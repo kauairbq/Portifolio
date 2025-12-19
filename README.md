@@ -6,7 +6,7 @@ Portfolio web moderno e responsivo em HTML, CSS e JavaScript, com paginas estati
 
 - Design responsivo para desktop, tablet e mobile
 - Modo escuro/claro com preferencia salva
-- Animações e scroll suave
+- Animacoes e scroll suave
 - Galeria e pagina de projetos com dados em JSON
 - Paginas institucionais (sobre, servicos, contactos, galeria)
 - Componentes reutilizaveis em HTML
@@ -57,6 +57,33 @@ Fullstack MD/
 - `data/projects.json`: lista de projetos do portfolio
 - `data/services.json`: dados da secao de servicos
 - `data/pricing.json`: dados da tabela de precos
+
+## Configuracao de ambiente (.env central)
+
+1. Copie `.env.example` para `.env`
+2. Preencha os valores de banco
+3. Os projetos leem o `.env` da raiz com fallbacks locais
+
+### Variaveis principais
+
+- `POSTGRES_*` e/ou `DATABASE_URL`
+- `MONGODB_URI`
+- `MYSQL_*`
+
+### Overrides por projeto (opcional)
+
+- `CRM_DATABASE_URL`
+- `ECOMMERCE_DATABASE_URL` e `ECOMMERCE_POSTGRES_*`
+- `TODO_MONGODB_URI`
+- `TASKFLOW_MONGODB_URI`
+- `XKAIROS_MYSQL_*`
+
+## Fluxo para novos projetos
+
+1. Crie o projeto em `projects/`
+2. Adicione variaveis com prefixo do projeto em `.env.example`
+3. No backend, carregue o `.env` da raiz e use fallbacks do prefixo
+4. Para bancos SQL, crie a conexao no SQLTools usando as variaveis do `.env`
 
 ## Como executar
 

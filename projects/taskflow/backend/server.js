@@ -3,8 +3,13 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const http = require('http');
 const socketIo = require('socket.io');
+const fs = require('fs');
+const path = require('path');
 const tasksRouter = require('./routes/tasks');
 const { router: authRouter } = require('./routes/auth');
+
+const rootEnv = path.resolve(__dirname, '../../..', '.env');
+require('dotenv').config({ path: fs.existsSync(rootEnv) ? rootEnv : undefined });
 
 const app = express();
 const server = http.createServer(app);
@@ -15,8 +20,11 @@ const io = socketIo(server, {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/taskflow';
+const PORT = process.env.TASKFLOW_PORT || process.env.PORT || 3000;
+const MONGODB_URI =
+  process.env.TASKFLOW_MONGODB_URI ||
+  process.env.MONGODB_URI ||
+  'mongodb://localhost:27017/taskflow';
 
 // Middleware
 app.use(cors());

@@ -4,15 +4,20 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const { Server } = require('socket.io');
 const path = require('path');
+const fs = require('fs');
 
-require('dotenv').config();
+const rootEnv = path.resolve(__dirname, '../../..', '.env');
+require('dotenv').config({ path: fs.existsSync(rootEnv) ? rootEnv : undefined });
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: '*' } });
 
-const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/todoapp';
+const PORT = process.env.TODO_PORT || process.env.PORT || 5000;
+const MONGODB_URI =
+  process.env.TODO_MONGODB_URI ||
+  process.env.MONGODB_URI ||
+  'mongodb://localhost:27017/todoapp';
 
 app.use(cors());
 app.use(express.json());
