@@ -27,6 +27,7 @@
         "technologies": ["PHP", "MySQL", "JavaScript", "CSS", "Font Awesome"],
         "link": "projects/xkairos/index.php",
         "github": "",
+        "requiresServer": true,
         "featured": false
     },
     {
@@ -93,7 +94,8 @@
         "image": "assets/img/projects/api-rest.svg",
         "technologies": ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
         "link": "projects/API REST para Gestao/swagger.html",
-        "github": "https://github.com/seuusuario/rest-api"
+        "github": "",
+        "requiresServer": true
     },
     {
         "id": 7,
@@ -111,7 +113,8 @@
         "image": "assets/img/projects/chat-app.svg",
         "technologies": ["React", "Socket.io", "Node.js", "MongoDB"],
         "link": "projects/Sistema de Chat em Tempo Real/public/index.html",
-        "github": "https://github.com/seuusuario/chat-app"
+        "github": "",
+        "requiresServer": true
     },
     {
         "id": 12,
@@ -131,6 +134,7 @@
         "technologies": ["React", "Node.js", "MongoDB", "Socket.io"],
         "link": "projects/todo-app/frontend/public/index.html",
         "github": "",
+        "requiresServer": true,
         "featured": false
     },
     {

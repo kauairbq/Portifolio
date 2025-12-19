@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form submission
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         if (!validateForm()) {
@@ -119,25 +119,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Collect form data
         const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
+        const actionUrl = contactForm.getAttribute('action');
 
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Success
+        try {
+            const response = await fetch(actionUrl, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (!response.ok) {
+                throw new Error('Falha ao enviar mensagem.');
+            }
+
             formFeedback.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
             formFeedback.className = 'success-message';
             formFeedback.style.display = 'block';
             contactForm.reset();
-
+        } catch (error) {
+            formFeedback.textContent = 'Nao foi possivel enviar. Tente novamente em alguns minutos.';
+            formFeedback.className = 'error-message';
+            formFeedback.style.display = 'block';
+        } finally {
             // Re-enable submit button
             submitBtn.disabled = false;
             submitBtn.textContent = 'Enviar Mensagem';
 
-            // Clear success message after 5 seconds
+            // Clear message after 5 seconds
             setTimeout(() => {
                 formFeedback.style.display = 'none';
             }, 5000);
-        }, 2000);
+        }
     });
 
     // Initialize Leaflet map
