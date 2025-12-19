@@ -1,5 +1,10 @@
 # Portfolio Web - Fullstack MD
 
+![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222?logo=githubpages&logoColor=white)
+
 Portfolio web moderno e responsivo em HTML, CSS e JavaScript, com paginas estaticas e dados dinamicos em JSON para projetos, servicos e precos.
 
 ## Funcionalidades
@@ -106,6 +111,19 @@ php -S localhost:8000
 1. Edite `data/projects.json`
 2. Adicione imagens em `assets/img/projects/` (ou o caminho usado no JSON)
 3. Confirme o link do projeto em `projects/` ou para um URL externo
+
+## Deploy (GitHub Pages)
+
+1. Acesse `Settings -> Pages`
+2. Source: `Deploy from a branch`
+3. Branch: `main` e pasta `/(root)`
+4. Aguarde o build e acesse `https://kauairbq.github.io/Portifolio/`
+
+## Contribuicao
+
+- Abra uma issue descrevendo a melhoria
+- Crie um branch com o nome da feature
+- Envie um pull request com descricao objetiva
 
 ## Contato
 
