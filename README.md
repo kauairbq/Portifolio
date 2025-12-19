@@ -34,6 +34,20 @@ Portfolio web moderno e responsivo em HTML, CSS e JavaScript, com paginas estati
 - `contactos.html`
 - `calculadora-media.html`
 
+## Screenshots
+
+Portfolio:
+
+![Portfolio](assets/img/kauai.webp)
+
+Projetos:
+
+| Ecommerce | CRM LookCar | App de Tarefas |
+| --- | --- | --- |
+| ![Ecommerce](assets/img/projects/ecommerce.svg) | ![CRM LookCar](assets/img/projects/crm-lookcar.svg) | ![App de Tarefas](assets/img/projects/app%20de%20tarefas.jpeg) |
+| Dashboard | Calculadora | Xkairos |
+| ![Dashboard](assets/img/projects/dashboard-analytics.svg) | ![Calculadora](assets/img/projects/calculadora.svg) | ![Xkairos](assets/img/projects/xkairos.svg) |
+
 ## Estrutura do projeto
 
 ```
