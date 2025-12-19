@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "build:ecommerce": "cd ecommerce/frontend/ecommerce-frontend && npm run build",
+    "build:ts": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sharp": "^0.34.5",
+    "sharp-cli": "^5.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.6.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

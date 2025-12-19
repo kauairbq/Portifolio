@@ -1,0 +1,19 @@
+<!-- Reusable service card component -->
+<!-- Usage: copy this into any page or include it with your templating system -->
+<article class="service-card" tabindex="0" itemscope itemtype="http://schema.org/Service" role="article">
+    <figure class="service-image">
+        <img src="{{imgSrc}}" alt="{{imgAlt}}" loading="lazy" itemprop="image">
+    </figure>
+    <header class="service-header">
+        <h3 id="{{id}}" itemprop="name">{{title}}</h3>
+    </header>
+    <p class="service-description" itemprop="description">{{description}}</p>
+    <ul class="service-features" aria-labelledby="{{id}}" role="list">
+        {{#features}}
+        <li role="listitem" itemprop="serviceType">{{.}}</li>
+        {{/features}}
+    </ul>
+    <div class="service-actions">
+        <a class="contact-btn" href="#contact" role="button" aria-label="Saiba mais sobre {{title}}">Saiba mais</a>
+    </div>
+</article>

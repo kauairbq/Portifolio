@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeria de projetos e trabalhos de Kauai Rocha - Desenvolvimento web, mobile e muito mais.">
+    <meta name="keywords" content="galeria kauai rocha, portfolio, projetos, trabalhos, desenvolvimento web">
+    <title>Galeria - Kauai Rocha</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/animations.css?v=1">
+    <link rel="stylesheet" href="css/responsive.css?v=1">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta property="og:title" content="Galeria - Kauai Rocha">
+    <meta property="og:description" content="Galeria de projetos e trabalhos de Kauai Rocha - Desenvolvimento web, mobile e muito mais.">
+    <meta property="og:image" content="assets/img/projects/ecommerce.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+      /* Nav remodelado */
+      .nav-shell{position:sticky;top:0;z-index:999;background:linear-gradient(120deg,#0a0f1d 0%,#0f172a 45%,#0a0f1d 100%);border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(0,0,0,0.25);} 
+      .nav-inner{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+      .nav-brand{display:flex;align-items:center;gap:10px;color:#f5f7fb;font-weight:800;letter-spacing:.02em;text-transform:uppercase;}
+      .nav-brand img{height:38px;width:auto;}
+      .nav-actions{display:flex;align-items:center;gap:10px;}
+      .nav-toggle{background:#8b5cf6;color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 20px rgba(139,92,246,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-toggle:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,92,246,0.45);} 
+      .nav-cta{background:#22d3ee;color:#0b1224;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 8px 20px rgba(34,211,238,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,0.45);}
+      .nav-dark{background:transparent;color:#e2e8f0;border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:10px 12px;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, border .15s ease;}
+      .nav-dark:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.35);border-color:rgba(255,255,255,0.35);} 
+      .menu-drawer{position:fixed;inset:0;pointer-events:none;}
+      .menu-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);opacity:0;transition:opacity .2s ease;}
+      .menu-panel{position:absolute;right:16px;top:80px;width:260px;background:#0f172a;border:1px solid rgba(255,255,255,0.08);border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,0.35);transform:translateY(-8px);opacity:0;transition:transform .2s ease, opacity .2s ease;}
+      .menu-panel ul{list-style:none;margin:0;padding:12px;}
+      .menu-panel li{border-bottom:1px solid rgba(255,255,255,0.06);} 
+      .menu-panel li:last-child{border-bottom:none;}
+      .menu-panel a{display:block;padding:12px 10px;color:#f5f7fb;font-weight:700;border-radius:10px;transition:background .15s ease;}
+      .menu-panel a:hover{background:rgba(255,255,255,0.06);} 
+      .menu-open .menu-drawer{pointer-events:auto;}
+      .menu-open .menu-overlay{opacity:1;}
+      .menu-open .menu-panel{transform:translateY(0);opacity:1;}
+      @media(max-width:768px){.nav-inner{flex-wrap:wrap;gap:10px;} .nav-actions{width:100%;justify-content:flex-end;} .menu-panel{right:12px;left:12px;width:auto;}}
+    </style>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conte&uacute;do</a>
+    <header class="nav-shell">
+        <div class="nav-inner" role="navigation" aria-label="Main Navigation">
+            <div class="nav-brand">
+                <img src="assets/img/logo.webp" alt="Logo">
+                <span>Kauai Rocha</span>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-dark" id="dark-mode-toggle" aria-pressed="false" title="Alternar modo claro/escuro">Modo</button>
+                <button class="nav-cta" onclick="location.href='contactos.html'">Contactar</button>
+                <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+            </div>
+        </div>
+        <div class="menu-drawer" id="menu-drawer">
+            <div class="menu-overlay"></div>
+            <div class="menu-panel" id="menu-panel">
+                <ul>
+                    <li><a href="index.html">In&iacute;cio</a></li>
+                    <li><a href="sobre-detalhado.html">Sobre</a></li>
+                    <li><a href="projects.html">Projetos</a></li>
+                    <li><a href="servicos.html">Servi&ccedil;os</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="projects/xkairos/response.html">Xkairos</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section id="hero-gallery" class="hero" role="banner" aria-labelledby="hero-gallery-title">
+        <video autoplay muted loop class="hero-video" preload="metadata" aria-hidden="true" poster="assets/img/kauai_rocha.webp">
+            <source src="assets/video/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="matrix-rain" aria-hidden="true">
+            <div class="rain-column" style="left: 10%;"></div>
+            <div class="rain-column" style="left: 20%;"></div>
+            <div class="rain-column" style="left: 30%;"></div>
+            <div class="rain-column" style="left: 40%;"></div>
+            <div class="rain-column" style="left: 50%;"></div>
+            <div class="rain-column" style="left: 60%;"></div>
+            <div class="rain-column" style="left: 70%;"></div>
+            <div class="rain-column" style="left: 80%;"></div>
+            <div class="rain-column" style="left: 90%;"></div>
+        </div>
+        <div class="hero-content">
+            <h1 id="hero-gallery-title">Galeria de Trabalhos</h1>
+            <p>Uma seleÃ§Ã£o dos meus melhores projetos e criaÃ§Ãµes</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section" role="main" aria-labelledby="gallery-title">
+        <div class="container">
+            <h2 id="gallery-title">Meus Trabalhos</h2>
+
+            <div class="gallery-filter" role="group" aria-label="Filtrar galeria">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="other">Outros</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item web" data-category="web">
+                    <img src="assets/img/projects/ecommerce.svg" alt="Projeto E-commerce" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>E-commerce Platform</h3>
+                        <p>Plataforma completa de e-commerce com React e Node.js</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item mobile" data-category="mobile">
+                    <img src="assets/img/projects/todo-app.svg" alt="Aplicativo Todo List" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Task Management App</h3>
+                        <p>Aplicativo mobile para gerenciamento de tarefas</p>
+                        <div class="tech-stack">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item web" data-category="web">
+                    <img src="assets/img/projects/dashboard-analytics.svg" alt="Dashboard Administrativo" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Admin Dashboard</h3>
+                        <p>Dashboard responsivo com grÃ¡ficos e analytics</p>
+                        <div class="tech-stack">
+                            <span>Vue.js</span>
+                            <span>Chart.js</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item design" data-category="design">
+                    <img src="assets/img/projects/landing-page.svg" alt="Landing Page" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Landing Page Criativa</h3>
+                        <p>PÃ¡gina de destino com design moderno e animaÃ§Ãµes</p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>GSAP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item web" data-category="web">
+                    <img src="assets/img/projects/blog.svg" alt="Sistema de Blog" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Blog Platform</h3>
+                        <p>Sistema de blog com CMS personalizado</p>
+                        <div class="tech-stack">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>jQuery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item other" data-category="other">
+                    <img src="assets/img/projects/api.svg" alt="API REST" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>REST API</h3>
+                        <p>API RESTful para integraÃ§Ã£o de sistemas</p>
+                        <div class="tech-stack">
+                            <span>Express.js</span>
+                            <span>PostgreSQL</span>
+                            <span>JWT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item mobile" data-category="mobile">
+                    <img src="assets/img/projects/memory-game.svg" alt="Jogo da MemÃ³ria" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>Memory Game</h3>
+                        <p>Jogo da memÃ³ria interativo para mobile</p>
+                        <div class="tech-stack">
+                            <span>JavaScript</span>
+                            <span>CSS3</span>
+                            <span>HTML5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item design" data-category="design">
+                    <img src="assets/img/projects/chat-app.svg" alt="UI/UX Design" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h3>UI/UX Design</h3>
+                        <p>Design de interface para aplicativo financeiro</p>
+                        <div class="tech-stack">
+                            <span>Figma</span>
+                            <span>Adobe XD</span>
+                            <span>Sketch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/logo.webp" alt="Logo Kauai Rocha" loading="lazy">
+                    <p>Construo produtos digitais completos: UX estratÃ©gico, front-end de alta performance e APIs robustas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegacao</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="sobre-detalhado.html">Sobre</a>
+                    <a href="servicos.html">Servicos</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contactos.html">Contacto</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicos</h4>
+                    <a href="servicos.html#ux">UX/UI e prototipos</a>
+                    <a href="servicos.html#web">Web e landing pages</a>
+                    <a href="servicos.html#api">APIs e integracoes</a>
+                    <a href="servicos.html#ecommerce">E-commerce</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Email: <a href="mailto:kauai_lucas@hotmail.com">kauai_lucas@hotmail.com</a></p>
+                    <p>Telefone: <a href="tel:+351961150993">+351 961-150-993</a></p>
+                    <p>Viseu, Portugal</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/kauai_rocha" class="social-link twitter" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.threads.net/" class="social-link threads" target="_blank" rel="noopener noreferrer" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                        <a href="https://www.tiktok.com/" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/kauai.rocha.10/" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kauai Rocha. Todos os direitos reservados.</p>
+                <span class="footer-made">UX â€¢ API â€¢ DevOps â€¢ Performance</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+        <script>
+      // Toggle menu drawer
+      const navToggle = document.getElementById('nav-toggle');
+      const menuDrawer = document.getElementById('menu-drawer');
+      navToggle?.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+      menuDrawer?.addEventListener('click', (ev) => {
+        if (ev.target.classList.contains('menu-overlay')) {
+          document.body.classList.remove('menu-open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/scroll.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
+</body>
+</html>
+
+
+

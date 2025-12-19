@@ -1,0 +1,40 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1F3B" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accentPhone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    <linearGradient id="accentPhone2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect x="24" y="24" width="352" height="252" rx="18" fill="rgba(255,255,255,0.06)" stroke="#1f3b57" stroke-width="2" />
+
+  <text x="200" y="44" text-anchor="middle" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Desenvolvimento Mobile</text>
+
+  <!-- Phones -->
+  <rect x="92" y="68" width="92" height="180" rx="20" fill="#0f172a" stroke="#38bdf8" />
+  <rect x="216" y="56" width="92" height="200" rx="20" fill="#0f172a" stroke="#a855f7" />
+  <circle cx="138" cy="86" r="8" fill="#38bdf8" />
+  <circle cx="262" cy="76" r="8" fill="#a855f7" />
+
+  <!-- Bubbles -->
+  <rect x="112" y="110" width="60" height="20" rx="8" fill="rgba(56,189,248,0.25)" />
+  <rect x="112" y="138" width="72" height="16" rx="8" fill="rgba(255,255,255,0.12)" />
+  <rect x="112" y="168" width="70" height="16" rx="8" fill="url(#accentPhone)" />
+
+  <rect x="236" y="104" width="70" height="18" rx="8" fill="rgba(168,85,247,0.25)" />
+  <rect x="236" y="132" width="76" height="16" rx="8" fill="rgba(255,255,255,0.12)" />
+  <rect x="236" y="160" width="70" height="18" rx="8" fill="url(#accentPhone2)" />
+
+  <!-- Footer labels -->
+  <text x="138" y="240" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Nativo</text>
+  <text x="262" y="240" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Hibrido</text>
+  <text x="200" y="260" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">iOS ? Android ? Flutter</text>
+</svg>

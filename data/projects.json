@@ -1,0 +1,174 @@
+[
+    {
+        "id": 100,
+        "title": "E-commerce Completo (React + Node.js)",
+        "description": "Plataforma de e-commerce com frontend em React, backend Node.js/Express, carrinho, checkout e integracao com API.",
+        "image": "projects/ecommerce/frontend/ecommerce-frontend/public/logo192.png",
+        "technologies": ["React", "Node.js", "Express", "API", "CSS", "Responsivo"],
+        "link": "projects/ecommerce/frontend/ecommerce-frontend/build/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 13,
+        "title": "CRM LookCar (Vue + Express)",
+        "description": "CRM para leads de stand automotivo com paineis, gestao de clientes/negocios e importador de contactos.",
+        "image": "assets/img/projects/crm-lookcar.svg",
+        "technologies": ["Vue 3", "Vite", "Pinia", "TailwindCSS", "Express", "PostgreSQL"],
+        "link": "projects/crm-lookcar/client/dist/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 14,
+        "title": "Xkairos Tech",
+        "description": "Plataforma para orcamentos, area do cliente e CRM de montagens de PCs, com painel admin e automacoes.",
+        "image": "assets/img/projects/xkairos.svg",
+        "technologies": ["PHP", "MySQL", "JavaScript", "CSS", "Font Awesome"],
+        "link": "projects/xkairos/index.php",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 0,
+        "title": "Calculadora de Media de Notas",
+        "description": "Aplicacao web para calcular a media de notas com validacao de dados (0-20), lista de notas, estatisticas completas e interface responsiva com modo escuro.",
+        "image": "assets/img/projects/calculadora.svg",
+        "technologies": ["HTML", "CSS", "JavaScript", "Responsivo"],
+        "link": "calculadora-media.html",
+        "github": "https://github.com/kauairbq",
+        "featured": true
+    },
+    {
+        "id": 11,
+        "title": "Contador de Cliques",
+        "description": "Mini app de contador com animacoes, prevencao de negativos e persistencia em localStorage.",
+        "image": "assets/img/projects/click-counter.svg",
+        "technologies": ["HTML", "CSS", "JavaScript", "LocalStorage"],
+        "link": "projects/contador de cliques/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 99,
+        "title": "Site da Banda Rock Band",
+        "description": "Site institucional de banda de rock alternativo, com agenda de concertos, albuns, galeria, contacto e modo escuro.",
+        "image": "projects/banda/img/album-energia-pura.svg",
+        "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "Acessibilidade"],
+        "link": "projects/banda/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 3,
+        "title": "Dashboard Analytics",
+        "description": "Painel administrativo interativo com graficos em tempo real, relatorios personalizaveis e integracao com multiplas fontes de dados.",
+        "image": "assets/img/projects/dashboard-analytics.svg",
+        "technologies": ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+        "link": "projects/Dashboard Analytics/index.html",
+        "github": "https://github.com/seuusuario/analytics-dashboard"
+    },
+    {
+        "id": 4,
+        "title": "Blog Pessoal",
+        "description": "Blog responsivo com sistema de comentarios, integracao com redes sociais, SEO optimizado e painel de administracao intuitivo.",
+        "image": "assets/img/projects/blog-pessoal.svg",
+        "technologies": ["WordPress", "PHP", "MySQL", "JavaScript"],
+        "link": "projects/Blog Pessoal/index.html",
+        "github": "https://github.com/seuusuario/personal-blog"
+    },
+    {
+        "id": 5,
+        "title": "Jogo da Memoria",
+        "description": "Jogo interativo da memoria desenvolvido com JavaScript puro, niveis de dificuldade e sistema de pontuacao.",
+        "image": "assets/img/projects/memory-game.svg",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "link": "projects/jogo da memoria/index.html",
+        "github": "https://github.com/seuusuario/memory-game"
+    },
+    {
+        "id": 6,
+        "title": "API REST para Gestao",
+        "description": "API REST robusta para gestao de utilizadores, autenticacao JWT, validacao de dados e documentacao completa com Swagger.",
+        "image": "assets/img/projects/api-rest.svg",
+        "technologies": ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
+        "link": "projects/API REST para Gestao/swagger.html",
+        "github": "https://github.com/seuusuario/rest-api"
+    },
+    {
+        "id": 7,
+        "title": "Landing Page Institucional",
+        "description": "Pagina institucional moderna e responsiva com animacoes suaves, formulario de contacto integrado e optimizacao para conversoes.",
+        "image": "assets/img/projects/landing-page.svg",
+        "technologies": ["HTML", "CSS", "JavaScript", "GSAP"],
+        "link": "projects/Landing Page Institucional/index.html",
+        "github": "https://github.com/seuusuario/landing-page"
+    },
+    {
+        "id": 8,
+        "title": "Sistema de Chat em Tempo Real",
+        "description": "Aplicacao de chat com salas privadas, mensagens em tempo real via WebSocket, envio de ficheiros e interface moderna.",
+        "image": "assets/img/projects/chat-app.svg",
+        "technologies": ["React", "Socket.io", "Node.js", "MongoDB"],
+        "link": "projects/Sistema de Chat em Tempo Real/public/index.html",
+        "github": "https://github.com/seuusuario/chat-app"
+    },
+    {
+        "id": 12,
+        "title": "Catalogo de Produtos (POO + API)",
+        "description": "Sistema de gestao de catalogo com POO, edicao inline, filtros, persistencia em localStorage e detalhes via Fake Store API.",
+        "image": "assets/img/projects/catalogo.svg",
+        "technologies": ["JavaScript", "POO", "Fetch", "localStorage", "API"],
+        "link": "projects/sistema de gestao de catalogo de produtos/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 10,
+        "title": "Aplicativo de Tarefas",
+        "description": "Aplicacao de tarefas em tempo real usando React, Node.js, MongoDB e Socket.io.",
+        "image": "assets/img/projects/app de tarefas.jpeg",
+        "technologies": ["React", "Node.js", "MongoDB", "Socket.io"],
+        "link": "projects/todo-app/frontend/public/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 15,
+        "title": "Site para Advogados",
+        "description": "Website institucional para escritorios, com areas de atuacao, agendamento e formulario seguro.",
+        "image": "assets/img/projects/advogados.svg",
+        "technologies": ["Next.js", "React", "TypeScript", "TailwindCSS", "SEO", "Calendly", "CMS", "GDPR"],
+        "link": "projects/Site para Advogados/index.html",
+        "github": ""
+    },
+    {
+        "id": 102,
+        "title": "Gestao de Projetos (React + TS)",
+        "description": "Dashboard de projetos e tarefas com validacao e progresso, persistencia local.",
+        "image": "assets/img/projects/dashboard-analytics.svg",
+        "technologies": ["React", "TypeScript", "LocalStorage"],
+        "link": "projects/gestao-projetos-react-ts/dist/index.html",
+        "github": ""
+    },
+    {
+        "id": 104,
+        "title": "Personal Trainer (Landing)",
+        "description": "Portefolio estatico com servicos, dicas, biblioteca de exercicios e calculadoras rapidas para IMC e macros.",
+        "image": "assets/img/projects/personal-trainer.svg",
+        "technologies": ["HTML", "CSS", "JavaScript", "Responsivo"],
+        "link": "projects/personal-trainer/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
+        "id": 105,
+        "title": "Stand Automoveis",
+        "description": "Landing moderna para stand automotivo com filtros de stock, destaques e CTA.",
+        "image": "assets/img/projects/stand-lookcar.svg",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "link": "projects/lookcar-stand/index.html",
+        "github": "",
+        "featured": false
+    }
+]

@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Kauai Rocha, Desenvolvedor Fullstack Sênior com experiência em front-end, back-end e bancos de dados.">
+    <meta name="keywords" content="desenvolvedor, fullstack, portfolio, kauai rocha, front-end, back-end">
+    <title>Portfólio - Kauai Rocha</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/animations.css?v=1">
+    <link rel="stylesheet" href="css/responsive.css?v=1">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      /* Nav remodelado */
+      .nav-shell{position:sticky;top:0;z-index:999;background:linear-gradient(120deg,#0a0f1d 0%,#0f172a 45%,#0a0f1d 100%);border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(0,0,0,0.25);}
+      .nav-inner{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+      .nav-brand{display:flex;align-items:center;gap:10px;color:#f5f7fb;font-weight:800;letter-spacing:.02em;text-transform:uppercase;}
+      .nav-brand img{height:38px;width:auto;}
+      .nav-actions{display:flex;align-items:center;gap:10px;}
+      .nav-toggle{background:#8b5cf6;color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 20px rgba(139,92,246,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-toggle:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,92,246,0.45);}
+      .nav-cta{background:#22d3ee;color:#0b1224;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 8px 20px rgba(34,211,238,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,0.45);}
+      .nav-dark{background:transparent;color:#e2e8f0;border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:10px 12px;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, border .15s ease;}
+      .nav-dark:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.35);border-color:rgba(255,255,255,0.35);}
+      .menu-drawer{position:fixed;inset:0;pointer-events:none;}
+      .menu-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);opacity:0;transition:opacity .2s ease;}
+      .menu-panel{position:absolute;right:16px;top:80px;width:260px;background:#0f172a;border:1px solid rgba(255,255,255,0.08);border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,0.35);transform:translateY(-8px);opacity:0;transition:transform .2s ease, opacity .2s ease;}
+      .menu-panel ul{list-style:none;margin:0;padding:12px;}
+      .menu-panel li{border-bottom:1px solid rgba(255,255,255,0.06);}
+      .menu-panel li:last-child{border-bottom:none;}
+      .menu-panel a{display:block;padding:12px 10px;color:#f5f7fb;font-weight:700;border-radius:10px;transition:background .15s ease;}
+      .menu-panel a:hover{background:rgba(255,255,255,0.06);}
+      .menu-open .menu-drawer{pointer-events:auto;}
+      .menu-open .menu-overlay{opacity:1;}
+      .menu-open .menu-panel{transform:translateY(0);opacity:1;}
+      @media(max-width:768px){
+        .nav-inner{flex-wrap:wrap;gap:10px;}
+        .nav-actions{width:100%;justify-content:flex-end;}
+        .menu-panel{right:12px;left:12px;width:auto;}
+      }
+    </style>
+    <!-- Open Graph / Twitter card -->
+    <meta property="og:title" content="PortfÃƒÆ’Ã‚Â³lio - Kauai Rocha">
+    <meta property="og:description" content="PortfÃƒÆ’Ã‚Â³lio de Kauai Rocha, Desenvolvedor Fullstack SÃƒÆ’Ã‚Âªnior com experiÃƒÆ’Ã‚Âªncia em front-end, back-end e bancos de dados.">
+    <meta property="og:image" content="assets/img/kauai.webp">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+    <header class="nav-shell">
+        <div class="nav-inner" role="navigation" aria-label="Main Navigation">
+            <div class="nav-brand">
+                <img src="assets/img/logo.webp" alt="Logo">
+                <span>Kauai Rocha</span>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-dark" id="dark-mode-toggle" aria-pressed="false" title="Alternar modo claro/escuro">Modo</button>
+                <button class="nav-cta" onclick="location.href='contactos.html'">Contactar</button>
+                <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+            </div>
+        </div>
+        <div class="menu-drawer" id="menu-drawer">
+            <div class="menu-overlay"></div>
+            <div class="menu-panel" id="menu-panel">
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="sobre-detalhado.html">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="projects/xkairos/response.html">Xkairos</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section id="hero" class="hero" role="banner" aria-labelledby="hero-title">
+    <div class="hero-inner">
+        <div class="hero-copy">
+            <p class="eyebrow">Desenvolvedor Fullstack</p>
+            <h1 id="hero-title">Crio experiências web e APIs de alto desempenho.</h1>
+            <p class="lede">React, Node.js/Express, integrações REST/GraphQL e otimizações de performance para produtos digitais completos.</p>
+            <div class="cta">
+                <a class="btn primary" href="#projects">Ver projetos</a>
+                <a class="btn ghost" href="contactos.html">Contactar</a>
+            </div>
+            <div class="hero-stats">
+                <div><strong>5+</strong><span>anos em fullstack</span></div>
+                <div><strong>25+</strong><span>projetos entregues</span></div>
+                <div><strong>98%</strong><span>uptime / SLAs</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <img src="assets/img/kauai_rocha.webp" alt="Foto de Kauai Rocha" loading="lazy">
+                <div class="hero-badge">UI-UX / API / DevOps</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about" role="main" aria-labelledby="about-title">
+    <div class="container">
+        <h2 id="about-title">Sobre Mim</h2>
+        <div class="about-content">
+            <div class="profile-container">
+                <img src="assets/img/kauai.webp" alt="Foto de Kauai Rocha, desenvolvedor fullstack Sênior" class="profile-img" loading="lazy">
+                <div class="profile-glow" aria-hidden="true"></div>
+            </div>
+            <div class="about-text">
+                <p>Sou <strong>Kauai Rocha</strong>, Desenvolvedor <strong>Front-End & Fullstack Sênior</strong> com experiência completa em criar sistemas de ponta a ponta, desde a concepção até a entrega final. Minha trajetória combina desenvolvimento front-end, back-end, bancos de dados e integração de sistemas, garantindo soluções digitais robustas e escaláveis.</p>
+
+                <p>Tenho proficiência em tecnologias modernas como:</p>
+
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Linguagens de Programação</h3>
+                        <div class="skills-subcategory">
+                            <h4>Front-end</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item skill-html"><i class="fab fa-html5"></i> HTML5</div>
+                                <div class="skill-item skill-css"><i class="fab fa-css3-alt"></i> CSS3</div>
+                                <div class="skill-item skill-js"><i class="fab fa-js-square"></i> JavaScript</div>
+                                <div class="skill-item skill-SASS"><i class="fab fa-sass"></i> SASS</div>
+                            </div>
+                        </div>
+                        <div class="skills-subcategory">
+                            <h4>Back-end</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item skill-php"><i class="fab fa-php"></i> PHP</div>
+                                <div class="skill-item skill-java"><i class="fab fa-java"></i> Java</div>
+                                <div class="skill-item skill-csharp"><i class="fab fa-microsoft"></i> C#</div>
+                                <div class="skill-item skill-cpp"><i class="fab fa-cuttlefish"></i> C++</div>
+                                <div class="skill-item skill-python"><i class="fab fa-python"></i> Python</div>
+                                <div class="skill-item skill-nodejs"><i class="fab fa-node-js"></i> Node.js</div>
+                            </div>
+                        </div>
+                        <div class="skills-subcategory">
+                            <h4>Banco de dados</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item skill-db"><i class="fas fa-database"></i> MySQL</div>
+                                <div class="skill-item skill-db"><i class="fas fa-database"></i> PostgreSQL</div>
+                                <div class="skill-item skill-db"><i class="fas fa-database"></i> MongoDB</div>
+                            </div>
+                        </div>
+                        <div class="skills-subcategory">
+                            <h4>Outras</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item skill-json"><i class="fas fa-code"></i> JSON</div>
+                                <div class="skill-item skill-sql"><i class="fas fa-database"></i> SQL</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Frameworks e Bibliotecas</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item skill-react"><i class="fab fa-react"></i> React</div>
+                            <div class="skill-item skill-react-native"><i class="fab fa-react"></i> React Native</div>
+                            <div class="skill-item skill-material"><i class="fas fa-layer-group"></i> Material UI</div>
+                            <div class="skill-item skill-ant"><i class="fas fa-th-large"></i> Ant Design</div>
+                            <div class="skill-item skill-kendo"><i class="fas fa-window-maximize"></i> Kendo UI</div>
+                            <div class="skill-item skill-tilewindow"><i class="fas fa-th-large"></i> TileWindow</div>
+                            <div class="skill-item skill-bootstrap"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+                            <div class="skill-item skill-vue"><i class="fab fa-vuejs"></i> Vue.js</div> 
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Ferramentas e Metodologias</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item skill-git"><i class="fab fa-git-alt"></i> Git/GitHub</div>
+                            <div class="skill-item skill-scrum"><i class="fas fa-users-cog"></i> Scrum/Agile</div>
+                            <div class="skill-item skill-code-review"><i class="fas fa-code-branch"></i> Code Review</div>
+                            <div class="skill-item skill-pair"><i class="fas fa-user-friends"></i> Pair Programming</div>
+                            <div class="skill-item skill-fullstack"><i class="fas fa-layer-group"></i> Fullstack</div>
+                            <div class="skill-item skill-ui-design"><i class="fas fa-palette"></i> UI Design</div>
+                            <div class="skill-item skill-linux"><i class="fab fa-linux"></i> Linux</div>
+                            <div class="skill-item skill-windows"><i class="fab fa-windows"></i> Windows</div>
+                            <div class="skill-item skill-ux"><i class="fas fa-user-circle"></i> UX / UI Design</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Meu trabalho foca sempre em <strong>performance, design responsivo, otimização e experiência do usuário</strong>.</p>
+
+                <p>Além de desenvolver, sou mentor de desenvolvedores juniores, atuando com <strong>code review, pair programming e suporte técnico</strong>, elevando a qualidade e eficiência das equipes em que atuo. Cada projeto que assumo é tratado com excelência, inovação e atenção aos detalhes, transformando ideias complexas em soluções digitais de alto impacto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projetos serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Vamos Conversar!</h3>
+                <p>Estou sempre interessado em novos projetos e oportunidades de colaboração. Entre em contato comigo!</p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> kauai_lucas@hotmail.com</p>
+                    <p><strong>Telefone:</strong> +351 961-150-993</p>
+                    <p><strong>Localização:</strong> Portugal, Viseu</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/kauai.rocha.10/" class="social-link facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ka_roochaa/" class="social-link instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+                <input type="text" name="name" placeholder="Seu Nome" required minlength="3" maxlength="50">
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <input type="text" name="subject" placeholder="Assunto" required>
+                <textarea name="message" placeholder="Sua Mensagem" required minlength="10" maxlength="1000"></textarea>
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+        </div>
+        <div id="form-feedback" role="alert"></div>
+    </div>
+</section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/logo.webp" alt="Logo Kauai Rocha" loading="lazy">
+                    <p>Construo produtos digitais completos: UX estratégico, front-end de alta performance e APIs robustas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegacao</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="sobre-detalhado.html">Sobre</a>
+                    <a href="servicos.html">Servicos</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contactos.html">Contacto</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicos</h4>
+                    <a href="servicos.html#ux">UX/UI e prototipos</a>
+                    <a href="servicos.html#web">Web e landing pages</a>
+                    <a href="servicos.html#api">APIs e integrações</a>
+                    <a href="servicos.html#ecommerce">E-commerce</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Email: <a href="mailto:kauai_lucas@hotmail.com">kauai_lucas@hotmail.com</a></p>
+                    <p>Telefone: <a href="tel:+351961150993">+351 961-150-993</a></p>
+                    <p>Viseu, Portugal</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/kauai.rocha.10/" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/kauai_rocha" class="social-link twitter" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.threads.net/" class="social-link threads" target="_blank" rel="noopener noreferrer" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                        <a href="https://www.tiktok.com/" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kauai Rocha. Todos os direitos reservados.</p>
+                <span class="footer-made">UX • API • DevOps • Performance</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      // Toggle menu drawer
+      const navToggle = document.getElementById('nav-toggle');
+      const menuDrawer = document.getElementById('menu-drawer');
+      navToggle?.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+      menuDrawer?.addEventListener('click', (ev) => {
+        if (ev.target.classList.contains('menu-overlay')) {
+          document.body.classList.remove('menu-open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/scroll.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
+    <script src="js/projects.js" defer></script>
+</body>
+</html>
+
+
+

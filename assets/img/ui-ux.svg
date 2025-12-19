@@ -1,0 +1,29 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0B1F3B" /><stop offset="100%" stop-color="#0f172a" /></linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#38bdf8" /><stop offset="100%" stop-color="#a855f7" /></linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect x="24" y="24" width="352" height="252" rx="18" fill="rgba(255,255,255,0.06)" stroke="#1f3b57" stroke-width="2" />
+
+  <text x="200" y="44" text-anchor="middle" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">UI/UX Design</text>
+
+  <!-- Wireframe canvas -->
+  <rect x="64" y="72" width="272" height="170" rx="14" fill="#0f172a" stroke="#1f3b57" />
+  <rect x="80" y="90" width="180" height="14" rx="6" fill="rgba(56,189,248,0.28)" />
+  <rect x="80" y="112" width="120" height="12" rx="6" fill="rgba(255,255,255,0.14)" />
+  <rect x="214" y="112" width="100" height="12" rx="6" fill="rgba(255,255,255,0.08)" />
+
+  <rect x="80" y="138" width="110" height="80" rx="10" fill="rgba(168,85,247,0.12)" stroke="#a855f7" />
+  <rect x="202" y="138" width="112" height="40" rx="10" fill="rgba(34,197,94,0.14)" stroke="#22c55e" />
+  <rect x="202" y="188" width="112" height="30" rx="10" fill="rgba(255,255,255,0.08)" />
+
+  <rect x="140" y="230" width="120" height="22" rx="10" fill="url(#accent)" />
+  <text x="200" y="246" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Prototipo</text>
+
+  <!-- Cursor and markers -->
+  <polygon points="250,120 280,160 262,162 266,182 248,184 244,156 230,156" fill="#38bdf8" />
+  <circle cx="110" cy="132" r="5" fill="#38bdf8" />
+  <circle cx="292" cy="150" r="5" fill="#22c55e" />
+  <circle cx="130" cy="210" r="5" fill="#a855f7" />
+</svg>

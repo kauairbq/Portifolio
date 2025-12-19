@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre Kauai Rocha - HistÃ³ria, missÃ£o, visÃ£o, valores e equipe da empresa.">
+    <meta name="keywords" content="sobre kauai rocha, historia, missao, visao, valores, equipe">
+    <title>Sobre - Kauai Rocha</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/animations.css?v=1">
+    <link rel="stylesheet" href="css/responsive.css?v=1">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta property="og:title" content="Sobre - Kauai Rocha">
+    <meta property="og:description" content="Sobre Kauai Rocha - HistÃ³ria, missÃ£o, visÃ£o, valores e equipe da empresa.">
+    <meta property="og:image" content="assets/img/kauai.webp">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+      /* Nav remodelado */
+      .nav-shell{position:sticky;top:0;z-index:999;background:linear-gradient(120deg,#0a0f1d 0%,#0f172a 45%,#0a0f1d 100%);border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(0,0,0,0.25);} 
+      .nav-inner{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+      .nav-brand{display:flex;align-items:center;gap:10px;color:#f5f7fb;font-weight:800;letter-spacing:.02em;text-transform:uppercase;}
+      .nav-brand img{height:38px;width:auto;}
+      .nav-actions{display:flex;align-items:center;gap:10px;}
+      .nav-toggle{background:#8b5cf6;color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 20px rgba(139,92,246,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-toggle:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,92,246,0.45);} 
+      .nav-cta{background:#22d3ee;color:#0b1224;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 8px 20px rgba(34,211,238,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,0.45);}
+      .nav-dark{background:transparent;color:#e2e8f0;border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:10px 12px;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, border .15s ease;}
+      .nav-dark:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.35);border-color:rgba(255,255,255,0.35);} 
+      .menu-drawer{position:fixed;inset:0;pointer-events:none;}
+      .menu-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);opacity:0;transition:opacity .2s ease;}
+      .menu-panel{position:absolute;right:16px;top:80px;width:260px;background:#0f172a;border:1px solid rgba(255,255,255,0.08);border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,0.35);transform:translateY(-8px);opacity:0;transition:transform .2s ease, opacity .2s ease;}
+      .menu-panel ul{list-style:none;margin:0;padding:12px;}
+      .menu-panel li{border-bottom:1px solid rgba(255,255,255,0.06);} 
+      .menu-panel li:last-child{border-bottom:none;}
+      .menu-panel a{display:block;padding:12px 10px;color:#f5f7fb;font-weight:700;border-radius:10px;transition:background .15s ease;}
+      .menu-panel a:hover{background:rgba(255,255,255,0.06);} 
+      .menu-open .menu-drawer{pointer-events:auto;}
+      .menu-open .menu-overlay{opacity:1;}
+      .menu-open .menu-panel{transform:translateY(0);opacity:1;}
+      @media(max-width:768px){.nav-inner{flex-wrap:wrap;gap:10px;} .nav-actions{width:100%;justify-content:flex-end;} .menu-panel{right:12px;left:12px;width:auto;}}
+    </style>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conte&uacute;do</a>
+    <header class="nav-shell">
+        <div class="nav-inner" role="navigation" aria-label="Main Navigation">
+            <div class="nav-brand">
+                <img src="assets/img/logo.webp" alt="Logo">
+                <span>Kauai Rocha</span>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-dark" id="dark-mode-toggle" aria-pressed="false" title="Alternar modo claro/escuro">Modo</button>
+                <button class="nav-cta" onclick="location.href='contactos.html'">Contactar</button>
+                <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+            </div>
+        </div>
+        <div class="menu-drawer" id="menu-drawer">
+            <div class="menu-overlay"></div>
+            <div class="menu-panel" id="menu-panel">
+                <ul>
+                    <li><a href="index.html">In&iacute;cio</a></li>
+                    <li><a href="sobre-detalhado.html">Sobre</a></li>
+                    <li><a href="projects.html">Projetos</a></li>
+                    <li><a href="servicos.html">Servi&ccedil;os</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="projects/xkairos/response.html">Xkairos</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section id="hero-about" class="hero" role="banner" aria-labelledby="hero-about-title">
+        <video autoplay muted loop class="hero-video" preload="metadata" aria-hidden="true" poster="assets/img/kauai_rocha.webp">
+            <source src="assets/video/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="matrix-rain" aria-hidden="true">
+            <div class="rain-column" style="left: 10%;"></div>
+            <div class="rain-column" style="left: 20%;"></div>
+            <div class="rain-column" style="left: 30%;"></div>
+            <div class="rain-column" style="left: 40%;"></div>
+            <div class="rain-column" style="left: 50%;"></div>
+            <div class="rain-column" style="left: 60%;"></div>
+            <div class="rain-column" style="left: 70%;"></div>
+            <div class="rain-column" style="left: 80%;"></div>
+            <div class="rain-column" style="left: 90%;"></div>
+        </div>
+        <div class="hero-content">
+            <h1 id="hero-about-title">Sobre Kauai Rocha</h1>
+            <p>ConheÃ§a nossa histÃ³ria, missÃ£o e valores</p>
+        </div>
+    </section>
+
+    <section id="history" class="about-section" role="main" aria-labelledby="history-title">
+        <div class="container">
+            <h2 id="history-title">Nossa HistÃ³ria</h2>
+            <p class="section-subtitle">Uma jornada de evoluÃ§Ã£o constante e aprendizado contÃ­nuo, marcada por desafios superados e conquistas que moldaram minha trajetÃ³ria profissional no mundo da tecnologia.</p>
+            <div class="history-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-date">2015</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>InÃ­cio da Jornada</h3>
+                            <p>Comecei minha carreira como desenvolvedor front-end, focando em criar interfaces intuitivas e responsivas com HTML5, CSS3 e JavaScript. Durante esse perÃ­odo, aprendi a importÃ¢ncia da acessibilidade e da otimizaÃ§Ã£o de performance, desenvolvendo projetos pessoais que me ensinaram a resolver problemas complexos de forma criativa.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-date">2017</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>ExpansÃ£o Fullstack</h3>
+                            <p>Expandi meus conhecimentos para desenvolvimento back-end, trabalhando com Node.js, PHP, MySQL e PostgreSQL. Essa transiÃ§Ã£o me permitiu entender a arquitetura completa de aplicaÃ§Ãµes web, desde a lÃ³gica do servidor atÃ© a persistÃªncia de dados, ampliando minha capacidade de criar soluÃ§Ãµes mais robustas e escalÃ¡veis.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>LideranÃ§a TÃ©cnica</h3>
+                            <p>Assumi posiÃ§Ãµes de lideranÃ§a tÃ©cnica, mentorando desenvolvedores juniores e implementando melhores prÃ¡ticas Ã¡geis. Nesse perÃ­odo, desenvolvi habilidades de gestÃ£o de equipes, code reviews e implementaÃ§Ã£o de processos de desenvolvimento que aumentaram a produtividade e a qualidade do cÃ³digo produzido.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>EspecializaÃ§Ã£o em UI/UX</h3>
+                            <p>Profundizei meus conhecimentos em design de interface e experiÃªncia do usuÃ¡rio, integrando design e desenvolvimento.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Presente</h3>
+                            <p>Continuo evoluindo, adotando novas tecnologias como React, Vue.js e metodologias modernas para entregar soluÃ§Ãµes de alta qualidade. Atualmente, foco em projetos que combinam inteligÃªncia artificial, machine learning e desenvolvimento sustentÃ¡vel, sempre buscando impactar positivamente a comunidade tecnolÃ³gica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission-vision-values" class="about-section" aria-labelledby="mission-title">
+        <div class="container">
+            <h2 class="section-main-title">Nossos PrincÃ­pios</h2>
+            <p class="section-subtitle">Os pilares que guiam nosso trabalho e nossas decisÃµes</p>
+            <div class="mission-vision-values-grid">
+                <div class="mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h2 id="mission-title">MissÃ£o</h2>
+                    <p>Desenvolver soluÃ§Ãµes digitais inovadoras e de alta qualidade que transformem ideias em realidade, sempre priorizando a experiÃªncia do usuÃ¡rio e a excelÃªncia tÃ©cnica. Nosso compromisso Ã© entregar produtos que nÃ£o apenas atendam Ã s necessidades dos clientes, mas que tambÃ©m superem suas expectativas, utilizando as melhores prÃ¡ticas de desenvolvimento e tecnologias de ponta para criar aplicaÃ§Ãµes robustas, escalÃ¡veis e seguras.</p>
+                </div>
+                <div class="vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h2 id="vision-title">VisÃ£o</h2>
+                    <p>Ser referÃªncia em desenvolvimento fullstack, reconhecido pela qualidade, inovaÃ§Ã£o e impacto positivo nos projetos desenvolvidos. Aspiramos a liderar o mercado atravÃ©s da excelÃªncia tÃ©cnica, contribuindo para a transformaÃ§Ã£o digital de empresas e organizaÃ§Ãµes, enquanto construÃ­mos uma comunidade de profissionais apaixonados por tecnologia e aprendizado contÃ­nuo. Nosso objetivo Ã© ser o parceiro de escolha para empresas que buscam soluÃ§Ãµes tecnolÃ³gicas avanÃ§adas, estabelecendo padrÃµes elevados de qualidade e eficiÃªncia no setor.</p>
+                </div>
+                <div class="values-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h2 id="values-title">Valores</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>ExcelÃªncia</h3>
+                            <p>Busca constante pela perfeiÃ§Ã£o em cada linha de cÃ³digo, garantindo qualidade superior em todos os projetos e entregas</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>InovaÃ§Ã£o</h3>
+                            <p>AdoÃ§Ã£o de novas tecnologias e metodologias para criar soluÃ§Ãµes criativas e eficientes que antecipam as necessidades do mercado</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Integridade</h3>
+                            <p>TransparÃªncia e Ã©tica em todas as relaÃ§Ãµes, mantendo confianÃ§a e respeito mÃºtuo com clientes e colaboradores</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>ColaboraÃ§Ã£o</h3>
+                            <p>Trabalho em equipe e compartilhamento de conhecimento para alcanÃ§ar objetivos comuns e promover o crescimento coletivo</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Aprendizado ContÃ­nuo</h3>
+                            <p>EvoluÃ§Ã£o constante e adaptaÃ§Ã£o Ã s mudanÃ§as tecnolÃ³gicas, investindo em formaÃ§Ã£o e atualizaÃ§Ã£o profissional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="about-section" aria-labelledby="team-title">
+        <div class="container">
+            <h2 id="team-title">Nossa Equipe</h2>
+            <p class="section-subtitle">Profissionais dedicados e apaixonados por tecnologia</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <img src="assets/img/kauai.webp" alt="Kauai Rocha - Desenvolvedor Fullstack SÃªnior" loading="lazy">
+                        <div class="member-overlay">
+                            <div class="member-role-badge">LÃ­der TÃ©cnico</div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Kauai Rocha</h3>
+                        <p class="member-position">Desenvolvedor Fullstack SÃªnior</p>
+                        <p class="member-description">Especialista em front-end e back-end, com experiÃªncia em React, Node.js, Vue.js e bancos de dados. Mentor de desenvolvedores juniores e entusiasta de metodologias Ã¡geis. Possui mais de 8 anos de experiÃªncia no desenvolvimento de aplicaÃ§Ãµes web escalÃ¡veis, com foco em performance, seguranÃ§a e experiÃªncia do usuÃ¡rio. LÃ­der tÃ©cnico apaixonado por inovaÃ§Ã£o, sempre buscando soluÃ§Ãµes criativas e eficientes para desafios complexos, contribuindo para o crescimento da equipe e da comunidade tecnolÃ³gica.</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/kauairbq" aria-label="GitHub de Kauai Rocha" class="social-link github"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" aria-label="LinkedIn de Kauai Rocha" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:kauai_lucas@hotmail.com" aria-label="Email de Kauai Rocha" class="social-link email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member coming-soon">
+                    <div class="member-image-container">
+                        <div class="coming-soon-placeholder">
+                            <i class="fas fa-users"></i>
+                            <div class="coming-soon-text">Em Breve</div>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Novos Talentos</h3>
+                        <p class="member-position">Colaboradores em Potencial</p>
+                        <p class="member-description">Estamos sempre em busca de profissionais talentosos, criativos e apaixonados por tecnologia para se juntarem Ã  nossa equipe e crescerem juntos. Valorizamos diversidade, inovaÃ§Ã£o e compromisso com a excelÃªncia, oferecendo oportunidades de desenvolvimento profissional contÃ­nuo e participaÃ§Ã£o em projetos desafiadores que impactam o mercado.</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">Desenvolvedores</span>
+                            <span class="skill-tag">Designers</span>
+                            <span class="skill-tag">Analistas</span>
+                        </div>
+                        <div class="join-team-cta">
+                            <a href="contactos.html" class="btn btn-secondary">Junte-se a NÃ³s</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="about-section" aria-labelledby="certifications-title">
+        <div class="container">
+            <h2 id="certifications-title">CertificaÃ§Ãµes e Cursos</h2>
+            <p class="section-subtitle">Compromisso com o aprendizado contÃ­nuo e atualizaÃ§Ã£o de conhecimentos</p>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>React Developer Certification</h3>
+                        <p class="certification-issuer">Meta (Facebook)</p>
+                        <p class="certification-date">2022</p>
+                        <p class="certification-description">CertificaÃ§Ã£o completa em desenvolvimento com React, incluindo hooks, context API, Redux e melhores prÃ¡ticas.</p>
+                        <div class="certification-progress">
+                            <div class="certification-progress-bar">
+                                <div class="certification-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Node.js Developer Certification</h3>
+                        <p class="certification-issuer">OpenJS Foundation</p>
+                        <p class="certification-date">2021</p>
+                        <p class="certification-description">EspecializaÃ§Ã£o em desenvolvimento back-end com Node.js, Express, MongoDB e arquitetura de APIs RESTful.</p>
+                        <div class="certification-progress">
+                            <div class="certification-progress-bar">
+                                <div class="certification-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Vue.js Master Class</h3>
+                        <p class="certification-issuer">Vue School</p>
+                        <p class="certification-date">2023</p>
+                        <p class="certification-description">Curso avanÃ§ado de Vue.js 3, incluindo Composition API, Pinia, Vue Router e desenvolvimento de aplicaÃ§Ãµes escalÃ¡veis.</p>
+                        <div class="certification-progress">
+                            <div class="certification-progress-bar">
+                                <div class="certification-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>PostgreSQL Database Administration</h3>
+                        <p class="certification-issuer">EDB</p>
+                        <p class="certification-date">2022</p>
+                        <p class="certification-description">CertificaÃ§Ã£o em administraÃ§Ã£o de bancos de dados PostgreSQL, incluindo otimizaÃ§Ã£o, backup e alta disponibilidade.</p>
+                        <div class="certification-progress">
+                            <div class="certification-progress-bar">
+                                <div class="certification-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>AWS Certified Developer</h3>
+                        <p class="certification-issuer">Amazon Web Services</p>
+                        <p class="certification-date">2023</p>
+                        <p class="certification-description">CertificaÃ§Ã£o em desenvolvimento de aplicaÃ§Ãµes na nuvem AWS, incluindo EC2, S3, Lambda e serviÃ§os de banco de dados.</p>
+                        <div class="certification-progress">
+                            <div class="certification-progress-bar">
+                                <div class="certification-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Fullstack Web Development</h3>
+                        <p class="certification-issuer">Coursera</p>
+                        <p class="certification-date">2021</p>
+                        <p class="certification-description">EspecializaÃ§Ã£o completa em desenvolvimento fullstack, cobrindo front-end, back-end e deployment de aplicaÃ§Ãµes web.</p>
+                        <div class="certification-progress">
+                            <div class="certification-progress-bar">
+                                <div class="certification-progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/logo.webp" alt="Logo Kauai Rocha" loading="lazy">
+                    <p>Construo produtos digitais completos: UX estrategico, front-end de alta performance e APIs robustas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegacao</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="sobre-detalhado.html">Sobre</a>
+                    <a href="servicos.html">Servicos</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contactos.html">Contacto</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicos</h4>
+                    <a href="servicos.html#ux">UX/UI e prototipos</a>
+                    <a href="servicos.html#web">Web e landing pages</a>
+                    <a href="servicos.html#api">APIs e integracoes</a>
+                    <a href="servicos.html#ecommerce">E-commerce</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Email: <a href="mailto:kauai_lucas@hotmail.com">kauai_lucas@hotmail.com</a></p>
+                    <p>Telefone: <a href="tel:+351961150993">+351 961-150-993</a></p>
+                    <p>Viseu, Portugal</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/kauai_rocha" class="social-link twitter" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.threads.net/" class="social-link threads" target="_blank" rel="noopener noreferrer" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                        <a href="https://www.tiktok.com/" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/kauai.rocha.10/" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kauai Rocha. Todos os direitos reservados.</p>
+                <span class="footer-made">UX â€¢ API â€¢ DevOps â€¢ Performance</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+        <script>
+      // Toggle menu drawer
+      const navToggle = document.getElementById('nav-toggle');
+      const menuDrawer = document.getElementById('menu-drawer');
+      navToggle?.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+      menuDrawer?.addEventListener('click', (ev) => {
+        if (ev.target.classList.contains('menu-overlay')) {
+          document.body.classList.remove('menu-open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/scroll.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
+</body>
+</html>
+
+
+

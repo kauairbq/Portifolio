@@ -1,0 +1,62 @@
+[
+  {
+    "id": "service-web-dev",
+    "title": "Desenvolvimento Web",
+    "img": "assets/img/web-dev.svg",
+    "alt": "Desenvolvimento Web",
+    "description": "Criação de websites e aplicações web responsivas e performáticas usando as melhores tecnologias do mercado.",
+    "details": "Projetos sob medida: desde landing pages até plataformas completas de e-commerce, com foco em performance, SEO e experiência do usuário.",
+    "features": ["Sites Institucionais","E-commerce","Aplicações Web","Landing Pages"],
+    "contactQuery": "Desenvolvimento Web"
+  },
+  {
+    "id": "service-mobile-dev",
+    "title": "Desenvolvimento Mobile",
+    "img": "assets/img/mobile-dev.svg",
+    "alt": "Desenvolvimento Mobile",
+    "description": "Aplicativos móveis nativos e híbridos para iOS e Android, com foco na experiência do usuário.",
+    "details": "Desenvolvimento nativo com Swift/Kotlin ou híbrido com React Native/Flutter, com integração de APIs e publicação nas lojas.",
+    "features": ["Apps Nativos","Apps Híbridos","React Native","Flutter"],
+    "contactQuery": "Desenvolvimento Mobile"
+  },
+  {
+    "id": "service-backend-dev",
+    "title": "Desenvolvimento Backend",
+    "img": "assets/img/backend-dev.svg",
+    "alt": "Desenvolvimento Backend",
+    "description": "APIs robustas, sistemas escaláveis e integração de bancos de dados para suportar suas aplicações.",
+    "details": "Arquitetura escalável (microserviços, containers), autenticação, testes e integração contínua para garantir confiabilidade.",
+    "features": ["APIs RESTful","Microserviços","Bancos de Dados","Cloud Computing"],
+    "contactQuery": "Desenvolvimento Backend"
+  },
+  {
+    "id": "service-ui-ux",
+    "title": "UI/UX Design",
+    "img": "assets/img/ui-ux.svg",
+    "alt": "UI/UX Design",
+    "description": "Design de interfaces intuitivas e experiências memoráveis que encantam os usuários.",
+    "details": "Do wireframe ao protótipo interativo, validamos hipóteses com testes de usabilidade e criamos design orientado a conversão.",
+    "features": ["Design de Interface","Experiência do Usuário","Prototipagem","Testes de Usabilidade"],
+    "contactQuery": "UI/UX Design"
+  },
+  {
+    "id": "service-consulting",
+    "title": "Consultoria Técnica",
+    "img": "assets/img/consulting.svg",
+    "alt": "Consultoria Técnica",
+    "description": "Orientação especializada para tomada de decisões técnicas e implementação de melhores práticas.",
+    "details": "Avaliação de arquitetura, revisões de código, planejamento técnico e mentoria para equipes e líderes de projeto.",
+    "features": ["Arquitetura de Software","Code Review","Mentoria","Otimização de Performance"],
+    "contactQuery": "Consultoria Técnica"
+  },
+  {
+    "id": "service-maintenance",
+    "title": "Manutenção e Suporte",
+    "img": "assets/img/maintenance.svg",
+    "alt": "Manutenção e Suporte",
+    "description": "Suporte contínuo e manutenção preventiva para garantir que seus sistemas estejam sempre funcionando.",
+    "details": "Planos de manutenção com monitoramento, correções, atualizações de segurança e melhorias evolutivas sob demanda.",
+    "features": ["Correções de Bugs","Atualizações de Segurança","Melhorias de Performance","Suporte Técnico"],
+    "contactQuery": "Manutenção e Suporte"
+  }
+]

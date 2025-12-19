@@ -1,0 +1,32 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.22" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect x="24" y="26" width="352" height="248" rx="18" fill="rgba(255,255,255,0.06)" stroke="#1f3b57" stroke-width="2" />
+  <rect x="44" y="56" width="312" height="120" rx="14" fill="url(#panel)" stroke="#1f3b57" stroke-width="1.5" />
+  <rect x="56" y="70" width="150" height="18" rx="6" fill="rgba(14,165,233,0.4)" />
+  <rect x="56" y="96" width="200" height="14" rx="6" fill="rgba(255,255,255,0.15)" />
+  <rect x="56" y="116" width="230" height="14" rx="6" fill="rgba(255,255,255,0.12)" />
+  <rect x="56" y="136" width="140" height="32" rx="10" fill="#38bdf8" />
+  <rect x="206" y="136" width="120" height="32" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
+
+  <rect x="44" y="188" width="94" height="66" rx="10" fill="#0f172a" stroke="#1f3b57" />
+  <rect x="152" y="188" width="94" height="66" rx="10" fill="#0f172a" stroke="#1f3b57" />
+  <rect x="260" y="188" width="94" height="66" rx="10" fill="#0f172a" stroke="#1f3b57" />
+
+  <text x="200" y="48" text-anchor="middle" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Landing Page</text>
+  <text x="91" y="222" text-anchor="middle" fill="#38bdf8" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Conversao</text>
+  <text x="199" y="222" text-anchor="middle" fill="#a855f7" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Leads</text>
+  <text x="307" y="222" text-anchor="middle" fill="#22c55e" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">CTA</text>
+  <text x="91" y="242" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">+18%</text>
+  <text x="199" y="242" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">1.2k</text>
+  <text x="307" y="242" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">Click</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0B1F3B" /><stop offset="100%" stop-color="#0f172a" /></linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#38bdf8" /><stop offset="100%" stop-color="#22c55e" /></linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect x="24" y="24" width="352" height="252" rx="18" fill="rgba(255,255,255,0.06)" stroke="#1f3b57" stroke-width="2" />
+
+  <text x="200" y="44" text-anchor="middle" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Consultoria Tecnica</text>
+
+  <!-- Whiteboard -->
+  <rect x="56" y="70" width="288" height="150" rx="14" fill="#0f172a" stroke="#1f3b57" />
+  <rect x="70" y="86" width="18" height="18" rx="5" fill="#22c55e" />
+  <rect x="70" y="114" width="18" height="18" rx="5" fill="#38bdf8" />
+  <rect x="70" y="142" width="18" height="18" rx="5" fill="#a855f7" />
+
+  <line x1="102" y1="95" x2="320" y2="95" stroke="#e5e7eb" stroke-width="2" />
+  <line x1="102" y1="123" x2="240" y2="123" stroke="#e5e7eb" stroke-width="2" />
+  <line x1="102" y1="151" x2="300" y2="151" stroke="#e5e7eb" stroke-width="2" />
+
+  <rect x="120" y="170" width="120" height="26" rx="8" fill="url(#accent)" />
+  <text x="180" y="188" text-anchor="middle" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Plano de acao</text>
+
+  <!-- Flow arrows -->
+  <path d="M220 100 L250 120 L235 120 L235 132 L225 132 L225 120 L210 120 Z" fill="#38bdf8" />
+  <path d="M240 130 L270 152 L255 152 L255 164 L245 164 L245 152 L230 152 Z" fill="#22c55e" />
+  <path d="M200 140 L230 162 L215 162 L215 174 L205 174 L205 162 L190 162 Z" fill="#a855f7" />
+
+  <text x="200" y="230" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">Arquitetura ? Code review ? Mentoria</text>
+</svg>

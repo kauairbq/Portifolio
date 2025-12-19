@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Média de Notas - Insira suas notas e calcule a média automaticamente">
+    <meta name="keywords" content="calculadora, media, notas, grades, average">
+    <title>Calculadora de Média de Notas</title>
+    <style>
+        :root {
+            --primary: #1E4DB7;
+            --primary-dark: #0B1C3F;
+            --accent: #4A90E2;
+            --success: #27AE60;
+            --error: #E74C3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at 20% 50%, rgba(30, 77, 183, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+                        linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #1E4DB7;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(30, 77, 183, 0.15);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            margin: 40px auto;
+            border: 1px solid rgba(74, 144, 226, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #E0E0E0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            color: var(--primary-dark);
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 77, 183, 0.1);
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add {
+            background: var(--primary);
+            color: white;
+            flex: 0 0 auto;
+        }
+
+        .btn-add:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 77, 183, 0.3);
+        }
+
+        .btn-add:active {
+            transform: translateY(0);
+        }
+
+        .btn-calculate {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn-calculate:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 77, 183, 0.3);
+        }
+
+        .btn-calculate:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-clear {
+            width: 100%;
+            background: #E0E0E0;
+            color: var(--primary-dark);
+        }
+
+        .btn-clear:hover {
+            background: #D0D0D0;
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            background: #FFEBEE;
+            color: var(--error);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--error);
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .notes-section {
+            margin-bottom: 30px;
+        }
+
+        .notes-title {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .notes-list {
+            list-style: none;
+            max-height: 250px;
+            overflow-y: auto;
+            border: 2px solid rgba(30, 77, 183, 0.1);
+            border-radius: 6px;
+            padding: 0;
+            background: #FAFBFC;
+        }
+
+        .notes-list li {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(30, 77, 183, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FAFBFC;
+            transition: all 0.3s ease;
+        }
+
+        .notes-list li:last-child {
+            border-bottom: none;
+        }
+
+        .notes-list li:hover {
+            background: #F0F5FF;
+        }
+
+        .note-value {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .note-remove {
+            background: var(--error);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .note-remove:hover {
+            background: #C0392B;
+            transform: scale(1.05);
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, rgba(30, 77, 183, 0.05) 0%, rgba(74, 144, 226, 0.05) 100%);
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(30, 77, 183, 0.1);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .result-message {
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: none;
+            margin-bottom: 15px;
+        }
+
+        .result-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        .result-message.success {
+            background: #E8F5E9;
+            color: var(--success);
+            border-left: 4px solid var(--success);
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #999;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .btn-add {
+                width: 100%;
+            }
+
+            .notes-list {
+                max-height: 200px;
+            }
+        }
+
+        /* Acessibilidade */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+                            linear-gradient(135deg, #0B1C3F 0%, #1E4DB7 100%);
+            }
+
+            .container {
+                background: #16213e;
+                color: #FFFFFF;
+                border-color: rgba(74, 144, 226, 0.3);
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            }
+
+            h1 {
+                color: #4A90E2;
+            }
+
+            .subtitle {
+                color: #B0B0B0;
+            }
+
+            input[type="number"] {
+                background: #0F3460;
+                color: #FFFFFF;
+                border-color: rgba(74, 144, 226, 0.3);
+            }
+
+            input[type="number"]:focus {
+                border-color: #4A90E2;
+                box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+            }
+
+            .notes-list {
+                background: #0F3460;
+                border-color: rgba(74, 144, 226, 0.3);
+            }
+
+            .notes-list li {
+                background: #0F3460;
+                border-bottom-color: rgba(74, 144, 226, 0.15);
+            }
+
+            .notes-list li:hover {
+                background: #1A2540;
+            }
+
+            .stats-box {
+                background: rgba(30, 77, 183, 0.1);
+                border-color: rgba(74, 144, 226, 0.3);
+            }
+
+            .stat-label {
+                color: #B0B0B0;
+            }
+
+            .error-message {
+                background: rgba(231, 76, 60, 0.2);
+                color: #FF9999;
+                border-left-color: #FF9999;
+            }
+
+            .notes-title {
+                color: #4A90E2;
+            }
+
+            .empty-state {
+                color: #666;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="btn-portfolio" style="display:inline-block;margin-bottom:20px;padding:10px 20px;background:var(--primary);color:#fff;border-radius:5px;text-decoration:none;font-weight:600;transition:background 0.2s;">← Voltar ao Portfólio</a>
+        <h1>📊 Calculadora de Média</h1>
+        <p class="subtitle">Insira suas notas e calcule a média (valores entre 0 e 20)</p>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <div class="input-group">
+            <input 
+                type="number" 
+                id="nota" 
+                placeholder="Digite a nota (0-20)" 
+                min="0" 
+                max="20" 
+                step="0.5"
+                aria-label="Entrada de nota"
+            >
+            <button class="btn-add" onclick="adicionarNota()" aria-label="Adicionar nota">
+                Adicionar
+            </button>
+        </div>
+
+        <div class="notes-section">
+            <h2 class="notes-title">Notas Inseridas</h2>
+            <ul class="notes-list" id="notasList">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📝</div>
+                    <div>Nenhuma nota inserida ainda</div>
+                </div>
+            </ul>
+        </div>
+
+        <div class="result-message" id="resultMessage"></div>
+
+        <div class="stats-box" id="statsBox" style="display: none;">
+            <div class="stat-item">
+                <span class="stat-label">Total de Notas:</span>
+                <span class="stat-value" id="totalNotas">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Nota Mínima:</span>
+                <span class="stat-value" id="minNota">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Nota Máxima:</span>
+                <span class="stat-value" id="maxNota">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label" style="font-size: 18px; font-weight: bold;">Média Final:</span>
+                <span class="stat-value" id="mediaFinal" style="font-size: 32px;">-</span>
+            </div>
+        </div>
+
+        <button class="btn-calculate" onclick="calcularMedia()" aria-label="Calcular média das notas">
+            Calcular Média
+        </button>
+        <button class="btn-clear" onclick="limparTudo()" aria-label="Limpar todas as notas">
+            Limpar Tudo
+        </button>
+    </div>
+    <style>
+    .btn-portfolio:hover {
+        background: var(--primary-dark);
+        color: #fff;
+        text-decoration: none;
+    }
+    </style>
+
+    <script src="js/calculadora-media.js" defer></script>
+</body>
+</html>

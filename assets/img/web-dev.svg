@@ -1,0 +1,37 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1F3B" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#4ade80" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect x="24" y="24" width="352" height="252" rx="18" fill="rgba(255,255,255,0.06)" stroke="#1f3b57" stroke-width="2" />
+
+  <text x="200" y="44" text-anchor="middle" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Desenvolvimento Web</text>
+
+  <!-- Browser frame -->
+  <rect x="52" y="66" width="296" height="160" rx="16" fill="#0f172a" stroke="#1f3b57" />
+  <rect x="52" y="66" width="296" height="30" rx="16" fill="rgba(255,255,255,0.04)" />
+  <circle cx="72" cy="81" r="5" fill="#ef4444" />
+  <circle cx="88" cy="81" r="5" fill="#f59e0b" />
+  <circle cx="104" cy="81" r="5" fill="#22c55e" />
+
+  <!-- Grid layout -->
+  <rect x="76" y="110" width="120" height="40" rx="8" fill="rgba(56,189,248,0.25)" />
+  <rect x="208" y="110" width="96" height="40" rx="8" fill="rgba(74,222,128,0.18)" />
+  <rect x="76" y="158" width="120" height="26" rx="7" fill="rgba(255,255,255,0.12)" />
+  <rect x="208" y="158" width="96" height="26" rx="7" fill="rgba(255,255,255,0.08)" />
+  <rect x="76" y="190" width="228" height="24" rx="8" fill="url(#accent)" />
+  <rect x="76" y="222" width="60" height="10" rx="5" fill="rgba(255,255,255,0.24)" />
+  <rect x="142" y="222" width="70" height="10" rx="5" fill="rgba(255,255,255,0.18)" />
+  <rect x="216" y="222" width="88" height="10" rx="5" fill="rgba(255,255,255,0.12)" />
+
+  <text x="136" y="136" text-anchor="middle" fill="#e0f2fe" font-size="12" font-family="Inter, Arial, sans-serif" font-weight="700">Landing</text>
+  <text x="256" y="136" text-anchor="middle" fill="#bbf7d0" font-size="12" font-family="Inter, Arial, sans-serif" font-weight="700">E-commerce</text>
+  <text x="190" y="206" text-anchor="middle" fill="#0f172a" font-size="12" font-family="Inter, Arial, sans-serif" font-weight="700">Call to Action</text>
+</svg>

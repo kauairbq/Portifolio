@@ -1,0 +1,8 @@
+[
+  {"service":"Website Institucional","basico":"€1.500","profissional":"€3.000","enterprise":"€5.000+"},
+  {"service":"E-commerce","basico":"€3.000","profissional":"€6.000","enterprise":"€10.000+"},
+  {"service":"App Mobile","basico":"€5.000","profissional":"€10.000","enterprise":"€20.000+"},
+  {"service":"API Backend","basico":"€2.000","profissional":"€4.000","enterprise":"€8.000+"},
+  {"service":"Consultoria (por hora)","basico":"€50","profissional":"€75","enterprise":"€100"},
+  {"service":"Manutenção Mensal","basico":"€200","profissional":"€400","enterprise":"€800+"}
+]

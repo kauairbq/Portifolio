@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - PortfÃ³lio</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta property="og:title" content="Sobre - Kauai Rocha">
+    <meta property="og:description" content="Sobre Kauai Rocha â€” desenvolvedor fullstack com experiÃªncia em front-end, back-end e bancos de dados.">
+    <meta property="og:image" content="assets/img/kauai.webp">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+      /* Nav remodelado */
+      .nav-shell{position:sticky;top:0;z-index:999;background:linear-gradient(120deg,#0a0f1d 0%,#0f172a 45%,#0a0f1d 100%);border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(0,0,0,0.25);} 
+      .nav-inner{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+      .nav-brand{display:flex;align-items:center;gap:10px;color:#f5f7fb;font-weight:800;letter-spacing:.02em;text-transform:uppercase;}
+      .nav-brand img{height:38px;width:auto;}
+      .nav-actions{display:flex;align-items:center;gap:10px;}
+      .nav-toggle{background:#8b5cf6;color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 20px rgba(139,92,246,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-toggle:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,92,246,0.45);} 
+      .nav-cta{background:#22d3ee;color:#0b1224;border:none;border-radius:12px;padding:10px 14px;font-weight:800;letter-spacing:.02em;cursor:pointer;box-shadow:0 8px 20px rgba(34,211,238,0.35);transition:transform .15s ease, box-shadow .15s ease;}
+      .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,0.45);}
+      .nav-dark{background:transparent;color:#e2e8f0;border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:10px 12px;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, border .15s ease;}
+      .nav-dark:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,0.35);border-color:rgba(255,255,255,0.35);} 
+      .menu-drawer{position:fixed;inset:0;pointer-events:none;}
+      .menu-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);opacity:0;transition:opacity .2s ease;}
+      .menu-panel{position:absolute;right:16px;top:80px;width:260px;background:#0f172a;border:1px solid rgba(255,255,255,0.08);border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,0.35);transform:translateY(-8px);opacity:0;transition:transform .2s ease, opacity .2s ease;}
+      .menu-panel ul{list-style:none;margin:0;padding:12px;}
+      .menu-panel li{border-bottom:1px solid rgba(255,255,255,0.06);} 
+      .menu-panel li:last-child{border-bottom:none;}
+      .menu-panel a{display:block;padding:12px 10px;color:#f5f7fb;font-weight:700;border-radius:10px;transition:background .15s ease;}
+      .menu-panel a:hover{background:rgba(255,255,255,0.06);} 
+      .menu-open .menu-drawer{pointer-events:auto;}
+      .menu-open .menu-overlay{opacity:1;}
+      .menu-open .menu-panel{transform:translateY(0);opacity:1;}
+      @media(max-width:768px){.nav-inner{flex-wrap:wrap;gap:10px;} .nav-actions{width:100%;justify-content:flex-end;} .menu-panel{right:12px;left:12px;width:auto;}}
+    </style>
+
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conte&uacute;do</a>
+    <header class="nav-shell">
+        <div class="nav-inner" role="navigation" aria-label="Main Navigation">
+            <div class="nav-brand">
+                <img src="assets/img/logo.webp" alt="Logo">
+                <span>Kauai Rocha</span>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-dark" id="dark-mode-toggle" aria-pressed="false" title="Alternar modo claro/escuro">Modo</button>
+                <button class="nav-cta" onclick="location.href='contactos.html'">Contactar</button>
+                <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+            </div>
+        </div>
+        <div class="menu-drawer" id="menu-drawer">
+            <div class="menu-overlay"></div>
+            <div class="menu-panel" id="menu-panel">
+                <ul>
+                    <li><a href="index.html">In&iacute;cio</a></li>
+                    <li><a href="sobre-detalhado.html">Sobre</a></li>
+                    <li><a href="projects.html">Projetos</a></li>
+                    <li><a href="servicos.html">Servi&ccedil;os</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="contactos.html">Contacto</a></li>
+                    <li><a href="projects/xkairos/response.html">Xkairos</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <section id="about" class="about-page">
+        <div class="container">
+            <h1>Sobre Mim</h1>
+            <div class="about-content">
+                <img src="assets/img/profile.webp" alt="Foto de perfil" class="profile-img">
+                <div class="about-text">
+                    <h2>Quem Sou Eu</h2>
+                    <p>Sou um desenvolvedor web apaixonado por tecnologia e inovaÃ§Ã£o. Minha jornada comeÃ§ou hÃ¡ alguns
+                        anos, e desde entÃ£o venho me dedicando a criar soluÃ§Ãµes digitais que fazem a diferenÃ§a.</p>
+
+                    <h3>Minhas Habilidades</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Linguagens de ProgramaÃ§Ã£o</h4>
+                            <ul>
+                                <li>Front-end</li>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                                <li>SASS</li>
+                                <li>Back-end</li>
+                                <li>PHP</li>
+                                <li>Java</li>
+                                <li>C#</li>
+                                <li>C++</li>
+                                <li>Python</li>
+                                <li>Node.js</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Banco de dados</h4>
+                            <ul>
+                                <li>MySQL</li>
+                                <li>PostgreSQL</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Outras</h4>
+                            <ul>
+                                <li>JSON</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frameworks e Bibliotecas</h4>
+                            <ul>
+                                <li>React</li>
+                                <li>React Native</li>
+                                <li>Material UI</li>
+                                <li>Ant Design</li>
+                                <li>Kendo UI</li>
+                                <li>TileWindow</li>
+                                <li>Bootstrap</li>
+                                <li>Vue.js</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Ferramentas e Metodologias</h4>
+                            <ul>
+                                <!-- Controle de versÃ£o -->
+                                <li>Git / GitHub</li>
+
+                                <!-- Metodologias Ã¡geis -->
+                                <li>Scrum / Agile</li>
+                                <li>Code Review</li>
+                                <li>Pair Programming</li>
+
+                                <!-- Habilidades tÃ©cnicas -->
+                                <li>Fullstack Development</li>
+                                <li>Linux</li>
+
+                                <!-- Design e ExperiÃªncia do UsuÃ¡rio -->
+                                <li>UI Design</li>
+                                <li>UX / UX Design</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <h3>ExperiÃªncia</h3>
+                    <p>Tenho experiÃªncia em desenvolvimento de websites responsivos, aplicaÃ§Ãµes web interativas e
+                        sistemas de gerenciamento de conteÃºdo. Trabalhei em projetos para diversos setores, sempre
+                        focando em qualidade e satisfaÃ§Ã£o do cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/logo.webp" alt="Logo Kauai Rocha" loading="lazy">
+                    <p>Construo produtos digitais completos: UX estrategico, front-end de alta performance e APIs robustas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegacao</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="sobre-detalhado.html">Sobre</a>
+                    <a href="servicos.html">Servicos</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="contactos.html">Contacto</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicos</h4>
+                    <a href="servicos.html#ux">UX/UI e prototipos</a>
+                    <a href="servicos.html#web">Web e landing pages</a>
+                    <a href="servicos.html#api">APIs e integracoes</a>
+                    <a href="servicos.html#ecommerce">E-commerce</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Email: <a href="mailto:kauai_lucas@hotmail.com">kauai_lucas@hotmail.com</a></p>
+                    <p>Telefone: <a href="tel:+351961150993">+351 961-150-993</a></p>
+                    <p>Viseu, Portugal</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/ka_roochaa/" class="social-link instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/kauai.rocha.10/" class="social-link facebook" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.threads.net/" class="social-link threads" target="_blank" rel="noopener noreferrer" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                        <a href="https://www.tiktok.com/" class="social-link tiktok" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kauai Rocha. Todos os direitos reservados.</p>
+                <span class="footer-made">UX â€¢ API â€¢ DevOps â€¢ Performance</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+        <script>
+      // Toggle menu drawer
+      const navToggle = document.getElementById('nav-toggle');
+      const menuDrawer = document.getElementById('menu-drawer');
+      navToggle?.addEventListener('click', () => {
+        const open = document.body.classList.toggle('menu-open');
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+      menuDrawer?.addEventListener('click', (ev) => {
+        if (ev.target.classList.contains('menu-overlay')) {
+          document.body.classList.remove('menu-open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
+</body>
+</html>
+
+
+

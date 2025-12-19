@@ -1,0 +1,15 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9" /><stop offset="100%" stop-color="#111827" /></linearGradient></defs>
+  <rect width="400" height="300" fill="url(#bg)" />
+  <rect x="28" y="30" width="344" height="240" rx="18" fill="rgba(255,255,255,0.06)" stroke="#1f3b57" stroke-width="2" />
+  <rect x="48" y="60" width="304" height="150" rx="14" fill="rgba(17,24,39,0.9)" stroke="#1f3b57" />
+  <rect x="64" y="80" width="180" height="16" rx="6" fill="rgba(56,189,248,0.3)" />
+  <rect x="64" y="104" width="220" height="12" rx="6" fill="rgba(255,255,255,0.12)" />
+  <rect x="64" y="124" width="240" height="12" rx="6" fill="rgba(255,255,255,0.1)" />
+  <rect x="64" y="144" width="120" height="28" rx="9" fill="#38bdf8" />
+  <rect x="64" y="182" width="120" height="14" rx="6" fill="rgba(255,255,255,0.08)" />
+  <rect x="214" y="182" width="120" height="14" rx="6" fill="rgba(255,255,255,0.08)" />
+  <text x="200" y="48" text-anchor="middle" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Blog Pessoal</text>
+  <text x="124" y="207" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">Comentarios</text>
+  <text x="274" y="207" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="11">Redes</text>
+</svg>
