@@ -119,7 +119,7 @@
         "description": "Sistema de gestao de catalogo com POO, edicao inline, filtros, persistencia em localStorage e detalhes via Fake Store API.",
         "image": "assets/img/projects/catalogo.svg",
         "technologies": ["JavaScript", "POO", "Fetch", "localStorage", "API"],
-        "link": "projects/sistema de gestao de catalogo de produtos/index.html",
+        "link": "projects/sistema-gestao-catalogo-produtos/index.html",
         "github": "",
         "featured": false
     },

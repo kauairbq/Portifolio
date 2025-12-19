@@ -105,6 +105,7 @@ function createProjectCard(project, index) {
     card.style.animationDelay = `${index * 0.1}s`;
 
     const isInternalLink = !project.link.startsWith('http');
+    const safeLink = isInternalLink ? encodeURI(project.link) : project.link;
 
     card.innerHTML = `
         <img src="${project.image}" alt="${project.title}" loading="lazy">
@@ -115,7 +116,7 @@ function createProjectCard(project, index) {
                 ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
             </div>
             <div class="project-links">
-                <a href="${project.link}" class="btn" ${isInternalLink ? '' : 'target="_blank"'}>Ver Projeto</a>
+                <a href="${safeLink}" class="btn" ${isInternalLink ? '' : 'target="_blank"'}>Ver Projeto</a>
                 ${project.github ? `<a href="${project.github}" class="btn secondary" target="_blank">GitHub</a>` : ''}
             </div>
         </div>
@@ -270,7 +271,7 @@ function initProjectModal() {
 function openProjectModal(project) {
     // Se for um link interno, navegar diretamente
     if (!project.link.startsWith('http')) {
-        window.location.href = project.link;
+        window.location.href = encodeURI(project.link);
         return;
     }
 
