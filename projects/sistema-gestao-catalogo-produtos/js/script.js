@@ -1,10 +1,11 @@
 class Produto {
-  constructor(id, nome, preco, descricao, categoria) {
+  constructor(id, nome, preco, descricao, categoria, apiId = '') {
     this.id = id;
     this.nome = nome;
     this.preco = preco;
     this.descricao = descricao;
     this.categoria = categoria;
+    this.apiId = apiId;
   }
 }
 
@@ -13,7 +14,6 @@ class Catalogo {
     this.storageKey = 'catalogo-produtos';
     this.produtos = [];
     this.carregarProdutos();
-    // Se vazio, semear alguns exemplos
     if (this.produtos.length === 0) {
       this.semear();
       this.salvarProdutos();
@@ -22,9 +22,9 @@ class Catalogo {
 
   semear() {
     this.produtos = [
-      new Produto(1, 'Auriculares Wireless', 59.9, 'Bluetooth 5.3, ANC leve, 30h de bateria.', 'Áudio'),
-      new Produto(2, 'Portátil 14" Pro', 1299.9, 'Intel i7, 16GB RAM, SSD 512GB, ecrã IPS.', 'Informática'),
-      new Produto(3, 'Monitor 27" 144Hz', 299.9, 'Painel IPS, QHD, 1ms, G-Sync compatível.', 'Periféricos')
+      new Produto(1, 'Auriculares Wireless', 59.9, 'Bluetooth 5.3, ANC leve, 30h de bateria.', 'Audio', 1),
+      new Produto(2, 'Portatil 14" Pro', 1299.9, 'Intel i7, 16GB RAM, SSD 512GB, ecra IPS.', 'Informatica', 2),
+      new Produto(3, 'Monitor 27" 144Hz', 299.9, 'Painel IPS, QHD, 1ms, G-Sync compativel.', 'Perifericos', 3)
     ];
   }
 
@@ -60,7 +60,7 @@ class Catalogo {
     if (guardados) {
       try {
         const data = JSON.parse(guardados);
-        this.produtos = data.map(d => new Produto(d.id, d.nome, d.preco, d.descricao, d.categoria));
+        this.produtos = data.map(d => new Produto(d.id, d.nome, d.preco, d.descricao, d.categoria, d.apiId));
       } catch (e) {
         console.error('Erro ao carregar do localStorage', e);
         this.produtos = [];
@@ -69,14 +69,13 @@ class Catalogo {
   }
 }
 
-// Instância global
 const catalogo = new Catalogo();
 
-// DOM refs
 const form = document.getElementById('form-produto');
 const nomeInput = document.getElementById('nome');
 const precoInput = document.getElementById('preco');
 const categoriaInput = document.getElementById('categoria');
+const apiIdInput = document.getElementById('api-id');
 const descricaoInput = document.getElementById('descricao');
 const filtroCategoria = document.getElementById('filtro-categoria');
 const tabelaBody = document.querySelector('#tabela-produtos tbody');
@@ -87,14 +86,11 @@ function setStatus(msg, tipo = 'info') {
   statusEl.className = `status ${tipo}`;
 }
 
-function limparFormulario() {
-  form.reset();
-}
-
-function validar(nome, preco, categoria) {
-  if (!nome.trim()) return 'O nome é obrigatório.';
-  if (Number.isNaN(preco) || preco < 0) return 'O preço deve ser positivo.';
-  if (!categoria.trim()) return 'A categoria é obrigatória.';
+function validar(nome, preco, categoria, descricao) {
+  if (!nome.trim()) return 'O nome e obrigatorio.';
+  if (Number.isNaN(preco) || preco < 0) return 'O preco deve ser positivo.';
+  if (!categoria.trim()) return 'A categoria e obrigatoria.';
+  if (!descricao.trim()) return 'A descricao e obrigatoria.';
   return '';
 }
 
@@ -115,11 +111,15 @@ function preencherFiltroCategoria() {
 
 function criarLinha(produto) {
   const tr = document.createElement('tr');
+  const apiLabel = produto.apiId ? produto.apiId : '-';
+  const desc = produto.descricao || '';
   tr.innerHTML = `
     <td>${produto.id}</td>
     <td class="nome-cell">${produto.nome}</td>
     <td class="preco-cell">${produto.preco.toFixed(2)}</td>
     <td class="cat-cell">${produto.categoria}</td>
+    <td class="api-cell">${apiLabel}</td>
+    <td class="desc-cell">${desc}</td>
     <td>
       <div class="acoes">
         <button class="mini-btn edit">Editar</button>
@@ -151,24 +151,31 @@ function alternarEdicao(tr, id) {
   const nomeCell = tr.querySelector('.nome-cell');
   const precoCell = tr.querySelector('.preco-cell');
   const catCell = tr.querySelector('.cat-cell');
+  const apiCell = tr.querySelector('.api-cell');
+  const descCell = tr.querySelector('.desc-cell');
   const btnEditar = tr.querySelector('.edit');
 
   if (!emEdicao) {
     nomeCell.innerHTML = `<input class="input-inline" value="${produto.nome}">`;
     precoCell.innerHTML = `<input class="input-inline" type="number" min="0" step="0.01" value="${produto.preco}">`;
     catCell.innerHTML = `<input class="input-inline" value="${produto.categoria}">`;
+    apiCell.innerHTML = `<input class="input-inline" type="number" min="1" value="${produto.apiId || ''}">`;
+    descCell.innerHTML = `<textarea class="input-inline" rows="2">${produto.descricao}</textarea>`;
     btnEditar.textContent = 'Guardar';
     tr.classList.add('editing');
   } else {
     const novoNome = nomeCell.querySelector('input').value.trim();
     const novoPreco = parseFloat(precoCell.querySelector('input').value);
     const novaCat = catCell.querySelector('input').value.trim();
-    const erro = validar(novoNome, novoPreco, novaCat);
+    const novoApi = apiCell.querySelector('input').value.trim();
+    const novaDesc = descCell.querySelector('textarea').value.trim();
+    const erro = validar(novoNome, novoPreco, novaCat, novaDesc);
     if (erro) {
       setStatus(erro, 'error');
       return;
     }
-    catalogo.editarProduto(id, { nome: novoNome, preco: novoPreco, categoria: novaCat });
+    const apiId = novoApi ? Number(novoApi) : '';
+    catalogo.editarProduto(id, { nome: novoNome, preco: novoPreco, categoria: novaCat, apiId, descricao: novaDesc });
     setStatus(`Produto #${id} atualizado.`, 'success');
     actualizarTabela();
   }
@@ -181,7 +188,7 @@ function actualizarTabela() {
 
   if (lista.length === 0) {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td colspan="5" style="text-align:center;color:var(--muted);">Nenhum produto.</td>`;
+    tr.innerHTML = `<td colspan="7" style="text-align:center;color:var(--muted);">Nenhum produto.</td>`;
     tabelaBody.appendChild(tr);
   } else {
     lista.forEach(prod => tabelaBody.appendChild(criarLinha(prod)));
@@ -192,33 +199,36 @@ function actualizarTabela() {
 async function buscarDetalhes(id) {
   setStatus(`A obter detalhes externos para o produto #${id}...`, 'info');
   try {
-    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-    if (!res.ok) throw new Error('Resposta não OK');
+    const produto = catalogo.produtos.find(p => p.id === id);
+    const apiId = produto && produto.apiId ? produto.apiId : id;
+    const res = await fetch(`https://fakestoreapi.com/products/${apiId}`);
+    if (!res.ok) throw new Error('Resposta nao OK');
     const data = await res.json();
-    alert(`Detalhes (Fake Store API):\n\n${data.title || 'Sem título'}\n\n${data.description || 'Sem descrição.'}`);
+    alert(`Detalhes (Fake Store API):\n\n${data.title || 'Sem titulo'}\n\n${data.description || 'Sem descricao.'}`);
     setStatus('Detalhes obtidos da API.', 'success');
   } catch (err) {
     console.error(err);
-    setStatus('Não foi possível obter detalhes externos.', 'error');
+    setStatus('Nao foi possivel obter detalhes externos.', 'error');
   }
 }
 
-// Eventos
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const nome = nomeInput.value.trim();
   const preco = parseFloat(precoInput.value);
   const categoria = categoriaInput.value.trim();
   const descricao = descricaoInput.value.trim();
+  const apiRaw = apiIdInput.value.trim();
+  const apiId = apiRaw ? Number(apiRaw) : '';
 
-  const erro = validar(nome, preco, categoria);
+  const erro = validar(nome, preco, categoria, descricao);
   if (erro) {
     setStatus(erro, 'error');
     return;
   }
 
   const id = catalogo.gerarProximoId();
-  const produto = new Produto(id, nome, preco, descricao, categoria);
+  const produto = new Produto(id, nome, preco, descricao, categoria, apiId);
   catalogo.adicionarProduto(produto);
   setStatus(`Produto "${nome}" adicionado com sucesso.`, 'success');
   actualizarTabela();
@@ -227,11 +237,10 @@ form.addEventListener('submit', (e) => {
 
 document.getElementById('limpar').addEventListener('click', () => {
   form.reset();
-  setStatus('Formulário limpo.', 'info');
+  setStatus('Formulario limpo.', 'info');
 });
 
 filtroCategoria.addEventListener('change', actualizarTabela);
 
-// Inicialização
 actualizarTabela();
 setStatus('Clique em "Detalhes" para obter info externa via API.', 'info');

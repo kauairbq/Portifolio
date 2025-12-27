@@ -168,7 +168,7 @@ select {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
+  min-width: 980px;
 }
 
 thead {
@@ -209,6 +209,10 @@ tbody tr:hover {
   border-radius: 8px;
   padding: 6px 8px;
   color: var(--text);
+}
+
+.desc-cell {
+  min-width: 220px;
 }
 
 .largura-media { width: 220px; }

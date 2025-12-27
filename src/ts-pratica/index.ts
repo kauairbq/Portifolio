@@ -52,7 +52,7 @@ interface Pessoa {
 }
 
 class Funcionario implements Pessoa {
-  protected nome: string;
+  public nome: string;
   protected salario: number;
 
   constructor(nome: string, salario: number) {
