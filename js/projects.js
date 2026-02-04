@@ -11,7 +11,9 @@ let projectsData = [];
 // Carregar projetos do arquivo JSON
 async function loadProjects() {
     try {
+        const origin = window.location.origin;
         const urls = [
+            `${origin}/data/projects.json?v=${Date.now()}`,
             `./data/projects.json?v=${Date.now()}`,
             `/data/projects.json?v=${Date.now()}`,
             `data/projects.json?v=${Date.now()}`
@@ -21,6 +23,21 @@ async function loadProjects() {
             response = await fetch(url, { cache: 'no-store' });
             if (response.ok) break;
         }
+        if (!response || !response.ok) {
+            throw new Error('Erro ao carregar projetos');
+        }
+        const data = await response.json();
+        projectsData = Array.isArray(data) ? data : (data.projects || []);
+        if (!projectsData.length) {
+            throw new Error('Lista de projetos vazia');
+        }
+        displayProjects(projectsData);
+    } catch (error) {
+        console.error('Erro ao carregar projetos:', error);
+        // Carregar projetos de exemplo se o JSON n?o estiver dispon?vel
+        loadFallbackProjects();
+    }
+}
         if (!response || !response.ok) {
             throw new Error('Erro ao carregar projetos');
         }
