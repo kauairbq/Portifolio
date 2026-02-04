@@ -38,25 +38,6 @@ async function loadProjects() {
         loadFallbackProjects();
     }
 }
-        if (!response || !response.ok) {
-            throw new Error('Erro ao carregar projetos');
-        }
-        projectsData = await response.json();
-        displayProjects(projectsData);
-    } catch (error) {
-        console.error('Erro ao carregar projetos:', error);
-        // Carregar projetos de exemplo se o JSON n??o estiver dispon??vel
-        loadFallbackProjects();
-    }
-}
-        projectsData = await response.json();
-        displayProjects(projectsData);
-    } catch (error) {
-        console.error('Erro ao carregar projetos:', error);
-        // Carregar projetos de exemplo se o JSON não estiver disponível
-        loadFallbackProjects();
-    }
-}
 
 // Projetos de exemplo caso o JSON falhe
 function loadFallbackProjects() {
