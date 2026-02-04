@@ -24,7 +24,7 @@ const PORT = process.env.TASKFLOW_PORT || process.env.PORT || 3000;
 const MONGODB_URI =
   process.env.TASKFLOW_MONGODB_URI ||
   process.env.MONGODB_URI ||
-  'mongodb://localhost:27017/taskflow';
+  'mongodb://admin:03101812%40@localhost:27017/taskflow?authSource=admin';
 
 // Middleware
 app.use(cors());
