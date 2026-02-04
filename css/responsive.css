@@ -2,6 +2,48 @@
 
 /* Tablets */
 @media (max-width: 768px) {
+    .nav-shell {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .nav-inner {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .nav-brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-brand img {
+        height: 28px;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-actions .nav-dark,
+    .nav-actions .nav-cta,
+    .nav-actions .nav-toggle {
+        flex: 1 1 auto;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .menu-panel {
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
     nav {
         display: flex;
         flex-direction: column;
@@ -26,6 +68,32 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-copy {
+        align-items: center;
+    }
+
+    .hero-card,
+    .hero-vitual {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .hero-content h1 {
@@ -98,6 +166,17 @@
         padding: 0 15px;
     }
 
+    .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-actions .nav-dark,
+    .nav-actions .nav-cta,
+    .nav-actions .nav-toggle {
+        width: 100%;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -113,6 +192,18 @@
 
     .hero-content p {
         font-size: 0.9rem;
+    }
+
+    .hero-inner {
+        gap: 1rem;
+    }
+
+    .hero-card {
+        padding: 12px;
+    }
+
+    .hero-stats {
+        max-width: 100%;
     }
 
     .btn {
