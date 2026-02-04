@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Prime Finite Fields
@@ -304,7 +304,7 @@ class Integer extends Base
     }
 
     /**
-     * Is Odd?
+     * Is Odd
      *
      * @return bool
      */
@@ -389,7 +389,7 @@ class Integer extends Base
             if ($d->isOdd()) {
                 // start mods
 
-                $bigInteger = $d->testBit($w - 1) ?
+                $bigInteger = $d->testBit($w - 1) 
                     $d->bitwise_and($mask)->subtract($sub) :
                     //$sub->subtract($d->bitwise_and($mask)) :
                     $d->bitwise_and($mask);
@@ -399,7 +399,7 @@ class Integer extends Base
             } else {
                 $d_i[$i] = 0;
             }
-            $shift = !$d->equals($zero) && $d->bitwise_and($mask)->equals($zero) ? $w : 1; // $w or $w + 1?
+            $shift = !$d->equals($zero) && $d->bitwise_and($mask)->equals($zero)  $w : 1; // $w or $w + 1
             $d = $d->bitwise_rightShift($shift);
             while (--$shift > 0) {
                 $d_i[++$i] = 0;

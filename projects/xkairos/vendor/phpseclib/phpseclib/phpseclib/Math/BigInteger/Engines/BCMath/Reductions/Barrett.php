@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * BCMath Barrett Modular Exponentiation Engine
@@ -67,7 +67,7 @@ abstract class Barrett extends Base
         $m_length = strlen($m);
 
         if (strlen($n) > 2 * $m_length) {
-            return self::BCMOD_THREE_PARAMS ? bcmod($n, $m, 0) : bcmod($n, $m);
+            return self::BCMOD_THREE_PARAMS  bcmod($n, $m, 0) : bcmod($n, $m);
         }
 
         // if (m.length >> 1) + 2 <= m.length then m is too small and n can't be reduced
@@ -140,7 +140,7 @@ abstract class Barrett extends Base
             $result = bcsub($result, $m, 0);
         }
 
-        return $correctionNeeded && $result != '0' ? substr($result, 0, -1) : $result;
+        return $correctionNeeded && $result != '0'  substr($result, 0, -1) : $result;
     }
 
     /**
@@ -163,7 +163,7 @@ abstract class Barrett extends Base
         $n_length = strlen($n);
 
         if (strlen($x) > 2 * $n_length) {
-            return self::BCMOD_THREE_PARAMS ? bcmod($x, $n, 0) : bcmod($x, $n);
+            return self::BCMOD_THREE_PARAMS  bcmod($x, $n, 0) : bcmod($x, $n);
         }
 
         if (($key = array_search($n, $cache[self::VARIABLE])) === false) {

@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2023 Google Inc.
  *
@@ -19,6 +19,6 @@ namespace Google\Auth;
 
 interface ExternalAccountCredentialSourceInterface
 {
-    public function fetchSubjectToken(?callable $httpHandler = null): string;
-    public function getCacheKey(): ?string;
+    public function fetchSubjectToken(callable $httpHandler = null): string;
+    public function getCacheKey(): string;
 }

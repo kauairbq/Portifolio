@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -247,7 +247,7 @@ class Runner
     private function getDelay()
     {
         $jitter = $this->getJitter();
-        $factor = $this->attempts > 1 ? $this->factor + $jitter : 1 + abs($jitter);
+        $factor = $this->attempts > 1  $this->factor + $jitter : 1 + abs($jitter);
 
         return $this->delay = min($this->maxDelay, $this->delay * $factor);
     }

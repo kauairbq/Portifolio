@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2010 Google Inc.
  *
@@ -61,7 +61,7 @@ class Client
     const API_BASE_PATH = 'https://www.googleapis.com';
 
     /**
-     * @var ?OAuth2 $auth
+     * @var OAuth2 $auth
      */
     private $auth;
 
@@ -71,7 +71,7 @@ class Client
     private $http;
 
     /**
-     * @var ?CacheItemPoolInterface $cache
+     * @var CacheItemPoolInterface $cache
      */
     private $cache;
 
@@ -86,12 +86,12 @@ class Client
     private $config;
 
     /**
-     * @var ?LoggerInterface $logger
+     * @var LoggerInterface $logger
      */
     private $logger;
 
     /**
-     * @var ?FetchAuthTokenInterface $credentials
+     * @var FetchAuthTokenInterface $credentials
      */
     private $credentials;
 
@@ -210,7 +210,7 @@ class Client
             'jwt' => null,
             'api_format_v2' => false,
             'universe_domain' => getenv('GOOGLE_CLOUD_UNIVERSE_DOMAIN')
-                ?: GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN,
+                : GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN,
         ], $config);
 
         if (!is_null($this->config['credentials'])) {
@@ -322,7 +322,7 @@ class Client
      * @param ClientInterface $authHttp optional.
      * @return array access token
      */
-    public function fetchAccessTokenWithAssertion(?ClientInterface $authHttp = null)
+    public function fetchAccessTokenWithAssertion(ClientInterface $authHttp = null)
     {
         if (!$this->isUsingApplicationDefaultCredentials()) {
             throw new DomainException(
@@ -414,12 +414,12 @@ class Client
 
         // only accept one of prompt or approval_prompt
         $approvalPrompt = $this->config['prompt']
-            ? null
+             null
             : $this->config['approval_prompt'];
 
         // include_granted_scopes should be string "true", string "false", or null
         $includeGrantedScopes = $this->config['include_granted_scopes'] === null
-            ? null
+             null
             : var_export($this->config['include_granted_scopes'], true);
 
         $params = array_filter([
@@ -455,9 +455,9 @@ class Client
      * @param ClientInterface $http the http client object.
      * @return ClientInterface the http client object
      */
-    public function authorize(?ClientInterface $http = null)
+    public function authorize(ClientInterface $http = null)
     {
-        $http = $http ?: $this->getHttpClient();
+        $http = $http : $this->getHttpClient();
         $authHandler = $this->getAuthHandler();
 
         // These conditionals represent the decision tree for authentication
@@ -832,7 +832,7 @@ class Client
     {
         $tokenRevoker = new Revoke($this->getHttpClient());
 
-        return $tokenRevoker->revokeToken($token ?: $this->getAccessToken());
+        return $tokenRevoker->revokeToken($token : $this->getAccessToken());
     }
 
     /**
@@ -989,7 +989,7 @@ class Client
     }
 
     /**
-     * Are we running in Google AppEngine?
+     * Are we running in Google AppEngine
      * return bool
      */
     public function isAppEngine()
@@ -1005,7 +1005,7 @@ class Client
 
     public function getConfig($name, $default = null)
     {
-        return isset($this->config[$name]) ? $this->config[$name] : $default;
+        return isset($this->config[$name])  $this->config[$name] : $default;
     }
 
     /**
@@ -1043,7 +1043,7 @@ class Client
             }
         }
 
-        $key = isset($config['installed']) ? 'installed' : 'web';
+        $key = isset($config['installed'])  'installed' : 'web';
         if (isset($config['type']) && $config['type'] == 'service_account') {
             // @TODO(v3): Remove this, as it isn't accurate. ADC applies only to determining
             // credentials based on the user's environment.
@@ -1296,8 +1296,8 @@ class Client
             $credentials = ApplicationDefaultCredentials::getCredentials(
                 $scopes,
                 null,
-                $sub ? null : $this->config['cache_config'],
-                $sub ? null : $this->getCache(),
+                $sub  null : $this->config['cache_config'],
+                $sub  null : $this->getCache(),
                 $this->config['quota_project']
             );
         }
@@ -1350,7 +1350,7 @@ class Client
     private function checkUniverseDomain($credentials)
     {
         $credentialsUniverse = $credentials instanceof GetUniverseDomainInterface
-            ? $credentials->getUniverseDomain()
+             $credentials->getUniverseDomain()
             : GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN;
         if ($credentialsUniverse !== $this->getUniverseDomain()) {
             throw new DomainException(sprintf(

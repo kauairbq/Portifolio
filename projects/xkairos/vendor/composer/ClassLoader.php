@@ -1,4 +1,4 @@
-<?php
+<php
 
 /*
  * This file is part of Composer.
@@ -346,7 +346,7 @@ class ClassLoader
     }
 
     /**
-     * Should class lookup fail if not found in the current class map?
+     * Should class lookup fail if not found in the current class map
      *
      * @return bool
      */
@@ -364,7 +364,7 @@ class ClassLoader
      */
     public function setApcuPrefix($apcuPrefix)
     {
-        $this->apcuPrefix = function_exists('apcu_fetch') && filter_var(ini_get('apc.enabled'), FILTER_VALIDATE_BOOLEAN) ? $apcuPrefix : null;
+        $this->apcuPrefix = function_exists('apcu_fetch') && filter_var(ini_get('apc.enabled'), FILTER_VALIDATE_BOOLEAN)  $apcuPrefix : null;
     }
 
     /**

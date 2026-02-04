@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -103,7 +103,7 @@ abstract class CredentialsLoader implements
      */
     public static function fromWellKnownFile()
     {
-        $rootEnv = self::isOnWindows() ? 'APPDATA' : 'HOME';
+        $rootEnv = self::isOnWindows()  'APPDATA' : 'HOME';
         $path = [self::getEnv($rootEnv)];
         if (!self::isOnWindows()) {
             $path[] = self::NON_WINDOWS_WELL_KNOWN_PATH_BASE;
@@ -169,17 +169,17 @@ abstract class CredentialsLoader implements
         }
 
         if ($jsonKey['type'] == 'authorized_user') {
-            $anyScope = $scope ?: $defaultScope;
+            $anyScope = $scope : $defaultScope;
             return new UserRefreshCredentials($anyScope, $jsonKey);
         }
 
         if ($jsonKey['type'] == 'impersonated_service_account') {
-            $anyScope = $scope ?: $defaultScope;
+            $anyScope = $scope : $defaultScope;
             return new ImpersonatedServiceAccountCredentials($anyScope, $jsonKey);
         }
 
         if ($jsonKey['type'] == 'external_account') {
-            $anyScope = $scope ?: $defaultScope;
+            $anyScope = $scope : $defaultScope;
             return new ExternalAccountCredentials($anyScope, $jsonKey);
         }
 
@@ -198,8 +198,8 @@ abstract class CredentialsLoader implements
     public static function makeHttpClient(
         FetchAuthTokenInterface $fetcher,
         array $httpClientOptions = [],
-        ?callable $httpHandler = null,
-        ?callable $tokenCallback = null
+        callable $httpHandler = null,
+        callable $tokenCallback = null
     ) {
         $middleware = new Middleware\AuthTokenMiddleware(
             $fetcher,
@@ -234,7 +234,7 @@ abstract class CredentialsLoader implements
      */
     public static function quotaProjectFromEnv()
     {
-        return self::getEnv(self::QUOTA_PROJECT_ENV_VAR) ?: null;
+        return self::getEnv(self::QUOTA_PROJECT_ENV_VAR) : null;
     }
 
     /**
@@ -278,7 +278,7 @@ abstract class CredentialsLoader implements
      */
     private static function loadDefaultClientCertSourceFile()
     {
-        $rootEnv = self::isOnWindows() ? 'APPDATA' : 'HOME';
+        $rootEnv = self::isOnWindows()  'APPDATA' : 'HOME';
         $path = sprintf('%s/%s', self::getEnv($rootEnv), self::MTLS_WELL_KNOWN_PATH);
         if (!file_exists($path)) {
             return null;
@@ -314,6 +314,6 @@ abstract class CredentialsLoader implements
 
     private static function getEnv(string $env): mixed
     {
-        return getenv($env) ?: $_ENV[$env] ?? null;
+        return getenv($env) : $_ENV[$env]  null;
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<php
 require('../fpdf.php');
 
 class PDF extends FPDF
@@ -99,4 +99,4 @@ $pdf->ImprovedTable($header,$data);
 $pdf->AddPage();
 $pdf->FancyTable($header,$data);
 $pdf->Output();
-?>
+>

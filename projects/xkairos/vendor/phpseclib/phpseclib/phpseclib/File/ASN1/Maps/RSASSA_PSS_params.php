@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * RSASSA_PSS_params

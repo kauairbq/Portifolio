@@ -1,4 +1,4 @@
-<?php
+<php
 declare(strict_types=1);
 namespace ParagonIE\ConstantTime;
 
@@ -63,7 +63,7 @@ abstract class Binary
      * @staticvar boolean $exists
      * @param string $str
      * @param int $start
-     * @param ?int $length
+     * @param int $length
      * @return string
      *
      * @throws TypeError
@@ -72,7 +72,7 @@ abstract class Binary
         #[SensitiveParameter]
         string $str,
         int $start = 0,
-        ?int $length = null
+        int $length = null
     ): string {
         if ($length === 0) {
             return '';

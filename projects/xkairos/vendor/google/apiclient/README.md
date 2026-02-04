@@ -255,7 +255,7 @@ The classes used to call the API in [google-api-php-client-services](https://git
 A JSON request to the [Datastore API](https://developers.google.com/apis-explorer/#p/datastore/v1beta3/datastore.projects.runQuery) would look like this:
 
 ```
-POST https://datastore.googleapis.com/v1beta3/projects/YOUR_PROJECT_ID:runQuery?key=YOUR_API_KEY
+POST https://datastore.googleapis.com/v1beta3/projects/YOUR_PROJECT_ID:runQuerykey=YOUR_API_KEY
 ```
 ```json
 {
@@ -458,13 +458,13 @@ echo $client->getOAuth2Service()->getGrantedScope();
 
 YouTube: https://github.com/youtube/api-samples/tree/master/php
 
-## How Do I Contribute? ##
+## How Do I Contribute ##
 
 Please see the [contributing](.github/CONTRIBUTING.md) page for more information. In particular, we love pull requests - but please make sure to sign the contributor license agreement.
 
 ## Frequently Asked Questions ##
 
-### What do I do if something isn't working? ###
+### What do I do if something isn't working ###
 
 For support with the library the best place to ask is via the google-api-php-client tag on StackOverflow: https://stackoverflow.com/questions/tagged/google-api-php-client
 
@@ -474,11 +474,11 @@ If there is a specific bug with the library, please [file an issue](https://gith
 
 If X is a feature of the library, file away! If X is an example of using a specific service, the best place to go is to the teams for those specific APIs - our preference is to link to their examples rather than add them to the library, as they can then pin to specific versions of the library. If you have any examples for other APIs, let us know and we will happily add a link to the README above!
 
-### Why do some Google\Service classes have weird names? ###
+### Why do some Google\Service classes have weird names ###
 
 The _Google\Service_ classes are generally automatically generated from the API discovery documents: https://developers.google.com/discovery/. Sometimes new features are added to APIs with unusual names, which can cause some unexpected or non-standard style naming in the PHP classes.
 
-### How do I deal with non-JSON response types? ###
+### How do I deal with non-JSON response types ###
 
 Some services return XML or similar by default, rather than JSON, which is what the library supports. You can request a JSON response by adding an 'alt' argument to optional params that is normally the last argument to a method call:
 
@@ -488,7 +488,7 @@ $opt_params = array(
 );
 ```
 
-### How do I set a field to null? ###
+### How do I set a field to null ###
 
 The library strips out nulls from the objects sent to the Google APIs as it is the default value of all of the uninitialized properties. To work around this, set the field you want to null to `Google\Model::NULL_VALUE`. This is a placeholder that will be replaced with a true null when sent over the wire.
 

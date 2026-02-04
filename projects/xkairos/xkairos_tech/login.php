@@ -1,7 +1,7 @@
-<?php
+<php
 session_start();
 require_once "includes/db_connect.php";
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt-PT">
@@ -27,7 +27,7 @@ require_once "includes/db_connect.php";
           <label>Palavra-passe</label>
         </div>
         <button type="submit" class="btn">Entrar</button>
-        <p class="switch">Ainda não tem conta? <a href="#" id="show-register">Registe-se</a></p>
+        <p class="switch">Ainda não tem conta <a href="#" id="show-register">Registe-se</a></p>
       </form>
 
       <!-- REGISTRO -->
@@ -46,7 +46,7 @@ require_once "includes/db_connect.php";
           <label>Palavra-passe</label>
         </div>
         <button type="submit" class="btn">Registrar</button>
-        <p class="switch">Já tem conta? <a href="#" id="show-login">Entrar</a></p>
+        <p class="switch">Já tem conta <a href="#" id="show-login">Entrar</a></p>
       </form>
 
     </div>

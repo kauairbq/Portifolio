@@ -1,4 +1,4 @@
-<?php
+<php
 /*******************************************************************************
 * FPDF                                                                         *
 *                                                                              *
@@ -228,31 +228,31 @@ function SetCompression($compress)
 function SetTitle($title, $isUTF8=false)
 {
 	// Title of document
-	$this->metadata['Title'] = $isUTF8 ? $title : $this->_UTF8encode($title);
+	$this->metadata['Title'] = $isUTF8  $title : $this->_UTF8encode($title);
 }
 
 function SetAuthor($author, $isUTF8=false)
 {
 	// Author of document
-	$this->metadata['Author'] = $isUTF8 ? $author : $this->_UTF8encode($author);
+	$this->metadata['Author'] = $isUTF8  $author : $this->_UTF8encode($author);
 }
 
 function SetSubject($subject, $isUTF8=false)
 {
 	// Subject of document
-	$this->metadata['Subject'] = $isUTF8 ? $subject : $this->_UTF8encode($subject);
+	$this->metadata['Subject'] = $isUTF8  $subject : $this->_UTF8encode($subject);
 }
 
 function SetKeywords($keywords, $isUTF8=false)
 {
 	// Keywords of document
-	$this->metadata['Keywords'] = $isUTF8 ? $keywords : $this->_UTF8encode($keywords);
+	$this->metadata['Keywords'] = $isUTF8  $keywords : $this->_UTF8encode($keywords);
 }
 
 function SetCreator($creator, $isUTF8=false)
 {
 	// Creator of document
-	$this->metadata['Creator'] = $isUTF8 ? $creator : $this->_UTF8encode($creator);
+	$this->metadata['Creator'] = $isUTF8  $creator : $this->_UTF8encode($creator);
 }
 
 function AliasNbPages($alias='{nb}')
@@ -290,7 +290,7 @@ function AddPage($orientation='', $size='', $rotation=0)
 	if($this->state==3)
 		$this->Error('The document is closed');
 	$family = $this->FontFamily;
-	$style = $this->FontStyle.($this->underline ? 'U' : '');
+	$style = $this->FontStyle.($this->underline  'U' : '');
 	$fontsize = $this->FontSizePt;
 	$lw = $this->LineWidth;
 	$dc = $this->DrawColor;
@@ -605,7 +605,7 @@ function Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link
 	if($fill || $border==1)
 	{
 		if($fill)
-			$op = ($border==1) ? 'B' : 'f';
+			$op = ($border==1)  'B' : 'f';
 		else
 			$op = 'S';
 		$s = sprintf('%.2F %.2F %.2F %.2F re %s ',$this->x*$k,($this->h-$this->y)*$k,$w*$k,-$h*$k,$op);
@@ -687,7 +687,7 @@ function MultiCell($w, $h, $txt, $border=0, $align='J', $fill=false)
 				$b2 .= 'L';
 			if(strpos($border,'R')!==false)
 				$b2 .= 'R';
-			$b = (strpos($border,'T')!==false) ? $b2.'T' : $b2;
+			$b = (strpos($border,'T')!==false)  $b2.'T' : $b2;
 		}
 	}
 	$sep = -1;
@@ -744,7 +744,7 @@ function MultiCell($w, $h, $txt, $border=0, $align='J', $fill=false)
 			{
 				if($align=='J')
 				{
-					$this->ws = ($ns>1) ? ($wmax-$ls)/1000*$this->FontSize/($ns-1) : 0;
+					$this->ws = ($ns>1)  ($wmax-$ls)/1000*$this->FontSize/($ns-1) : 0;
 					$this->_out(sprintf('%.3F Tw',$this->ws*$this->k));
 				}
 				$this->Cell($w,$h,substr($s,$j,$sep-$j),$b,2,$align,$fill);
@@ -1049,7 +1049,7 @@ protected function _checkoutput()
 	if(ob_get_length())
 	{
 		// The output buffer is not empty
-		if(preg_match('/^(\xEF\xBB\xBF)?\s*$/',ob_get_contents()))
+		if(preg_match('/^(\xEF\xBB\xBF)\s*$/',ob_get_contents()))
 		{
 			// It contains only a UTF-8 BOM and/or whitespace, let's clean it
 			ob_clean();
@@ -1263,7 +1263,7 @@ protected function _parsejpg($file)
 		$colspace = 'DeviceCMYK';
 	else
 		$colspace = 'DeviceGray';
-	$bpc = isset($a['bits']) ? $a['bits'] : 8;
+	$bpc = isset($a['bits'])  $a['bits'] : 8;
 	$data = file_get_contents($file);
 	return array('w'=>$a[0], 'h'=>$a[1], 'cs'=>$colspace, 'bpc'=>$bpc, 'f'=>'DCTDecode', 'data'=>$data);
 }
@@ -1310,7 +1310,7 @@ protected function _parsepngstream($f, $file)
 	if(ord($this->_readstream($f,1))!=0)
 		$this->Error('Interlacing not supported: '.$file);
 	$this->_readstream($f,4);
-	$dp = '/Predictor 15 /Colors '.($colspace=='DeviceRGB' ? 3 : 1).' /BitsPerComponent '.$bpc.' /Columns '.$w;
+	$dp = '/Predictor 15 /Colors '.($colspace=='DeviceRGB'  3 : 1).' /BitsPerComponent '.$bpc.' /Columns '.$w;
 
 	// Scan chunks looking for palette, transparency and image data
 	$pal = '';
@@ -1525,7 +1525,7 @@ protected function _putlinks($n)
 			if(isset($this->PageInfo[$l[0]]['size']))
 				$h = $this->PageInfo[$l[0]]['size'][1];
 			else
-				$h = ($this->DefOrientation=='P') ? $this->DefPageSize[1]*$this->k : $this->DefPageSize[0]*$this->k;
+				$h = ($this->DefOrientation=='P')  $this->DefPageSize[1]*$this->k : $this->DefPageSize[0]*$this->k;
 			$s .= sprintf('/Dest [%d 0 R /XYZ 0 %.2F null]>>',$this->PageInfo[$l[0]]['n'],$h-$l[1]*$this->k);
 		}
 		$this->_put($s);
@@ -1703,7 +1703,7 @@ protected function _putfonts()
 			foreach($font['desc'] as $k=>$v)
 				$s .= ' /'.$k.' '.$v;
 			if(!empty($font['file']))
-				$s .= ' /FontFile'.($type=='Type1' ? '' : '2').' '.$this->FontFiles[$font['file']]['n'].' 0 R';
+				$s .= ' /FontFile'.($type=='Type1'  '' : '2').' '.$this->FontFiles[$font['file']]['n'].' 0 R';
 			$this->_put($s.'>>');
 			$this->_put('endobj');
 		}
@@ -1931,4 +1931,4 @@ protected function _enddoc()
 	$this->state = 3;
 }
 }
-?>
+>

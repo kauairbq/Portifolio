@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2023 Google Inc.
  *
@@ -31,9 +31,9 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
 
     private string $audience;
     private string $regionalCredVerificationUrl;
-    private ?string $regionUrl;
-    private ?string $securityCredentialsUrl;
-    private ?string $imdsv2SessionTokenUrl;
+    private string $regionUrl;
+    private string $securityCredentialsUrl;
+    private string $imdsv2SessionTokenUrl;
 
     /**
      * @param string $audience The audience for the credential.
@@ -50,9 +50,9 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
     public function __construct(
         string $audience,
         string $regionalCredVerificationUrl,
-        ?string $regionUrl = null,
-        ?string $securityCredentialsUrl = null,
-        ?string $imdsv2SessionTokenUrl = null
+        string $regionUrl = null,
+        string $securityCredentialsUrl = null,
+        string $imdsv2SessionTokenUrl = null
     ) {
         $this->audience = $audience;
         $this->regionalCredVerificationUrl = $regionalCredVerificationUrl;
@@ -61,7 +61,7 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
         $this->imdsv2SessionTokenUrl = $imdsv2SessionTokenUrl;
     }
 
-    public function fetchSubjectToken(?callable $httpHandler = null): string
+    public function fetchSubjectToken(callable $httpHandler = null): string
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -93,7 +93,7 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
             $region = self::getRegionFromUrl($httpHandler, $this->regionUrl, $headers);
         }
         $url = str_replace('{region}', $region, $this->regionalCredVerificationUrl);
-        $host = parse_url($url)['host'] ?? '';
+        $host = parse_url($url)['host']  '';
 
         // From here we use the signing vars to create the signed request to receive a token
         [$accessKeyId, $secretAccessKey, $securityToken] = $signingVars;
@@ -115,7 +115,7 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
             'url' => $url,
         ];
 
-        return urlencode(json_encode($request) ?: '');
+        return urlencode(json_encode($request) : '');
     }
 
     /**
@@ -148,7 +148,7 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
         string $host,
         string $accessKeyId,
         string $secretAccessKey,
-        ?string $securityToken
+        string $securityToken
     ): array {
         $service = 'sts';
 
@@ -235,13 +235,13 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
     /**
      * @internal
      */
-    public static function getRegionFromEnv(): ?string
+    public static function getRegionFromEnv(): string
     {
         $region = getenv('AWS_REGION');
         if (empty($region)) {
             $region = getenv('AWS_DEFAULT_REGION');
         }
-        return $region ?: null;
+        return $region : null;
     }
 
     /**
@@ -285,7 +285,7 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
      * @param callable $httpHandler
      * @param string $securityCredentialsUrl
      * @param array<string, string|string[]> $headers Request headers to send in with the request.
-     * @return array{string, string, ?string}
+     * @return array{string, string, string}
      */
     public static function getSigningVarsFromUrl(
         callable $httpHandler,
@@ -311,9 +311,9 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
     /**
      * @internal
      *
-     * @return array{string, string, ?string}
+     * @return array{string, string, string}
      */
-    public static function getSigningVarsFromEnv(): ?array
+    public static function getSigningVarsFromEnv(): array
     {
         $accessKeyId = getenv('AWS_ACCESS_KEY_ID');
         $secretAccessKey = getenv('AWS_SECRET_ACCESS_KEY');
@@ -321,7 +321,7 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
             return [
                 $accessKeyId,
                 $secretAccessKey,
-                getenv('AWS_SESSION_TOKEN') ?: null, // session token (can be null)
+                getenv('AWS_SESSION_TOKEN') : null, // session token (can be null)
             ];
         }
 
@@ -337,8 +337,8 @@ class AwsNativeSource implements ExternalAccountCredentialSourceInterface
      */
     public function getCacheKey(): string
     {
-        return ($this->imdsv2SessionTokenUrl ?? '') .
-            '.' . ($this->securityCredentialsUrl ?? '') .
+        return ($this->imdsv2SessionTokenUrl  '') .
+            '.' . ($this->securityCredentialsUrl  '') .
             '.' . $this->regionUrl .
             '.' . $this->regionalCredVerificationUrl;
     }

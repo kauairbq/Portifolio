@@ -1,4 +1,4 @@
-<?php
+<php
 include 'includes/config.php';
 
 try {
@@ -38,4 +38,4 @@ try {
 } catch (PDOException $e) {
     echo "Erro geral: " . $e->getMessage();
 }
-?>
+>

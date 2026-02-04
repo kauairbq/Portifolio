@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -150,8 +150,8 @@ class MongoDBFormatter implements FormatterInterface
     {
         $milliseconds = floor(((float) $value->format('U.u')) * 1000);
 
-        $milliseconds = (PHP_INT_SIZE === 8) //64-bit OS?
-            ? (int) $milliseconds
+        $milliseconds = (PHP_INT_SIZE === 8) //64-bit OS
+             (int) $milliseconds
             : (string) $milliseconds;
 
         return new UTCDateTime($milliseconds);

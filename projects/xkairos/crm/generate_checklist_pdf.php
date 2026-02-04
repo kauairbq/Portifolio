@@ -1,4 +1,4 @@
-<?php
+<php
 include "../includes/config.php";
 session_start();
 
@@ -28,13 +28,13 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',12);
 
 // Buscar checklist do cliente
-$stmt = $pdo->prepare("SELECT * FROM projeto_checklist WHERE cliente_id = ? ORDER BY etapa");
+$stmt = $pdo->prepare("SELECT * FROM projeto_checklist WHERE cliente_id =  ORDER BY etapa");
 $stmt->execute([$_SESSION['cliente_id']]);
 $checklist = $stmt->fetchAll();
 
 if (count($checklist) > 0) {
     foreach ($checklist as $item) {
-        $status = $item['concluido'] ? 'Concluído' : 'Pendente';
+        $status = $item['concluido']  'Concluído' : 'Pendente';
         $pdf->Cell(0,10, mb_convert_encoding($item['etapa'] . ' - ' . $status, 'ISO-8859-1', 'UTF-8'),0,1);
     }
 } else {
@@ -42,4 +42,4 @@ if (count($checklist) > 0) {
 }
 
 $pdf->Output('D', 'checklist_status.pdf');
-?>
+>

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of RC4.
@@ -17,7 +17,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $rc4 = new \phpseclib3\Crypt\RC4();
@@ -31,7 +31,7 @@
  *    }
  *
  *    echo $rc4->decrypt($rc4->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>

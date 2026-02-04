@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -98,10 +98,10 @@ class ProjectsLocationsLakesZonesEntities extends \Google\Service\Resource
    *
    * @opt_param string filter Optional. The following filter parameters can be
    * added to the URL to limit the entities returned by the API: Entity ID:
-   * ?filter="id=entityID" Asset ID: ?filter="asset=assetID" Data path
-   * ?filter="data_path=gs://my-bucket" Is HIVE compatible:
-   * ?filter="hive_compatible=true" Is BigQuery compatible:
-   * ?filter="bigquery_compatible=true"
+   * filter="id=entityID" Asset ID: filter="asset=assetID" Data path
+   * filter="data_path=gs://my-bucket" Is HIVE compatible:
+   * filter="hive_compatible=true" Is BigQuery compatible:
+   * filter="bigquery_compatible=true"
    * @opt_param int pageSize Optional. Maximum number of entities to return. The
    * service may return fewer than this value. If unspecified, 100 entities will
    * be returned by default. The maximum value is 500; larger values will will be

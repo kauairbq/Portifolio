@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Curves over a*x^2 + y^2 = 1 + d*x^2*y^2
@@ -125,8 +125,8 @@ class TwistedEdwards extends Base
             throw new \RuntimeException('setModulo needs to be called before this method');
         }
         $this->p = [
-            $x instanceof BigInteger ? $this->factory->newInteger($x) : $x,
-            $y instanceof BigInteger ? $this->factory->newInteger($y) : $y
+            $x instanceof BigInteger  $this->factory->newInteger($x) : $x,
+            $y instanceof BigInteger  $this->factory->newInteger($y) : $y
         ];
     }
 

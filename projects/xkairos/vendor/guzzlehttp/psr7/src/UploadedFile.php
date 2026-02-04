@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -62,10 +62,10 @@ class UploadedFile implements UploadedFileInterface
      */
     public function __construct(
         $streamOrFile,
-        ?int $size,
+        int $size,
         int $errorStatus,
-        ?string $clientFilename = null,
-        ?string $clientMediaType = null
+        string $clientFilename = null,
+        string $clientMediaType = null
     ) {
         $this->setError($errorStatus);
         $this->size = $size;
@@ -171,7 +171,7 @@ class UploadedFile implements UploadedFileInterface
 
         if ($this->file) {
             $this->moved = PHP_SAPI === 'cli'
-                ? rename($this->file, $targetPath)
+                 rename($this->file, $targetPath)
                 : move_uploaded_file($this->file, $targetPath);
         } else {
             Utils::copyToStream(
@@ -189,7 +189,7 @@ class UploadedFile implements UploadedFileInterface
         }
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         return $this->size;
     }
@@ -199,12 +199,12 @@ class UploadedFile implements UploadedFileInterface
         return $this->error;
     }
 
-    public function getClientFilename(): ?string
+    public function getClientFilename(): string
     {
         return $this->clientFilename;
     }
 
-    public function getClientMediaType(): ?string
+    public function getClientMediaType(): string
     {
         return $this->clientMediaType;
     }

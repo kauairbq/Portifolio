@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -38,11 +38,11 @@ class CaseClassifications extends \Google\Service\Resource
    * deactivated, this endpoint immediately stops returning it. After six months,
    * `case.create` requests using the classification will fail. EXAMPLES: cURL:
    * ```shell curl \ --header "Authorization: Bearer $(gcloud auth print-access-
-   * token)" \ 'https://cloudsupport.googleapis.com/v2/caseClassifications:search?
+   * token)" \ 'https://cloudsupport.googleapis.com/v2/caseClassifications:search
    * query=display_name:"*Compute%20Engine*"' ``` Python: ```python import
    * googleapiclient.discovery supportApiService =
    * googleapiclient.discovery.build( serviceName="cloudsupport", version="v2", di
-   * scoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?versi
+   * scoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/restversi
    * on=v2", ) request = supportApiService.caseClassifications().search(
    * query='display_name:"*Compute Engine*"' ) print(request.execute()) ```
    * (caseClassifications.search)

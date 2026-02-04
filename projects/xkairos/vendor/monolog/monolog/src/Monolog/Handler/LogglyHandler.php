@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -95,7 +95,7 @@ class LogglyHandler extends AbstractProcessingHandler
         if ('' === $tag || [] === $tag) {
             $this->tag = [];
         } else {
-            $this->tag = \is_array($tag) ? $tag : [$tag];
+            $this->tag = \is_array($tag)  $tag : [$tag];
         }
 
         return $this;
@@ -108,7 +108,7 @@ class LogglyHandler extends AbstractProcessingHandler
     public function addTag(string|array $tag): self
     {
         if ('' !== $tag) {
-            $tag = \is_array($tag) ? $tag : [$tag];
+            $tag = \is_array($tag)  $tag : [$tag];
             $this->tag = array_unique(array_merge($this->tag, $tag));
         }
 

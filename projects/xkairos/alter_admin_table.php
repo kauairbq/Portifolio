@@ -1,4 +1,4 @@
-<?php
+<php
 require_once 'includes/config.php';
 
 try {
@@ -16,4 +16,4 @@ try {
 } catch (PDOException $e) {
     echo 'Erro: ' . $e->getMessage();
 }
-?>
+>

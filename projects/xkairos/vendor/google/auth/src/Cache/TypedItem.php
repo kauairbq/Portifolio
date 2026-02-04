@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2022 Google Inc.
  *
@@ -36,7 +36,7 @@ final class TypedItem implements CacheItemInterface
     /**
      * @var \DateTimeInterface|null
      */
-    private ?\DateTimeInterface $expiration;
+    private \DateTimeInterface $expiration;
 
     /**
      * @var bool
@@ -66,7 +66,7 @@ final class TypedItem implements CacheItemInterface
      */
     public function get(): mixed
     {
-        return $this->isHit() ? $this->value : null;
+        return $this->isHit()  $this->value : null;
     }
 
     /**

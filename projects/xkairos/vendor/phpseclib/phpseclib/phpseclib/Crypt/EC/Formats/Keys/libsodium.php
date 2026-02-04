@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * libsodium Key Handler
@@ -71,7 +71,7 @@ abstract class libsodium
             $components['dA'] = $arr['dA'];
             $components['secret'] = $arr['secret'];
         }
-        $components['QA'] = isset($public) ?
+        $components['QA'] = isset($public) 
             self::extractPoint($public, $curve) :
             $curve->multiplyPoint($curve->getBasePoint(), $components['dA']);
 

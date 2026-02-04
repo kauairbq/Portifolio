@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -115,7 +115,7 @@ final class FnStream implements StreamInterface
         return ($this->_fn_detach)();
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         return ($this->_fn_getSize)();
     }

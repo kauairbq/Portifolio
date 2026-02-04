@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -46,7 +46,7 @@ class ProjectsLocationsKeys extends \Google\Service\Resource
    * unique within the project, must conform with RFC-1034, is restricted to
    * lower-cased letters, and has a maximum length of 63 characters. In another
    * word, the id must match the regular expression:
-   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`. The id must NOT be a UUID-like string.
+   * `[a-z]([a-z0-9-]{0,61}[a-z0-9])`. The id must NOT be a UUID-like string.
    * @return Operation
    * @throws \Google\Service\Exception
    */

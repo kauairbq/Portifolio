@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2020 Google LLC
  *
@@ -30,11 +30,11 @@ class Composer
      */
     public static function cleanup(
         Event $event,
-        ?Filesystem $filesystem = null
+        Filesystem $filesystem = null
     ) {
         $composer = $event->getComposer();
         $extra = $composer->getPackage()->getExtra();
-        $servicesToKeep = $extra['google/apiclient-services'] ?? [];
+        $servicesToKeep = $extra['google/apiclient-services']  [];
         if (empty($servicesToKeep)) {
             return;
         }
@@ -52,7 +52,7 @@ class Composer
         }
         self::verifyServicesToKeep($serviceDir, $servicesToKeep);
         $finder = self::getServicesToRemove($serviceDir, $servicesToKeep);
-        $filesystem = $filesystem ?: new Filesystem();
+        $filesystem = $filesystem : new Filesystem();
         $servicesToRemoveCount = $finder->count();
         if (0 === $servicesToRemoveCount) {
             return;

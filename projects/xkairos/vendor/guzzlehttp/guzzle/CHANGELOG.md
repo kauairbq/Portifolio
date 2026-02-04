@@ -697,7 +697,7 @@ object).
   * No longer double percent-encoding characters in the path or query string if
     they are already encoded.
   * Now properly encoding the supplied path to a URL object, instead of only
-    encoding ' ' and '?'.
+    encoding ' ' and ''.
   * Note: This has been changed in 5.0.3 to now encode query string values by
     default unless the `rawString` argument is provided when setting the query
     string on a URL: Now allowing many more characters to be present in the
@@ -1308,7 +1308,7 @@ interfaces.
 
 * CurlMulti is no longer reused globally. A new multi object is created per-client. This helps to isolate clients.
 * URLs with no path no longer contain a "/" by default
-* Guzzle\Http\QueryString does no longer manages the leading "?". This is now handled in Guzzle\Http\Url.
+* Guzzle\Http\QueryString does no longer manages the leading "". This is now handled in Guzzle\Http\Url.
 * BadResponseException no longer includes the full request and response message
 * Adding setData() to Guzzle\Service\Description\ServiceDescriptionInterface
 * Adding getResponseBody() to Guzzle\Http\Message\RequestInterface
@@ -1523,11 +1523,11 @@ interfaces.
 ## 2.8.0 - 2012-07-15
 
 * BC: Guzzle\Http\Query
-    * Query strings with empty variables will always show an equal sign unless the variable is set to QueryString::BLANK (e.g. ?acl= vs ?acl)
+    * Query strings with empty variables will always show an equal sign unless the variable is set to QueryString::BLANK (e.g. acl= vs acl)
     * Changed isEncodingValues() and isEncodingFields() to isUrlEncoding()
     * Changed setEncodeValues(bool) and setEncodeFields(bool) to useUrlEncoding(bool)
     * Changed the aggregation functions of QueryString to be static methods
-    * Can now use fromString() with querystrings that have a leading ?
+    * Can now use fromString() with querystrings that have a leading 
 * cURL configuration values can be specified in service descriptions using `curl.` prefixed parameters
 * Content-Length is set to 0 before emitting the request.before_send event when sending an empty request body
 * Cookies are no longer URL decoded by default

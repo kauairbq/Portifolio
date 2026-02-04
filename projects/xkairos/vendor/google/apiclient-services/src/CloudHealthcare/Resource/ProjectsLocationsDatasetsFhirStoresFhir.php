@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -798,11 +798,11 @@ class ProjectsLocationsDatasetsFhirStoresFhir extends \Google\Service\Resource
    * [STU3](https://hl7.org/fhir/STU3/search.html),
    * [R4](https://hl7.org/fhir/R4/search.html),
    * [R5](https://hl7.org/fhir/R5/search.html)). Supports four methods of search
-   * defined by the specification: * `GET [base]?[parameters]` to search across
-   * all resources. * `GET [base]/[type]?[parameters]` to search resources of a
-   * specified type. * `POST [base]/_search?[parameters]` as an alternate form
+   * defined by the specification: * `GET [base][parameters]` to search across
+   * all resources. * `GET [base]/[type][parameters]` to search resources of a
+   * specified type. * `POST [base]/_search[parameters]` as an alternate form
    * having the same semantics as the `GET` method across all resources. * `POST
-   * [base]/[type]/_search?[parameters]` as an alternate form having the same
+   * [base]/[type]/_search[parameters]` as an alternate form having the same
    * semantics as the `GET` method for the specified type. The `GET` and `POST`
    * methods do not support compartment searches. The `POST` method does not
    * support `application/x-www-form-urlencoded` search parameters. On success,
@@ -879,11 +879,11 @@ class ProjectsLocationsDatasetsFhirStoresFhir extends \Google\Service\Resource
    * [STU3](https://hl7.org/fhir/STU3/search.html),
    * [R4](https://hl7.org/fhir/R4/search.html),
    * [R5](https://hl7.org/fhir/R5/search.html)). Supports four methods of search
-   * defined by the specification: * `GET [base]?[parameters]` to search across
-   * all resources. * `GET [base]/[type]?[parameters]` to search resources of a
-   * specified type. * `POST [base]/_search?[parameters]` as an alternate form
+   * defined by the specification: * `GET [base][parameters]` to search across
+   * all resources. * `GET [base]/[type][parameters]` to search resources of a
+   * specified type. * `POST [base]/_search[parameters]` as an alternate form
    * having the same semantics as the `GET` method across all resources. * `POST
-   * [base]/[type]/_search?[parameters]` as an alternate form having the same
+   * [base]/[type]/_search[parameters]` as an alternate form having the same
    * semantics as the `GET` method for the specified type. The `GET` and `POST`
    * methods do not support compartment searches. The `POST` method does not
    * support `application/x-www-form-urlencoded` search parameters. On success,

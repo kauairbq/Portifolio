@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -115,7 +115,7 @@ class ProjectsLocationsGatewaySecurityPoliciesRules extends \Google\Service\Reso
    * @param string $name Required. Immutable. Name of the resource. ame is the
    * full resource name so projects/{project}/locations/{location}/gatewaySecurity
    * Policies/{gateway_security_policy}/rules/{rule} rule should match the
-   * pattern: (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * pattern: (^[a-z]([a-z0-9-]{0,61}[a-z0-9])$).
    * @param GatewaySecurityPolicyRule $postBody
    * @param array $optParams Optional parameters.
    *

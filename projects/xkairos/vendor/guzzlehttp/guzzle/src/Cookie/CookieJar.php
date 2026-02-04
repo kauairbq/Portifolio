@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Cookie;
 
@@ -85,7 +85,7 @@ class CookieJar implements CookieJarInterface
      *
      * @return SetCookie|null cookie that was found or null if not found
      */
-    public function getCookieByName(string $name): ?SetCookie
+    public function getCookieByName(string $name): SetCookie
     {
         foreach ($this->cookies as $cookie) {
             if ($cookie->getName() !== null && \strcasecmp($cookie->getName(), $name) === 0) {
@@ -103,7 +103,7 @@ class CookieJar implements CookieJarInterface
         }, $this->getIterator()->getArrayCopy());
     }
 
-    public function clear(?string $domain = null, ?string $path = null, ?string $name = null): void
+    public function clear(string $domain = null, string $path = null, string $name = null): void
     {
         if (!$domain) {
             $this->cookies = [];
@@ -271,7 +271,7 @@ class CookieJar implements CookieJarInterface
         $uri = $request->getUri();
         $scheme = $uri->getScheme();
         $host = $uri->getHost();
-        $path = $uri->getPath() ?: '/';
+        $path = $uri->getPath() : '/';
 
         foreach ($this->cookies as $cookie) {
             if ($cookie->matchesPath($path)
@@ -285,7 +285,7 @@ class CookieJar implements CookieJarInterface
         }
 
         return $values
-            ? $request->withHeader('Cookie', \implode('; ', $values))
+             $request->withHeader('Cookie', \implode('; ', $values))
             : $request;
     }
 

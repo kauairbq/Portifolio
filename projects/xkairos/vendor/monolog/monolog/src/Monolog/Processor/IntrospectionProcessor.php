@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -101,11 +101,11 @@ class IntrospectionProcessor implements ProcessorInterface
         $record->extra = array_merge(
             $record->extra,
             [
-                'file'      => $trace[$i - 1]['file'] ?? null,
-                'line'      => $trace[$i - 1]['line'] ?? null,
-                'class'     => $trace[$i]['class'] ?? null,
-                'callType'  => $trace[$i]['type'] ?? null,
-                'function'  => $trace[$i]['function'] ?? null,
+                'file'      => $trace[$i - 1]['file']  null,
+                'line'      => $trace[$i - 1]['line']  null,
+                'class'     => $trace[$i]['class']  null,
+                'callType'  => $trace[$i]['type']  null,
+                'function'  => $trace[$i]['function']  null,
             ]
         );
 

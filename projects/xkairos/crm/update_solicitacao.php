@@ -1,4 +1,4 @@
-<?php
+<php
 include "../includes/config.php";
 session_start();
 
@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $total = $precos['cpu'] + $precos['gpu'] + $precos['ram'] + $precos['ssd'] + $precos['placa_mae'] + $precos['cooler'];
 
     // Atualizar solicitação
-    $stmt = $pdo->prepare("UPDATE solicitacoes SET cpu = ?, gpu = ?, ram = ?, ssd = ?, placa_mae = ?, cooler = ?, total = ? WHERE id = ? AND cliente_email = (SELECT email FROM clientes WHERE id = ?)");
+    $stmt = $pdo->prepare("UPDATE solicitacoes SET cpu = , gpu = , ram = , ssd = , placa_mae = , cooler = , total =  WHERE id =  AND cliente_email = (SELECT email FROM clientes WHERE id = )");
     $stmt->execute([$cpu, $gpu, $ram, $ssd, $placa_mae, $cooler, $total, $id, $_SESSION['cliente_id']]);
 
     header("Location: dashboard.php");
     exit;
 }
-?>
+>

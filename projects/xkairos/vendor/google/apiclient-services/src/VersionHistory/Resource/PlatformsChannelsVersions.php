@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -45,8 +45,8 @@ class PlatformsChannelsVersions extends \Google\Service\Resource
    * Version comparison is done numerically. If version is not entirely written,
    * the version will be appended with 0 in missing fields. Ex) version > 80
    * becoms version > 80.0.0.0 Name and platform are filtered by string
-   * comparison. Ex) "...?filter=channel<=beta, version >= 80 Ex)
-   * "...?filter=version > 80, version < 81
+   * comparison. Ex) "...filter=channel<=beta, version >= 80 Ex)
+   * "...filter=version > 80, version < 81
    * @opt_param string orderBy Optional. Ordering string. Valid order_by strings
    * are "version", "name", "platform", and "channel". Optionally, you can append
    * " desc" or " asc" to specify the sorting order. Multiple order_by strings can
@@ -56,7 +56,7 @@ class PlatformsChannelsVersions extends \Google\Service\Resource
    * may cause unexpected behaviour as it is a naive string sort. For example,
    * 1.0.0.8 will be before 1.0.0.10 in descending order. If order_by is not
    * specified the response will be sorted by version in descending order. Ex)
-   * "...?order_by=version asc" Ex) "...?order_by=platform desc, channel, version"
+   * "...order_by=version asc" Ex) "...order_by=platform desc, channel, version"
    * @opt_param int pageSize Optional. Optional limit on the number of versions to
    * include in the response. If unspecified, the server will pick an appropriate
    * default.

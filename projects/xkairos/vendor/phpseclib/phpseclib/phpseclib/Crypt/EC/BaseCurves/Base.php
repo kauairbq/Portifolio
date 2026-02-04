@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Curve methods common to all curves
@@ -89,7 +89,7 @@ abstract class Base
     public function multiplyPoint(array $p, BigInteger $d)
     {
         $alreadyInternal = isset($p[2]);
-        $r = $alreadyInternal ?
+        $r = $alreadyInternal 
             [[], $p] :
             [[], $this->convertToInternal($p)];
 
@@ -100,7 +100,7 @@ abstract class Base
             $r[$d_i] = $this->doublePoint($r[$d_i]);
         }
 
-        return $alreadyInternal ? $r[0] : $this->convertToAffine($r[0]);
+        return $alreadyInternal  $r[0] : $this->convertToAffine($r[0]);
     }
 
     /**

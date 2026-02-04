@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -55,8 +55,8 @@ class SA360 extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://searchads360.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://searchads360.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://searchads360.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://searchads360.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v0';

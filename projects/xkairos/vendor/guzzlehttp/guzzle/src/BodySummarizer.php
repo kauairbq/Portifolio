@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -11,7 +11,7 @@ final class BodySummarizer implements BodySummarizerInterface
      */
     private $truncateAt;
 
-    public function __construct(?int $truncateAt = null)
+    public function __construct(int $truncateAt = null)
     {
         $this->truncateAt = $truncateAt;
     }
@@ -19,10 +19,10 @@ final class BodySummarizer implements BodySummarizerInterface
     /**
      * Returns a summarized message body.
      */
-    public function summarize(MessageInterface $message): ?string
+    public function summarize(MessageInterface $message): string
     {
         return $this->truncateAt === null
-            ? Psr7\Message::bodySummary($message)
+             Psr7\Message::bodySummary($message)
             : Psr7\Message::bodySummary($message, $this->truncateAt);
     }
 }

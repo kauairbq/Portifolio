@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Firebase\JWT;
 
@@ -35,11 +35,11 @@ class CachedKeySet implements ArrayAccess
      */
     private $cache;
     /**
-     * @var ?int
+     * @var int
      */
     private $expiresAfter;
     /**
-     * @var ?CacheItemInterface
+     * @var CacheItemInterface
      */
     private $cacheItem;
     /**
@@ -80,9 +80,9 @@ class CachedKeySet implements ArrayAccess
         ClientInterface $httpClient,
         RequestFactoryInterface $httpFactory,
         CacheItemPoolInterface $cache,
-        ?int $expiresAfter = null,
+        int $expiresAfter = null,
         bool $rateLimit = false,
-        ?string $defaultAlg = null
+        string $defaultAlg = null
     ) {
         $this->jwksUri = $jwksUri;
         $this->httpClient = $httpClient;
@@ -149,7 +149,7 @@ class CachedKeySet implements ArrayAccess
 
         $keys = [];
         foreach ($jwks['keys'] as $k => $v) {
-            $kid = isset($v['kid']) ? $v['kid'] : $k;
+            $kid = isset($v['kid'])  $v['kid'] : $k;
             $keys[(string) $kid] = $v;
         }
 
@@ -218,8 +218,8 @@ class CachedKeySet implements ArrayAccess
             $cacheItemData = $data;
         }
 
-        $callsPerMinute = $cacheItemData['callsPerMinute'] ?? 0;
-        $expiry = $cacheItemData['expiry'] ?? new \DateTime('+60 seconds', new \DateTimeZone('UTC'));
+        $callsPerMinute = $cacheItemData['callsPerMinute']  0;
+        $expiry = $cacheItemData['expiry']  new \DateTime('+60 seconds', new \DateTimeZone('UTC'));
 
         if (++$callsPerMinute > $this->maxCallsPerMinute) {
             return true;

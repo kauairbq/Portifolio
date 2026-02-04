@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -51,7 +51,7 @@ class ProjectsLocationsConnectClustersConnectors extends \Google\Service\Resourc
    * @opt_param string connectorId Required. The ID to use for the connector,
    * which will become the final component of the connector's name. The ID must be
    * 1-63 characters long, and match the regular expression
-   * `[a-z]([-a-z0-9]*[a-z0-9])?` to comply with RFC 1035. This value is
+   * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC 1035. This value is
    * structured like: `my-connector-id`.
    * @return Connector
    * @throws \Google\Service\Exception

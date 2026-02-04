@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -56,11 +56,11 @@ class PsrHandler extends AbstractHandler implements FormattableHandlerInterface
         }
 
         $message = $this->formatter !== null
-            ? (string) $this->formatter->format($record)
+             (string) $this->formatter->format($record)
             : $record->message;
 
         $context = $this->includeExtra
-            ? [...$record->extra, ...$record->context]
+             [...$record->extra, ...$record->context]
             : $record->context;
 
         $this->logger->log($record->level->toPsrLogLevel(), $message, $context);

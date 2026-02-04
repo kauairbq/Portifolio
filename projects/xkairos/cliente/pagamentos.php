@@ -1,4 +1,4 @@
-<?php
+<php
 include '../includes/config.php';
 session_start();
 if(!isset($_SESSION['cliente_id'])){
@@ -8,10 +8,10 @@ $cliente_id = $_SESSION['cliente_id'];
 $cliente_nome = $_SESSION['cliente_nome'];
 
 // Buscar pagamentos do cliente
-$stmt = $pdo->prepare('SELECT * FROM pagamentos WHERE cliente_id = ? ORDER BY data_pagamento DESC');
+$stmt = $pdo->prepare('SELECT * FROM pagamentos WHERE cliente_id =  ORDER BY data_pagamento DESC');
 $stmt->execute([$cliente_id]);
 $pagamentos = $stmt->fetchAll();
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -272,7 +272,7 @@ $pagamentos = $stmt->fetchAll();
                 <div class="user-info">
                     <div class="user-menu">
                         <button class="user-menu-btn" onclick="toggleUserMenu()">
-                            <i class="fas fa-user"></i> <?php echo htmlspecialchars($cliente_nome); ?>
+                            <i class="fas fa-user"></i> <php echo htmlspecialchars($cliente_nome); >
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="user-dropdown" id="userDropdown">
@@ -294,17 +294,17 @@ $pagamentos = $stmt->fetchAll();
                 <p>Acompanhe o histórico de todos os seus pagamentos</p>
             </section>
 
-            <?php
+            <php
             $total_pago = 0;
             foreach ($pagamentos as $pagamento) {
                 if ($pagamento['status'] === 'Completo') {
                     $total_pago += $pagamento['valor'];
                 }
             }
-            ?>
+            >
 
             <div class="total-section">
-                <div class="total-amount">€<?php echo number_format($total_pago, 2, ',', '.'); ?></div>
+                <div class="total-amount">€<php echo number_format($total_pago, 2, ',', '.'); ></div>
                 <div class="total-label">Total Pago</div>
             </div>
 
@@ -313,13 +313,13 @@ $pagamentos = $stmt->fetchAll();
                     <h3>Histórico de Pagamentos</h3>
                 </div>
 
-                <?php if (empty($pagamentos)): ?>
+                <php if (empty($pagamentos)): >
                     <div class="no-pagamentos">
                         <i class="fas fa-credit-card fa-3x" style="color: rgba(255, 255, 255, 0.3); margin-bottom: 20px;"></i>
                         <p>Você ainda não fez nenhum pagamento.</p>
                         <p>Os pagamentos aparecerão aqui após serem processados.</p>
                     </div>
-                <?php else: ?>
+                <php else: >
                     <table class="pagamentos-table">
                         <thead>
                             <tr>
@@ -332,45 +332,45 @@ $pagamentos = $stmt->fetchAll();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($pagamentos as $pagamento): ?>
+                            <php foreach ($pagamentos as $pagamento): >
                                 <tr>
-                                    <td>#<?php echo $pagamento['id']; ?></td>
-                                    <td><?php echo date('d/m/Y H:i', strtotime($pagamento['data_pagamento'])); ?></td>
-                                    <td>€<?php echo number_format($pagamento['valor'], 2, ',', '.'); ?></td>
-                                    <td><?php echo htmlspecialchars($pagamento['metodo_pagamento']); ?></td>
+                                    <td>#<php echo $pagamento['id']; ></td>
+                                    <td><php echo date('d/m/Y H:i', strtotime($pagamento['data_pagamento'])); ></td>
+                                    <td>€<php echo number_format($pagamento['valor'], 2, ',', '.'); ></td>
+                                    <td><php echo htmlspecialchars($pagamento['metodo_pagamento']); ></td>
                                     <td>
-                                        <span class="status-badge status-<?php echo strtolower($pagamento['status']); ?>">
-                                            <?php echo htmlspecialchars($pagamento['status']); ?>
+                                        <span class="status-badge status-<php echo strtolower($pagamento['status']); >">
+                                            <php echo htmlspecialchars($pagamento['status']); >
                                         </span>
                                     </td>
                                     <td>
-                                        <button class="expand-btn" id="btn-<?php echo $pagamento['id']; ?>" onclick="toggleDetails(<?php echo $pagamento['id']; ?>)">
+                                        <button class="expand-btn" id="btn-<php echo $pagamento['id']; >" onclick="toggleDetails(<php echo $pagamento['id']; >)">
                                             <i class="fas fa-chevron-down"></i> Ver Detalhes
                                         </button>
                                     </td>
                                 </tr>
-                                <tr id="details-<?php echo $pagamento['id']; ?>" style="display: none;">
+                                <tr id="details-<php echo $pagamento['id']; >" style="display: none;">
                                     <td colspan="6">
                                         <div class="pagamento-details">
                                             <div class="detail-row">
                                                 <span class="detail-label">Referência:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($pagamento['referencia'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($pagamento['referencia'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">Descrição:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($pagamento['descricao'] ?: 'Pagamento de serviço'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($pagamento['descricao'] : 'Pagamento de serviço'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">ID da Solicitação:</span>
-                                                <span class="detail-value">#<?php echo htmlspecialchars($pagamento['solicitacao_id'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value">#<php echo htmlspecialchars($pagamento['solicitacao_id'] : 'N/A'); ></span>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <php endforeach; >
                         </tbody>
                     </table>
-                <?php endif; ?>
+                <php endif; >
             </section>
         </main>
     </div>

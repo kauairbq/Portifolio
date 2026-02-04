@@ -1009,14 +1009,14 @@ class YourClient extends \Guzzle\Service\Client
 **Before**
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<xml version="1.0" encoding="UTF-8">
 <client>
     <commands>
         <!-- Groups -->
         <command name="list_groups" method="GET" uri="groups.json">
             <doc>Get a list of groups</doc>
         </command>
-        <command name="search_groups" method="GET" uri='search.json?query="{{query}} type:group"'>
+        <command name="search_groups" method="GET" uri='search.jsonquery="{{query}} type:group"'>
             <doc>Uses a search query to get a list of groups</doc>
             <param name="query" type="string" required="true" />
         </command>
@@ -1057,7 +1057,7 @@ class YourClient extends \Guzzle\Service\Client
         },
         "search_groups":{
             "httpMethod":"GET",
-            "uri":       "search.json?query=\"{query} type:group\"",
+            "uri":       "search.jsonquery=\"{query} type:group\"",
             "summary":   "Uses a search query to get a list of groups",
             "parameters":{
                 "query":{

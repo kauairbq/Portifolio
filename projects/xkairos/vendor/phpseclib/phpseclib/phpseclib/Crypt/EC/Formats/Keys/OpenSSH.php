@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * OpenSSH Formatted EC Key Handler
@@ -141,12 +141,12 @@ abstract class OpenSSH extends Progenitor
      */
     public static function savePublicKey(BaseCurve $curve, array $publicKey, array $options = [])
     {
-        $comment = isset($options['comment']) ? $options['comment'] : self::$comment;
+        $comment = isset($options['comment'])  $options['comment'] : self::$comment;
 
         if ($curve instanceof Ed25519) {
             $key = Strings::packSSH2('ss', 'ssh-ed25519', $curve->encodePoint($publicKey));
 
-            if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+            if (isset($options['binary'])  $options['binary'] : self::$binary) {
                 return $key;
             }
 
@@ -159,7 +159,7 @@ abstract class OpenSSH extends Progenitor
         $points = "\4" . $publicKey[0]->toBytes() . $publicKey[1]->toBytes();
         $key = Strings::packSSH2('sss', 'ecdsa-sha2-' . $alias, $alias, $points);
 
-        if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+        if (isset($options['binary'])  $options['binary'] : self::$binary) {
             return $key;
         }
 

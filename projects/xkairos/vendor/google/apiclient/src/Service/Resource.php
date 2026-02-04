@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2010 Google Inc.
  *
@@ -68,12 +68,12 @@ class Resource
 
     public function __construct($service, $serviceName, $resourceName, $resource)
     {
-        $this->rootUrlTemplate = $service->rootUrlTemplate ?? $service->rootUrl;
+        $this->rootUrlTemplate = $service->rootUrlTemplate  $service->rootUrl;
         $this->client = $service->getClient();
         $this->servicePath = $service->servicePath;
         $this->serviceName = $serviceName;
         $this->resourceName = $resourceName;
-        $this->methods = is_array($resource) && isset($resource['methods']) ?
+        $this->methods = is_array($resource) && isset($resource['methods']) 
         $resource['methods'] :
         [$resourceName => $resource];
     }
@@ -206,14 +206,14 @@ class Resource
         $request = new Request(
             $method['httpMethod'],
             $url,
-            $postBody ? ['content-type' => 'application/json'] : [],
-            $postBody ? json_encode($postBody) : ''
+            $postBody  ['content-type' => 'application/json'] : [],
+            $postBody  json_encode($postBody) : ''
         );
 
         // support uploads
         if (isset($parameters['data'])) {
             $mimeType = isset($parameters['mimeType'])
-                ? $parameters['mimeType']['value']
+                 $parameters['mimeType']['value']
                 : 'application/octet-stream';
             $data = $parameters['data']['value'];
             $upload = new MediaFileUpload($this->client, $request, $mimeType, $data);
@@ -291,7 +291,7 @@ class Resource
         $queryVars = [];
         foreach ($params as $paramName => $paramSpec) {
             if ($paramSpec['type'] == 'boolean') {
-                $paramSpec['value'] = $paramSpec['value'] ? 'true' : 'false';
+                $paramSpec['value'] = $paramSpec['value']  'true' : 'false';
             }
             if ($paramSpec['location'] == 'path') {
                 $uriTemplateVars[$paramName] = $paramSpec['value'];
@@ -312,7 +312,7 @@ class Resource
         }
 
         if (count($queryVars)) {
-            $requestUrl .= '?' . implode('&', $queryVars);
+            $requestUrl .= '' . implode('&', $queryVars);
         }
 
         return $requestUrl;

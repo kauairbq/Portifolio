@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#8 Formatted RSA-PSS Key Handler
@@ -107,7 +107,7 @@ abstract class PSS extends Progenitor
 
         $key = parent::load($key, $password);
 
-        $type = isset($key['privateKey']) ? 'private' : 'public';
+        $type = isset($key['privateKey'])  'private' : 'public';
 
         $result = $components + PKCS1::load($key[$type . 'Key']);
 

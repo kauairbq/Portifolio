@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * JSON Web Key (RFC7517 / RFC8037) Formatted EC Handler
@@ -121,7 +121,7 @@ abstract class JWK extends Progenitor
         }
 
         $reflect = new \ReflectionClass($curve);
-        $curveName = $reflect->isFinal() ?
+        $curveName = $reflect->isFinal() 
             $reflect->getParentClass()->getShortName() :
             $reflect->getShortName();
         throw new UnsupportedCurveException("$curveName is not a supported curve");
@@ -139,7 +139,7 @@ abstract class JWK extends Progenitor
         if ($curve instanceof TwistedEdwardsCurve) {
             return [
                 'kty' => 'OKP',
-                'crv' => $curve instanceof Ed25519 ? 'Ed25519' : 'Ed448',
+                'crv' => $curve instanceof Ed25519  'Ed25519' : 'Ed448',
                 'x' => Strings::base64url_encode($curve->encodePoint($publicKey))
             ];
         }
@@ -181,7 +181,7 @@ abstract class JWK extends Progenitor
     public static function savePrivateKey(BigInteger $privateKey, BaseCurve $curve, array $publicKey, $secret = null, $password = '', array $options = [])
     {
         $key = self::savePublicKeyHelper($curve, $publicKey);
-        $key['d'] = $curve instanceof TwistedEdwardsCurve ? $secret : $privateKey->toBytes();
+        $key['d'] = $curve instanceof TwistedEdwardsCurve  $secret : $privateKey->toBytes();
         $key['d'] = Strings::base64url_encode($key['d']);
 
         return self::wrapKey($key, $options);

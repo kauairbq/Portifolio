@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -49,8 +49,8 @@ class PlatformsChannelsVersionsReleases extends \Google\Service\Resource
    * with 0 for the missing fields. Ex) version > 80 becoms version > 80.0.0.0
    * When filtering by starttime or endtime, string must be in RFC 3339 date
    * string format. Name and platform are filtered by string comparison. Ex)
-   * "...?filter=channel<=beta, version >= 80 Ex) "...?filter=version > 80,
-   * version < 81 Ex) "...?filter=starttime>2020-01-01T00:00:00Z
+   * "...filter=channel<=beta, version >= 80 Ex) "...filter=version > 80,
+   * version < 81 Ex) "...filter=starttime>2020-01-01T00:00:00Z
    * @opt_param string orderBy Optional. Ordering string. Valid order_by strings
    * are "version", "name", "starttime", "endtime", "platform", "channel", and
    * "fraction". Optionally, you can append "desc" or "asc" to specify the sorting
@@ -60,8 +60,8 @@ class PlatformsChannelsVersionsReleases extends \Google\Service\Resource
    * dev, canary, and canary_asan. Sorting by name may cause unexpected behaviour
    * as it is a naive string sort. For example, 1.0.0.8 will be before 1.0.0.10 in
    * descending order. If order_by is not specified the response will be sorted by
-   * starttime in descending order. Ex) "...?order_by=starttime asc" Ex)
-   * "...?order_by=platform desc, channel, startime desc"
+   * starttime in descending order. Ex) "...order_by=starttime asc" Ex)
+   * "...order_by=platform desc, channel, startime desc"
    * @opt_param int pageSize Optional. Optional limit on the number of releases to
    * include in the response. If unspecified, the server will pick an appropriate
    * default.

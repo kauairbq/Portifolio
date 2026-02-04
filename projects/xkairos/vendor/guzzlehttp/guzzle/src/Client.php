@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -85,10 +85,10 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
         }
 
         $uri = $args[0];
-        $opts = $args[1] ?? [];
+        $opts = $args[1]  [];
 
         return \substr($method, -5) === 'Async'
-            ? $this->requestAsync(\substr($method, 0, -5), $uri, $opts)
+             $this->requestAsync(\substr($method, 0, -5), $uri, $opts)
             : $this->request($method, $uri, $opts);
     }
 
@@ -154,9 +154,9 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
     {
         $options = $this->prepareDefaults($options);
         // Remove request modifying parameter because it can be done up-front.
-        $headers = $options['headers'] ?? [];
-        $body = $options['body'] ?? null;
-        $version = $options['version'] ?? '1.1';
+        $headers = $options['headers']  [];
+        $body = $options['body']  null;
+        $version = $options['version']  '1.1';
         // Merge the URI into the base URI.
         $uri = $this->buildUri(Psr7\Utils::uriFor($uri), $options);
         if (\is_array($body)) {
@@ -202,11 +202,11 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      *
      * @deprecated Client::getConfig will be removed in guzzlehttp/guzzle:8.0.
      */
-    public function getConfig(?string $option = null)
+    public function getConfig(string $option = null)
     {
         return $option === null
-            ? $this->config
-            : ($this->config[$option] ?? null);
+             $this->config
+            : ($this->config[$option]  null);
     }
 
     private function buildUri(UriInterface $uri, array $config): UriInterface
@@ -216,11 +216,11 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
         }
 
         if (isset($config['idn_conversion']) && ($config['idn_conversion'] !== false)) {
-            $idnOptions = ($config['idn_conversion'] === true) ? \IDNA_DEFAULT : $config['idn_conversion'];
+            $idnOptions = ($config['idn_conversion'] === true)  \IDNA_DEFAULT : $config['idn_conversion'];
             $uri = Utils::idnUriConvert($uri, $idnOptions);
         }
 
-        return $uri->getScheme() === '' && $uri->getHost() !== '' ? $uri->withScheme('http') : $uri;
+        return $uri->getScheme() === '' && $uri->getHost() !== ''  $uri->withScheme('http') : $uri;
     }
 
     /**
@@ -399,7 +399,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
 
         if (!empty($options['auth']) && \is_array($options['auth'])) {
             $value = $options['auth'];
-            $type = isset($value[2]) ? \strtolower($value[2]) : 'basic';
+            $type = isset($value[2])  \strtolower($value[2]) : 'basic';
             switch ($type) {
                 case 'basic':
                     // Ensure that we don't have the header in different case and set the new value.
@@ -433,7 +433,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
 
         // Ensure that sink is not an invalid value.
         if (isset($options['sink'])) {
-            // TODO: Add more sink validation?
+            // TODO: Add more sink validation
             if (\is_bool($options['sink'])) {
                 throw new InvalidArgumentException('sink must not be a boolean');
             }

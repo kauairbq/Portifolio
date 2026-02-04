@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP arbitrary precision integer arithmetic library.
@@ -10,14 +10,14 @@
  *
  * Here's an example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    $a = new \phpseclib3\Math\BigInteger(2);
  *    $b = new \phpseclib3\Math\BigInteger(3);
  *
  *    $c = $a->add($b);
  *
  *    echo $c->toString(); // outputs 5
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -291,7 +291,7 @@ class BigInteger implements \JsonSerializable
      *
      * Here's an example:
      * <code>
-     * <?php
+     * <php
      *    $a = new \phpseclib3\Math\BigInteger('10');
      *    $b = new \phpseclib3\Math\BigInteger('20');
      *
@@ -300,7 +300,7 @@ class BigInteger implements \JsonSerializable
      *    echo $quotient->toString(); // outputs 0
      *    echo "\r\n";
      *    echo $remainder->toString(); // outputs 10
-     * ?>
+     * >
      * </code>
      *
      * @param BigInteger $y
@@ -474,7 +474,7 @@ class BigInteger implements \JsonSerializable
      *
      * Will be called, automatically, when json_encode() is called on a BigInteger object.
      *
-     * @return array{hex: string, precision?: int]
+     * @return array{hex: string, precision: int]
      */
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
@@ -837,7 +837,7 @@ class BigInteger implements \JsonSerializable
     }
 
     /**
-     * Is Odd?
+     * Is Odd
      *
      * @return bool
      */
@@ -858,7 +858,7 @@ class BigInteger implements \JsonSerializable
     }
 
     /**
-     * Is Negative?
+     * Is Negative
      *
      * @return bool
      */

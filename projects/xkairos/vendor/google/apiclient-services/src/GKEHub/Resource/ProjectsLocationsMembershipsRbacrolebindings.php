@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -46,7 +46,7 @@ class ProjectsLocationsMembershipsRbacrolebindings extends \Google\Service\Resou
    * label: 1. At most 63 characters in length 2. It must consist of lower case
    * alphanumeric characters or `-` 3. It must start and end with an alphanumeric
    * character Which can be expressed as the regex:
-   * `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a maximum length of 63 characters.
+   * `[a-z0-9]([-a-z0-9]*[a-z0-9])`, with a maximum length of 63 characters.
    * @return Operation
    * @throws \Google\Service\Exception
    */
@@ -87,7 +87,7 @@ class ProjectsLocationsMembershipsRbacrolebindings extends \Google\Service\Resou
    * label: 1. At most 63 characters in length 2. It must consist of lower case
    * alphanumeric characters or `-` 3. It must start and end with an alphanumeric
    * character Which can be expressed as the regex:
-   * `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a maximum length of 63 characters.
+   * `[a-z0-9]([-a-z0-9]*[a-z0-9])`, with a maximum length of 63 characters.
    * @return GenerateMembershipRBACRoleBindingYAMLResponse
    * @throws \Google\Service\Exception
    */

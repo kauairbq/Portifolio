@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -123,7 +123,7 @@ final class AppendStream implements StreamInterface
      * If any of the streams do not return a valid number, then the size of the
      * append stream cannot be determined and null is returned.
      */
-    public function getSize(): ?int
+    public function getSize(): int
     {
         $size = 0;
 
@@ -243,6 +243,6 @@ final class AppendStream implements StreamInterface
      */
     public function getMetadata($key = null)
     {
-        return $key ? null : [];
+        return $key  null : [];
     }
 }

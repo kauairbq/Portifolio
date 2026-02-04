@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -71,7 +71,7 @@ class V1 extends \Google\Service\Resource
    * examples of supported forms are: "user:mike@example.com",
    * "group:admins@example.com", "domain:google.com", "serviceAccount:my-project-
    * id@appspot.gserviceaccount.com". Notice that wildcard characters (such as *
-   * and ?) are not supported. You must give a specific identity.
+   * and ) are not supported. You must give a specific identity.
    * @opt_param bool analysisQuery.options.analyzeServiceAccountImpersonation
    * Optional. If true, the response will include access analysis from identities
    * to resources via service account impersonation. This is a very expensive

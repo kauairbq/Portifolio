@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -46,7 +46,7 @@ class ProjectsAgentPools extends \Google\Service\Resource
    * alphabet characters, numerals, hyphens (`-`), periods (`.`), underscores
    * (`_`), or tildes (`~`). * One or more numerals or lowercase ASCII characters.
    * As expressed by the regular expression:
-   * `^(?!goog)[a-z]([a-z0-9-._~]*[a-z0-9])?$`.
+   * `^(!goog)[a-z]([a-z0-9-._~]*[a-z0-9])$`.
    * @return AgentPool
    * @throws \Google\Service\Exception
    */

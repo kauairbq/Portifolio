@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Psr\Log;
 
@@ -10,7 +10,7 @@ trait LoggerAwareTrait
     /**
      * The logger instance.
      */
-    protected ?LoggerInterface $logger = null;
+    protected LoggerInterface $logger = null;
 
     /**
      * Sets a logger.

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -31,7 +31,7 @@ class Media extends \Google\Service\Resource
 {
   /**
    * Method for media download. Download is supported on the URI
-   * `/v1/media/{+name}?alt=media`. (media.download)
+   * `/v1/media/{+name}alt=media`. (media.download)
    *
    * @param string $resourceName Name of the media that is being downloaded.
    * @param array $optParams Optional parameters.

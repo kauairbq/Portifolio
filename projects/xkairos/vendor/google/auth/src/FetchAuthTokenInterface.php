@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -28,7 +28,7 @@ interface FetchAuthTokenInterface
      * @param callable|null $httpHandler callback which delivers psr7 request
      * @return array<mixed> a hash of auth tokens
      */
-    public function fetchAuthToken(?callable $httpHandler = null);
+    public function fetchAuthToken(callable $httpHandler = null);
 
     /**
      * Obtains a key that can used to cache the results of #fetchAuthToken.

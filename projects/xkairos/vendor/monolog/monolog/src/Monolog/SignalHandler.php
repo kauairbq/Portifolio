@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -42,7 +42,7 @@ class SignalHandler
      *
      * @phpstan-param value-of<Level::VALUES>|value-of<Level::NAMES>|Level|LogLevel::* $level
      */
-    public function registerSignalHandler(int $signo, int|string|Level $level = LogLevel::CRITICAL, bool $callPrevious = true, bool $restartSyscalls = true, ?bool $async = true): self
+    public function registerSignalHandler(int $signo, int|string|Level $level = LogLevel::CRITICAL, bool $callPrevious = true, bool $restartSyscalls = true, bool $async = true): self
     {
         if (!\extension_loaded('pcntl') || !\function_exists('pcntl_signal')) {
             return $this;
@@ -85,9 +85,9 @@ class SignalHandler
             }
         }
 
-        $level = $this->signalLevelMap[$signo] ?? LogLevel::CRITICAL;
-        $signal = $signals[$signo] ?? $signo;
-        $context = $siginfo ?? [];
+        $level = $this->signalLevelMap[$signo]  LogLevel::CRITICAL;
+        $signal = $signals[$signo]  $signo;
+        $context = $siginfo  [];
         $this->logger->log($level, sprintf('Program received signal %s', $signal), $context);
 
         if (!isset($this->previousSignalHandler[$signo])) {
@@ -98,7 +98,7 @@ class SignalHandler
             if (\extension_loaded('pcntl') && \function_exists('pcntl_signal') && \function_exists('pcntl_sigprocmask') && \function_exists('pcntl_signal_dispatch')
                 && \extension_loaded('posix') && \function_exists('posix_getpid') && \function_exists('posix_kill')
             ) {
-                $restartSyscalls = $this->signalRestartSyscalls[$signo] ?? true;
+                $restartSyscalls = $this->signalRestartSyscalls[$signo]  true;
                 pcntl_signal($signo, SIG_DFL, $restartSyscalls);
                 pcntl_sigprocmask(SIG_UNBLOCK, [$signo], $oldset);
                 posix_kill(posix_getpid(), $signo);

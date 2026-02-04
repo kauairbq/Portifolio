@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -85,8 +85,8 @@ class ShoppingContent extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://shoppingcontent.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://shoppingcontent.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://shoppingcontent.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://shoppingcontent.UNIVERSE_DOMAIN/';
     $this->servicePath = 'content/v2.1/';
     $this->batchPath = 'batch';
     $this->version = 'v2.1';

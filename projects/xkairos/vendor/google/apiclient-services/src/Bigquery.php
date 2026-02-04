@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -76,8 +76,8 @@ class Bigquery extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://bigquery.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://bigquery.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://bigquery.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://bigquery.UNIVERSE_DOMAIN/';
     $this->servicePath = 'bigquery/v2/';
     $this->batchPath = 'batch/bigquery/v2';
     $this->version = 'v2';

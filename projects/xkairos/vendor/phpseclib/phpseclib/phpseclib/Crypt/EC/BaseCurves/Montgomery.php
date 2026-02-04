@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Curves over y^2 = x^3 + a*x + x
@@ -136,8 +136,8 @@ class Montgomery extends Base
             throw new \RuntimeException('setModulo needs to be called before this method');
         }
         $this->p = [
-            $x instanceof BigInteger ? $this->factory->newInteger($x) : $x,
-            $y instanceof BigInteger ? $this->factory->newInteger($y) : $y
+            $x instanceof BigInteger  $this->factory->newInteger($x) : $x,
+            $y instanceof BigInteger  $this->factory->newInteger($y) : $y
         ];
     }
 
@@ -197,7 +197,7 @@ class Montgomery extends Base
         $temp = $da->subtract($cb);
         $z5 = $x1->multiply($temp->multiply($temp));
         $x4 = $aa->multiply($bb);
-        $temp = static::class == Curve25519::class ? $bb : $aa;
+        $temp = static::class == Curve25519::class  $bb : $aa;
         $z4 = $e->multiply($temp->add($this->a24->multiply($e)));
 
         return [
@@ -234,7 +234,7 @@ class Montgomery extends Base
             }
         }
 
-        return $alreadyInternal ? $p1 : $this->convertToAffine($p1);
+        return $alreadyInternal  $p1 : $this->convertToAffine($p1);
     }
 
     /**

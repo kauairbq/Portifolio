@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -31,7 +31,7 @@ class Media extends \Google\Service\Resource
 {
   /**
    * Downloads media. Download is supported on the URI
-   * `/download/{resource_name=**}?alt=media.` **Note**: Download requests will
+   * `/download/{resource_name=**}alt=media.` **Note**: Download requests will
    * not be successful without including `alt=media` query string.
    * (media.download)
    *
@@ -49,7 +49,7 @@ class Media extends \Google\Service\Resource
   }
   /**
    * Uploads media. Upload is supported on the URI
-   * `/upload/media/{resource_name=**}?upload_type=media.` **Note**: Upload
+   * `/upload/media/{resource_name=**}upload_type=media.` **Note**: Upload
    * requests will not be successful without including `upload_type=media` query
    * string. (media.upload)
    *

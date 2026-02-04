@@ -1,4 +1,4 @@
-<?php
+<php
 require('../fpdf.php');
 
 class PDF extends FPDF
@@ -36,7 +36,7 @@ function WriteHTML($html)
 				$attr = array();
 				foreach($a2 as $v)
 				{
-					if(preg_match('/([^=]*)=["\']?([^"\']*)/',$v,$a3))
+					if(preg_match('/([^=]*)=["\']([^"\']*)/',$v,$a3))
 						$attr[strtoupper($a3[1])] = $a3[2];
 				}
 				$this->OpenTag($tag,$attr);
@@ -68,7 +68,7 @@ function CloseTag($tag)
 function SetStyle($tag, $enable)
 {
 	// Modify style and select corresponding font
-	$this->$tag += ($enable ? 1 : -1);
+	$this->$tag += ($enable  1 : -1);
 	$style = '';
 	foreach(array('B', 'I', 'U') as $s)
 	{
@@ -110,4 +110,4 @@ $pdf->SetLeftMargin(45);
 $pdf->SetFontSize(14);
 $pdf->WriteHTML($html);
 $pdf->Output();
-?>
+>

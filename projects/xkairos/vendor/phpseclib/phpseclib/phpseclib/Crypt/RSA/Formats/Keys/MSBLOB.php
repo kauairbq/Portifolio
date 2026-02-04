@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Miccrosoft BLOB Formatted RSA Key Handler
@@ -138,7 +138,7 @@ abstract class MSBLOB
             throw new \UnexpectedValueException('Key appears to be malformed');
         }
 
-        $components[$components['isPublicKey'] ? 'publicExponent' : 'privateExponent'] = new BigInteger(strrev($pubexp), 256);
+        $components[$components['isPublicKey']  'publicExponent' : 'privateExponent'] = new BigInteger(strrev($pubexp), 256);
         // BYTE modulus[rsapubkey.bitlen/8]
         $components['modulus'] = new BigInteger(strrev(Strings::shift($key, $bitlen / 8)), 256);
 

@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Psr\Http\Message;
 
@@ -105,7 +105,7 @@ interface UriInterface
      *
      * @return null|int The URI port.
      */
-    public function getPort(): ?int;
+    public function getPort(): int;
 
     /**
      * Retrieve the path component of the URI.
@@ -139,7 +139,7 @@ interface UriInterface
      *
      * If no query string is present, this method MUST return an empty string.
      *
-     * The leading "?" character is not part of the query and MUST NOT be
+     * The leading "" character is not part of the query and MUST NOT be
      * added.
      *
      * The value returned MUST be percent-encoded, but MUST NOT double-encode
@@ -205,7 +205,7 @@ interface UriInterface
      * @param null|string $password The password associated with $user.
      * @return static A new instance with the specified user information.
      */
-    public function withUserInfo(string $user, ?string $password = null): UriInterface;
+    public function withUserInfo(string $user, string $password = null): UriInterface;
 
     /**
      * Return an instance with the specified host.
@@ -238,7 +238,7 @@ interface UriInterface
      * @return static A new instance with the specified port.
      * @throws \InvalidArgumentException for invalid ports.
      */
-    public function withPort(?int $port): UriInterface;
+    public function withPort(int $port): UriInterface;
 
     /**
      * Return an instance with the specified path.
@@ -314,7 +314,7 @@ interface UriInterface
      *       be prefixed by "/".
      *     - If the path is starting with more than one "/" and no authority is
      *       present, the starting slashes MUST be reduced to one.
-     * - If a query is present, it MUST be prefixed by "?".
+     * - If a query is present, it MUST be prefixed by "".
      * - If a fragment is present, it MUST be prefixed by "#".
      *
      * @see http://tools.ietf.org/html/rfc3986#section-4.1

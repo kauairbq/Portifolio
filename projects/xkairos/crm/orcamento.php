@@ -1,12 +1,12 @@
-<?php
+<php
 require '../vendor/fpdf/fpdf.php';
 include '../includes/config.php';
 
 // ID da solicitação
-$id = $_GET['id'] ?? 0;
+$id = $_GET['id']  0;
 
 // Buscar dados da solicitação
-$stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE id=?');
+$stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE id=');
 $stmt->execute([$id]);
 $s = $stmt->fetch();
 
@@ -98,13 +98,13 @@ $pdf->Ln();
 
 // Lista completa de peças incluindo o gabinete
 $pecas = [
-    ['Processador', $s['cpu'] ?? 'Não selecionado', $s['cpu_preco'] ?? 0],
-    ['Placa de Vídeo', $s['gpu'] ?? 'Não selecionado', $s['gpu_preco'] ?? 0],
-    ['Memória RAM', $s['ram'] ?? 'Não selecionado', $s['ram_preco'] ?? 0],
-    ['Armazenamento', $s['ssd'] ?? 'Não selecionado', $s['ssd_preco'] ?? 0],
-    ['Placa-Mãe', $s['placa_mae'] ?? 'Não selecionado', $s['placa_mae_preco'] ?? 0],
-    ['Cooler', $s['cooler'] ?? 'Não selecionado', $s['cooler_preco'] ?? 0],
-    ['Gabinete', $s['case'] ?? 'Não selecionado', $s['case_preco'] ?? 0]
+    ['Processador', $s['cpu']  'Não selecionado', $s['cpu_preco']  0],
+    ['Placa de Vídeo', $s['gpu']  'Não selecionado', $s['gpu_preco']  0],
+    ['Memória RAM', $s['ram']  'Não selecionado', $s['ram_preco']  0],
+    ['Armazenamento', $s['ssd']  'Não selecionado', $s['ssd_preco']  0],
+    ['Placa-Mãe', $s['placa_mae']  'Não selecionado', $s['placa_mae_preco']  0],
+    ['Cooler', $s['cooler']  'Não selecionado', $s['cooler_preco']  0],
+    ['Gabinete', $s['case']  'Não selecionado', $s['case_preco']  0]
 ];
 
 $pdf->SetFont('Arial', '', 9);
@@ -166,6 +166,6 @@ $pdf->Cell(0, 5, encode('Orçamento válido por 30 dias | Data de emissão: ') .
 $pdf->Ln(3);
 $pdf->SetTextColor($primaryColor[0], $primaryColor[1], $primaryColor[2]);
 $pdf->SetFont('Arial', 'U', 10);
-$pdf->Cell(0, 8, encode('Clique aqui para efetuar o pagamento'), 0, 1, 'C', false, 'http://localhost/xkairos/crm/pagamento_mbway.php?id=' . $s['id']);
+$pdf->Cell(0, 8, encode('Clique aqui para efetuar o pagamento'), 0, 1, 'C', false, 'http://localhost/xkairos/crm/pagamento_mbway.phpid=' . $s['id']);
 
 $pdf->Output('I', 'Orcamento_XkairosTech_' . $s['id'] . '.pdf');

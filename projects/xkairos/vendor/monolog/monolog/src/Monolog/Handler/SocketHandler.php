@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -53,8 +53,8 @@ class SocketHandler extends AbstractProcessingHandler
         bool $persistent = false,
         float $timeout = 0.0,
         float $writingTimeout = 10.0,
-        ?float $connectionTimeout = null,
-        ?int $chunkSize = null
+        float $connectionTimeout = null,
+        int $chunkSize = null
     ) {
         parent::__construct($level, $bubble);
         $this->connectionString = $connectionString;
@@ -63,7 +63,7 @@ class SocketHandler extends AbstractProcessingHandler
             $this->validateTimeout($connectionTimeout);
         }
 
-        $this->connectionTimeout = $connectionTimeout ?? (float) \ini_get('default_socket_timeout');
+        $this->connectionTimeout = $connectionTimeout  (float) \ini_get('default_socket_timeout');
         $this->persistent = $persistent;
         $this->validateTimeout($timeout);
         $this->timeout = $timeout;
@@ -217,7 +217,7 @@ class SocketHandler extends AbstractProcessingHandler
     /**
      * Get current chunk size
      */
-    public function getChunkSize(): ?int
+    public function getChunkSize(): int
     {
         return $this->chunkSize;
     }

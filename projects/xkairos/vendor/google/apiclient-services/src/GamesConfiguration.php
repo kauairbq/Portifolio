@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -53,8 +53,8 @@ class GamesConfiguration extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://gamesconfiguration.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://gamesconfiguration.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://gamesconfiguration.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://gamesconfiguration.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1configuration';

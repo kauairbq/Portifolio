@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Psr\Http\Message;
 
@@ -48,7 +48,7 @@ interface StreamInterface
      *
      * @return int|null Returns the size in bytes if known, or null if unknown.
      */
-    public function getSize(): ?int;
+    public function getSize(): int;
 
     /**
      * Returns the current position of the file read/write pointer
@@ -154,5 +154,5 @@ interface StreamInterface
      *     provided. Returns a specific key value if a key is provided and the
      *     value is found, or null if the key is not found.
      */
-    public function getMetadata(?string $key = null);
+    public function getMetadata(string $key = null);
 }

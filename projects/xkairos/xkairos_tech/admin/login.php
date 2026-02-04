@@ -1,4 +1,4 @@
-<?php
+<php
 session_start();
 require_once '../includes/config.php';
 
@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     try {
-        $stmt = $pdo->prepare('SELECT password FROM admin WHERE username = ?');
+        $stmt = $pdo->prepare('SELECT password FROM admin WHERE username = ');
         $stmt->execute([$username]);
         $admin = $stmt->fetch();
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = 'Erro no banco de dados';
     }
 }
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -43,9 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Entrar</h1>
         <span>use suas credenciais</span>
 
-        <?php if (isset($error)): ?>
-          <div class="error-message" style="color: red; text-align: center; margin-bottom: 15px;"><?php echo $error; ?></div>
-        <?php endif; ?>
+        <php if (isset($error)): >
+          <div class="error-message" style="color: red; text-align: center; margin-bottom: 15px;"><php echo $error; ></div>
+        <php endif; >
 
         <input type="text" name="username" placeholder="Usuário" required>
         <input type="password" name="password" placeholder="Senha" required>

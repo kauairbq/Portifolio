@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -147,7 +147,7 @@ class RedirectMiddleware
     private function guardMax(RequestInterface $request, ResponseInterface $response, array &$options): void
     {
         $current = $options['__redirect_count']
-            ?? 0;
+             0;
         $options['__redirect_count'] = $current + 1;
         $max = $options['allow_redirects']['max'];
 
@@ -172,13 +172,13 @@ class RedirectMiddleware
             $safeMethods = ['GET', 'HEAD', 'OPTIONS'];
             $requestMethod = $request->getMethod();
 
-            $modify['method'] = in_array($requestMethod, $safeMethods) ? $requestMethod : 'GET';
+            $modify['method'] = in_array($requestMethod, $safeMethods)  $requestMethod : 'GET';
             $modify['body'] = '';
         }
 
         $uri = self::redirectUri($request, $response, $protocols);
         if (isset($options['idn_conversion']) && ($options['idn_conversion'] !== false)) {
-            $idnOptions = ($options['idn_conversion'] === true) ? \IDNA_DEFAULT : $options['idn_conversion'];
+            $idnOptions = ($options['idn_conversion'] === true)  \IDNA_DEFAULT : $options['idn_conversion'];
             $uri = Utils::idnUriConvert($uri, $idnOptions);
         }
 

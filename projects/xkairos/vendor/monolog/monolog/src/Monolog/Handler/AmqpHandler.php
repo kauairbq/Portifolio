@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -33,7 +33,7 @@ class AmqpHandler extends AbstractProcessingHandler
      * @param AMQPExchange|AMQPChannel $exchange     AMQPExchange (php AMQP ext) or PHP AMQP lib channel, ready for use
      * @param string|null              $exchangeName Optional exchange name, for AMQPChannel (PhpAmqpLib) only
      */
-    public function __construct(AMQPExchange|AMQPChannel $exchange, ?string $exchangeName = null, int|string|Level $level = Level::Debug, bool $bubble = true)
+    public function __construct(AMQPExchange|AMQPChannel $exchange, string $exchangeName = null, int|string|Level $level = Level::Debug, bool $bubble = true)
     {
         if ($exchange instanceof AMQPChannel) {
             $this->exchangeName = (string) $exchangeName;

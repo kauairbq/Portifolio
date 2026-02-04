@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -81,7 +81,7 @@ class ProjectsEvents extends \Google\Service\Resource
    * key](https://support.google.com/cloud/answer/6158862) for authentication. To
    * use an API key, append it to the URL as the value of a `key` parameter. For
    * example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectNam
-   * e}/events:report?key=123ABC456` **Note:** [Error Reporting]
+   * e}/events:reportkey=123ABC456` **Note:** [Error Reporting]
    * (https://cloud.google.com/error-reporting) is a service built on Cloud
    * Logging and can analyze log entries when all of the following are true: *
    * Customer-managed encryption keys (CMEK) are disabled on the log bucket. * The

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Random Number Generator
@@ -7,11 +7,11 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    echo bin2hex(\phpseclib3\Crypt\Random::string(8));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -83,7 +83,7 @@ abstract class Random
             $old_session_id = session_id();
             $old_use_cookies = ini_get('session.use_cookies');
             $old_session_cache_limiter = session_cache_limiter();
-            $_OLD_SESSION = isset($_SESSION) ? $_SESSION : false;
+            $_OLD_SESSION = isset($_SESSION)  $_SESSION : false;
             if ($old_session_id != '') {
                 session_write_close();
             }
@@ -93,14 +93,14 @@ abstract class Random
             session_cache_limiter('');
             session_start();
 
-            $v = (isset($_SERVER) ? self::safe_serialize($_SERVER) : '') .
-                 (isset($_POST) ? self::safe_serialize($_POST) : '') .
-                 (isset($_GET) ? self::safe_serialize($_GET) : '') .
-                 (isset($_COOKIE) ? self::safe_serialize($_COOKIE) : '') .
+            $v = (isset($_SERVER)  self::safe_serialize($_SERVER) : '') .
+                 (isset($_POST)  self::safe_serialize($_POST) : '') .
+                 (isset($_GET)  self::safe_serialize($_GET) : '') .
+                 (isset($_COOKIE)  self::safe_serialize($_COOKIE) : '') .
                  // as of PHP 8.1 $GLOBALS can't be accessed by reference, which eliminates
                  // the need for phpseclib_safe_serialize. see https://wiki.php.net/rfc/restrict_globals_usage
                  // for more info
-                 (version_compare(PHP_VERSION, '8.1.0', '>=') ? serialize($GLOBALS) : self::safe_serialize($GLOBALS)) .
+                 (version_compare(PHP_VERSION, '8.1.0', '>=')  serialize($GLOBALS) : self::safe_serialize($GLOBALS)) .
                  self::safe_serialize($_SESSION) .
                  self::safe_serialize($_OLD_SESSION);
             $v = $seed = $_SESSION['seed'] = sha1($v, true);

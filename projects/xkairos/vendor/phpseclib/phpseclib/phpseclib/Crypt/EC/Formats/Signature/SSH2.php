@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * SSH2 Signature Handler

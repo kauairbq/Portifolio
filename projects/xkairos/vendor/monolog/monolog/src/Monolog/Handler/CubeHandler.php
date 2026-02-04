@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -24,8 +24,8 @@ use Monolog\LogRecord;
  */
 class CubeHandler extends AbstractProcessingHandler
 {
-    private ?\Socket $udpConnection = null;
-    private ?\CurlHandle $httpConnection = null;
+    private \Socket $udpConnection = null;
+    private \CurlHandle $httpConnection = null;
     private string $scheme;
     private string $host;
     private int $port;

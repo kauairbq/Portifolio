@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Ed25519
@@ -306,7 +306,7 @@ class Ed25519 extends TwistedEdwards
         }
 
         if ($p[0]->equals($q[0])) {
-            return !$p[1]->equals($q[1]) ? [] : $this->doublePoint($p);
+            return !$p[1]->equals($q[1])  [] : $this->doublePoint($p);
         }
 
         // from https://tools.ietf.org/html/rfc8032#page-12

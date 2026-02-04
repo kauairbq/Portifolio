@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -41,7 +41,7 @@ class Guzzle6HttpHandler
      * @param ClientInterface $client
      * @param null|LoggerInterface $logger
      */
-    public function __construct(ClientInterface $client, ?LoggerInterface $logger = null)
+    public function __construct(ClientInterface $client, LoggerInterface $logger = null)
     {
         $this->client = $client;
         $this->logger = $logger;
@@ -112,10 +112,10 @@ class Guzzle6HttpHandler
         $requestEvent->url = (string) $request->getUri();
         $requestEvent->headers = $request->getHeaders();
         $requestEvent->payload = $request->getBody()->getContents();
-        $requestEvent->retryAttempt = $options['retryAttempt'] ?? null;
-        $requestEvent->serviceName = $options['serviceName'] ?? null;
+        $requestEvent->retryAttempt = $options['retryAttempt']  null;
+        $requestEvent->serviceName = $options['serviceName']  null;
         $requestEvent->processId = (int) getmypid();
-        $requestEvent->requestId = $options['requestId'] ?? crc32((string) spl_object_id($request) . getmypid());
+        $requestEvent->requestId = $options['requestId']  crc32((string) spl_object_id($request) . getmypid());
 
         $this->logRequest($requestEvent);
 

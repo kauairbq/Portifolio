@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -41,7 +41,7 @@ class Cases extends \Google\Service\Resource
    * import googleapiclient.discovery api_version = "v2" supportApiService =
    * googleapiclient.discovery.build( serviceName="cloudsupport",
    * version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.co
-   * m/$discovery/rest?version={api_version}", ) request =
+   * m/$discovery/restversion={api_version}", ) request =
    * supportApiService.cases().close( name="projects/some-project/cases/43595344"
    * ) print(request.execute()) ``` (cases.close)
    *
@@ -73,7 +73,7 @@ class Cases extends \Google\Service\Resource
    * import googleapiclient.discovery api_version = "v2" supportApiService =
    * googleapiclient.discovery.build( serviceName="cloudsupport",
    * version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.co
-   * m/$discovery/rest?version={api_version}", ) request =
+   * m/$discovery/restversion={api_version}", ) request =
    * supportApiService.cases().create( parent="projects/some-project", body={
    * "displayName": "A Test Case", "description": "This is a test case.",
    * "testCase": True, "priority": "P2", "classification": { "id": "100IK2AKCLHMGR
@@ -107,7 +107,7 @@ class Cases extends \Google\Service\Resource
    * import googleapiclient.discovery api_version = "v2" supportApiService =
    * googleapiclient.discovery.build( serviceName="cloudsupport",
    * version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.co
-   * m/$discovery/rest?version={api_version}", ) request =
+   * m/$discovery/restversion={api_version}", ) request =
    * supportApiService.cases().escalate( name="projects/some-
    * project/cases/43595344", body={ "escalation": { "reason": "BUSINESS_IMPACT",
    * "justification": "This is a test escalation.", }, }, )
@@ -132,7 +132,7 @@ class Cases extends \Google\Service\Resource
    * Python: ```python import googleapiclient.discovery api_version = "v2"
    * supportApiService = googleapiclient.discovery.build(
    * serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https:
-   * //cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+   * //cloudsupport.googleapis.com/$discovery/restversion={api_version}", )
    * request = supportApiService.cases().get( name="projects/some-
    * project/cases/43595344", ) print(request.execute()) ``` (cases.get)
    *
@@ -157,7 +157,7 @@ class Cases extends \Google\Service\Resource
    * ```python import googleapiclient.discovery api_version = "v2"
    * supportApiService = googleapiclient.discovery.build(
    * serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https:
-   * //cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+   * //cloudsupport.googleapis.com/$discovery/restversion={api_version}", )
    * request = supportApiService.cases().list(parent="projects/some-project")
    * print(request.execute()) ``` (cases.listCases)
    *
@@ -192,11 +192,11 @@ class Cases extends \Google\Service\Resource
    * case="projects/some-project/cases/43595344" curl \ --request PATCH \ --header
    * "Authorization: Bearer $(gcloud auth print-access-token)" \ --header
    * "Content-Type: application/json" \ --data '{ "priority": "P1" }' \
-   * "https://cloudsupport.googleapis.com/v2/$case?updateMask=priority" ```
+   * "https://cloudsupport.googleapis.com/v2/$caseupdateMask=priority" ```
    * Python: ```python import googleapiclient.discovery api_version = "v2"
    * supportApiService = googleapiclient.discovery.build(
    * serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https:
-   * //cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+   * //cloudsupport.googleapis.com/$discovery/restversion={api_version}", )
    * request = supportApiService.cases().patch( name="projects/some-
    * project/cases/43112854", body={ "displayName": "This is Now a New Title",
    * "priority": "P2", }, ) print(request.execute()) ``` (cases.patch)
@@ -229,7 +229,7 @@ class Cases extends \Google\Service\Resource
    * ```python import googleapiclient.discovery api_version = "v2"
    * supportApiService = googleapiclient.discovery.build(
    * serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https:
-   * //cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+   * //cloudsupport.googleapis.com/$discovery/restversion={api_version}", )
    * request = supportApiService.cases().search( parent="projects/some-project",
    * query="state=OPEN" ) print(request.execute()) ``` (cases.search)
    *

@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -35,7 +35,7 @@ class HttpHandlerFactory
      * @throws \Exception
      */
     public static function build(
-        ?ClientInterface $client = null,
+        ClientInterface $client = null,
         null|false|LoggerInterface $logger = null,
     ) {
         if (is_null($client)) {
@@ -51,8 +51,8 @@ class HttpHandlerFactory
         }
 
         $logger = ($logger === false)
-            ? null
-            : $logger ?? ApplicationDefaultCredentials::getDefaultLogger();
+             null
+            : $logger  ApplicationDefaultCredentials::getDefaultLogger();
 
         $version = null;
         if (defined('GuzzleHttp\ClientInterface::MAJOR_VERSION')) {

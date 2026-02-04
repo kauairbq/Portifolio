@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Power of Two Modular Exponentiation Engine

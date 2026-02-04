@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -115,7 +115,7 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
             $this->buffering = false;
         }
 
-        $this->getHandler(end($this->buffer) ?: null)->handleBatch($this->buffer);
+        $this->getHandler(end($this->buffer) : null)->handleBatch($this->buffer);
         $this->buffer = [];
     }
 

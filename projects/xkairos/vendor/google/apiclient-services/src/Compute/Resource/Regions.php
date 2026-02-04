@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -38,7 +38,7 @@ class Regions extends \Google\Service\Resource
    * especially recommended for unused quota information (the `quotas` field). To
    * exclude one or more fields, set your request's `fields` query parameter to
    * only include the fields you need. For example, to only include the `id` and
-   * `selfLink` fields, add the query parameter `?fields=id,selfLink` to your
+   * `selfLink` fields, add the query parameter `fields=id,selfLink` to your
    * request.
    *
    * This method fails if the quota information is unavailable for the region and
@@ -69,7 +69,7 @@ class Regions extends \Google\Service\Resource
    * especially recommended for unused quota information (the `items.quotas`
    * field). To exclude one or more fields, set your request's `fields` query
    * parameter to only include the fields you need. For example, to only include
-   * the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink`
+   * the `id` and `selfLink` fields, add the query parameter `fields=id,selfLink`
    * to your request.
    *
    * This method fails if the quota information is unavailable for the region and

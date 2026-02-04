@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -45,7 +45,7 @@ class ErrorHandler
 
     private string|null $reservedMemory = null;
 
-    /** @var ?array{type: int, message: string, file: string, line: int, trace: mixed} */
+    /** @var array{type: int, message: string, file: string, line: int, trace: mixed} */
     private array|null $lastFatalData = null;
 
     private const FATAL_ERRORS = [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR];
@@ -113,7 +113,7 @@ class ErrorHandler
         $prev = set_error_handler($this->handleError(...), $errorTypes);
         $this->errorLevelMap = array_replace($this->defaultErrorLevelMap(), $levelMap);
         if ($callPrevious) {
-            $this->previousErrorHandler = $prev !== null ? $prev(...) : true;
+            $this->previousErrorHandler = $prev !== null  $prev(...) : true;
         } else {
             $this->previousErrorHandler = null;
         }
@@ -133,7 +133,7 @@ class ErrorHandler
         register_shutdown_function($this->handleFatalError(...));
 
         $this->reservedMemory = str_repeat(' ', 1024 * $reservedMemorySize);
-        $this->fatalLevel = null === $level ? LogLevel::ALERT : $level;
+        $this->fatalLevel = null === $level  LogLevel::ALERT : $level;
         $this->hasFatalErrorHandler = true;
 
         return $this;
@@ -209,7 +209,7 @@ class ErrorHandler
 
         // fatal error codes are ignored if a fatal error handler is present as well to avoid duplicate log entries
         if (!$this->hasFatalErrorHandler || !\in_array($code, self::FATAL_ERRORS, true)) {
-            $level = $this->errorLevelMap[$code] ?? LogLevel::CRITICAL;
+            $level = $this->errorLevelMap[$code]  LogLevel::CRITICAL;
             $this->logger->log($level, self::codeToString($code).': '.$message, ['code' => $code, 'message' => $message, 'file' => $file, 'line' => $line]);
         } else {
             $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
@@ -240,7 +240,7 @@ class ErrorHandler
             $lastError = error_get_last();
         }
         if (\is_array($lastError) && \in_array($lastError['type'], self::FATAL_ERRORS, true)) {
-            $trace = $lastError['trace'] ?? null;
+            $trace = $lastError['trace']  null;
             $this->logger->log(
                 $this->fatalLevel,
                 'Fatal Error ('.self::codeToString($lastError['type']).'): '.$lastError['message'],

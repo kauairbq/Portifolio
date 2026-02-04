@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP (EC)DH implementation
@@ -7,13 +7,13 @@
  *
  * Here's an example of how to compute a shared secret with this library:
  * <code>
- * <?php
+ * <php
  * include 'vendor/autoload.php';
  *
  * $ourPrivate = \phpseclib3\Crypt\DH::createKey();
  * $secret = DH::computeSecret($ourPrivate, $theirPublic);
  *
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -349,7 +349,7 @@ abstract class DH extends AsymmetricKey
         if (!isset($components['privateKey']) && !isset($components['publicKey'])) {
             $new = new Parameters();
         } else {
-            $new = isset($components['privateKey']) ?
+            $new = isset($components['privateKey']) 
                 new PrivateKey() :
                 new PublicKey();
         }

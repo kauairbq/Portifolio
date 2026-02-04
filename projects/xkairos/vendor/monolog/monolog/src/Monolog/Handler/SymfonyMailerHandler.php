@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -59,7 +59,7 @@ class SymfonyMailerHandler extends MailHandler
      *
      * @param string|null $format The format of the subject
      */
-    protected function getSubjectFormatter(?string $format): FormatterInterface
+    protected function getSubjectFormatter(string $format): FormatterInterface
     {
         return new LineFormatter($format);
     }
@@ -82,7 +82,7 @@ class SymfonyMailerHandler extends MailHandler
         if (!$message instanceof Email) {
             $record = reset($records);
 
-            throw new \InvalidArgumentException('Could not resolve message as instance of Email or a callable returning it' . ($record instanceof LogRecord ? Utils::getRecordMessageForException($record) : ''));
+            throw new \InvalidArgumentException('Could not resolve message as instance of Email or a callable returning it' . ($record instanceof LogRecord  Utils::getRecordMessageForException($record) : ''));
         }
 
         if (\count($records) > 0) {

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * IEEE P1363 Signature Handler

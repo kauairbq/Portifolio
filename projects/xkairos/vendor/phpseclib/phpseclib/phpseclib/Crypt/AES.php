@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of AES.
@@ -22,7 +22,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $aes = new \phpseclib3\Crypt\AES('ctr');
@@ -36,7 +36,7 @@
  *    }
  *
  *    echo $aes->decrypt($aes->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>

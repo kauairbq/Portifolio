@@ -1,10 +1,10 @@
-![Guzzle](.github/logo.png?raw=true)
+![Guzzle](.github/logo.pngraw=true)
 
 # Guzzle, PHP HTTP client
 
-[![Latest Version](https://img.shields.io/github/release/guzzle/guzzle.svg?style=flat-square)](https://github.com/guzzle/guzzle/releases)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/guzzle/guzzle/ci.yml?label=ci%20build&style=flat-square)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI)
-[![Total Downloads](https://img.shields.io/packagist/dt/guzzlehttp/guzzle.svg?style=flat-square)](https://packagist.org/packages/guzzlehttp/guzzle)
+[![Latest Version](https://img.shields.io/github/release/guzzle/guzzle.svgstyle=flat-square)](https://github.com/guzzle/guzzle/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/guzzle/guzzle/ci.ymllabel=ci%20build&style=flat-square)](https://github.com/guzzle/guzzle/actionsquery=workflow%3ACI)
+[![Total Downloads](https://img.shields.io/packagist/dt/guzzlehttp/guzzle.svgstyle=flat-square)](https://packagist.org/packages/guzzlehttp/guzzle)
 
 Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and
 trivial to integrate with web services.
@@ -91,4 +91,4 @@ Guzzle is made available under the MIT License (MIT). Please see [License File](
 
 Available as part of the Tidelift Subscription
 
-The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-guzzle?utm_source=packagist-guzzlehttp-guzzle&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-guzzleutm_source=packagist-guzzlehttp-guzzle&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)

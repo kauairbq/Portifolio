@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -44,7 +44,7 @@ class ProjectsLocationsAssessmentRules extends \Google\Service\Resource
    * AssessmentRule. This ID will become the final component of the
    * AssessmentRule's resource name. If no ID is specified, a server-generated ID
    * will be used. This value should be 4-64 characters and must match the regular
-   * expression `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * expression `^[a-z]([a-z0-9-]{0,61}[a-z0-9])$`.
    * @return GoogleCloudContactcenterinsightsV1AssessmentRule
    * @throws \Google\Service\Exception
    */

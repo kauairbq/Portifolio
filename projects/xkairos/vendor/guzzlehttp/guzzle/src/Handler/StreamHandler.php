@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Handler;
 
@@ -46,7 +46,7 @@ class StreamHandler
             throw new ConnectException(sprintf('HTTP/%s is not supported by the stream handler.', $protocolVersion), $request);
         }
 
-        $startTime = isset($options['on_stats']) ? Utils::currentTime() : null;
+        $startTime = isset($options['on_stats'])  Utils::currentTime() : null;
 
         try {
             // Does not support the expect header.
@@ -94,9 +94,9 @@ class StreamHandler
     private function invokeStats(
         array $options,
         RequestInterface $request,
-        ?float $startTime,
-        ?ResponseInterface $response = null,
-        ?\Throwable $error = null
+        float $startTime,
+        ResponseInterface $response = null,
+        \Throwable $error = null
     ): void {
         if (isset($options['on_stats'])) {
             $stats = new TransferStats($request, $response, Utils::currentTime() - $startTime, $error, []);
@@ -107,7 +107,7 @@ class StreamHandler
     /**
      * @param resource $stream
      */
-    private function createResponse(RequestInterface $request, array $options, $stream, ?float $startTime): PromiseInterface
+    private function createResponse(RequestInterface $request, array $options, $stream, float $startTime): PromiseInterface
     {
         $hdrs = $this->lastHeaders;
         $this->lastHeaders = [];
@@ -163,9 +163,9 @@ class StreamHandler
             return $stream;
         }
 
-        $sink = $options['sink'] ?? Psr7\Utils::tryFopen('php://temp', 'r+');
+        $sink = $options['sink']  Psr7\Utils::tryFopen('php://temp', 'r+');
 
-        return \is_string($sink) ? new Psr7\LazyOpenStream($sink, 'w+') : Psr7\Utils::streamFor($sink);
+        return \is_string($sink)  new Psr7\LazyOpenStream($sink, 'w+') : Psr7\Utils::streamFor($sink);
     }
 
     /**
@@ -219,7 +219,7 @@ class StreamHandler
         Psr7\Utils::copyToStream(
             $source,
             $sink,
-            (\strlen($contentLength) > 0 && (int) $contentLength > 0) ? (int) $contentLength : -1
+            (\strlen($contentLength) > 0 && (int) $contentLength > 0)  (int) $contentLength : -1
         );
 
         $sink->seek(0);
@@ -342,7 +342,7 @@ class StreamHandler
                     $http_response_header = \http_get_last_response_headers();
                 }
 
-                $this->lastHeaders = $http_response_header ?? [];
+                $this->lastHeaders = $http_response_header  [];
 
                 if (false === $resource) {
                     throw new ConnectException(sprintf('Connection refused for URI %s', $uri), $request, null, $context);
@@ -472,7 +472,7 @@ class StreamHandler
 
                 return [
                     'proxy' => "tcp://{$parsed['host']}:{$parsed['port']}",
-                    'auth' => $auth ? "Basic {$auth}" : null,
+                    'auth' => $auth  "Basic {$auth}" : null,
                 ];
             }
         }

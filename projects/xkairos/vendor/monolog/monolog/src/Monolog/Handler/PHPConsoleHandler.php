@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -62,26 +62,26 @@ use PhpConsole\Storage;
  *     dataStorage: Storage|null
  * }
  * @phpstan-type InputOptions array{
- *     enabled?: bool,
- *     classesPartialsTraceIgnore?: string[],
- *     debugTagsKeysInContext?: array<int|string>,
- *     useOwnErrorsHandler?: bool,
- *     useOwnExceptionsHandler?: bool,
- *     sourcesBasePath?: string|null,
- *     registerHelper?: bool,
- *     serverEncoding?: string|null,
- *     headersLimit?: int|null,
- *     password?: string|null,
- *     enableSslOnlyMode?: bool,
- *     ipMasks?: string[],
- *     enableEvalListener?: bool,
- *     dumperDetectCallbacks?: bool,
- *     dumperLevelLimit?: int,
- *     dumperItemsCountLimit?: int,
- *     dumperItemSizeLimit?: int,
- *     dumperDumpSizeLimit?: int,
- *     detectDumpTraceAndSource?: bool,
- *     dataStorage?: Storage|null
+ *     enabled: bool,
+ *     classesPartialsTraceIgnore: string[],
+ *     debugTagsKeysInContext: array<int|string>,
+ *     useOwnErrorsHandler: bool,
+ *     useOwnExceptionsHandler: bool,
+ *     sourcesBasePath: string|null,
+ *     registerHelper: bool,
+ *     serverEncoding: string|null,
+ *     headersLimit: int|null,
+ *     password: string|null,
+ *     enableSslOnlyMode: bool,
+ *     ipMasks: string[],
+ *     enableEvalListener: bool,
+ *     dumperDetectCallbacks: bool,
+ *     dumperLevelLimit: int,
+ *     dumperItemsCountLimit: int,
+ *     dumperItemSizeLimit: int,
+ *     dumperDumpSizeLimit: int,
+ *     detectDumpTraceAndSource: bool,
+ *     dataStorage: Storage|null
  * }
  *
  * @deprecated Since 2.8.0 and 3.2.0, PHPConsole is abandoned and thus we will drop this handler in Monolog 4
@@ -122,7 +122,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
      * @throws \RuntimeException
      * @phpstan-param InputOptions $options
      */
-    public function __construct(array $options = [], ?Connector $connector = null, int|string|Level $level = Level::Debug, bool $bubble = true)
+    public function __construct(array $options = [], Connector $connector = null, int|string|Level $level = Level::Debug, bool $bubble = true)
     {
         if (!class_exists('PhpConsole\Connector')) {
             throw new \RuntimeException('PHP Console library not found. See https://github.com/barbushin/php-console#installation');
@@ -149,7 +149,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
         return array_replace($this->options, $options);
     }
 
-    private function initConnector(?Connector $connector = null): Connector
+    private function initConnector(Connector $connector = null): Connector
     {
         if (null === $connector) {
             if ($this->options['dataStorage'] instanceof Storage) {
@@ -260,10 +260,10 @@ class PHPConsoleHandler extends AbstractProcessingHandler
         $context = $record->context;
 
         $this->connector->getErrorsDispatcher()->dispatchError(
-            $context['code'] ?? null,
-            $context['message'] ?? $record->message,
-            $context['file'] ?? null,
-            $context['line'] ?? null,
+            $context['code']  null,
+            $context['message']  $record->message,
+            $context['file']  null,
+            $context['line']  null,
             $this->options['classesPartialsTraceIgnore']
         );
     }
@@ -290,7 +290,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
             }
         }
 
-        return [$tags ?? $record->level->toPsrLogLevel(), $filteredContext];
+        return [$tags  $record->level->toPsrLogLevel(), $filteredContext];
     }
 
     /**

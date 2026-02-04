@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2016 Google Inc.
  *
@@ -58,7 +58,7 @@ final class MemoryCacheItemPool implements CacheItemPoolInterface
     {
         $items = [];
         foreach ($keys as $key) {
-            $items[$key] = $this->hasItem($key) ? clone $this->items[$key] : new TypedItem($key);
+            $items[$key] = $this->hasItem($key)  clone $this->items[$key] : new TypedItem($key);
         }
 
         return $items;

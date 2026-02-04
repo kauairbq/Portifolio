@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2020 Google Inc.
  *
@@ -46,8 +46,8 @@ class GCECache
      * @param CacheItemPoolInterface $cache
      */
     public function __construct(
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $this->cache = $cache;
         $this->cacheConfig = array_merge([
@@ -63,7 +63,7 @@ class GCECache
      * @param callable|null $httpHandler callback which delivers psr7 request
      * @return bool True if this a GCEInstance, false otherwise
      */
-    public function onGce(?callable $httpHandler = null)
+    public function onGce(callable $httpHandler = null)
     {
         if (is_null($this->cache)) {
             return GCECredentials::onGce($httpHandler);

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -46,7 +46,7 @@ class ProjectsLocationsScopes extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string scopeId Required. Client chosen ID for the Scope.
-   * `scope_id` must be a ????
+   * `scope_id` must be a 
    * @return Operation
    * @throws \Google\Service\Exception
    */

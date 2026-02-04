@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -177,7 +177,7 @@ class Logger implements LoggerInterface, ResettableInterface
         $this->name = $name;
         $this->setHandlers($handlers);
         $this->processors = $processors;
-        $this->timezone = $timezone ?? new DateTimeZone(date_default_timezone_get());
+        $this->timezone = $timezone  new DateTimeZone(date_default_timezone_get());
         $this->fiberLogDepth = new \WeakMap();
     }
 
@@ -337,7 +337,7 @@ class Logger implements LoggerInterface, ResettableInterface
 
         if ($this->detectCycles) {
             if (null !== ($fiber = Fiber::getCurrent())) {
-                $logDepth = $this->fiberLogDepth[$fiber] = ($this->fiberLogDepth[$fiber] ?? 0) + 1;
+                $logDepth = $this->fiberLogDepth[$fiber] = ($this->fiberLogDepth[$fiber]  0) + 1;
             } else {
                 $logDepth = ++$this->logDepth;
             }
@@ -357,7 +357,7 @@ class Logger implements LoggerInterface, ResettableInterface
             $recordInitialized = \count($this->processors) === 0;
 
             $record = new LogRecord(
-                datetime: $datetime ?? new JsonSerializableDateTimeImmutable($this->microsecondTimestamps, $this->timezone),
+                datetime: $datetime  new JsonSerializableDateTimeImmutable($this->microsecondTimestamps, $this->timezone),
                 channel: $this->name,
                 level: self::toMonologLevel($level),
                 message: $message,

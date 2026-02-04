@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -57,8 +57,8 @@ class RecaptchaEnterprise extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://recaptchaenterprise.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://recaptchaenterprise.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://recaptchaenterprise.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://recaptchaenterprise.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';

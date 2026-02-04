@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatButton = document.createElement('div');
     chatButton.id = 'whatsapp-chat-button';
     chatButton.innerHTML = `
-        <a href="https://wa.me/351912345678?text=Olá, preciso de ajuda com meu PC!" target="_blank" style="text-decoration: none;">
+        <a href="https://wa.me/351912345678text=Olá, preciso de ajuda com meu PC!" target="_blank" style="text-decoration: none;">
             <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" style="width: 50px; height: 50px;">
         </a>
     `;

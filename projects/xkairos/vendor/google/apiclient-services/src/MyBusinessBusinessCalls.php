@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -26,7 +26,7 @@ use Google\Client;
  * The My Business Business Calls API manages business calls information of a
  * location on Google and collect insights like the number of missed calls to
  * their location. Additional information about Business calls can be found at
- * https://support.google.com/business/answer/9688285?p=call_history. If the
+ * https://support.google.com/business/answer/9688285p=call_history. If the
  * Google Business Profile links to a Google Ads account and call history is
  * turned on, calls that last longer than a specific time, and that can be
  * attributed to an ad interaction, will show in the linked Google Ads account
@@ -62,7 +62,7 @@ class MyBusinessBusinessCalls extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://mybusinessbusinesscalls.googleapis.com/';
+    $this->rootUrl = $rootUrl : 'https://mybusinessbusinesscalls.googleapis.com/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';

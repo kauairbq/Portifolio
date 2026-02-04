@@ -1,4 +1,4 @@
-<?php
+<php
 // Google Sheets Integration for Leads and Requests
 // Note: Requires Google API Client installed via Composer: composer require google/apiclient
 // And credentials.json file in the root directory
@@ -50,4 +50,4 @@ function addToGoogleSheets($data) {
 // Example usage: Call this function after inserting into DB in configurator.php
 // $result = addToGoogleSheets(['nome' => $nome, 'email' => $email, 'cpu' => $cpu, 'gpu' => $gpu, 'ram' => $ram, 'ssd' => $ssd, 'total' => $total]);
 // if ($result['status'] === 'error') { echo 'Erro ao salvar no Google Sheets: ' . $result['message']; }
-?>
+>

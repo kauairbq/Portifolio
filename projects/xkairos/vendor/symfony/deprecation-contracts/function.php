@@ -1,4 +1,4 @@
-<?php
+<php
 
 /*
  * This file is part of the Symfony package.
@@ -22,6 +22,6 @@ if (!function_exists('trigger_deprecation')) {
      */
     function trigger_deprecation(string $package, string $version, string $message, mixed ...$args): void
     {
-        @trigger_error(($package || $version ? "Since $package $version: " : '').($args ? vsprintf($message, $args) : $message), \E_USER_DEPRECATED);
+        @trigger_error(($package || $version  "Since $package $version: " : '').($args  vsprintf($message, $args) : $message), \E_USER_DEPRECATED);
     }
 }

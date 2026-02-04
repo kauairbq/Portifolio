@@ -1,7 +1,7 @@
-<?php
+<php
 include "includes/config.php";
 include "includes/header.php";
-?>
+>
 
 <section class="privacy-policy">
     <div class="container">
@@ -10,7 +10,7 @@ include "includes/header.php";
                 <i class="fas fa-home"></i> Voltar ao Início
             </a>
             <h1>Política de Privacidade</h1>
-            <p class="last-updated">Última atualização: <?php echo date('d/m/Y'); ?></p>
+            <p class="last-updated">Última atualização: <php echo date('d/m/Y'); ></p>
         </div>
 
         <div class="policy-content">
@@ -310,6 +310,6 @@ include "includes/header.php";
 }
 </style>
 
-<?php
+<php
 include "includes/footer.php";
-?>
+>

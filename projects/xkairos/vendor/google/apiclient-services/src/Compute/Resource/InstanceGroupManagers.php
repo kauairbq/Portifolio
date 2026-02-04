@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -501,7 +501,7 @@ class InstanceGroupManagers extends \Google\Service\Resource
    * @param string $instanceGroupManager The name of the managed instance group.
    * It must be a string that meets the requirements in RFC1035, or an unsigned
    * long integer: must match regexp pattern:
-   * (?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)|1-9{0,19}.
+   * (:[a-z](:[-a-z0-9]{0,61}[a-z0-9]))|1-9{0,19}.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter A filter expression that filters resources listed in

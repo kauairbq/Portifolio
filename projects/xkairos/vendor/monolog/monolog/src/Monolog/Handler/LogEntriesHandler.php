@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -37,14 +37,14 @@ class LogEntriesHandler extends SocketHandler
         bool $persistent = false,
         float $timeout = 0.0,
         float $writingTimeout = 10.0,
-        ?float $connectionTimeout = null,
-        ?int $chunkSize = null
+        float $connectionTimeout = null,
+        int $chunkSize = null
     ) {
         if ($useSSL && !\extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP plugin is required to use SSL encrypted connection for LogEntriesHandler');
         }
 
-        $endpoint = $useSSL ? 'ssl://' . $host . ':443' : $host . ':80';
+        $endpoint = $useSSL  'ssl://' . $host . ':443' : $host . ':80';
         parent::__construct(
             $endpoint,
             $level,

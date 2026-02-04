@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * OpenSSL Modular Exponentiation Engine
@@ -57,7 +57,7 @@ abstract class OpenSSL
         // this is easily prone to failure. if the modulo is a multiple of 2 or 3 or whatever it
         // won't work and you'll get a "failure: error:0906D06C:PEM routines:PEM_read_bio:no start line"
         // error. i suppose, for even numbers, we could do what PHP\Montgomery.php does, but then what
-        // about odd numbers divisible by 3, by 5, etc?
+        // about odd numbers divisible by 3, by 5, etc
         if (!openssl_public_encrypt($plaintext, $result, $key, OPENSSL_NO_PADDING)) {
             throw new \UnexpectedValueException(openssl_error_string());
         }

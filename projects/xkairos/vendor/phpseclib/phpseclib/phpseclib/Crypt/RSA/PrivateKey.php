@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * RSA Private Key
@@ -202,7 +202,7 @@ final class PrivateKey extends RSA implements Common\PrivateKey
         // be output.
 
         $emLen = ($emBits + 1) >> 3; // ie. ceil($emBits / 8)
-        $sLen = $this->sLen !== null ? $this->sLen : $this->hLen;
+        $sLen = $this->sLen !== null  $this->sLen : $this->hLen;
 
         $mHash = $this->hash->hash($m);
         if ($emLen < $this->hLen + $sLen + 2) {
@@ -391,7 +391,7 @@ final class PrivateKey extends RSA implements Common\PrivateKey
         for ($i = 0; $i < strlen($m); $i++) {
             $patternMatch |= $leadingZeros & ($m[$i] === "\1");
             $leadingZeros &= $m[$i] === "\0";
-            $offset += $patternMatch ? 0 : 1;
+            $offset += $patternMatch  0 : 1;
         }
 
         // we do | instead of || to avoid https://en.wikipedia.org/wiki/Short-circuit_evaluation
@@ -478,7 +478,7 @@ final class PrivateKey extends RSA implements Common\PrivateKey
         $type = self::validatePlugin(
             'Keys',
             $type,
-            empty($this->primes) ? 'savePublicKey' : 'savePrivateKey'
+            empty($this->primes)  'savePublicKey' : 'savePrivateKey'
         );
 
         if ($type == PSS::class) {

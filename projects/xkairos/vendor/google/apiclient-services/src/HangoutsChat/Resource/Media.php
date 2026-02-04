@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -33,7 +33,7 @@ class Media extends \Google\Service\Resource
 {
   /**
    * Downloads media. Download is supported on the URI
-   * `/v1/media/{+name}?alt=media`. (media.download)
+   * `/v1/media/{+name}alt=media`. (media.download)
    *
    * @param string $resourceName Name of the media that is being downloaded. See
    * ReadRequest.resource_name.
@@ -60,7 +60,7 @@ class Media extends \Google\Service\Resource
    * `https://www.googleapis.com/auth/chat.import` (import mode spaces only) You
    * can upload attachments up to 200 MB. Certain file types aren't supported. For
    * details, see [File types blocked by Google Chat](https://support.google.com/c
-   * hat/answer/7651457?&co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%2
+   * hat/answer/7651457&co=GENIE.Platform%3DDesktop#File%20types%20blocked%20in%2
    * 0Google%20Chat). (media.upload)
    *
    * @param string $parent Required. Resource name of the Chat space in which the

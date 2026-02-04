@@ -1,4 +1,4 @@
-<?php
+<php
 require_once 'includes/config.php';
 
 try {
@@ -21,7 +21,7 @@ try {
     }
 
     // Verificar se a senha está correta
-    $stmt = $pdo->prepare('SELECT password FROM admin WHERE username = ?');
+    $stmt = $pdo->prepare('SELECT password FROM admin WHERE username = ');
     $stmt->execute(['kauai rocha']);
     $hashedPassword = $stmt->fetchColumn();
 
@@ -34,4 +34,4 @@ try {
 } catch (PDOException $e) {
     echo 'Erro: ' . $e->getMessage();
 }
-?>
+>

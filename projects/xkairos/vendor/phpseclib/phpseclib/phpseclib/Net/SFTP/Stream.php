@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * SFTP Stream Wrapper
@@ -149,9 +149,9 @@ class Stream
         }
 
         if (isset($query)) {
-            $path .= '?' . $query;
-        } elseif (preg_match('/(\?|\?#)$/', $orig)) {
-            $path .= '?';
+            $path .= '' . $query;
+        } elseif (preg_match('/(\|\#)$/', $orig)) {
+            $path .= '';
         }
         if (isset($fragment)) {
             $path .= '#' . $fragment;
@@ -278,7 +278,7 @@ class Stream
             }
         }
 
-        $this->pos = $this->mode[0] != 'a' ? 0 : $this->size;
+        $this->pos = $this->mode[0] != 'a'  0 : $this->size;
 
         return true;
     }
@@ -432,8 +432,8 @@ class Stream
         //     and https://github.com/php/php-src/blob/master/main/php_streams.h#L592
         switch ($option) {
             case 1: // PHP_STREAM_META_TOUCH
-                $time = isset($var[0]) ? $var[0] : null;
-                $atime = isset($var[1]) ? $var[1] : null;
+                $time = isset($var[0])  $var[0] : null;
+                $atime = isset($var[1])  $var[1] : null;
                 return $this->sftp->touch($path, $time, $atime);
             case 2: // PHP_STREAM_OWNER_NAME
             case 3: // PHP_STREAM_GROUP_NAME
@@ -602,7 +602,7 @@ class Stream
      * Only valid $options is STREAM_MKDIR_RECURSIVE per <http://php.net/streamwrapper.rmdir>, however,
      * <http://php.net/rmdir>  does not have a $recursive parameter as mkdir() does so I don't know how
      * STREAM_MKDIR_RECURSIVE is supposed to be set. Also, when I try it out with rmdir() I get 8 as
-     * $options. What does 8 correspond to?
+     * $options. What does 8 correspond to
      *
      * @param string $path
      * @param int $options
@@ -678,7 +678,7 @@ class Stream
             return false;
         }
 
-        $results = $flags & STREAM_URL_STAT_LINK ? $this->sftp->lstat($path) : $this->sftp->stat($path);
+        $results = $flags & STREAM_URL_STAT_LINK  $this->sftp->lstat($path) : $this->sftp->stat($path);
         if ($results === false) {
             return false;
         }
@@ -732,7 +732,7 @@ class Stream
      * __call Magic Method
      *
      * When you're utilizing an SFTP stream you're not calling the methods in this class directly - PHP is calling them for you.
-     * Which kinda begs the question... what methods is PHP calling and what parameters is it passing to them? This function
+     * Which kinda begs the question... what methods is PHP calling and what parameters is it passing to them This function
      * lets you figure that out.
      *
      * If NET_SFTP_STREAM_LOGGING is defined all calls will be output on the screen and then (regardless of whether or not

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of Twofish.
@@ -13,7 +13,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $twofish = new \phpseclib3\Crypt\Twofish('ctr');
@@ -23,7 +23,7 @@
  *    $plaintext = str_repeat('a', 1024);
  *
  *    echo $twofish->decrypt($twofish->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>

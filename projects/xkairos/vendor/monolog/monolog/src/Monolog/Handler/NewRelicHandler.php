@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -42,7 +42,7 @@ class NewRelicHandler extends AbstractProcessingHandler
 
         /**
          * Some context and extra data is passed into the handler as arrays of values. Do we send them as is
-         * (useful if we are using the API), or explode them for display on the NewRelic RPM website?
+         * (useful if we are using the API), or explode them for display on the NewRelic RPM website
          */
         protected bool $explodeArrays = false,
 
@@ -118,7 +118,7 @@ class NewRelicHandler extends AbstractProcessingHandler
      *
      * @param mixed[] $context
      */
-    protected function getAppName(array $context): ?string
+    protected function getAppName(array $context): string
     {
         if (isset($context['appname'])) {
             return $context['appname'];
@@ -133,7 +133,7 @@ class NewRelicHandler extends AbstractProcessingHandler
      *
      * @param mixed[] $context
      */
-    protected function getTransactionName(array $context): ?string
+    protected function getTransactionName(array $context): string
     {
         if (isset($context['transaction_name'])) {
             return $context['transaction_name'];

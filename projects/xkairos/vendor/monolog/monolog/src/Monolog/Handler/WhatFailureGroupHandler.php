@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -35,7 +35,7 @@ class WhatFailureGroupHandler extends GroupHandler
             try {
                 $handler->handle(clone $record);
             } catch (Throwable) {
-                // What failure?
+                // What failure
             }
         }
 
@@ -59,7 +59,7 @@ class WhatFailureGroupHandler extends GroupHandler
             try {
                 $handler->handleBatch(array_map(fn ($record) => clone $record, $records));
             } catch (Throwable) {
-                // What failure?
+                // What failure
             }
         }
     }
@@ -73,7 +73,7 @@ class WhatFailureGroupHandler extends GroupHandler
             try {
                 $handler->close();
             } catch (\Throwable $e) {
-                // What failure?
+                // What failure
             }
         }
     }

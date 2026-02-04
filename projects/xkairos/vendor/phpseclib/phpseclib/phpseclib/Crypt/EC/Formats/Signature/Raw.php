@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Raw EC Signature Handler

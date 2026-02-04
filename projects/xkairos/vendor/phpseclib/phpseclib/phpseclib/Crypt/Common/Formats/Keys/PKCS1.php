@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS1 Formatted Key Handler
@@ -138,7 +138,7 @@ abstract class PKCS1 extends PKCS
         if (preg_match('#DEK-Info: (.+),(.+)#', $key, $matches)) {
             $iv = Strings::hex2bin(trim($matches[2]));
             // remove the Proc-Type / DEK-Info sections as they're no longer needed
-            $key = preg_replace('#^(?:Proc-Type|DEK-Info): .*#m', '', $key);
+            $key = preg_replace('#^(:Proc-Type|DEK-Info): .*#m', '', $key);
             $ciphertext = ASN1::extractBER($key);
             if ($ciphertext === false) {
                 $ciphertext = $key;
@@ -178,7 +178,7 @@ abstract class PKCS1 extends PKCS
                    "-----END $type PRIVATE KEY-----";
         }
 
-        $encryptionAlgorithm = isset($options['encryptionAlgorithm']) ? $options['encryptionAlgorithm'] : self::$defaultEncryptionAlgorithm;
+        $encryptionAlgorithm = isset($options['encryptionAlgorithm'])  $options['encryptionAlgorithm'] : self::$defaultEncryptionAlgorithm;
 
         $cipher = self::getEncryptionObject($encryptionAlgorithm);
         $iv = Random::string($cipher->getBlockLength() >> 3);

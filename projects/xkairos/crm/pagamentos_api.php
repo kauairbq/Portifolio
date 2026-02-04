@@ -1,12 +1,12 @@
-<?php
+<php
 include '../includes/config.php';
 
-$action = $_POST['action'] ?? '';
+$action = $_POST['action']  '';
 switch($action){
     case 'add':
         $stmt = $pdo->prepare("INSERT INTO pagamentos 
             (projeto_id, cliente_nome, taxa_fixa, valor_pecas, margem, servicos_adicionais, total) 
-            VALUES (?,?,?,?,?,?,?)");
+            VALUES (,,,,,,)");
         $stmt->execute([
             $_POST['projeto_id'],
             $_POST['cliente_nome'],
@@ -20,7 +20,7 @@ switch($action){
         break;
 
     case 'updateStatus':
-        $stmt = $pdo->prepare("UPDATE pagamentos SET status=? WHERE id=?");
+        $stmt = $pdo->prepare("UPDATE pagamentos SET status= WHERE id=");
         $stmt->execute([$_POST['status'], $_POST['id']]);
         echo json_encode(['status'=>'success']);
         break;
@@ -36,4 +36,4 @@ switch($action){
         echo json_encode(['status'=>'success', 'message'=>'Pagamento MBWay simulado']);
         break;
 }
-?>
+>

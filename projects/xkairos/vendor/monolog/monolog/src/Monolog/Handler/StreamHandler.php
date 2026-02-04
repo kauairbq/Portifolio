@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -47,7 +47,7 @@ class StreamHandler extends AbstractProcessingHandler
      *
      * @throws \InvalidArgumentException If stream is not a resource or string
      */
-    public function __construct($stream, int|string|Level $level = Level::Debug, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false, string $fileOpenMode = 'a')
+    public function __construct($stream, int|string|Level $level = Level::Debug, bool $bubble = true, int $filePermission = null, bool $useLocking = false, string $fileOpenMode = 'a')
     {
         parent::__construct($level, $bubble);
 
@@ -118,7 +118,7 @@ class StreamHandler extends AbstractProcessingHandler
     /**
      * Return the stream URL if it was configured with a URL and not an active resource
      */
-    public function getUrl(): ?string
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -203,12 +203,12 @@ class StreamHandler extends AbstractProcessingHandler
 
     private function customErrorHandler(int $code, string $msg): bool
     {
-        $this->errorMessage = preg_replace('{^(fopen|mkdir|fwrite)\(.*?\): }', '', $msg);
+        $this->errorMessage = preg_replace('{^(fopen|mkdir|fwrite)\(.*\): }', '', $msg);
 
         return true;
     }
 
-    private function getDirFromStream(string $stream): ?string
+    private function getDirFromStream(string $stream): string
     {
         $pos = strpos($stream, '://');
         if ($pos === false) {

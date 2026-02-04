@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -44,9 +44,9 @@ class HandlerStack
      *                                                                            handler is provided, the best handler for your
      *                                                                            system will be utilized.
      */
-    public static function create(?callable $handler = null): self
+    public static function create(callable $handler = null): self
     {
-        $stack = new self($handler ?: Utils::chooseHandler());
+        $stack = new self($handler : Utils::chooseHandler());
         $stack->push(Middleware::httpErrors(), 'http_errors');
         $stack->push(Middleware::redirect(), 'allow_redirects');
         $stack->push(Middleware::cookies(), 'cookies');
@@ -58,7 +58,7 @@ class HandlerStack
     /**
      * @param (callable(RequestInterface, array): PromiseInterface)|null $handler Underlying HTTP handler.
      */
-    public function __construct(?callable $handler = null)
+    public function __construct(callable $handler = null)
     {
         $this->handler = $handler;
     }
@@ -131,7 +131,7 @@ class HandlerStack
      * @param callable(callable): callable $middleware Middleware function
      * @param string                       $name       Name to register for this middleware.
      */
-    public function unshift(callable $middleware, ?string $name = null): void
+    public function unshift(callable $middleware, string $name = null): void
     {
         \array_unshift($this->stack, [$middleware, $name]);
         $this->cached = null;
@@ -185,7 +185,7 @@ class HandlerStack
         }
 
         $this->cached = null;
-        $idx = \is_callable($remove) ? 0 : 1;
+        $idx = \is_callable($remove)  0 : 1;
         $this->stack = \array_values(\array_filter(
             $this->stack,
             static function ($tuple) use ($idx, $remove) {
@@ -265,7 +265,7 @@ class HandlerStack
 
         if (\is_array($fn)) {
             return \is_string($fn[0])
-                ? "callable({$fn[0]}::{$fn[1]})"
+                 "callable({$fn[0]}::{$fn[1]})"
                 : "callable(['".\get_class($fn[0])."', '{$fn[1]}'])";
         }
 

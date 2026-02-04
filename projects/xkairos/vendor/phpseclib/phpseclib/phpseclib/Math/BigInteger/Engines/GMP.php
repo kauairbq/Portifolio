@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * GMP BigInteger Engine
@@ -23,7 +23,7 @@ use phpseclib3\Exception\BadConfigurationException;
 class GMP extends Engine
 {
     /**
-     * Can Bitwise operations be done fast?
+     * Can Bitwise operations be done fast
      *
      * @see parent::bitwise_leftRotate()
      * @see parent::bitwise_rightRotate()
@@ -90,11 +90,11 @@ class GMP extends Engine
                 }
                 break;
             case 16:
-                $temp = $this->is_negative ? '-0x' . $this->value : '0x' . $this->value;
+                $temp = $this->is_negative  '-0x' . $this->value : '0x' . $this->value;
                 $this->value = gmp_init($temp);
                 break;
             case 10:
-                $this->value = gmp_init(isset($this->value) ? $this->value : '0');
+                $this->value = gmp_init(isset($this->value)  $this->value : '0');
         }
     }
 
@@ -147,12 +147,12 @@ class GMP extends Engine
         }
 
         if (gmp_cmp($this->value, gmp_init(0)) == 0) {
-            return $this->precision > 0 ? str_repeat(chr(0), ($this->precision + 1) >> 3) : '';
+            return $this->precision > 0  str_repeat(chr(0), ($this->precision + 1) >> 3) : '';
         }
 
         $temp = gmp_export($this->value);
 
-        return $this->precision > 0 ?
+        return $this->precision > 0 
             substr(str_pad($temp, $this->precision >> 3, chr(0), STR_PAD_LEFT), -($this->precision >> 3)) :
             ltrim($temp, chr(0));
     }
@@ -280,7 +280,7 @@ class GMP extends Engine
         $temp = new self();
         $temp->value = gmp_invert($this->value, $n->value);
 
-        return $temp->value === false ? false : $this->normalize($temp);
+        return $temp->value === false  false : $this->normalize($temp);
     }
 
     /**
@@ -651,7 +651,7 @@ class GMP extends Engine
     }
 
     /**
-     * Is Odd?
+     * Is Odd
      *
      * @return bool
      */
@@ -671,7 +671,7 @@ class GMP extends Engine
     }
 
     /**
-     * Is Negative?
+     * Is Negative
      *
      * @return bool
      */

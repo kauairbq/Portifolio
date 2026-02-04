@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -45,7 +45,7 @@ class ProjectsLocationsManagedidentitiesGlobalPeerings extends \Google\Service\R
    *
    * @opt_param string peeringId Required. Peering Id, unique name to identify
    * peering. It should follow the regex format
-   * "^(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)$"
+   * "^(:[a-z](:[-a-z0-9]{0,61}[a-z0-9]))$"
    * @return Operation
    * @throws \Google\Service\Exception
    */

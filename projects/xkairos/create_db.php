@@ -1,4 +1,4 @@
-<?php
+<php
 // Configurações do banco de dados
 $host = "localhost";
 $user = "root";          // Usuário padrão do WAMP
@@ -96,4 +96,4 @@ try {
 } catch (PDOException $e) {
     die("Erro: " . $e->getMessage());
 }
-?>
+>

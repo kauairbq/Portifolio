@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP X.509 Parser
@@ -260,12 +260,12 @@ class X509
     private static $extensions = [];
 
     /**
-     * @var ?array
+     * @var array
      */
     private $ipAddresses = null;
 
     /**
-     * @var ?array
+     * @var array
      */
     private $domains = null;
 
@@ -441,7 +441,7 @@ class X509
             $this->currentCert = $cert;
 
             $currentKeyIdentifier = $this->getExtension('id-ce-subjectKeyIdentifier');
-            $this->currentKeyIdentifier = is_string($currentKeyIdentifier) ? $currentKeyIdentifier : null;
+            $this->currentKeyIdentifier = is_string($currentKeyIdentifier)  $currentKeyIdentifier : null;
 
             unset($this->signatureSubject);
 
@@ -490,7 +490,7 @@ class X509
         $this->dn = $x509['tbsCertificate']['subject'];
 
         $currentKeyIdentifier = $this->getExtension('id-ce-subjectKeyIdentifier');
-        $this->currentKeyIdentifier = is_string($currentKeyIdentifier) ? $currentKeyIdentifier : null;
+        $this->currentKeyIdentifier = is_string($currentKeyIdentifier)  $currentKeyIdentifier : null;
 
         return $x509;
     }
@@ -579,7 +579,7 @@ class X509
                    corresponding to the extension type identified by extnID */
                 $map = $this->getMapping($id);
                 if (!is_bool($map)) {
-                    $decoder = $id == 'id-ce-nameConstraints' ?
+                    $decoder = $id == 'id-ce-nameConstraints' 
                         [static::class, 'decodeNameConstraintIP'] :
                         [static::class, 'decodeIP'];
                     $decoded = ASN1::decodeBER($value);
@@ -587,7 +587,7 @@ class X509
                         continue;
                     }
                     $mapped = ASN1::asn1map($decoded[0], $map, ['iPAddress' => $decoder]);
-                    $value = $mapped === false ? $decoded[0] : $mapped;
+                    $value = $mapped === false  $decoded[0] : $mapped;
 
                     if ($id == 'id-ce-certificatePolicies') {
                         for ($j = 0; $j < count($value); $j++) {
@@ -604,7 +604,7 @@ class X509
                                         continue;
                                     }
                                     $mapped = ASN1::asn1map($decoded[0], $map);
-                                    $subvalue = $mapped === false ? $decoded[0] : $mapped;
+                                    $subvalue = $mapped === false  $decoded[0] : $mapped;
                                 }
                             }
                         }
@@ -1060,7 +1060,7 @@ class X509
                                In some cases, the URI is specified as an IP address rather than a
                                hostname. In this case, the iPAddress subjectAltName must be present
                                in the certificate and must exactly match the IP in the URI. */
-                            if (preg_match('#(?:\d{1-3}\.){4}#', $components['host'] . '.') && preg_match('#^' . $value . '$#', $components['host'])) {
+                            if (preg_match('#(:\d{1-3}\.){4}#', $components['host'] . '.') && preg_match('#^' . $value . '$#', $components['host'])) {
                                 return true;
                             }
                     }
@@ -1096,10 +1096,10 @@ class X509
         }
 
         $notBefore = $this->currentCert['tbsCertificate']['validity']['notBefore'];
-        $notBefore = isset($notBefore['generalTime']) ? $notBefore['generalTime'] : $notBefore['utcTime'];
+        $notBefore = isset($notBefore['generalTime'])  $notBefore['generalTime'] : $notBefore['utcTime'];
 
         $notAfter = $this->currentCert['tbsCertificate']['validity']['notAfter'];
-        $notAfter = isset($notAfter['generalTime']) ? $notAfter['generalTime'] : $notAfter['utcTime'];
+        $notAfter = isset($notAfter['generalTime'])  $notAfter['generalTime'] : $notAfter['utcTime'];
 
         if (is_string($date)) {
             $date = new \DateTimeImmutable($date, new \DateTimeZone(@date_default_timezone_get()));
@@ -1127,13 +1127,13 @@ class X509
         $data = '';
         switch ($parts['scheme']) {
             case 'http':
-                $fsock = @fsockopen($parts['host'], isset($parts['port']) ? $parts['port'] : 80);
+                $fsock = @fsockopen($parts['host'], isset($parts['port'])  $parts['port'] : 80);
                 if (!$fsock) {
                     return false;
                 }
                 $path = $parts['path'];
                 if (isset($parts['query'])) {
-                    $path .= '?' . $parts['query'];
+                    $path .= '' . $parts['query'];
                 }
                 fputs($fsock, "GET $path HTTP/1.0\r\n");
                 fputs($fsock, "Host: $parts[host]\r\n\r\n");
@@ -1526,7 +1526,7 @@ class X509
      */
     public static function encodeIP($ip)
     {
-        return is_string($ip) ?
+        return is_string($ip) 
             inet_pton($ip) :
             inet_pton($ip[0]) . inet_pton($ip[1]);
     }
@@ -1793,7 +1793,7 @@ class X509
         }
 
         // handles everything else
-        $results = preg_split('#((?:^|, *|/)(?:C=|O=|OU=|CN=|L=|ST=|SN=|postalCode=|streetAddress=|emailAddress=|serialNumber=|organizationalUnitName=|title=|description=|role=|x500UniqueIdentifier=|postalAddress=))#', $dn, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $results = preg_split('#((:^|, *|/)(:C=|O=|OU=|CN=|L=|ST=|SN=|postalCode=|streetAddress=|emailAddress=|serialNumber=|organizationalUnitName=|title=|description=|role=|x500UniqueIdentifier=|postalAddress=))#', $dn, -1, PREG_SPLIT_DELIM_CAPTURE);
         for ($i = 1; $i < count($results); $i += 2) {
             $prop = trim($results[$i], ', =/');
             $value = $results[$i + 1];
@@ -1815,7 +1815,7 @@ class X509
     public function getDN($format = self::DN_ARRAY, $dn = null)
     {
         if (!isset($dn)) {
-            $dn = isset($this->currentCert['tbsCertList']) ? $this->currentCert['tbsCertList']['issuer'] : $this->dn;
+            $dn = isset($this->currentCert['tbsCertList'])  $this->currentCert['tbsCertList']['issuer'] : $this->dn;
         }
 
         switch ((int) $format) {
@@ -1938,13 +1938,13 @@ class X509
                 $value = strtoupper(preg_replace_callback('#[^\x20-\x7E]#', $callback, $value->element));
             }
             $output .= $desc . '=' . $value;
-            $result[$desc] = isset($result[$desc]) ?
+            $result[$desc] = isset($result[$desc]) 
                 array_merge((array) $result[$desc], [$value]) :
                 $value;
             $start = false;
         }
 
-        return $format == self::DN_OPENSSL ? $result : $output;
+        return $format == self::DN_OPENSSL  $result : $output;
     }
 
     /**
@@ -2309,8 +2309,8 @@ class X509
         // see http://www.w3.org/html/wg/drafts/html/master/forms.html#signedpublickeyandchallenge
 
         // OpenSSL produces SPKAC's that are preceded by the string SPKAC=
-        $temp = preg_replace('#(?:SPKAC=)|[ \r\n\\\]#', '', $spkac);
-        $temp = preg_match('#^[a-zA-Z\d/+]*={0,2}$#', $temp) ? Strings::base64_decode($temp) : false;
+        $temp = preg_replace('#(:SPKAC=)|[ \r\n\\\]#', '', $spkac);
+        $temp = preg_match('#^[a-zA-Z\d/+]*={0,2}$#', $temp)  Strings::base64_decode($temp) : false;
         if ($temp != false) {
             $spkac = $temp;
         }
@@ -2553,8 +2553,8 @@ class X509
             return false;
         }
 
-        $currentCert = isset($this->currentCert) ? $this->currentCert : null;
-        $signatureSubject = isset($this->signatureSubject) ? $this->signatureSubject : null;
+        $currentCert = isset($this->currentCert)  $this->currentCert : null;
+        $signatureSubject = isset($this->signatureSubject)  $this->signatureSubject : null;
         $signatureAlgorithm = self::identifySignatureAlgorithm($issuer->privateKey);
 
         if (isset($subject->currentCert) && is_array($subject->currentCert) && isset($subject->currentCert['tbsCertificate'])) {
@@ -2589,10 +2589,10 @@ class X509
             }
 
             $startDate = new \DateTimeImmutable('now', new \DateTimeZone(@date_default_timezone_get()));
-            $startDate = !empty($this->startDate) ? $this->startDate : $startDate->format('D, d M Y H:i:s O');
+            $startDate = !empty($this->startDate)  $this->startDate : $startDate->format('D, d M Y H:i:s O');
 
             $endDate = new \DateTimeImmutable('+1 year', new \DateTimeZone(@date_default_timezone_get()));
-            $endDate = !empty($this->endDate) ? $this->endDate : $endDate->format('D, d M Y H:i:s O');
+            $endDate = !empty($this->endDate)  $this->endDate : $endDate->format('D, d M Y H:i:s O');
 
             /* "The serial number MUST be a positive integer"
                "Conforming CAs MUST NOT use serialNumber values longer than 20 octets."
@@ -2601,7 +2601,7 @@ class X509
                for the integer to be positive the leading bit needs to be 0 hence the
                application of a bitmap
             */
-            $serialNumber = !empty($this->serialNumber) ?
+            $serialNumber = !empty($this->serialNumber) 
                 $this->serialNumber :
                 new BigInteger(Random::string(20) & ("\x7F" . str_repeat("\xFF", 19)), 256);
 
@@ -2660,8 +2660,8 @@ class X509
         }
 
         if (isset($subject->ipAddresses) && count($subject->ipAddresses)) {
-            // should an IP address appear as the CN if no domain name is specified? idk
-            //$ips = count($subject->domains) ? $subject->ipAddresses : array_slice($subject->ipAddresses, 1);
+            // should an IP address appear as the CN if no domain name is specified idk
+            //$ips = count($subject->domains)  $subject->ipAddresses : array_slice($subject->ipAddresses, 1);
             $ipAddresses = [];
             foreach ($subject->ipAddresses as $ipAddress) {
                 $encoded = $subject->ipAddress($ipAddress);
@@ -2736,8 +2736,8 @@ class X509
         $publicKey = $this->formatSubjectPublicKey();
         $this->publicKey = $origPublicKey;
 
-        $currentCert = isset($this->currentCert) ? $this->currentCert : null;
-        $signatureSubject = isset($this->signatureSubject) ? $this->signatureSubject : null;
+        $currentCert = isset($this->currentCert)  $this->currentCert : null;
+        $signatureSubject = isset($this->signatureSubject)  $this->signatureSubject : null;
         $signatureAlgorithm = self::identifySignatureAlgorithm($this->privateKey);
 
         if (isset($this->currentCert) && is_array($this->currentCert) && isset($this->currentCert['certificationRequestInfo'])) {
@@ -2791,11 +2791,11 @@ class X509
         $publicKey = $this->formatSubjectPublicKey();
         $this->publicKey = $origPublicKey;
 
-        $currentCert = isset($this->currentCert) ? $this->currentCert : null;
-        $signatureSubject = isset($this->signatureSubject) ? $this->signatureSubject : null;
+        $currentCert = isset($this->currentCert)  $this->currentCert : null;
+        $signatureSubject = isset($this->signatureSubject)  $this->signatureSubject : null;
         $signatureAlgorithm = self::identifySignatureAlgorithm($this->privateKey);
 
-        // re-signing a SPKAC seems silly but since everything else supports re-signing why not?
+        // re-signing a SPKAC seems silly but since everything else supports re-signing why not
         if (isset($this->currentCert) && is_array($this->currentCert) && isset($this->currentCert['publicKeyAndChallenge'])) {
             $this->currentCert['signatureAlgorithm'] = $signatureAlgorithm;
             $this->currentCert['publicKeyAndChallenge']['spki'] = $publicKey;
@@ -2813,7 +2813,7 @@ class X509
                         // both Firefox and OpenSSL ("openssl spkac -key private.key") behave this way
                         // we could alternatively do this instead if we ignored the specs:
                         // Random::string(8) & str_repeat("\x7F", 8)
-                        'challenge' => !empty($this->challenge) ? $this->challenge : ''
+                        'challenge' => !empty($this->challenge)  $this->challenge : ''
                     ],
                     'signatureAlgorithm' => $signatureAlgorithm,
                     'signature'          => false // this is going to be overwritten later
@@ -2848,12 +2848,12 @@ class X509
             return false;
         }
 
-        $currentCert = isset($this->currentCert) ? $this->currentCert : null;
-        $signatureSubject = isset($this->signatureSubject) ? $this->signatureSubject : null;
+        $currentCert = isset($this->currentCert)  $this->currentCert : null;
+        $signatureSubject = isset($this->signatureSubject)  $this->signatureSubject : null;
         $signatureAlgorithm = self::identifySignatureAlgorithm($issuer->privateKey);
 
         $thisUpdate = new \DateTimeImmutable('now', new \DateTimeZone(@date_default_timezone_get()));
-        $thisUpdate = !empty($this->startDate) ? $this->startDate : $thisUpdate->format('D, d M Y H:i:s O');
+        $thisUpdate = !empty($this->startDate)  $this->startDate : $thisUpdate->format('D, d M Y H:i:s O');
 
         if (isset($crl->currentCert) && is_array($crl->currentCert) && isset($crl->currentCert['tbsCertList'])) {
             $this->currentCert = $crl->currentCert;
@@ -2892,14 +2892,14 @@ class X509
             //  CRL issuer.  This extension allows users to easily determine when a
             //  particular CRL supersedes another CRL."
             // -- https://tools.ietf.org/html/rfc5280#section-5.2.3
-            $crlNumber = $crlNumber !== false ? $crlNumber->add(new BigInteger(1)) : null;
+            $crlNumber = $crlNumber !== false  $crlNumber->add(new BigInteger(1)) : null;
         }
 
         $this->removeExtension('id-ce-authorityKeyIdentifier');
         $this->removeExtension('id-ce-issuerAltName');
 
         // Be sure version >= v2 if some extension found.
-        $version = isset($tbsCertList['version']) ? $tbsCertList['version'] : 0;
+        $version = isset($tbsCertList['version'])  $tbsCertList['version'] : 0;
         if (!$version) {
             if (!empty($tbsCertList['crlExtensions'])) {
                 $version = 'v2'; // v2.
@@ -3596,7 +3596,7 @@ class X509
                 $attributes[$last]['value'][] = $value;
                 break;
             default:
-                $attributes[] = ['type' => $id, 'value' => $disposition == self::ATTR_ALL ? $value : [$value]];
+                $attributes[] = ['type' => $id, 'value' => $disposition == self::ATTR_ALL  $value : [$value]];
                 break;
         }
 
@@ -3706,7 +3706,7 @@ class X509
      */
     private function formatSubjectPublicKey()
     {
-        $format = $this->publicKey instanceof RSA && ($this->publicKey->getPadding() & RSA::SIGNATURE_PSS) ?
+        $format = $this->publicKey instanceof RSA && ($this->publicKey->getPadding() & RSA::SIGNATURE_PSS) 
             'PSS' :
             'PKCS8';
 
@@ -4011,7 +4011,7 @@ class X509
      */
     public static function getRegisteredExtension($id)
     {
-        return isset(self::$extensions[$id]) ? self::$extensions[$id] : null;
+        return isset(self::$extensions[$id])  self::$extensions[$id] : null;
     }
 
     /**

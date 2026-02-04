@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -33,9 +33,9 @@ class ElasticaFormatter extends NormalizerFormatter
 
     /**
      * @param string  $index Elastic Search index name
-     * @param ?string $type  Elastic Search document type, deprecated as of Elastica 7
+     * @param string $type  Elastic Search document type, deprecated as of Elastica 7
      */
-    public function __construct(string $index, ?string $type)
+    public function __construct(string $index, string $type)
     {
         // elasticsearch requires a ISO 8601 format date with optional millisecond precision.
         parent::__construct('Y-m-d\TH:i:s.uP');

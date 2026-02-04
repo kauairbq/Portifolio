@@ -1,4 +1,4 @@
-<?php
+<php
 include '../includes/config.php';
 session_start();
 if(!isset($_SESSION['cliente_id'])){
@@ -8,10 +8,10 @@ $cliente_id = $_SESSION['cliente_id'];
 $cliente_nome = $_SESSION['cliente_nome'];
 
 // Buscar solicitações do cliente
-$stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE cliente_id = ? ORDER BY data_solicitacao DESC');
+$stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE cliente_id =  ORDER BY data_solicitacao DESC');
 $stmt->execute([$cliente_id]);
 $solicitacoes = $stmt->fetchAll();
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -274,7 +274,7 @@ $solicitacoes = $stmt->fetchAll();
                 <div class="user-info">
                     <div class="user-menu">
                         <button class="user-menu-btn" onclick="toggleUserMenu()">
-                            <i class="fas fa-user"></i> <?php echo htmlspecialchars($cliente_nome); ?>
+                            <i class="fas fa-user"></i> <php echo htmlspecialchars($cliente_nome); >
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="user-dropdown" id="userDropdown">
@@ -292,7 +292,7 @@ $solicitacoes = $stmt->fetchAll();
 
         <main class="dashboard-content">
             <section class="welcome-section">
-                <h2>Bem-vindo, <?php echo htmlspecialchars($cliente_nome); ?>!</h2>
+                <h2>Bem-vindo, <php echo htmlspecialchars($cliente_nome); >!</h2>
                 <p>Gerencie suas supervisão e acompanhe o andamento de seus projetos</p>
             </section>
 
@@ -301,7 +301,7 @@ $solicitacoes = $stmt->fetchAll();
                     <div class="stat-icon">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
-                    <div class="stat-number"><?php echo count($solicitacoes); ?></div>
+                    <div class="stat-number"><php echo count($solicitacoes); ></div>
                     <div class="stat-label">Total de Solicitações</div>
                 </div>
                 <div class="stat-card">
@@ -309,7 +309,7 @@ $solicitacoes = $stmt->fetchAll();
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="stat-number">
-                        <?php echo count(array_filter($solicitacoes, function($s) { return $s['status'] === 'Pendente'; })); ?>
+                        <php echo count(array_filter($solicitacoes, function($s) { return $s['status'] === 'Pendente'; })); >
                     </div>
                     <div class="stat-label">Pendentes</div>
                 </div>
@@ -318,7 +318,7 @@ $solicitacoes = $stmt->fetchAll();
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <div class="stat-number">
-                        <?php echo count(array_filter($solicitacoes, function($s) { return $s['status'] === 'Concluido'; })); ?>
+                        <php echo count(array_filter($solicitacoes, function($s) { return $s['status'] === 'Concluido'; })); >
                     </div>
                     <div class="stat-label">Concluídas</div>
                 </div>
@@ -332,13 +332,13 @@ $solicitacoes = $stmt->fetchAll();
                     </a>
                 </div>
 
-                <?php if (empty($solicitacoes)): ?>
+                <php if (empty($solicitacoes)): >
                     <div class="no-solicitacoes">
                         <i class="fas fa-inbox fa-3x" style="color: rgba(255, 255, 255, 0.3); margin-bottom: 20px;"></i>
                         <p>Você ainda não fez nenhuma solicitação.</p>
                         <p>Clique em "Nova Solicitação" para começar!</p>
                     </div>
-                <?php else: ?>
+                <php else: >
                     <table class="solicitacoes-table">
                         <thead>
                             <tr>
@@ -351,23 +351,23 @@ $solicitacoes = $stmt->fetchAll();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($solicitacoes as $solicitacao): ?>
+                            <php foreach ($solicitacoes as $solicitacao): >
                                 <tr>
-                                    <td>#<?php echo $solicitacao['id']; ?></td>
-                                    <td><?php echo date('d/m/Y', strtotime($solicitacao['data_solicitacao'])); ?></td>
-                                    <td><?php echo htmlspecialchars($solicitacao['cpu'] ?: 'N/A'); ?></td>
-                                    <td><?php echo htmlspecialchars($solicitacao['gpu'] ?: 'N/A'); ?></td>
-                                    <td>€<?php echo number_format($solicitacao['total'], 2, ',', '.'); ?></td>
+                                    <td>#<php echo $solicitacao['id']; ></td>
+                                    <td><php echo date('d/m/Y', strtotime($solicitacao['data_solicitacao'])); ></td>
+                                    <td><php echo htmlspecialchars($solicitacao['cpu'] : 'N/A'); ></td>
+                                    <td><php echo htmlspecialchars($solicitacao['gpu'] : 'N/A'); ></td>
+                                    <td>€<php echo number_format($solicitacao['total'], 2, ',', '.'); ></td>
                                     <td>
-                                        <span class="status-badge status-<?php echo strtolower($solicitacao['status']); ?>">
-                                            <?php echo htmlspecialchars($solicitacao['status']); ?>
+                                        <span class="status-badge status-<php echo strtolower($solicitacao['status']); >">
+                                            <php echo htmlspecialchars($solicitacao['status']); >
                                         </span>
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <php endforeach; >
                         </tbody>
                     </table>
-                <?php endif; ?>
+                <php endif; >
             </section>
         </main>
     </div>

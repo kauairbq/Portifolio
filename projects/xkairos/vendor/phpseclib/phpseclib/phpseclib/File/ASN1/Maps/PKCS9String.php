@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS9String

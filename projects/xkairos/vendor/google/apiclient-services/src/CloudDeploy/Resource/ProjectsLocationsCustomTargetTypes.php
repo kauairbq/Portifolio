@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -185,7 +185,7 @@ class ProjectsLocationsCustomTargetTypes extends \Google\Service\Resource
    *
    * @param string $name Identifier. Name of the `CustomTargetType`. Format is `pr
    * ojects/{project}/locations/{location}/customTargetTypes/{customTargetType}`.
-   * The `customTargetType` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
+   * The `customTargetType` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])`
    * @param CustomTargetType $postBody
    * @param array $optParams Optional parameters.
    *

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Password Protected Trait for Private Keys

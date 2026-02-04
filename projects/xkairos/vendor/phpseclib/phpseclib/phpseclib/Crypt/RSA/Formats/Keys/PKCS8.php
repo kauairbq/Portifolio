@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#8 Formatted RSA Key Handler

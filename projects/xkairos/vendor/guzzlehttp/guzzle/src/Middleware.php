@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -55,7 +55,7 @@ final class Middleware
      *
      * @return callable(callable): callable Returns a function that accepts the next handler.
      */
-    public static function httpErrors(?BodySummarizerInterface $bodySummarizer = null): callable
+    public static function httpErrors(BodySummarizerInterface $bodySummarizer = null): callable
     {
         return static function (callable $handler) use ($bodySummarizer): callable {
             return static function ($request, array $options) use ($handler, $bodySummarizer) {
@@ -132,7 +132,7 @@ final class Middleware
      *
      * @return callable Returns a function that accepts the next handler.
      */
-    public static function tap(?callable $before = null, ?callable $after = null): callable
+    public static function tap(callable $before = null, callable $after = null): callable
     {
         return static function (callable $handler) use ($before, $after): callable {
             return static function (RequestInterface $request, array $options) use ($handler, $before, $after) {
@@ -176,7 +176,7 @@ final class Middleware
      *
      * @return callable Returns a function that accepts the next handler.
      */
-    public static function retry(callable $decider, ?callable $delay = null): callable
+    public static function retry(callable $decider, callable $delay = null): callable
     {
         return static function (callable $handler) use ($decider, $delay): RetryMiddleware {
             return new RetryMiddleware($decider, $handler, $delay);
@@ -212,7 +212,7 @@ final class Middleware
                         return $response;
                     },
                     static function ($reason) use ($logger, $request, $formatter): PromiseInterface {
-                        $response = $reason instanceof RequestException ? $reason->getResponse() : null;
+                        $response = $reason instanceof RequestException  $reason->getResponse() : null;
                         $message = $formatter->format($request, $response, P\Create::exceptionFor($reason));
                         $logger->error($message);
 

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * OpenSSL Modular Exponentiation Engine

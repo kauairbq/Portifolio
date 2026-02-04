@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Firebase\JWT;
 
@@ -45,7 +45,7 @@ class JWT
      * Useful for fixing a value within unit testing.
      * Will default to PHP time() value if null.
      *
-     * @var ?int
+     * @var int
      */
     public static $timestamp = null;
 
@@ -96,10 +96,10 @@ class JWT
     public static function decode(
         string $jwt,
         $keyOrKeyArray,
-        ?stdClass &$headers = null
+        stdClass &$headers = null
     ): stdClass {
         // Validate JWT
-        $timestamp = \is_null(static::$timestamp) ? \time() : static::$timestamp;
+        $timestamp = \is_null(static::$timestamp)  \time() : static::$timestamp;
 
         if (empty($keyOrKeyArray)) {
             throw new InvalidArgumentException('Key may not be empty');
@@ -135,7 +135,7 @@ class JWT
             throw new UnexpectedValueException('Algorithm not supported');
         }
 
-        $key = self::getKey($keyOrKeyArray, property_exists($header, 'kid') ? $header->kid : null);
+        $key = self::getKey($keyOrKeyArray, property_exists($header, 'kid')  $header->kid : null);
 
         // Check the algorithm
         if (!self::constantTimeEquals($key->getAlgorithm(), $header->alg)) {
@@ -200,8 +200,8 @@ class JWT
         array $payload,
         $key,
         string $alg,
-        ?string $keyId = null,
-        ?array $head = null
+        string $keyId = null,
+        array $head = null
     ): string {
         $header = ['typ' => 'JWT'];
         if (isset($head)) {
@@ -458,7 +458,7 @@ class JWT
      */
     private static function getKey(
         $keyOrKeyArray,
-        ?string $kid
+        string $kid
     ): Key {
         if ($keyOrKeyArray instanceof Key) {
             return $keyOrKeyArray;
@@ -521,7 +521,7 @@ class JWT
         ];
         throw new DomainException(
             isset($messages[$errno])
-            ? $messages[$errno]
+             $messages[$errno]
             : 'Unknown JSON error: ' . $errno
         );
     }

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -100,7 +100,7 @@ class PushoverHandler extends SocketHandler
     public function __construct(
         string $token,
         $users,
-        ?string $title = null,
+        string $title = null,
         int|string|Level $level = Level::Critical,
         bool $bubble = true,
         bool $useSSL = true,
@@ -111,10 +111,10 @@ class PushoverHandler extends SocketHandler
         bool $persistent = false,
         float $timeout = 0.0,
         float $writingTimeout = 10.0,
-        ?float $connectionTimeout = null,
-        ?int $chunkSize = null
+        float $connectionTimeout = null,
+        int $chunkSize = null
     ) {
-        $connectionString = $useSSL ? 'ssl://api.pushover.net:443' : 'api.pushover.net:80';
+        $connectionString = $useSSL  'ssl://api.pushover.net:443' : 'api.pushover.net:80';
         parent::__construct(
             $connectionString,
             $level,
@@ -128,7 +128,7 @@ class PushoverHandler extends SocketHandler
 
         $this->token = $token;
         $this->users = (array) $users;
-        $this->title = $title ?? (string) gethostname();
+        $this->title = $title  (string) gethostname();
         $this->highPriorityLevel = Logger::toMonologLevel($highPriorityLevel);
         $this->emergencyLevel = Logger::toMonologLevel($emergencyLevel);
         $this->retry = $retry;
@@ -147,7 +147,7 @@ class PushoverHandler extends SocketHandler
         // Pushover has a limit of 512 characters on title and message combined.
         $maxMessageLength = 512 - \strlen($this->title);
 
-        $message = ($this->useFormattedMessage) ? $record->formatted : $record->message;
+        $message = ($this->useFormattedMessage)  $record->formatted : $record->message;
         $message = Utils::substr($message, 0, $maxMessageLength);
 
         $timestamp = $record->datetime->getTimestamp();
@@ -233,7 +233,7 @@ class PushoverHandler extends SocketHandler
     }
 
     /**
-     * Use the formatted message?
+     * Use the formatted message
      *
      * @return $this
      */

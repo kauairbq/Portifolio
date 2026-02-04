@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -42,7 +42,7 @@ class ProjectsLocationsAutonomousDatabaseBackups extends \Google\Service\Resourc
    * the request. Only the **autonomous_database_id** field is supported in the
    * following format: `autonomous_database_id="{autonomous_database_id}"`. The
    * accepted values must be a valid Autonomous Database ID, limited to the naming
-   * restrictions of the ID: ^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$). The ID must start
+   * restrictions of the ID: ^[a-z]([a-z0-9-]{0,61}[a-z0-9])$). The ID must start
    * with a letter, end with a letter or a number, and be a maximum of 63
    * characters.
    * @opt_param int pageSize Optional. The maximum number of items to return. If

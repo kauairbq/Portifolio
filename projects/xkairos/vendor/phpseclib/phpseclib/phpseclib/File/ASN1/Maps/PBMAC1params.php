@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PBMAC1params

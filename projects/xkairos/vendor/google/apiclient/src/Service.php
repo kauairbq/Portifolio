@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2010 Google Inc.
  *
@@ -40,7 +40,7 @@ class Service
         if ($clientOrConfig instanceof Client) {
             $this->client = $clientOrConfig;
         } elseif (is_array($clientOrConfig)) {
-            $this->client = new Client($clientOrConfig ?: []);
+            $this->client = new Client($clientOrConfig : []);
         } else {
             $errorMessage = 'constructor must be array or instance of Google\Client';
             if (class_exists('TypeError')) {
@@ -69,7 +69,7 @@ class Service
         return new Batch(
             $this->client,
             false,
-            $this->rootUrlTemplate ?? $this->rootUrl,
+            $this->rootUrlTemplate  $this->rootUrl,
             $this->batchPath
         );
     }

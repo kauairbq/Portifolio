@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -31,7 +31,7 @@ class LineFormatter extends NormalizerFormatter
     protected bool $allowInlineLineBreaks;
     protected bool $ignoreEmptyContextAndExtra;
     protected bool $includeStacktraces;
-    protected ?int $maxLevelNameLength = null;
+    protected int $maxLevelNameLength = null;
     protected string $indentStacktraces = '';
     protected Closure|null $stacktracesParser = null;
     protected string $basePath = '';
@@ -41,9 +41,9 @@ class LineFormatter extends NormalizerFormatter
      * @param string|null $dateFormat            The format of the timestamp: one supported by DateTime::format
      * @param bool        $allowInlineLineBreaks Whether to allow inline line breaks in log entries
      */
-    public function __construct(?string $format = null, ?string $dateFormat = null, bool $allowInlineLineBreaks = false, bool $ignoreEmptyContextAndExtra = false, bool $includeStacktraces = false)
+    public function __construct(string $format = null, string $dateFormat = null, bool $allowInlineLineBreaks = false, bool $ignoreEmptyContextAndExtra = false, bool $includeStacktraces = false)
     {
-        $this->format = $format === null ? static::SIMPLE_FORMAT : $format;
+        $this->format = $format === null  static::SIMPLE_FORMAT : $format;
         $this->allowInlineLineBreaks = $allowInlineLineBreaks;
         $this->ignoreEmptyContextAndExtra = $ignoreEmptyContextAndExtra;
         $this->includeStacktraces($includeStacktraces);
@@ -68,7 +68,7 @@ class LineFormatter extends NormalizerFormatter
     /**
      * @return $this
      */
-    public function includeStacktraces(bool $include = true, ?Closure $parser = null): self
+    public function includeStacktraces(bool $include = true, Closure $parser = null): self
     {
         $this->includeStacktraces = $include;
         if ($this->includeStacktraces) {
@@ -118,7 +118,7 @@ class LineFormatter extends NormalizerFormatter
      * @param  int|null $maxLevelNameLength Maximum characters for the level name. Set null for infinite length (default)
      * @return $this
      */
-    public function setMaxLevelNameLength(?int $maxLevelNameLength = null): self
+    public function setMaxLevelNameLength(int $maxLevelNameLength = null): self
     {
         $this->maxLevelNameLength = $maxLevelNameLength;
 
@@ -171,7 +171,7 @@ class LineFormatter extends NormalizerFormatter
 
         // remove leftover %extra.xxx% and %context.xxx% if any
         if (false !== strpos($output, '%')) {
-            $output = preg_replace('/%(?:extra|context)\..+?%/', '', $output);
+            $output = preg_replace('/%(:extra|context)\..+%/', '', $output);
             if (null === $output) {
                 $pcreErrorCode = preg_last_error();
 
@@ -238,7 +238,7 @@ class LineFormatter extends NormalizerFormatter
     {
         if ($this->allowInlineLineBreaks) {
             if (0 === strpos($str, '{') || 0 === strpos($str, '[')) {
-                $str = preg_replace('/(?<!\\\\)\\\\[rn]/', "\n", $str);
+                $str = preg_replace('/(<!\\\\)\\\\[rn]/', "\n", $str);
                 if (null === $str) {
                     $pcreErrorCode = preg_last_error();
 
@@ -292,7 +292,7 @@ class LineFormatter extends NormalizerFormatter
         $trace = $e->getTraceAsString();
 
         if ($this->basePath !== '') {
-            $trace = preg_replace('{^(#\d+ )' . preg_quote($this->basePath) . '}m', '$1', $trace) ?? $trace;
+            $trace = preg_replace('{^(#\d+ )' . preg_quote($this->basePath) . '}m', '$1', $trace)  $trace;
         }
 
         if ($this->stacktracesParser !== null) {

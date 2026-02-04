@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -31,8 +31,8 @@ class FulfilledPromise implements PromiseInterface
     }
 
     public function then(
-        ?callable $onFulfilled = null,
-        ?callable $onRejected = null
+        callable $onFulfilled = null,
+        callable $onRejected = null
     ): PromiseInterface {
         // Return itself if there is no onFulfilled function.
         if (!$onFulfilled) {
@@ -62,7 +62,7 @@ class FulfilledPromise implements PromiseInterface
 
     public function wait(bool $unwrap = true)
     {
-        return $unwrap ? $this->value : null;
+        return $unwrap  $this->value : null;
     }
 
     public function getState(): string

@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -97,7 +97,7 @@ class Uri implements UriInterface, \JsonSerializable
      * On the other hand, cURL understands IDN correctly only when UTF-8 locale
      * is configured ("C.UTF-8", "en_US.UTF-8", etc.).
      *
-     * @see https://bugs.php.net/bug.php?id=52923
+     * @see https://bugs.php.net/bug.phpid=52923
      * @see https://www.php.net/manual/en/function.parse-url.php#114817
      * @see https://curl.haxx.se/libcurl/c/CURLOPT_URL.html#ENCODING
      *
@@ -107,7 +107,7 @@ class Uri implements UriInterface, \JsonSerializable
     {
         // If IPv6
         $prefix = '';
-        if (preg_match('%^(.*://\[[0-9:a-fA-F]+\])(.*?)$%', $url, $matches)) {
+        if (preg_match('%^(.*://\[[0-9:a-fA-F]+\])(.*)$%', $url, $matches)) {
             /** @var array{0:string, 1:string, 2:string} $matches */
             $prefix = $matches[1];
             $url = $matches[2];
@@ -115,7 +115,7 @@ class Uri implements UriInterface, \JsonSerializable
 
         /** @var string */
         $encodedUrl = preg_replace_callback(
-            '%[^:/@?&=#]+%usD',
+            '%[^:/@&=#]+%usD',
             static function ($matches) {
                 return urlencode($matches[0]);
             },
@@ -164,7 +164,7 @@ class Uri implements UriInterface, \JsonSerializable
      *
      * @see https://datatracker.ietf.org/doc/html/rfc3986#section-5.3
      */
-    public static function composeComponents(?string $scheme, ?string $authority, string $path, ?string $query, ?string $fragment): string
+    public static function composeComponents(string $scheme, string $authority, string $path, string $query, string $fragment): string
     {
         $uri = '';
 
@@ -184,7 +184,7 @@ class Uri implements UriInterface, \JsonSerializable
         $uri .= $path;
 
         if ($query != '') {
-            $uri .= '?'.$query;
+            $uri .= ''.$query;
         }
 
         if ($fragment != '') {
@@ -279,7 +279,7 @@ class Uri implements UriInterface, \JsonSerializable
      *
      * @see https://datatracker.ietf.org/doc/html/rfc3986#section-4.4
      */
-    public static function isSameDocumentReference(UriInterface $uri, ?UriInterface $base = null): bool
+    public static function isSameDocumentReference(UriInterface $uri, UriInterface $base = null): bool
     {
         if ($base !== null) {
             $uri = UriResolver::resolve($base, $uri);
@@ -322,7 +322,7 @@ class Uri implements UriInterface, \JsonSerializable
      * @param string       $key   Key to set.
      * @param string|null  $value Value to set
      */
-    public static function withQueryValue(UriInterface $uri, string $key, ?string $value): UriInterface
+    public static function withQueryValue(UriInterface $uri, string $key, string $value): UriInterface
     {
         $result = self::getFilteredQueryString($uri, [$key]);
 
@@ -344,7 +344,7 @@ class Uri implements UriInterface, \JsonSerializable
         $result = self::getFilteredQueryString($uri, array_keys($keyValueArray));
 
         foreach ($keyValueArray as $key => $value) {
-            $result[] = self::generateQueryString((string) $key, $value !== null ? (string) $value : null);
+            $result[] = self::generateQueryString((string) $key, $value !== null  (string) $value : null);
         }
 
         return $uri->withQuery(implode('&', $result));
@@ -395,7 +395,7 @@ class Uri implements UriInterface, \JsonSerializable
         return $this->host;
     }
 
-    public function getPort(): ?int
+    public function getPort(): int
     {
         return $this->port;
     }
@@ -543,25 +543,25 @@ class Uri implements UriInterface, \JsonSerializable
     private function applyParts(array $parts): void
     {
         $this->scheme = isset($parts['scheme'])
-            ? $this->filterScheme($parts['scheme'])
+             $this->filterScheme($parts['scheme'])
             : '';
         $this->userInfo = isset($parts['user'])
-            ? $this->filterUserInfoComponent($parts['user'])
+             $this->filterUserInfoComponent($parts['user'])
             : '';
         $this->host = isset($parts['host'])
-            ? $this->filterHost($parts['host'])
+             $this->filterHost($parts['host'])
             : '';
         $this->port = isset($parts['port'])
-            ? $this->filterPort($parts['port'])
+             $this->filterPort($parts['port'])
             : null;
         $this->path = isset($parts['path'])
-            ? $this->filterPath($parts['path'])
+             $this->filterPath($parts['path'])
             : '';
         $this->query = isset($parts['query'])
-            ? $this->filterQueryAndFragment($parts['query'])
+             $this->filterQueryAndFragment($parts['query'])
             : '';
         $this->fragment = isset($parts['fragment'])
-            ? $this->filterQueryAndFragment($parts['fragment'])
+             $this->filterQueryAndFragment($parts['fragment'])
             : '';
         if (isset($parts['pass'])) {
             $this->userInfo .= ':'.$this->filterUserInfoComponent($parts['pass']);
@@ -596,7 +596,7 @@ class Uri implements UriInterface, \JsonSerializable
         }
 
         return preg_replace_callback(
-            '/(?:[^%'.self::CHAR_UNRESERVED.self::CHAR_SUB_DELIMS.']+|%(?![A-Fa-f0-9]{2}))/',
+            '/(:[^%'.self::CHAR_UNRESERVED.self::CHAR_SUB_DELIMS.']+|%(![A-Fa-f0-9]{2}))/',
             [$this, 'rawurlencodeMatchZero'],
             $component
         );
@@ -621,7 +621,7 @@ class Uri implements UriInterface, \JsonSerializable
      *
      * @throws \InvalidArgumentException If the port is invalid.
      */
-    private function filterPort($port): ?int
+    private function filterPort($port): int
     {
         if ($port === null) {
             return null;
@@ -659,7 +659,7 @@ class Uri implements UriInterface, \JsonSerializable
         });
     }
 
-    private static function generateQueryString(string $key, ?string $value): string
+    private static function generateQueryString(string $key, string $value): string
     {
         // Query string separators ("=", "&") within the key or value need to be encoded
         // (while preventing double-encoding) before setting the query string. All other
@@ -694,7 +694,7 @@ class Uri implements UriInterface, \JsonSerializable
         }
 
         return preg_replace_callback(
-            '/(?:[^'.self::CHAR_UNRESERVED.self::CHAR_SUB_DELIMS.'%:@\/]++|%(?![A-Fa-f0-9]{2}))/',
+            '/(:[^'.self::CHAR_UNRESERVED.self::CHAR_SUB_DELIMS.'%:@\/]++|%(![A-Fa-f0-9]{2}))/',
             [$this, 'rawurlencodeMatchZero'],
             $path
         );
@@ -714,7 +714,7 @@ class Uri implements UriInterface, \JsonSerializable
         }
 
         return preg_replace_callback(
-            '/(?:[^'.self::CHAR_UNRESERVED.self::CHAR_SUB_DELIMS.'%:@\/\?]++|%(?![A-Fa-f0-9]{2}))/',
+            '/(:[^'.self::CHAR_UNRESERVED.self::CHAR_SUB_DELIMS.'%:@\/\]++|%(![A-Fa-f0-9]{2}))/',
             [$this, 'rawurlencodeMatchZero'],
             $str
         );

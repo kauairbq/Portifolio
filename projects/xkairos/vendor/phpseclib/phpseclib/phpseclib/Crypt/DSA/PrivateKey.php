@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * DSA Private Key

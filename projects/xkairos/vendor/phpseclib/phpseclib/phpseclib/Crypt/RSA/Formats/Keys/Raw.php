@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Raw RSA Key Handler

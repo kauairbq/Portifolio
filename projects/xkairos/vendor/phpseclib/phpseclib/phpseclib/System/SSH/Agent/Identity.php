@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP ssh-agent client.

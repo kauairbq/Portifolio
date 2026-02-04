@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -135,7 +135,7 @@ class EachPromise implements PromisorInterface
 
         // Add only up to N pending promises.
         $concurrency = is_callable($this->concurrency)
-            ? ($this->concurrency)(count($this->pending))
+             ($this->concurrency)(count($this->pending))
             : $this->concurrency;
         $concurrency = max($concurrency - count($this->pending), 0);
         // Concurrency may be set to 0 to disallow new promises.

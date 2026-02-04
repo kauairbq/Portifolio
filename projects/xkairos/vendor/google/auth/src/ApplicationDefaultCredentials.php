@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -95,9 +95,9 @@ class ApplicationDefaultCredentials
      */
     public static function getSubscriber(// @phpstan-ignore-line
         $scope = null,
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache);
 
@@ -125,9 +125,9 @@ class ApplicationDefaultCredentials
      */
     public static function getMiddleware(
         $scope = null,
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null,
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null,
         $quotaProject = null
     ) {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache, $quotaProject);
@@ -159,18 +159,18 @@ class ApplicationDefaultCredentials
      */
     public static function getCredentials(
         $scope = null,
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null,
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null,
         $quotaProject = null,
         $defaultScope = null,
-        ?string $universeDomain = null,
+        string $universeDomain = null,
         null|false|LoggerInterface $logger = null,
     ) {
         $creds = null;
         $jsonKey = CredentialsLoader::fromEnv()
-            ?: CredentialsLoader::fromWellKnownFile();
-        $anyScope = $scope ?: $defaultScope;
+            : CredentialsLoader::fromWellKnownFile();
+        $anyScope = $scope : $defaultScope;
 
         if (!$httpHandler) {
             if (!($client = HttpClientCache::getHttpClient())) {
@@ -232,9 +232,9 @@ class ApplicationDefaultCredentials
      */
     public static function getIdTokenMiddleware(
         $targetAudience,
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $creds = self::getIdTokenCredentials($targetAudience, $httpHandler, $cacheConfig, $cache);
 
@@ -259,9 +259,9 @@ class ApplicationDefaultCredentials
      */
     public static function getProxyIdTokenMiddleware(
         $targetAudience,
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $creds = self::getIdTokenCredentials($targetAudience, $httpHandler, $cacheConfig, $cache);
 
@@ -284,13 +284,13 @@ class ApplicationDefaultCredentials
      */
     public static function getIdTokenCredentials(
         $targetAudience,
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $creds = null;
         $jsonKey = CredentialsLoader::fromEnv()
-            ?: CredentialsLoader::fromWellKnownFile();
+            : CredentialsLoader::fromWellKnownFile();
 
         if (!$httpHandler) {
             if (!($client = HttpClientCache::getHttpClient())) {
@@ -375,9 +375,9 @@ class ApplicationDefaultCredentials
      * @return bool
      */
     private static function onGce(
-        ?callable $httpHandler = null,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        callable $httpHandler = null,
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $gceCacheConfig = [];
         foreach (['lifetime', 'prefix'] as $key) {

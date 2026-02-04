@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -59,8 +59,8 @@ class Oauth2 extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://www.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://www.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://www.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch/oauth2/v2';
     $this->version = 'v2';

@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -74,7 +74,7 @@ class PrepareBodyMiddleware
             return;
         }
 
-        $expect = $options['expect'] ?? null;
+        $expect = $options['expect']  null;
 
         // Return if disabled or using HTTP/1.0
         if ($expect === false || $request->getProtocolVersion() === '1.0') {

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -51,7 +51,7 @@ class AuthTokenMiddleware
     private $fetcher;
 
     /**
-     * @var ?callable
+     * @var callable
      */
     private $tokenCallback;
 
@@ -64,8 +64,8 @@ class AuthTokenMiddleware
      */
     public function __construct(
         FetchAuthTokenInterface $fetcher,
-        ?callable $httpHandler = null,
-        ?callable $tokenCallback = null
+        callable $httpHandler = null,
+        callable $tokenCallback = null
     ) {
         $this->fetcher = $fetcher;
         $this->httpHandler = $httpHandler;
@@ -133,7 +133,7 @@ class AuthTokenMiddleware
             $token = $this->fetcher->fetchAuthToken();
             $request = $request->withHeader(
                 'authorization',
-                'Bearer ' . ($token['access_token'] ?? $token['id_token'] ?? '')
+                'Bearer ' . ($token['access_token']  $token['id_token']  '')
             );
         } else {
             $headers = $this->fetcher->updateMetadata($request->getHeaders(), null, $this->httpHandler);

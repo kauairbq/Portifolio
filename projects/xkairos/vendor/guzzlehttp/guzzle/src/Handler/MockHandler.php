@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Handler;
 
@@ -52,7 +52,7 @@ class MockHandler implements \Countable
      * @param callable|null $onFulfilled Callback to invoke when the return value is fulfilled.
      * @param callable|null $onRejected  Callback to invoke when the return value is rejected.
      */
-    public static function createWithMiddleware(?array $queue = null, ?callable $onFulfilled = null, ?callable $onRejected = null): HandlerStack
+    public static function createWithMiddleware(array $queue = null, callable $onFulfilled = null, callable $onRejected = null): HandlerStack
     {
         return HandlerStack::create(new self($queue, $onFulfilled, $onRejected));
     }
@@ -66,7 +66,7 @@ class MockHandler implements \Countable
      * @param callable|null          $onFulfilled Callback to invoke when the return value is fulfilled.
      * @param callable|null          $onRejected  Callback to invoke when the return value is rejected.
      */
-    public function __construct(?array $queue = null, ?callable $onFulfilled = null, ?callable $onRejected = null)
+    public function __construct(array $queue = null, callable $onFulfilled = null, callable $onRejected = null)
     {
         $this->onFulfilled = $onFulfilled;
         $this->onRejected = $onRejected;
@@ -108,11 +108,11 @@ class MockHandler implements \Countable
         }
 
         $response = $response instanceof \Throwable
-            ? P\Create::rejectionFor($response)
+             P\Create::rejectionFor($response)
             : P\Create::promiseFor($response);
 
         return $response->then(
-            function (?ResponseInterface $value) use ($request, $options) {
+            function (ResponseInterface $value) use ($request, $options) {
                 $this->invokeStats($request, $options, $value);
                 if ($this->onFulfilled) {
                     ($this->onFulfilled)($value);
@@ -168,7 +168,7 @@ class MockHandler implements \Countable
     /**
      * Get the last received request.
      */
-    public function getLastRequest(): ?RequestInterface
+    public function getLastRequest(): RequestInterface
     {
         return $this->lastRequest;
     }
@@ -200,11 +200,11 @@ class MockHandler implements \Countable
     private function invokeStats(
         RequestInterface $request,
         array $options,
-        ?ResponseInterface $response = null,
+        ResponseInterface $response = null,
         $reason = null
     ): void {
         if (isset($options['on_stats'])) {
-            $transferTime = $options['transfer_time'] ?? 0;
+            $transferTime = $options['transfer_time']  0;
             $stats = new TransferStats($request, $response, $transferTime, $reason);
             ($options['on_stats'])($stats);
         }

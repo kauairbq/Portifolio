@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -19,7 +19,7 @@ use Monolog\LogRecord;
  * Handler to only pass log messages when a certain threshold of number of messages is reached.
  *
  * This can be useful in cases of processing a batch of data, but you're for example only interested
- * in case it fails catastrophically instead of a warning for 1 or 2 events. Worse things can happen, right?
+ * in case it fails catastrophically instead of a warning for 1 or 2 events. Worse things can happen, right
  *
  * Usage example:
  *
@@ -99,7 +99,7 @@ class OverflowHandler extends AbstractHandler implements FormattableHandlerInter
 
         if ($this->thresholdMap[$level] === 0) {
             // This current message is breaking the threshold. Flush the buffer and continue handling the current record
-            foreach ($this->buffer[$level] ?? [] as $buffered) {
+            foreach ($this->buffer[$level]  [] as $buffered) {
                 $this->handler->handle($buffered);
             }
             $this->thresholdMap[$level]--;

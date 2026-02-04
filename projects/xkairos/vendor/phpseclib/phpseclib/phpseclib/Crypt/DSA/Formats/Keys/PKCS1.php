@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#1 Formatted DSA Key Handler

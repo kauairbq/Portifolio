@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Modular Exponentiation Engine
@@ -59,7 +59,7 @@ abstract class Base extends PHP
      * The two most commonly used modular reductions are Barrett and Montgomery reduction.  Montgomery reduction,
      * although faster, only works when the gcd of the modulo and of the base being used is 1.  In RSA, when the
      * base is a power of two, the modulo - a product of two primes - is always going to have a gcd of 1 (because
-     * the product of two odd numbers is odd), but what about when RSA isn't used?
+     * the product of two odd numbers is odd), but what about when RSA isn't used
      *
      * In contrast, Barrett reduction has no such constraint.  As such, some bigint implementations perform a
      * Barrett reduction after every operation in the modpow function.  Others perform Barrett reductions when the

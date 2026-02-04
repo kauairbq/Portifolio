@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -28,11 +28,11 @@ use Monolog\LogRecord;
  *     password: string|null
  * }
  * @phpstan-type InputOptions array{
- *     host?: string,
- *     port?: int,
- *     dbname?: string,
- *     username?: string|null,
- *     password?: string|null
+ *     host: string,
+ *     port: int,
+ *     dbname: string,
+ *     username: string|null,
+ *     password: string|null
  * }
  */
 class CouchDBHandler extends AbstractProcessingHandler

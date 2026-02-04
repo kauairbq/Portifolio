@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -79,10 +79,10 @@ class SlackRecord
      * @param string[] $excludeFields
      */
     public function __construct(
-        ?string $channel = null,
-        ?string $username = null,
+        string $channel = null,
+        string $username = null,
         bool $useAttachment = true,
-        ?string $userIcon = null,
+        string $userIcon = null,
         bool $useShortAttachment = false,
         bool $includeContextAndExtra = false,
         array $excludeFields = [],
@@ -213,17 +213,17 @@ class SlackRecord
         $hasOnlyNonNumericKeys = \count(array_filter(array_keys($normalized), 'is_numeric')) === 0;
 
         return $hasSecondDimension || $hasOnlyNonNumericKeys
-            ? Utils::jsonEncode($normalized, JSON_PRETTY_PRINT|Utils::DEFAULT_JSON_FLAGS)
+             Utils::jsonEncode($normalized, JSON_PRETTY_PRINT|Utils::DEFAULT_JSON_FLAGS)
             : Utils::jsonEncode($normalized, Utils::DEFAULT_JSON_FLAGS);
     }
 
     /**
      * Channel used by the bot when posting
      *
-     * @param  ?string $channel
+     * @param  string $channel
      * @return $this
      */
-    public function setChannel(?string $channel = null): self
+    public function setChannel(string $channel = null): self
     {
         $this->channel = $channel;
 
@@ -233,10 +233,10 @@ class SlackRecord
     /**
      * Username used by the bot when posting
      *
-     * @param  ?string $username
+     * @param  string $username
      * @return $this
      */
-    public function setUsername(?string $username = null): self
+    public function setUsername(string $username = null): self
     {
         $this->username = $username;
 
@@ -256,7 +256,7 @@ class SlackRecord
     /**
      * @return $this
      */
-    public function setUserIcon(?string $userIcon = null): self
+    public function setUserIcon(string $userIcon = null): self
     {
         $this->userIcon = $userIcon;
 
@@ -305,7 +305,7 @@ class SlackRecord
     /**
      * @return $this
      */
-    public function setFormatter(?FormatterInterface $formatter = null): self
+    public function setFormatter(FormatterInterface $formatter = null): self
     {
         $this->formatter = $formatter;
 
@@ -322,7 +322,7 @@ class SlackRecord
     private function generateAttachmentField(string $title, $value): array
     {
         $value = \is_array($value)
-            ? sprintf('```%s```', substr($this->stringify($value), 0, 1990))
+             sprintf('```%s```', substr($this->stringify($value), 0, 1990))
             : $value;
 
         return [

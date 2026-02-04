@@ -1,4 +1,4 @@
- <?php
+ <php
 include '../includes/config.php';
 session_start();
 if(!isset($_SESSION['cliente_id']) && !isset($_SESSION['admin_logged_in'])) header('Location: login.php');
@@ -11,15 +11,15 @@ $is_client = isset($_SESSION['cliente_id']);
 $message = '';
 if ($is_admin && $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_peca'])) {
     try {
-        $stmt = $pdo->prepare('INSERT INTO pecas (tipo, nome, preco, estoque, categoria, imagem, descricao) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $stmt = $pdo->prepare('INSERT INTO pecas (tipo, nome, preco, estoque, categoria, imagem, descricao) VALUES (, , , , , , )');
         $stmt->execute([
             $_POST['tipo'],
             $_POST['nome'],
             $_POST['preco'],
             $_POST['estoque'],
-            $_POST['categoria'] ?? '',
-            $_POST['imagem'] ?? '',
-            $_POST['descricao'] ?? ''
+            $_POST['categoria']  '',
+            $_POST['imagem']  '',
+            $_POST['descricao']  ''
         ]);
         $message = 'Peça adicionada com sucesso!';
     } catch (PDOException $e) {
@@ -31,23 +31,23 @@ if ($is_admin && $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_peca'
 if ($is_admin) {
     $stmt_total_clients = $pdo->prepare("SELECT COUNT(*) as total_clients FROM clientes");
     $stmt_total_clients->execute();
-    $total_clients = $stmt_total_clients->fetch()['total_clients'] ?? 0;
+    $total_clients = $stmt_total_clients->fetch()['total_clients']  0;
 
     $stmt_total_projects = $pdo->prepare("SELECT COUNT(*) as total_projects FROM solicitacoes");
     $stmt_total_projects->execute();
-    $total_projects = $stmt_total_projects->fetch()['total_projects'] ?? 0;
+    $total_projects = $stmt_total_projects->fetch()['total_projects']  0;
 
     $stmt_total_revenue = $pdo->prepare("SELECT SUM(valor) as total_revenue FROM pagamentos WHERE status = 'Pago'");
     $stmt_total_revenue->execute();
-    $total_revenue = $stmt_total_revenue->fetch()['total_revenue'] ?? 0;
+    $total_revenue = $stmt_total_revenue->fetch()['total_revenue']  0;
 
     $stmt_pending_payments = $pdo->prepare("SELECT SUM(valor) as pending_payments FROM pagamentos WHERE status = 'Pendente'");
     $stmt_pending_payments->execute();
-    $pending_payments = $stmt_pending_payments->fetch()['pending_payments'] ?? 0;
+    $pending_payments = $stmt_pending_payments->fetch()['pending_payments']  0;
 
     $stmt_total_risks = $pdo->prepare("SELECT COUNT(*) as total_risks FROM riscos");
     $stmt_total_risks->execute();
-    $total_risks = $stmt_total_risks->fetch()['total_risks'] ?? 0;
+    $total_risks = $stmt_total_risks->fetch()['total_risks']  0;
 
     // Recent clients
     $stmt_recent_clients = $pdo->prepare("SELECT id, nome, email, data_cadastro FROM clientes ORDER BY data_cadastro DESC LIMIT 5");
@@ -62,24 +62,24 @@ if ($is_admin) {
 
 // Client data
 if ($is_client) {
-    $stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE cliente_email=(SELECT email FROM clientes WHERE id=?)');
+    $stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE cliente_email=(SELECT email FROM clientes WHERE id=)');
     $stmt->execute([$_SESSION['cliente_id']]);
     $solicitacoes = $stmt->fetchAll();
 
     // Dados financeiros para o dashboard
     $stmt_pagamentos = $pdo->prepare("SELECT SUM(valor) as total_recebido FROM pagamentos WHERE status = 'Pago'");
     $stmt_pagamentos->execute();
-    $total_recebido = $stmt_pagamentos->fetch()['total_recebido'] ?? 0;
+    $total_recebido = $stmt_pagamentos->fetch()['total_recebido']  0;
 
     $stmt_pendentes = $pdo->prepare("SELECT SUM(valor) as total_pendente FROM pagamentos WHERE status = 'Pendente'");
     $stmt_pendentes->execute();
-    $total_pendente = $stmt_pendentes->fetch()['total_pendente'] ?? 0;
+    $total_pendente = $stmt_pendentes->fetch()['total_pendente']  0;
 
     $stmt_projetos = $pdo->prepare("SELECT COUNT(*) as total_projetos FROM solicitacoes");
     $stmt_projetos->execute();
-    $total_projetos = $stmt_projetos->fetch()['total_projetos'] ?? 0;
+    $total_projetos = $stmt_projetos->fetch()['total_projetos']  0;
 }
-?>
+>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
@@ -477,69 +477,69 @@ tr:hover {
     </a>
 
     <div class="header">
-        <h1><i class="fas fa-tachometer-alt"></i> Bem-vindo, <?= $is_admin ? 'Administrador' : $_SESSION['cliente_nome'] ?></h1>
-        <p><?= $is_admin ? 'Painel de administração - Gerencie clientes, projetos e sistema' : 'Gerencie seus projetos e acompanhe o progresso em tempo real' ?></p>
+        <h1><i class="fas fa-tachometer-alt"></i> Bem-vindo, <= $is_admin  'Administrador' : $_SESSION['cliente_nome'] ></h1>
+        <p><= $is_admin  'Painel de administração - Gerencie clientes, projetos e sistema' : 'Gerencie seus projetos e acompanhe o progresso em tempo real' ></p>
     </div>
 
     <!-- Admin Statistics -->
-    <?php if ($is_admin): ?>
+    <php if ($is_admin): >
     <div class="stats-grid">
         <div class="stat-card">
             <i class="fas fa-users"></i>
-            <h3><?= $total_clients ?></h3>
+            <h3><= $total_clients ></h3>
             <p>Total de Clientes</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-project-diagram"></i>
-            <h3><?= $total_projects ?></h3>
+            <h3><= $total_projects ></h3>
             <p>Total de Projetos</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-euro-sign"></i>
-            <h3>€<?= number_format($total_revenue, 2) ?></h3>
+            <h3>€<= number_format($total_revenue, 2) ></h3>
             <p>Receita Total</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-clock"></i>
-            <h3>€<?= number_format($pending_payments, 2) ?></h3>
+            <h3>€<= number_format($pending_payments, 2) ></h3>
             <p>Pagamentos Pendentes</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-exclamation-triangle"></i>
-            <h3><?= $total_risks ?></h3>
+            <h3><= $total_risks ></h3>
             <p>Total de Riscos</p>
         </div>
     </div>
-    <?php endif; ?>
+    <php endif; >
 
     <!-- Client Statistics -->
-    <?php if ($is_client): ?>
+    <php if ($is_client): >
     <div class="stats-grid">
         <div class="stat-card">
             <i class="fas fa-euro-sign"></i>
-            <h3>€<?= number_format($total_recebido, 2) ?></h3>
+            <h3>€<= number_format($total_recebido, 2) ></h3>
             <p>Total Recebido</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-clock"></i>
-            <h3>€<?= number_format($total_pendente, 2) ?></h3>
+            <h3>€<= number_format($total_pendente, 2) ></h3>
             <p>Total Pendente</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-project-diagram"></i>
-            <h3><?= $total_projetos ?></h3>
+            <h3><= $total_projetos ></h3>
             <p>Total de Projetos</p>
         </div>
         <div class="stat-card">
             <i class="fas fa-check-circle"></i>
-            <h3><?= count($solicitacoes) ?></h3>
+            <h3><= count($solicitacoes) ></h3>
             <p>Suas Solicitações</p>
         </div>
     </div>
-    <?php endif; ?>
+    <php endif; >
 
     <!-- Recent Clients and Projects for Admins -->
-    <?php if ($is_admin): ?>
+    <php if ($is_admin): >
     <div class="section">
         <h2><i class="fas fa-users"></i> Clientes Recentes</h2>
         <div class="table-responsive">
@@ -553,14 +553,14 @@ tr:hover {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($recent_clients as $client): ?>
+                    <php foreach ($recent_clients as $client): >
                     <tr>
-                        <td><?= $client['id'] ?></td>
-                        <td><?= $client['nome'] ?></td>
-                        <td><?= $client['email'] ?></td>
-                        <td><?= isset($client['data_cadastro']) ? $client['data_cadastro'] : (isset($client['data_registro']) ? $client['data_registro'] : 'N/A') ?></td>
+                        <td><= $client['id'] ></td>
+                        <td><= $client['nome'] ></td>
+                        <td><= $client['email'] ></td>
+                        <td><= isset($client['data_cadastro'])  $client['data_cadastro'] : (isset($client['data_registro'])  $client['data_registro'] : 'N/A') ></td>
                     </tr>
-                    <?php endforeach; ?>
+                    <php endforeach; >
                 </tbody>
             </table>
         </div>
@@ -580,15 +580,15 @@ tr:hover {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($recent_projects as $project): ?>
+                    <php foreach ($recent_projects as $project): >
                     <tr>
-                        <td><?= $project['id'] ?></td>
-                        <td><?= $project['cliente_email'] ?></td>
-                        <td>€<?= number_format($project['total'], 2) ?></td>
-                        <td class="status-<?= strtolower(str_replace(' ', '-', $project['status'])) ?>"><?= $project['status'] ?></td>
-                        <td><?= $project['data_solicitacao'] ?></td>
+                        <td><= $project['id'] ></td>
+                        <td><= $project['cliente_email'] ></td>
+                        <td>€<= number_format($project['total'], 2) ></td>
+                        <td class="status-<= strtolower(str_replace(' ', '-', $project['status'])) >"><= $project['status'] ></td>
+                        <td><= $project['data_solicitacao'] ></td>
                     </tr>
-                    <?php endforeach; ?>
+                    <php endforeach; >
                 </tbody>
             </table>
         </div>
@@ -604,36 +604,36 @@ tr:hover {
             <a href="../orcamentos.php" class="btn"><i class="fas fa-file-alt"></i> Ver Orçamentos</a>
         </div>
     </div>
-    <?php endif; ?>
+    <php endif; >
 
     <!-- Client-specific content -->
-    <?php if ($is_client): ?>
+    <php if ($is_client): >
     <h3>Suas solicitações</h3>
-<?php if(count($solicitacoes)===0) echo '<p>Nenhuma solicitação encontrada.</p>'; ?>
+<php if(count($solicitacoes)===0) echo '<p>Nenhuma solicitação encontrada.</p>'; >
 <table border='1' cellpadding='10'>
 <tr><th>ID</th><th>CPU</th><th>GPU</th><th>RAM</th><th>SSD</th><th>Total (€)</th><th>Status</th><th>Data</th><th>PDF</th><th>Pagar</th></tr>
-<?php foreach($solicitacoes as $s): ?>
+<php foreach($solicitacoes as $s): >
 <tr>
-<td><?= $s['id'] ?></td>
-<td><?= $s['cpu'] ?></td>
-<td><?= $s['gpu'] ?></td>
-<td><?= $s['ram'] ?></td>
-<td><?= $s['ssd'] ?></td>
-<td><?= $s['total'] ?></td>
-<td><?= $s['status'] ?></td>
-<td><?= $s['data_solicitacao'] ?></td>
-<td><a href='orcamento.php?id=<?= $s['id'] ?>' target='_blank'>PDF</a></td>
+<td><= $s['id'] ></td>
+<td><= $s['cpu'] ></td>
+<td><= $s['gpu'] ></td>
+<td><= $s['ram'] ></td>
+<td><= $s['ssd'] ></td>
+<td><= $s['total'] ></td>
+<td><= $s['status'] ></td>
+<td><= $s['data_solicitacao'] ></td>
+<td><a href='orcamento.phpid=<= $s['id'] >' target='_blank'>PDF</a></td>
 <td>
 <form action='pagamento_mbway.php' method='POST'>
-<input type='hidden' name='solicitacao_id' value='<?= $s['id'] ?>'>
-<input type='hidden' name='valor' value='<?= $s['total'] ?>'>
+<input type='hidden' name='solicitacao_id' value='<= $s['id'] >'>
+<input type='hidden' name='valor' value='<= $s['total'] >'>
 <button type='submit'>MBWAY</button>
 </form>
 </td>
 </tr>
-<?php endforeach; ?>
+<php endforeach; >
 </table>
-<?php endif; ?>
+<php endif; >
 
 <!-- Adicionar Peça ao Site -->
 <div class="dashboard-section">
@@ -768,7 +768,7 @@ function loadDashboardChecklist() {
         data.forEach(item=>{
             const li = document.createElement('li');
             li.className = 'checklist-item';
-            li.innerHTML = `<input type="checkbox" data-etapa="${item.etapa}" ${item.concluida==1?'checked':''}> <span>${item.etapa}</span>`;
+            li.innerHTML = `<input type="checkbox" data-etapa="${item.etapa}" ${item.concluida==1'checked':''}> <span>${item.etapa}</span>`;
             if(item.concluida==1) {
                 li.classList.add('completed');
                 completedCount++;
@@ -777,7 +777,7 @@ function loadDashboardChecklist() {
         });
 
         // Update progress bar
-        const progressPercent = data.length > 0 ? (completedCount / data.length) * 100 : 0;
+        const progressPercent = data.length > 0  (completedCount / data.length) * 100 : 0;
         document.getElementById('progress-fill').style.width = progressPercent + '%';
         document.getElementById('progress-text').textContent = Math.round(progressPercent) + '% Concluído';
 
@@ -800,7 +800,7 @@ function loadDashboardChecklist() {
                     completedCount--;
                 }
                 // Update progress after change
-                const newProgress = data.length > 0 ? (completedCount / data.length) * 100 : 0;
+                const newProgress = data.length > 0  (completedCount / data.length) * 100 : 0;
                 document.getElementById('progress-fill').style.width = newProgress + '%';
                 document.getElementById('progress-text').textContent = Math.round(newProgress) + '% Concluído';
             });
@@ -812,7 +812,7 @@ function loadDashboardChecklist() {
 document.getElementById('dashboard-saveBtn').addEventListener('click', ()=>{
     const data = {};
     document.querySelectorAll('#dashboard-checklist input').forEach(chk=>{
-        data[chk.dataset.etapa] = chk.checked ? 1 : 0;
+        data[chk.dataset.etapa] = chk.checked  1 : 0;
     });
 
     fetch('checklist_api.php', {
@@ -873,9 +873,9 @@ function loadFinanceiro(){
                 <td class="${statusClass}">${p.status}</td>
                 <td>
                     <select onchange="updateStatus(${p.id}, this.value)">
-                        <option value="Pendente" ${p.status==='Pendente'?'selected':''}>Pendente</option>
-                        <option value="Parcial" ${p.status==='Parcial'?'selected':''}>Parcial</option>
-                        <option value="Pago" ${p.status==='Pago'?'selected':''}>Pago</option>
+                        <option value="Pendente" ${p.status==='Pendente''selected':''}>Pendente</option>
+                        <option value="Parcial" ${p.status==='Parcial''selected':''}>Parcial</option>
+                        <option value="Pago" ${p.status==='Pago''selected':''}>Pago</option>
                     </select>
                     <button onclick="payMBWay(${p.id})">MBWay</button>
                 </td>
@@ -934,9 +934,9 @@ function loadRiscos(){
                 <td class="${statusClass}">${r.status}</td>
                 <td>
                     <select onchange="updateRiscoStatus(${r.id}, this.value)">
-                        <option value="Aberto" ${r.status==='Aberto'?'selected':''}>Aberto</option>
-                        <option value="Em Mitigacao" ${r.status==='Em Mitigacao'?'selected':''}>Em Mitigação</option>
-                        <option value="Mitigado" ${r.status==='Mitigado'?'selected':''}>Mitigado</option>
+                        <option value="Aberto" ${r.status==='Aberto''selected':''}>Aberto</option>
+                        <option value="Em Mitigacao" ${r.status==='Em Mitigacao''selected':''}>Em Mitigação</option>
+                        <option value="Mitigado" ${r.status==='Mitigado''selected':''}>Mitigado</option>
                     </select>
                 </td>
             `;

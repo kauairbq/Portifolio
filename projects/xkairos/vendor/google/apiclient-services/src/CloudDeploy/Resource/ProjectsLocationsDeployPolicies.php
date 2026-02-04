@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -185,7 +185,7 @@ class ProjectsLocationsDeployPolicies extends \Google\Service\Resource
    *
    * @param string $name Output only. Name of the `DeployPolicy`. Format is
    * `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`. The
-   * `deployPolicy` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
+   * `deployPolicy` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])`
    * @param DeployPolicy $postBody
    * @param array $optParams Optional parameters.
    *

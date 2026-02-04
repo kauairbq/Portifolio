@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace phpseclib3\Exception;
 

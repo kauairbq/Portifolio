@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -71,7 +71,7 @@ class ProjectsLocationsSchemaRegistriesContextsSubjects extends \Google\Service\
    * deleted subjects. The default is false.
    * @opt_param string subjectPrefix Optional. The context to filter the subjects
    * by, in the format of `:.{context}:`. If unset, all subjects in the registry
-   * are returned. Set to empty string or add as '?subjectPrefix=' at the end of
+   * are returned. Set to empty string or add as 'subjectPrefix=' at the end of
    * this request to list subjects in the default context.
    * @return HttpBody
    * @throws \Google\Service\Exception

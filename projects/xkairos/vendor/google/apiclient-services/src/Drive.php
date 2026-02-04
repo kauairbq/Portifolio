@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -90,8 +90,8 @@ class Drive extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://www.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://www.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://www.UNIVERSE_DOMAIN/';
     $this->servicePath = 'drive/v3/';
     $this->batchPath = 'batch/drive/v3';
     $this->version = 'v3';

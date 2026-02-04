@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -105,7 +105,7 @@ class ProjectsLocationsEndpoints extends \Google\Service\Resource
    * character is a number, this value may be up to 9 characters, and valid
    * characters are `[0-9]` with no leading zeros. When using HTTP/JSON, this
    * field is populated based on a query string argument, such as
-   * `?endpoint_id=12345`. This is the fallback for fields that are not included
+   * `endpoint_id=12345`. This is the fallback for fields that are not included
    * in either the URI or the body.
    * @return GoogleLongrunningOperation
    * @throws \Google\Service\Exception

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -66,7 +66,7 @@ class GelfMessageFormatter extends NormalizerFormatter
     /**
      * @throws \RuntimeException
      */
-    public function __construct(?string $systemName = null, ?string $extraPrefix = null, string $contextPrefix = 'ctxt_', ?int $maxLength = null)
+    public function __construct(string $systemName = null, string $extraPrefix = null, string $contextPrefix = 'ctxt_', int $maxLength = null)
     {
         if (!class_exists(Message::class)) {
             throw new \RuntimeException('Composer package graylog2/gelf-php is required to use Monolog\'s GelfMessageFormatter');
@@ -74,11 +74,11 @@ class GelfMessageFormatter extends NormalizerFormatter
 
         parent::__construct('U.u');
 
-        $this->systemName = (null === $systemName || $systemName === '') ? (string) gethostname() : $systemName;
+        $this->systemName = (null === $systemName || $systemName === '')  (string) gethostname() : $systemName;
 
-        $this->extraPrefix = null === $extraPrefix ? '' : $extraPrefix;
+        $this->extraPrefix = null === $extraPrefix  '' : $extraPrefix;
         $this->contextPrefix = $contextPrefix;
-        $this->maxLength = null === $maxLength ? self::DEFAULT_MAX_LENGTH : $maxLength;
+        $this->maxLength = null === $maxLength  self::DEFAULT_MAX_LENGTH : $maxLength;
     }
 
     /**
@@ -116,7 +116,7 @@ class GelfMessageFormatter extends NormalizerFormatter
 
         foreach ($extra as $key => $val) {
             $key = (string) preg_replace('#[^\w.-]#', '-', (string) $key);
-            $val = \is_scalar($val) || null === $val ? $val : $this->toJson($val);
+            $val = \is_scalar($val) || null === $val  $val : $this->toJson($val);
             $len = \strlen($this->extraPrefix . $key . $val);
             if ($len > $this->maxLength) {
                 $message->setAdditional($this->extraPrefix . $key, Utils::substr((string) $val, 0, $this->maxLength));
@@ -128,7 +128,7 @@ class GelfMessageFormatter extends NormalizerFormatter
 
         foreach ($context as $key => $val) {
             $key = (string) preg_replace('#[^\w.-]#', '-', (string) $key);
-            $val = \is_scalar($val) || null === $val ? $val : $this->toJson($val);
+            $val = \is_scalar($val) || null === $val  $val : $this->toJson($val);
             $len = \strlen($this->contextPrefix . $key . $val);
             if ($len > $this->maxLength) {
                 $message->setAdditional($this->contextPrefix . $key, Utils::substr((string) $val, 0, $this->maxLength));

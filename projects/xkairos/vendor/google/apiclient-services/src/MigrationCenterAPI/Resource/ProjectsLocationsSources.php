@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -53,7 +53,7 @@ class ProjectsLocationsSources extends \Google\Service\Resource
    * will become the last component of the source name. The ID must be unique
    * within the project, must conform with RFC-1034, is restricted to lower-cased
    * letters, and has a maximum length of 63 characters. The ID must match the
-   * regular expression: `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
+   * regular expression: `[a-z]([a-z0-9-]{0,61}[a-z0-9])`.
    * @return Operation
    * @throws \Google\Service\Exception
    */

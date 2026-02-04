@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -23,14 +23,14 @@ use Monolog\LogRecord;
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  *
- * @method bool hasEmergency(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasAlert(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasCritical(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasError(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasWarning(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasNotice(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasInfo(array{message: string, context?: mixed[]}|string $recordAssertions)
- * @method bool hasDebug(array{message: string, context?: mixed[]}|string $recordAssertions)
+ * @method bool hasEmergency(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasAlert(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasCritical(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasError(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasWarning(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasNotice(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasInfo(array{message: string, context: mixed[]}|string $recordAssertions)
+ * @method bool hasDebug(array{message: string, context: mixed[]}|string $recordAssertions)
  *
  * @method bool hasEmergencyRecords()
  * @method bool hasAlertRecords()
@@ -115,7 +115,7 @@ class TestHandler extends AbstractProcessingHandler
     /**
      * @param string|array $recordAssertions Either a message string or an array containing message and optionally context keys that will be checked against all records
      *
-     * @phpstan-param array{message: string, context?: mixed[]}|string $recordAssertions
+     * @phpstan-param array{message: string, context: mixed[]}|string $recordAssertions
      */
     public function hasRecord(string|array $recordAssertions, Level $level): bool
     {
@@ -180,7 +180,7 @@ class TestHandler extends AbstractProcessingHandler
     public function __call(string $method, array $args): bool
     {
         if ((bool) preg_match('/(.*)(Debug|Info|Notice|Warning|Error|Critical|Alert|Emergency)(.*)/', $method, $matches)) {
-            $genericMethod = $matches[1] . ('Records' !== $matches[3] ? 'Record' : '') . $matches[3];
+            $genericMethod = $matches[1] . ('Records' !== $matches[3]  'Record' : '') . $matches[3];
             $level = \constant(Level::class.'::' . $matches[2]);
             $callback = [$this, $genericMethod];
             if (\is_callable($callback)) {

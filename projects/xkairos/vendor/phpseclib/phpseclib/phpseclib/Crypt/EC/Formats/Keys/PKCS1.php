@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * "PKCS1" (RFC5915) Formatted EC Key Handler
@@ -102,7 +102,7 @@ abstract class PKCS1 extends Progenitor
 
             $components['dA'] = new BigInteger($ecPrivate['privateKey'], 256);
             $components['curve']->rangeCheck($components['dA']);
-            $components['QA'] = isset($ecPrivate['publicKey']) ?
+            $components['QA'] = isset($ecPrivate['publicKey']) 
                 self::extractPoint($ecPrivate['publicKey'], $components['curve']) :
                 $components['curve']->multiplyPoint($components['curve']->getBasePoint(), $components['dA']);
 
@@ -132,7 +132,7 @@ abstract class PKCS1 extends Progenitor
         $components = [];
         $components['curve'] = self::loadCurveByParam($key['parameters']);
         $components['dA'] = new BigInteger($key['privateKey'], 256);
-        $components['QA'] = isset($ecPrivate['publicKey']) ?
+        $components['QA'] = isset($ecPrivate['publicKey']) 
             self::extractPoint($ecPrivate['publicKey'], $components['curve']) :
             $components['curve']->multiplyPoint($components['curve']->getBasePoint(), $components['dA']);
 

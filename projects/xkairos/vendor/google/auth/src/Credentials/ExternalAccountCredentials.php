@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2023 Google Inc.
  *
@@ -57,12 +57,12 @@ class ExternalAccountCredentials implements
     private const CLOUD_RESOURCE_MANAGER_URL = 'https://cloudresourcemanager.UNIVERSE_DOMAIN/v1/projects/%s';
 
     private OAuth2 $auth;
-    private ?string $quotaProject;
-    private ?string $serviceAccountImpersonationUrl;
-    private ?string $workforcePoolUserProject;
-    private ?string $projectId;
+    private string $quotaProject;
+    private string $serviceAccountImpersonationUrl;
+    private string $workforcePoolUserProject;
+    private string $projectId;
     /** @var array<mixed> */
-    private ?array $lastImpersonatedAccessToken;
+    private array $lastImpersonatedAccessToken;
     private string $universeDomain;
 
     /**
@@ -109,11 +109,11 @@ class ExternalAccountCredentials implements
             );
         }
 
-        $this->serviceAccountImpersonationUrl = $jsonKey['service_account_impersonation_url'] ?? null;
+        $this->serviceAccountImpersonationUrl = $jsonKey['service_account_impersonation_url']  null;
 
-        $this->quotaProject = $jsonKey['quota_project_id'] ?? null;
-        $this->workforcePoolUserProject = $jsonKey['workforce_pool_user_project'] ?? null;
-        $this->universeDomain = $jsonKey['universe_domain'] ?? GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN;
+        $this->quotaProject = $jsonKey['quota_project_id']  null;
+        $this->workforcePoolUserProject = $jsonKey['workforce_pool_user_project']  null;
+        $this->universeDomain = $jsonKey['universe_domain']  GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN;
 
         $this->auth = new OAuth2([
             'tokenCredentialUri' => $jsonKey['token_url'],
@@ -122,7 +122,7 @@ class ExternalAccountCredentials implements
             'subjectTokenType' => $jsonKey['subject_token_type'],
             'subjectTokenFetcher' => self::buildCredentialSource($jsonKey),
             'additionalOptions' => $this->workforcePoolUserProject
-                ? ['userProject' => $this->workforcePoolUserProject]
+                 ['userProject' => $this->workforcePoolUserProject]
                 : [],
         ]);
 
@@ -142,8 +142,8 @@ class ExternalAccountCredentials implements
         if (isset($credentialSource['file'])) {
             return new FileSource(
                 $credentialSource['file'],
-                $credentialSource['format']['type'] ?? null,
-                $credentialSource['format']['subject_token_field_name'] ?? null
+                $credentialSource['format']['type']  null,
+                $credentialSource['format']['subject_token_field_name']  null
             );
         }
 
@@ -165,18 +165,18 @@ class ExternalAccountCredentials implements
             return new AwsNativeSource(
                 $jsonKey['audience'],
                 $credentialSource['regional_cred_verification_url'],   // $regionalCredVerificationUrl
-                $credentialSource['region_url'] ?? null,               // $regionUrl
-                $credentialSource['url'] ?? null,                      // $securityCredentialsUrl
-                $credentialSource['imdsv2_session_token_url'] ?? null, // $imdsV2TokenUrl
+                $credentialSource['region_url']  null,               // $regionUrl
+                $credentialSource['url']  null,                      // $securityCredentialsUrl
+                $credentialSource['imdsv2_session_token_url']  null, // $imdsV2TokenUrl
             );
         }
 
         if (isset($credentialSource['url'])) {
             return new UrlSource(
                 $credentialSource['url'],
-                $credentialSource['format']['type'] ?? null,
-                $credentialSource['format']['subject_token_field_name'] ?? null,
-                $credentialSource['headers'] ?? null,
+                $credentialSource['format']['type']  null,
+                $credentialSource['format']['subject_token_field_name']  null,
+                $credentialSource['headers']  null,
             );
         }
 
@@ -195,25 +195,25 @@ class ExternalAccountCredentials implements
                 'GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE' => '0',
             ];
 
-            if ($outputFile = $credentialSource['executable']['output_file'] ?? null) {
+            if ($outputFile = $credentialSource['executable']['output_file']  null) {
                 $env['GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE'] = $outputFile;
             }
 
-            if ($serviceAccountImpersonationUrl = $jsonKey['service_account_impersonation_url'] ?? null) {
+            if ($serviceAccountImpersonationUrl = $jsonKey['service_account_impersonation_url']  null) {
                 // Parse email from URL. The formal looks as follows:
                 // https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/name@project-id.iam.gserviceaccount.com:generateAccessToken
-                $regex = '/serviceAccounts\/(?<email>[^:]+):generateAccessToken$/';
+                $regex = '/serviceAccounts\/(<email>[^:]+):generateAccessToken$/';
                 if (preg_match($regex, $serviceAccountImpersonationUrl, $matches)) {
                     $env['GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL'] = $matches['email'];
                 }
             }
 
-            $timeoutMs = $credentialSource['executable']['timeout_millis'] ?? null;
+            $timeoutMs = $credentialSource['executable']['timeout_millis']  null;
 
             return new ExecutableSource(
                 $credentialSource['executable']['command'],
                 $outputFile,
-                $timeoutMs ? new ExecutableHandler($env, $timeoutMs) : new ExecutableHandler($env)
+                $timeoutMs  new ExecutableHandler($env, $timeoutMs) : new ExecutableHandler($env)
             );
         }
 
@@ -231,7 +231,7 @@ class ExternalAccountCredentials implements
      *     @type int $expires_at
      * }
      */
-    private function getImpersonatedAccessToken(string $stsToken, ?callable $httpHandler = null): array
+    private function getImpersonatedAccessToken(string $stsToken, callable $httpHandler = null): array
     {
         if (!isset($this->serviceAccountImpersonationUrl)) {
             throw new InvalidArgumentException(
@@ -276,7 +276,7 @@ class ExternalAccountCredentials implements
      *     @type string $token_type (identity pool only)
      * }
      */
-    public function fetchAuthToken(?callable $httpHandler = null, array $headers = [])
+    public function fetchAuthToken(callable $httpHandler = null, array $headers = [])
     {
         $stsToken = $this->auth->fetchAuthToken($httpHandler, $headers);
 
@@ -297,9 +297,9 @@ class ExternalAccountCredentials implements
      * FetcherCacheKey.Scope.[ServiceAccount].[TokenType].[WorkforcePoolUserProject]
      * FetcherCacheKey.Audience.[ServiceAccount].[TokenType].[WorkforcePoolUserProject]
      *
-     * @return ?string;
+     * @return string;
      */
-    public function getCacheKey(): ?string
+    public function getCacheKey(): string
     {
         $scopeOrAudience = $this->auth->getAudience();
         if (!$scopeOrAudience) {
@@ -308,14 +308,14 @@ class ExternalAccountCredentials implements
 
         return $this->auth->getSubjectTokenFetcher()->getCacheKey() .
             '.' . $scopeOrAudience .
-            '.' . ($this->serviceAccountImpersonationUrl ?? '') .
-            '.' . ($this->auth->getSubjectTokenType() ?? '') .
-            '.' . ($this->workforcePoolUserProject ?? '');
+            '.' . ($this->serviceAccountImpersonationUrl  '') .
+            '.' . ($this->auth->getSubjectTokenType()  '') .
+            '.' . ($this->workforcePoolUserProject  '');
     }
 
     public function getLastReceivedToken()
     {
-        return $this->lastImpersonatedAccessToken ?? $this->auth->getLastReceivedToken();
+        return $this->lastImpersonatedAccessToken  $this->auth->getLastReceivedToken();
     }
 
     /**
@@ -347,13 +347,13 @@ class ExternalAccountCredentials implements
      *        token. **Defaults to** `null`.
      * @return string|null
      */
-    public function getProjectId(?callable $httpHandler = null, ?string $accessToken = null)
+    public function getProjectId(callable $httpHandler = null, string $accessToken = null)
     {
         if (isset($this->projectId)) {
             return $this->projectId;
         }
 
-        $projectNumber = $this->getProjectNumber() ?: $this->workforcePoolUserProject;
+        $projectNumber = $this->getProjectNumber() : $this->workforcePoolUserProject;
         if (!$projectNumber) {
             return null;
         }
@@ -379,11 +379,11 @@ class ExternalAccountCredentials implements
         return $this->projectId = $body['projectId'];
     }
 
-    private function getProjectNumber(): ?string
+    private function getProjectNumber(): string
     {
         $parts = explode('/', $this->auth->getAudience());
         $i = array_search('projects', $parts);
-        return $parts[$i + 1] ?? null;
+        return $parts[$i + 1]  null;
     }
 
     private function isWorkforcePool(): bool

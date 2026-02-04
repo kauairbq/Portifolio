@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -32,7 +32,7 @@ trait CacheTrait
     private $cacheConfig;
 
     /**
-     * @var ?CacheItemPoolInterface
+     * @var CacheItemPoolInterface
      */
     private $cache;
 
@@ -95,7 +95,7 @@ trait CacheTrait
             return null;
         }
 
-        $key = ($this->cacheConfig['prefix'] ?? '') . $key;
+        $key = ($this->cacheConfig['prefix']  '') . $key;
 
         // ensure we do not have illegal characters
         $key = preg_replace('|[^a-zA-Z0-9_\.!]|', '', $key);

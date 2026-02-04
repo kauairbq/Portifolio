@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -244,7 +244,7 @@ class ProjectsLocationsClustersInstances extends \Google\Service\Resource
    * @param string $name Output only. The name of the instance resource with the
    * format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instanc
    * es/{instance_id} where the cluster and instance ID segments should satisfy
-   * the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters
+   * the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])`, e.g. 1-63 characters
    * of lowercase letters, numbers, and dashes, starting with a letter, and ending
    * with a letter or number. For more details see https://google.aip.dev/122. The
    * prefix of the instance resource name is the name of the parent resource: *

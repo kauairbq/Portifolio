@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -67,8 +67,8 @@ class CloudResourceManager extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://cloudresourcemanager.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://cloudresourcemanager.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://cloudresourcemanager.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://cloudresourcemanager.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v3';

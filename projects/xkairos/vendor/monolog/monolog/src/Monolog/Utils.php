@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -30,13 +30,13 @@ final class Utils
         return $parent . '@anonymous';
     }
 
-    public static function substr(string $string, int $start, ?int $length = null): string
+    public static function substr(string $string, int $start, int $length = null): string
     {
         if (\extension_loaded('mbstring')) {
             return mb_strcut($string, $start, $length);
         }
 
-        return substr($string, $start, (null === $length) ? \strlen($string) : $length);
+        return substr($string, $start, (null === $length)  \strlen($string) : $length);
     }
 
     /**
@@ -76,7 +76,7 @@ final class Utils
      * @throws \RuntimeException if encoding fails and errors are not ignored
      * @return string            when errors are ignored and the encoding fails, "null" is returned which is valid json for null
      */
-    public static function jsonEncode($data, ?int $encodeFlags = null, bool $ignoreErrors = false): string
+    public static function jsonEncode($data, int $encodeFlags = null, bool $ignoreErrors = false): string
     {
         if (null === $encodeFlags) {
             $encodeFlags = self::DEFAULT_JSON_FLAGS;
@@ -113,7 +113,7 @@ final class Utils
      * @throws \RuntimeException if failure can't be corrected
      * @return string            JSON encoded data after error correction
      */
-    public static function handleJsonError(int $code, $data, ?int $encodeFlags = null): string
+    public static function handleJsonError(int $code, $data, int $encodeFlags = null): string
     {
         if ($code !== JSON_ERROR_UTF8) {
             self::throwEncodeError($code, $data);
@@ -182,8 +182,8 @@ final class Utils
                 '/[\x80-\xFF]+/',
                 function (array $m): string {
                     return \function_exists('mb_convert_encoding')
-                        ? mb_convert_encoding($m[0], 'UTF-8', 'ISO-8859-1')
-                        : (\function_exists('utf8_encode') ? utf8_encode($m[0]) : '');
+                         mb_convert_encoding($m[0], 'UTF-8', 'ISO-8859-1')
+                        : (\function_exists('utf8_encode')  utf8_encode($m[0]) : '');
                 },
                 $data
             );
@@ -217,7 +217,7 @@ final class Utils
             return (int) $val;
         }
 
-        if (!(bool) preg_match('/^\s*(?<val>\d+)(?:\.\d+)?\s*(?<unit>[gmk]?)\s*$/i', $val, $match)) {
+        if (!(bool) preg_match('/^\s*(<val>\d+)(:\.\d+)\s*(<unit>[gmk])\s*$/i', $val, $match)) {
             return false;
         }
 

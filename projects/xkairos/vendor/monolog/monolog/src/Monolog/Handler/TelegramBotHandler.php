@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -111,12 +111,12 @@ class TelegramBotHandler extends AbstractProcessingHandler
         string $channel,
         $level = Level::Debug,
         bool   $bubble = true,
-        ?string $parseMode = null,
-        ?bool   $disableWebPagePreview = null,
-        ?bool   $disableNotification = null,
+        string $parseMode = null,
+        bool   $disableWebPagePreview = null,
+        bool   $disableNotification = null,
         bool   $splitLongMessages = false,
         bool   $delayBetweenMessages = false,
-        ?int   $topic = null
+        int   $topic = null
     ) {
         if (!\extension_loaded('curl')) {
             throw new MissingExtensionException('The curl extension is needed to use the TelegramBotHandler');
@@ -196,7 +196,7 @@ class TelegramBotHandler extends AbstractProcessingHandler
     /**
      * @return $this
      */
-    public function setTopic(?int $topic = null): self
+    public function setTopic(int $topic = null): self
     {
         $this->topic = $topic;
 

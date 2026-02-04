@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * brainpoolP160r1

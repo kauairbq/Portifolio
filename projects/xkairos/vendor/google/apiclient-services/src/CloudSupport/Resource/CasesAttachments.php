@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -37,7 +37,7 @@ class CasesAttachments extends \Google\Service\Resource
    * ```python import googleapiclient.discovery api_version = "v2"
    * supportApiService = googleapiclient.discovery.build(
    * serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https:
-   * //cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+   * //cloudsupport.googleapis.com/$discovery/restversion={api_version}", )
    * request = ( supportApiService.cases() .attachments()
    * .list(parent="projects/some-project/cases/43595344") )
    * print(request.execute()) ``` (attachments.listCasesAttachments)

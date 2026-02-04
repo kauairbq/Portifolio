@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -55,7 +55,7 @@ class SendGridHandler extends MailHandler
 
         $this->to = (array) $to;
         // @phpstan-ignore property.deprecated
-        $this->apiUser = $apiUser ?? '';
+        $this->apiUser = $apiUser  '';
         parent::__construct($level, $bubble);
     }
 

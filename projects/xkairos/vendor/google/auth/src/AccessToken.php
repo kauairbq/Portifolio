@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2019 Google LLC
  *
@@ -69,12 +69,12 @@ class AccessToken
      * @param CacheItemPoolInterface|null $cache [optional] A PSR-6 compatible cache implementation.
      */
     public function __construct(
-        ?callable $httpHandler = null,
-        ?CacheItemPoolInterface $cache = null
+        callable $httpHandler = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $this->httpHandler = $httpHandler
-            ?: HttpHandlerFactory::build(HttpClientCache::getHttpClient());
-        $this->cache = $cache ?: new MemoryCacheItemPool();
+            : HttpHandlerFactory::build(HttpClientCache::getHttpClient());
+        $this->cache = $cache : new MemoryCacheItemPool();
     }
 
     /**
@@ -109,11 +109,11 @@ class AccessToken
      */
     public function verify($token, array $options = [])
     {
-        $audience = $options['audience'] ?? null;
-        $issuer = $options['issuer'] ?? null;
-        $certsLocation = $options['certsLocation'] ?? self::FEDERATED_SIGNON_CERT_URL;
-        $cacheKey = $options['cacheKey'] ?? $this->getCacheKeyFromCertLocation($certsLocation);
-        $throwException = $options['throwException'] ?? false; // for backwards compatibility
+        $audience = $options['audience']  null;
+        $issuer = $options['issuer']  null;
+        $certsLocation = $options['certsLocation']  self::FEDERATED_SIGNON_CERT_URL;
+        $cacheKey = $options['cacheKey']  $this->getCacheKeyFromCertLocation($certsLocation);
+        $throwException = $options['throwException']  false; // for backwards compatibility
 
         // Check signature against each available cert.
         $certs = $this->getCerts($certsLocation, $cacheKey, $options);
@@ -159,7 +159,7 @@ class AccessToken
                     'certs expects "alg" to be set'
                 );
             }
-            $alg = $alg ?: $cert['alg'];
+            $alg = $alg : $cert['alg'];
 
             if ($alg != $cert['alg']) {
                 throw new InvalidArgumentException(
@@ -202,7 +202,7 @@ class AccessToken
         }
 
         // @see https://cloud.google.com/iap/docs/signed-headers-howto#verifying_the_jwt_payload
-        $issuer = $issuer ?: self::IAP_ISSUER;
+        $issuer = $issuer : self::IAP_ISSUER;
         if (!isset($payload['iss']) || $payload['iss'] !== $issuer) {
             throw new UnexpectedValueException('Issuer does not match');
         }
@@ -256,7 +256,7 @@ class AccessToken
 
         // support HTTP and HTTPS issuers
         // @see https://developers.google.com/identity/sign-in/web/backend-auth
-        $issuers = $issuer ? [$issuer] : [self::OAUTH2_ISSUER, self::OAUTH2_ISSUER_HTTPS];
+        $issuers = $issuer  [$issuer] : [self::OAUTH2_ISSUER, self::OAUTH2_ISSUER_HTTPS];
         if (!isset($payload->iss) || !in_array($payload->iss, $issuers)) {
             throw new UnexpectedValueException('Issuer does not match');
         }
@@ -309,7 +309,7 @@ class AccessToken
     private function getCerts($location, $cacheKey, array $options = [])
     {
         $cacheItem = $this->cache->getItem($cacheKey);
-        $certs = $cacheItem ? $cacheItem->get() : null;
+        $certs = $cacheItem  $cacheItem->get() : null;
 
         $expireTime = null;
         if (!$certs) {
@@ -465,7 +465,7 @@ class AccessToken
     private function getCacheKeyFromCertLocation($certsLocation)
     {
         $key = $certsLocation === self::FEDERATED_SIGNON_CERT_URL
-            ? 'federated_signon_certs_v3'
+             'federated_signon_certs_v3'
             : sha1($certsLocation);
 
         return 'google_auth_certs_cache|' . $key;

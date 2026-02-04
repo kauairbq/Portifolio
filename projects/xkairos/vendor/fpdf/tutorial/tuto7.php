@@ -1,4 +1,4 @@
-<?php
+<php
 require('../fpdf.php');
 
 $pdf = new FPDF();
@@ -7,4 +7,4 @@ $pdf->AddPage();
 $pdf->SetFont('CevicheOne','',45);
 $pdf->Write(10,'Enjoy new fonts with FPDF!');
 $pdf->Output();
-?>
+>

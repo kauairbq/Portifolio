@@ -1,4 +1,4 @@
-<?php
+<php
 include '../includes/config.php';
 session_start();
 if($_SERVER['REQUEST_METHOD']==='POST'){
@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $nome_completo = $primeiro_nome . ' ' . $ultimo_nome;
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-    $stmt = $pdo->prepare('INSERT INTO clientes (nome,email,senha) VALUES (?,?,?)');
+    $stmt = $pdo->prepare('INSERT INTO clientes (nome,email,senha) VALUES (,,)');
     try {
         $stmt->execute([$nome_completo,$email,$senha]);
         $_SESSION['cliente_id'] = $pdo->lastInsertId();
@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $erro = "Erro ao registrar: " . $e->getMessage();
     }
 }
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -141,9 +141,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                 <label for="senha">Senha</label>
             </div>
             <button type="submit" class="btn">Registrar</button>
-            <?php if(isset($erro)) echo "<p class='error'>$erro</p>"; ?>
+            <php if(isset($erro)) echo "<p class='error'>$erro</p>"; >
             <div class="login-link">
-                <a href="login.php">Já tem conta? Faça login</a>
+                <a href="login.php">Já tem conta Faça login</a>
             </div>
         </form>
     </div>

@@ -20,7 +20,7 @@ Usage
 If you need a logger, you can use the interface like this:
 
 ```php
-<?php
+<php
 
 use Psr\Log\LoggerInterface;
 

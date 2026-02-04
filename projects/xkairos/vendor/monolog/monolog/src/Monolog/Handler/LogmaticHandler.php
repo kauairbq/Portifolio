@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -45,14 +45,14 @@ class LogmaticHandler extends SocketHandler
         bool $persistent = false,
         float $timeout = 0.0,
         float $writingTimeout = 10.0,
-        ?float $connectionTimeout = null,
-        ?int $chunkSize = null
+        float $connectionTimeout = null,
+        int $chunkSize = null
     ) {
         if ($useSSL && !\extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP extension is required to use SSL encrypted connection for LogmaticHandler');
         }
 
-        $endpoint = $useSSL ? 'ssl://api.logmatic.io:10515' : 'api.logmatic.io:10514';
+        $endpoint = $useSSL  'ssl://api.logmatic.io:10515' : 'api.logmatic.io:10514';
         $endpoint .= '/v1/';
 
         parent::__construct(

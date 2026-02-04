@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2024 Google Inc. All Rights Reserved.
  *
@@ -29,7 +29,7 @@ class ExecutableHandler
     /** @var array<string|\Stringable> */
     private array $env = [];
 
-    private ?string $output = null;
+    private string $output = null;
 
     /**
      * @param array<string|\Stringable> $env
@@ -76,7 +76,7 @@ class ExecutableHandler
         return $process->getExitCode();
     }
 
-    public function getOutput(): ?string
+    public function getOutput(): string
     {
         return $this->output;
     }

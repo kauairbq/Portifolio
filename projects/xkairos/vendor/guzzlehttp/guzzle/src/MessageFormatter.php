@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -56,9 +56,9 @@ class MessageFormatter implements MessageFormatterInterface
     /**
      * @param string $template Log message template
      */
-    public function __construct(?string $template = self::CLF)
+    public function __construct(string $template = self::CLF)
     {
-        $this->template = $template ?: self::CLF;
+        $this->template = $template : self::CLF;
     }
 
     /**
@@ -68,7 +68,7 @@ class MessageFormatter implements MessageFormatterInterface
      * @param ResponseInterface|null $response Response that was received
      * @param \Throwable|null        $error    Exception that was received
      */
-    public function format(RequestInterface $request, ?ResponseInterface $response = null, ?\Throwable $error = null): string
+    public function format(RequestInterface $request, ResponseInterface $response = null, \Throwable $error = null): string
     {
         $cache = [];
 
@@ -86,7 +86,7 @@ class MessageFormatter implements MessageFormatterInterface
                         $result = Psr7\Message::toString($request);
                         break;
                     case 'response':
-                        $result = $response ? Psr7\Message::toString($response) : '';
+                        $result = $response  Psr7\Message::toString($response) : '';
                         break;
                     case 'req_headers':
                         $result = \trim($request->getMethod()
@@ -95,7 +95,7 @@ class MessageFormatter implements MessageFormatterInterface
                             .$this->headers($request);
                         break;
                     case 'res_headers':
-                        $result = $response ?
+                        $result = $response 
                             \sprintf(
                                 'HTTP/%s %d %s',
                                 $response->getProtocolVersion(),
@@ -147,7 +147,7 @@ class MessageFormatter implements MessageFormatterInterface
                         break;
                     case 'res_version':
                         $result = $response
-                            ? $response->getProtocolVersion()
+                             $response->getProtocolVersion()
                             : 'NULL';
                         break;
                     case 'host':
@@ -157,13 +157,13 @@ class MessageFormatter implements MessageFormatterInterface
                         $result = \gethostname();
                         break;
                     case 'code':
-                        $result = $response ? $response->getStatusCode() : 'NULL';
+                        $result = $response  $response->getStatusCode() : 'NULL';
                         break;
                     case 'phrase':
-                        $result = $response ? $response->getReasonPhrase() : 'NULL';
+                        $result = $response  $response->getReasonPhrase() : 'NULL';
                         break;
                     case 'error':
-                        $result = $error ? $error->getMessage() : 'NULL';
+                        $result = $error  $error->getMessage() : 'NULL';
                         break;
                     default:
                         // handle prefixed dynamic headers
@@ -171,7 +171,7 @@ class MessageFormatter implements MessageFormatterInterface
                             $result = $request->getHeaderLine(\substr($matches[1], 11));
                         } elseif (\strpos($matches[1], 'res_header_') === 0) {
                             $result = $response
-                                ? $response->getHeaderLine(\substr($matches[1], 11))
+                                 $response->getHeaderLine(\substr($matches[1], 11))
                                 : 'NULL';
                         }
                 }

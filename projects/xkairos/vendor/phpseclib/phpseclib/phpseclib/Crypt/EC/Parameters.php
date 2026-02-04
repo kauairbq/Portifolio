@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * EC Parameters

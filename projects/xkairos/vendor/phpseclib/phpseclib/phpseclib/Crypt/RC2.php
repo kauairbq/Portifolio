@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of RC2.
@@ -13,7 +13,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $rc2 = new \phpseclib3\Crypt\RC2('ctr');
@@ -23,7 +23,7 @@
  *    $plaintext = str_repeat('a', 1024);
  *
  *    echo $rc2->decrypt($rc2->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author   Patrick Monnerat <pm@datasphere.ch>

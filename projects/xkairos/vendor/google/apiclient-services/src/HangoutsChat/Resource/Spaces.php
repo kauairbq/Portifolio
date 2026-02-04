@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -69,7 +69,7 @@ class Spaces extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) and one of the
+   * approval](https://support.google.com/ap=chat-app-auth) and one of the
    * following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.app.spaces.create` -
    * `https://www.googleapis.com/auth/chat.app.spaces` - [User
@@ -120,7 +120,7 @@ class Spaces extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) and the authorization
+   * approval](https://support.google.com/ap=chat-app-auth) and the authorization
    * scope: - `https://www.googleapis.com/auth/chat.app.delete` (only in spaces
    * the app created) - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
@@ -206,7 +206,7 @@ class Spaces extends \Google\Service\Resource
    * authorize-chat-app) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.bot` -
    * `https://www.googleapis.com/auth/chat.app.spaces` with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) - [User
+   * approval](https://support.google.com/ap=chat-app-auth) - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-user) with one of the following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.spaces.readonly` -
@@ -298,7 +298,7 @@ class Spaces extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) and one of the
+   * approval](https://support.google.com/ap=chat-app-auth) and one of the
    * following authorization scopes: -
    * `https://www.googleapis.com/auth/chat.app.spaces` - [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Raw DSA Signature Handler

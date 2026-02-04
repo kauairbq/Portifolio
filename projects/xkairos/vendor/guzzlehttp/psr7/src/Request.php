@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -69,7 +69,7 @@ class Request implements RequestInterface
             $target = '/';
         }
         if ($this->uri->getQuery() != '') {
-            $target .= '?'.$this->uri->getQuery();
+            $target .= ''.$this->uri->getQuery();
         }
 
         return $target;

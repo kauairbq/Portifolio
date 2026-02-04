@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Curves over y^2 = x^3 + a*x + b
@@ -157,8 +157,8 @@ class Prime extends Base
             throw new \RuntimeException('setModulo needs to be called before this method');
         }
         $this->p = [
-            $x instanceof BigInteger ? $this->factory->newInteger($x) : $x,
-            $y instanceof BigInteger ? $this->factory->newInteger($y) : $y
+            $x instanceof BigInteger  $this->factory->newInteger($x) : $x,
+            $y instanceof BigInteger  $this->factory->newInteger($y) : $y
         ];
     }
 
@@ -460,7 +460,7 @@ class Prime extends Base
             throw new \RuntimeException('Unable to derive Y coordinate');
         }
         $bn = $b->isOdd();
-        $yp = $ypn == $bn ? $b : $b->negate();
+        $yp = $ypn == $bn  $b : $b->negate();
         return [$xp, $yp];
     }
 
@@ -527,10 +527,10 @@ class Prime extends Base
         }
 
         $wnd = [$this->getNAFPoints($points[0], 7)];
-        $wndWidth = [isset($points[0]['nafwidth']) ? $points[0]['nafwidth'] : 7];
+        $wndWidth = [isset($points[0]['nafwidth'])  $points[0]['nafwidth'] : 7];
         for ($i = 1; $i < $length; $i++) {
             $wnd[] = $this->getNAFPoints($points[$i], 1);
-            $wndWidth[] = isset($points[$i]['nafwidth']) ? $points[$i]['nafwidth'] : 1;
+            $wndWidth[] = isset($points[$i]['nafwidth'])  $points[$i]['nafwidth'] : 1;
         }
 
         $naf = [];
@@ -582,8 +582,8 @@ class Prime extends Base
             }
 
             for ($j = 0; $j < $max; $j++) {
-                $ja = isset($jsf[0][$j]) ? $jsf[0][$j] : 0;
-                $jb = isset($jsf[1][$j]) ? $jsf[1][$j] : 0;
+                $ja = isset($jsf[0][$j])  $jsf[0][$j] : 0;
+                $jb = isset($jsf[1][$j])  $jsf[1][$j] : 0;
 
                 $naf[$a][$j] = $index[3 * ($ja + 1) + $jb + 1];
                 $naf[$b][$j] = 0;
@@ -598,7 +598,7 @@ class Prime extends Base
             while ($i >= 0) {
                 $zero = true;
                 for ($j = 0; $j < $length; $j++) {
-                    $temp[$j] = isset($naf[$j][$i]) ? $naf[$j][$i] : 0;
+                    $temp[$j] = isset($naf[$j][$i])  $naf[$j][$i] : 0;
                     if ($temp[$j] != 0) {
                         $zero = false;
                     }
@@ -627,7 +627,7 @@ class Prime extends Base
                 if ($z == 0) {
                     continue;
                 }
-                $p = $z > 0 ?
+                $p = $z > 0 
                     $wnd[$j][($z - 1) >> 1] :
                     $this->negatePoint($wnd[$j][(-$z - 1) >> 1]);
                 $acc = $this->addPoint($acc, $p);
@@ -653,7 +653,7 @@ class Prime extends Base
 
         $res = [$point];
         $max = (1 << $wnd) - 1;
-        $dbl = $max == 1 ? null : $this->doublePoint($point);
+        $dbl = $max == 1  null : $this->doublePoint($point);
         for ($i = 1; $i < $max; $i++) {
             $res[] = $this->addPoint($res[$i - 1], $dbl);
         }
@@ -717,7 +717,7 @@ class Prime extends Base
                 $m8 = $k1->testBit(0) + 2 * $k1->testBit(1) + 4 * $k1->testBit(2);
                 $m8 += $d1;
                 $m8 &= 7;
-                $u1 = ($m8 == 3 || $m8 == 5) && $m24 == 2 ? -$m14 : $m14;
+                $u1 = ($m8 == 3 || $m8 == 5) && $m24 == 2  -$m14 : $m14;
             }
             $jsf[0][] = $u1;
 
@@ -726,7 +726,7 @@ class Prime extends Base
                 $m8 = $k2->testBit(0) + 2 * $k2->testBit(1) + 4 * $k2->testBit(2);
                 $m8 += $d2;
                 $m8 &= 7;
-                $u2 = ($m8 == 3 || $m8 == 5) && $m14 == 2 ? -$m24 : $m24;
+                $u2 = ($m8 == 3 || $m8 == 5) && $m14 == 2  -$m24 : $m24;
             }
             $jsf[1][] = $u2;
 

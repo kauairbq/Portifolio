@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -43,7 +43,7 @@ class ProjectsLocationsExascaleDbStorageVaults extends \Google\Service\Resource
    *
    * @opt_param string exascaleDbStorageVaultId Required. The ID of the
    * ExascaleDbStorageVault to create. This value is restricted to
-   * (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in
+   * (^[a-z]([a-z0-9-]{0,61}[a-z0-9])$) and must be a maximum of 63 characters in
    * length. The value must start with a letter and end with a letter or a number.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID so that if you must retry your request,

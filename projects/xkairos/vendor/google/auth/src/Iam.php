@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2019 Google LLC
  *
@@ -33,7 +33,7 @@ class Iam
      * @deprecated
      */
     const IAM_API_ROOT = 'https://iamcredentials.googleapis.com/v1';
-    const SIGN_BLOB_PATH = '%s:signBlob?alt=json';
+    const SIGN_BLOB_PATH = '%s:signBlobalt=json';
     const SERVICE_ACCOUNT_NAME = 'projects/-/serviceAccounts/%s';
     private const IAM_API_ROOT_TEMPLATE = 'https://iamcredentials.UNIVERSE_DOMAIN/v1';
     private const GENERATE_ID_TOKEN_PATH = '%s:generateIdToken';
@@ -49,11 +49,11 @@ class Iam
      * @param callable|null $httpHandler [optional] The HTTP Handler to send requests.
      */
     public function __construct(
-        ?callable $httpHandler = null,
+        callable $httpHandler = null,
         string $universeDomain = GetUniverseDomainInterface::DEFAULT_UNIVERSE_DOMAIN
     ) {
         $this->httpHandler = $httpHandler
-            ?: HttpHandlerFactory::build(HttpClientCache::getHttpClient());
+            : HttpHandlerFactory::build(HttpClientCache::getHttpClient());
         $this->universeDomain = $universeDomain;
     }
 

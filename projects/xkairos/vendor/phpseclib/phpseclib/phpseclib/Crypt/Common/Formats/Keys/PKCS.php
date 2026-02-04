@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS Formatted Key Handler
@@ -35,7 +35,7 @@ abstract class PKCS
     /**#@-*/
 
     /**
-     * Is the key a base-64 encoded PEM, DER or should it be auto-detected?
+     * Is the key a base-64 encoded PEM, DER or should it be auto-detected
      *
      * @var int
      */

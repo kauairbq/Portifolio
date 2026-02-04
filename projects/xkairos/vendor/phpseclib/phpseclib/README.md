@@ -1,12 +1,12 @@
 # phpseclib - PHP Secure Communications Library
 
-[![CI Status](https://github.com/phpseclib/phpseclib/actions/workflows/ci.yml/badge.svg?branch=3.0&event=push "CI Status")](https://github.com/phpseclib/phpseclib)
+[![CI Status](https://github.com/phpseclib/phpseclib/actions/workflows/ci.yml/badge.svgbranch=3.0&event=push "CI Status")](https://github.com/phpseclib/phpseclib)
 
 ## Supporting phpseclib
 
 - [Become a backer or sponsor on Patreon](https://www.patreon.com/phpseclib)
-- [One-time donation via PayPal or crypto-currencies](http://sourceforge.net/donate/index.php?group_id=198487)
-- [Subscribe to Tidelift](https://tidelift.com/subscription/pkg/packagist-phpseclib-phpseclib?utm_source=packagist-phpseclib-phpseclib&utm_medium=referral&utm_campaign=readme)
+- [One-time donation via PayPal or crypto-currencies](http://sourceforge.net/donate/index.phpgroup_id=198487)
+- [Subscribe to Tidelift](https://tidelift.com/subscription/pkg/packagist-phpseclib-phpseclibutm_source=packagist-phpseclib-phpseclib&utm_medium=referral&utm_campaign=readme)
 
 ## Introduction
 
@@ -59,7 +59,7 @@ To report a security vulnerability, please use the [Tidelift security contact](h
 
 ## Support
 
-Need Support?
+Need Support
 
 * [Checkout Questions and Answers on Stack Overflow](http://stackoverflow.com/questions/tagged/phpseclib)
 * [Create a Support Ticket on GitHub](https://github.com/phpseclib/phpseclib/issues/new)

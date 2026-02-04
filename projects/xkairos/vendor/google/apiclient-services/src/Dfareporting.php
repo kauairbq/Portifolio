@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -125,8 +125,8 @@ class Dfareporting extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://dfareporting.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://dfareporting.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://dfareporting.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://dfareporting.UNIVERSE_DOMAIN/';
     $this->servicePath = 'dfareporting/v5/';
     $this->batchPath = 'batch';
     $this->version = 'v5';

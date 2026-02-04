@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Built-In BCMath Modular Exponentiation Engine

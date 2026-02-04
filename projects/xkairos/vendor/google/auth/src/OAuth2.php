@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -73,7 +73,7 @@ class OAuth2 implements FetchAuthTokenInterface
      *   The authorization server's HTTP endpoint capable of
      *   authenticating the end-user and obtaining authorization.
      *
-     * @var ?UriInterface
+     * @var UriInterface
      */
     private $authorizationUri;
 
@@ -89,7 +89,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * The redirection URI used in the initial request.
      *
-     * @var ?string
+     * @var string
      */
     private $redirectUri;
 
@@ -112,14 +112,14 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * The resource owner's username.
      *
-     * @var ?string
+     * @var string
      */
     private $username;
 
     /**
      * The resource owner's password.
      *
-     * @var ?string
+     * @var string
      */
     private $password;
 
@@ -127,7 +127,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * The scope of the access request, expressed either as an Array or as a
      * space-delimited string.
      *
-     * @var ?array<string>
+     * @var array<string>
      */
     private $scope;
 
@@ -143,14 +143,14 @@ class OAuth2 implements FetchAuthTokenInterface
      *
      * Only used by the authorization code access grant type.
      *
-     * @var ?string
+     * @var string
      */
     private $code;
 
     /**
      * The issuer ID when using assertion profile.
      *
-     * @var ?string
+     * @var string
      */
     private $issuer;
 
@@ -178,7 +178,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * The signing key when using assertion profile.
      *
-     * @var ?string
+     * @var string
      */
     private $signingKey;
 
@@ -192,14 +192,14 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * The signing algorithm when using an assertion profile.
      *
-     * @var ?string
+     * @var string
      */
     private $signingAlgorithm;
 
     /**
      * The refresh token associated with the access token to be refreshed.
      *
-     * @var ?string
+     * @var string
      */
     private $refreshToken;
 
@@ -227,7 +227,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * The lifetime in seconds of the current access token.
      *
-     * @var ?int
+     * @var int
      */
     private $expiresIn;
 
@@ -235,7 +235,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * The expiration time of the access token as a number of seconds since the
      * unix epoch.
      *
-     * @var ?int
+     * @var int
      */
     private $expiresAt;
 
@@ -243,14 +243,14 @@ class OAuth2 implements FetchAuthTokenInterface
      * The issue time of the access token as a number of seconds since the unix
      * epoch.
      *
-     * @var ?int
+     * @var int
      */
     private $issuedAt;
 
     /**
      * The current grant type.
      *
-     * @var ?string
+     * @var string
      */
     private $grantType;
 
@@ -276,7 +276,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * parameters, and the token URI will contain the Code Verifier parameter.
      *
      * @see https://datatracker.ietf.org/doc/html/rfc7636
-     * @var ?string
+     * @var string
      */
     private $codeVerifier;
 
@@ -285,7 +285,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * A URI that indicates the target service or resource where the client
      * intends to use the requested security token.
      */
-    private ?string $resource;
+    private string $resource;
 
     /**
      * For STS requests.
@@ -293,33 +293,33 @@ class OAuth2 implements FetchAuthTokenInterface
      * represents the identity of the party on behalf of whom the request is
      * being made.
      */
-    private ?ExternalAccountCredentialSourceInterface $subjectTokenFetcher;
+    private ExternalAccountCredentialSourceInterface $subjectTokenFetcher;
 
     /**
      * For STS requests.
      * An identifier, that indicates the type of the security token in the
      * subjectToken parameter.
      */
-    private ?string $subjectTokenType;
+    private string $subjectTokenType;
 
     /**
      * For STS requests.
      * A security token that represents the identity of the acting party.
      */
-    private ?string $actorToken;
+    private string $actorToken;
 
     /**
      * For STS requests.
      * An identifier that indicates the type of the security token in the
      * actorToken parameter.
      */
-    private ?string $actorTokenType;
+    private string $actorTokenType;
 
     /**
      * From STS response.
      * An identifier for the representation of the issued security token.
      */
-    private ?string $issuedTokenType = null;
+    private string $issuedTokenType = null;
 
     /**
      * From STS response.
@@ -586,7 +586,7 @@ class OAuth2 implements FetchAuthTokenInterface
      *        the token endpoint request.
      * @return RequestInterface the authorization Url.
      */
-    public function generateCredentialsRequest(?callable $httpHandler = null, array $headers = [])
+    public function generateCredentialsRequest(callable $httpHandler = null, array $headers = [])
     {
         $uri = $this->getTokenCredentialUri();
         if (is_null($uri)) {
@@ -669,7 +669,7 @@ class OAuth2 implements FetchAuthTokenInterface
      *        endpoint request.
      * @return array<mixed> the response
      */
-    public function fetchAuthToken(?callable $httpHandler = null, array $headers = [])
+    public function fetchAuthToken(callable $httpHandler = null, array $headers = [])
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -692,7 +692,7 @@ class OAuth2 implements FetchAuthTokenInterface
      *
      * The key is derived from the scopes.
      *
-     * @return ?string a key that may be used to cache the auth token.
+     * @return string a key that may be used to cache the auth token.
      */
     public function getCacheKey()
     {
@@ -713,7 +713,7 @@ class OAuth2 implements FetchAuthTokenInterface
      *
      * @return null|ExternalAccountCredentialSourceInterface
      */
-    public function getSubjectTokenFetcher(): ?ExternalAccountCredentialSourceInterface
+    public function getSubjectTokenFetcher(): ExternalAccountCredentialSourceInterface
     {
         return $this->subjectTokenFetcher;
     }
@@ -880,7 +880,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * @return string|null
      */
-    public function getCodeVerifier(): ?string
+    public function getCodeVerifier(): string
     {
         return $this->codeVerifier;
     }
@@ -897,7 +897,7 @@ class OAuth2 implements FetchAuthTokenInterface
      *
      * @param string|null $codeVerifier
      */
-    public function setCodeVerifier(?string $codeVerifier): void
+    public function setCodeVerifier(string $codeVerifier): void
     {
         $this->codeVerifier = $codeVerifier;
     }
@@ -955,7 +955,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * Gets the authorization server's HTTP endpoint capable of authenticating
      * the end-user and obtaining authorization.
      *
-     * @return ?UriInterface
+     * @return UriInterface
      */
     public function getAuthorizationUri()
     {
@@ -966,7 +966,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * Gets the authorization server's HTTP endpoint capable of issuing tokens
      * and refreshing expired tokens.
      *
-     * @return ?UriInterface
+     * @return UriInterface
      */
     public function getTokenCredentialUri()
     {
@@ -988,7 +988,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the redirection URI used in the initial request.
      *
-     * @return ?string
+     * @return string
      */
     public function getRedirectUri()
     {
@@ -998,7 +998,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Sets the redirection URI used in the initial request.
      *
-     * @param ?string $uri
+     * @param string $uri
      * @return void
      */
     public function setRedirectUri($uri)
@@ -1024,7 +1024,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the scope of the access requests as a space-delimited String.
      *
-     * @return ?string
+     * @return string
      */
     public function getScope()
     {
@@ -1038,9 +1038,9 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the subject token type
      *
-     * @return ?string
+     * @return string
      */
-    public function getSubjectTokenType(): ?string
+    public function getSubjectTokenType(): string
     {
         return $this->subjectTokenType;
     }
@@ -1079,7 +1079,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the current grant type.
      *
-     * @return ?string
+     * @return string
      */
     public function getGrantType()
     {
@@ -1267,7 +1267,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the Issuer ID when using assertion profile.
      *
-     * @return ?string
+     * @return string
      */
     public function getIssuer()
     {
@@ -1288,7 +1288,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the target sub when issuing assertions.
      *
-     * @return ?string
+     * @return string
      */
     public function getSub()
     {
@@ -1309,7 +1309,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the target audience when issuing assertions.
      *
-     * @return ?string
+     * @return string
      */
     public function getAudience()
     {
@@ -1330,7 +1330,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the signing key when using an assertion profile.
      *
-     * @return ?string
+     * @return string
      */
     public function getSigningKey()
     {
@@ -1351,7 +1351,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the signing key id when using an assertion profile.
      *
-     * @return ?string
+     * @return string
      */
     public function getSigningKeyId()
     {
@@ -1372,7 +1372,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the signing algorithm when using an assertion profile.
      *
-     * @return ?string
+     * @return string
      */
     public function getSigningAlgorithm()
     {
@@ -1382,7 +1382,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Sets the signing algorithm when using an assertion profile.
      *
-     * @param ?string $signingAlgorithm
+     * @param string $signingAlgorithm
      * @return void
      */
     public function setSigningAlgorithm($signingAlgorithm)
@@ -1453,7 +1453,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Sets the lifetime of the access token in seconds.
      *
-     * @param ?int $expiresIn
+     * @param int $expiresIn
      * @return void
      */
     public function setExpiresIn($expiresIn)
@@ -1470,7 +1470,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the time the current access token expires at.
      *
-     * @return ?int
+     * @return int
      */
     public function getExpiresAt()
     {
@@ -1512,7 +1512,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the time the current access token was issued at.
      *
-     * @return ?int
+     * @return int
      */
     public function getIssuedAt()
     {
@@ -1533,7 +1533,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the current access token.
      *
-     * @return ?string
+     * @return string
      */
     public function getAccessToken()
     {
@@ -1554,7 +1554,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the current ID token.
      *
-     * @return ?string
+     * @return string
      */
     public function getIdToken()
     {
@@ -1597,7 +1597,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the refresh token associated with the current access token.
      *
-     * @return ?string
+     * @return string
      */
     public function getRefreshToken()
     {
@@ -1639,7 +1639,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * Gets the additional claims to be included in the JWT token.
      *
-     * @return ?string
+     * @return string
      */
     public function getIssuedTokenType()
     {
@@ -1690,7 +1690,7 @@ class OAuth2 implements FetchAuthTokenInterface
      * @return string
      * @access private
      */
-    public function getClientName(?callable $httpHandler = null)
+    public function getClientName(callable $httpHandler = null)
     {
         return $this->getClientId();
     }
@@ -1698,7 +1698,7 @@ class OAuth2 implements FetchAuthTokenInterface
     /**
      * @todo handle uri as array
      *
-     * @param ?string $uri
+     * @param string $uri
      * @return null|UriInterface
      */
     private function coerceUri($uri)

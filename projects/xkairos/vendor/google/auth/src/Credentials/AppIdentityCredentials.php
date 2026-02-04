@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -53,7 +53,7 @@ use Google\Auth\SignBlobInterface;
  *     'auth' => 'google_auth'
  * ]);
  *
- * $res = $client->get('volumes?q=Henry+David+Thoreau&country=US');
+ * $res = $client->get('volumesq=Henry+David+Thoreau&country=US');
  * ```
  */
 class AppIdentityCredentials extends CredentialsLoader implements
@@ -84,7 +84,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      */
     public function __construct($scope = [])
     {
-        $this->scope = is_array($scope) ? $scope : explode(' ', (string) $scope);
+        $this->scope = is_array($scope)  $scope : explode(' ', (string) $scope);
     }
 
     /**
@@ -124,7 +124,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      *     @type string $expiration_time
      * }
      */
-    public function fetchAuthToken(?callable $httpHandler = null)
+    public function fetchAuthToken(callable $httpHandler = null)
     {
         try {
             $this->checkAppEngineContext();
@@ -164,7 +164,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      * @param callable|null $httpHandler Not used by this type.
      * @return string|null
      */
-    public function getProjectId(?callable $httpHandler = null)
+    public function getProjectId(callable $httpHandler = null)
     {
         try {
             $this->checkAppEngineContext();
@@ -185,7 +185,7 @@ class AppIdentityCredentials extends CredentialsLoader implements
      * @return string
      * @throws \Exception If AppEngine SDK or mock is not available.
      */
-    public function getClientName(?callable $httpHandler = null)
+    public function getClientName(callable $httpHandler = null)
     {
         $this->checkAppEngineContext();
 

@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2024 Google Inc. All Rights Reserved.
  *
@@ -34,9 +34,9 @@ trait LoggingTrait
         $debugEvent = [
             'timestamp' => $event->timestamp,
             'severity' => strtoupper(LogLevel::DEBUG),
-            'processId' => $event->processId ?? null,
-            'requestId' => $event->requestId ?? null,
-            'rpcName' => $event->rpcName ?? null,
+            'processId' => $event->processId  null,
+            'requestId' => $event->requestId  null,
+            'rpcName' => $event->rpcName  null,
         ];
 
         $debugEvent = array_filter($debugEvent, fn ($value) => !is_null($value));
@@ -46,7 +46,7 @@ trait LoggingTrait
             'request.url' => $event->url,
             'request.headers' => $event->headers,
             'request.payload' => $this->truncatePayload($event->payload),
-            'request.jwt' => $this->getJwtToken($event->headers ?? []),
+            'request.jwt' => $this->getJwtToken($event->headers  []),
             'retryAttempt' => $event->retryAttempt
         ];
 
@@ -71,8 +71,8 @@ trait LoggingTrait
         $debugEvent = [
             'timestamp' => $event->timestamp,
             'severity' => strtoupper(LogLevel::DEBUG),
-            'processId' => $event->processId ?? null,
-            'requestId' => $event->requestId ?? null,
+            'processId' => $event->processId  null,
+            'requestId' => $event->requestId  null,
             'jsonPayload' => [
                 'response.status' => $event->status,
                 'response.headers' => $event->headers,
@@ -106,7 +106,7 @@ trait LoggingTrait
             return null;
         }
 
-        $tokenHeader = $headers['Authorization'] ?? '';
+        $tokenHeader = $headers['Authorization']  '';
         $token = str_replace('Bearer ', '', $tokenHeader);
 
         if (substr_count($token, '.') !== 2) {

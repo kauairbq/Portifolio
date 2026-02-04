@@ -1,4 +1,4 @@
-<?php
+<php
 include '../includes/config.php';
 include '../includes/header.php';
 session_start();
@@ -13,8 +13,8 @@ echo '<link rel="stylesheet" href="../assets/css/layout/footer.css">';
 echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">';
 
 // Obter dados via GET ou POST
-$solicitacao_id = $_GET['id'] ?? $_POST['solicitacao_id'] ?? null;
-$valor = $_POST['valor'] ?? null;
+$solicitacao_id = $_GET['id']  $_POST['solicitacao_id']  null;
+$valor = $_POST['valor']  null;
 
 // Verificar se solicitacao_id foi fornecido
 if (!$solicitacao_id) {
@@ -23,28 +23,28 @@ if (!$solicitacao_id) {
 
 // Buscar o total da solicitação para calcular o valor se não fornecido
 if (!$valor) {
-    $stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE id=?');
+    $stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE id=');
     $stmt->execute([$solicitacao_id]);
     $s = $stmt->fetch();
     if (!$s) die('Solicitação não encontrada.');
     // Calcular total com peças + taxa
     $pecas_precos = [
-        $s['cpu_preco'] ?? 0,
-        $s['gpu_preco'] ?? 0,
-        $s['ram_preco'] ?? 0,
-        $s['ssd_preco'] ?? 0,
-        $s['placa_mae_preco'] ?? 0,
-        $s['cooler_preco'] ?? 0,
-        $s['case_preco'] ?? 0
+        $s['cpu_preco']  0,
+        $s['gpu_preco']  0,
+        $s['ram_preco']  0,
+        $s['ssd_preco']  0,
+        $s['placa_mae_preco']  0,
+        $s['cooler_preco']  0,
+        $s['case_preco']  0
     ];
     $subtotal = array_sum($pecas_precos);
     $taxaServico = 200;
     $valor = $subtotal + $taxaServico;
 }
 
-$stmt = $pdo->prepare('INSERT INTO pagamentos (solicitacao_id, metodo, valor, status) VALUES (?,?,?,?)');
+$stmt = $pdo->prepare('INSERT INTO pagamentos (solicitacao_id, metodo, valor, status) VALUES (,,,)');
 $stmt->execute([$solicitacao_id,'MBWAY',$valor,'Pago']); // Simular como pago
-?>
+>
 
 <div class="container">
     <div class="payment-success">
@@ -59,11 +59,11 @@ $stmt->execute([$solicitacao_id,'MBWAY',$valor,'Pago']); // Simular como pago
         <div class="payment-details">
             <div class="detail-item">
                 <span class="label">ID da Solicitação:</span>
-                <span class="value">#<?php echo $solicitacao_id; ?></span>
+                <span class="value">#<php echo $solicitacao_id; ></span>
             </div>
             <div class="detail-item">
                 <span class="label">Valor Pago:</span>
-                <span class="value">€<?php echo number_format($valor, 2, ',', '.'); ?></span>
+                <span class="value">€<php echo number_format($valor, 2, ',', '.'); ></span>
             </div>
             <div class="detail-item">
                 <span class="label">Método:</span>
@@ -75,22 +75,22 @@ $stmt->execute([$solicitacao_id,'MBWAY',$valor,'Pago']); // Simular como pago
             </div>
         </div>
 
-        <?php if(isset($_POST['parcelas'])): ?>
+        <php if(isset($_POST['parcelas'])): >
         <div class="parcelamento-info">
             <h3>Parcelamento</h3>
-            <?php
+            <php
             $parcelas = $_POST['parcelas'];
             $valor_parcela = $valor / $parcelas;
-            ?>
-            <p>Parcelado em <?php echo $parcelas; ?>x de €<?php echo number_format($valor_parcela, 2, ',', '.'); ?> cada</p>
+            >
+            <p>Parcelado em <php echo $parcelas; >x de €<php echo number_format($valor_parcela, 2, ',', '.'); > cada</p>
         </div>
-        <?php endif; ?>
+        <php endif; >
 
         <div class="payment-actions">
             <a href="dashboard.php" class="btn btn-primary">
                 <i class="fas fa-arrow-left"></i> Voltar ao Dashboard
             </a>
-            <a href="orcamento.php?id=<?php echo $solicitacao_id; ?>" class="btn btn-secondary">
+            <a href="orcamento.phpid=<php echo $solicitacao_id; >" class="btn btn-secondary">
                 <i class="fas fa-file-pdf"></i> Ver Orçamento
             </a>
         </div>
@@ -266,4 +266,4 @@ $stmt->execute([$solicitacao_id,'MBWAY',$valor,'Pago']); // Simular como pago
 }
 </style>
 
-<?php include '../includes/footer.php'; ?>
+<php include '../includes/footer.php'; >

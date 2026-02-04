@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -49,9 +49,9 @@ class SlackHandler extends SocketHandler
     public function __construct(
         string $token,
         string $channel,
-        ?string $username = null,
+        string $username = null,
         bool $useAttachment = true,
-        ?string $iconEmoji = null,
+        string $iconEmoji = null,
         $level = Level::Critical,
         bool $bubble = true,
         bool $useShortAttachment = false,
@@ -60,8 +60,8 @@ class SlackHandler extends SocketHandler
         bool $persistent = false,
         float $timeout = 0.0,
         float $writingTimeout = 10.0,
-        ?float $connectionTimeout = null,
-        ?int $chunkSize = null
+        float $connectionTimeout = null,
+        int $chunkSize = null
     ) {
         if (!\extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP extension is required to use the SlackHandler');

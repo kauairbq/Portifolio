@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Base Class for all \phpseclib3\Crypt\* cipher classes
@@ -221,7 +221,7 @@ abstract class SymmetricKey
      * HMAC Key
      *
      * @see self::setupGCM()
-     * @var ?string
+     * @var string
      */
     protected $hKey = false;
 
@@ -300,7 +300,7 @@ abstract class SymmetricKey
     private $demcrypt;
 
     /**
-     * Does the enmcrypt resource need to be (re)initialized?
+     * Does the enmcrypt resource need to be (re)initialized
      *
      * @see \phpseclib3\Crypt\Twofish::setKey()
      * @see \phpseclib3\Crypt\Twofish::setIV()
@@ -309,7 +309,7 @@ abstract class SymmetricKey
     private $enchanged = true;
 
     /**
-     * Does the demcrypt resource need to be (re)initialized?
+     * Does the demcrypt resource need to be (re)initialized
      *
      * @see \phpseclib3\Crypt\Twofish::setKey()
      * @see \phpseclib3\Crypt\Twofish::setIV()
@@ -357,7 +357,7 @@ abstract class SymmetricKey
     protected $cfb_init_len = 600;
 
     /**
-     * Does internal cipher state need to be (re)initialized?
+     * Does internal cipher state need to be (re)initialized
      *
      * @see self::setKey()
      * @see self::setIV()
@@ -367,7 +367,7 @@ abstract class SymmetricKey
     protected $changed = true;
 
     /**
-     * Does Eval engie need to be (re)initialized?
+     * Does Eval engie need to be (re)initialized
      *
      * @see self::setup()
      * @var bool
@@ -383,7 +383,7 @@ abstract class SymmetricKey
     private $padding = true;
 
     /**
-     * Is the mode one that is paddable?
+     * Is the mode one that is paddable
      *
      * @see self::__construct()
      * @var bool
@@ -489,7 +489,7 @@ abstract class SymmetricKey
     private $skip_key_adjustment = false;
 
     /**
-     * Has the key length explicitly been set or should it be derived from the key, itself?
+     * Has the key length explicitly been set or should it be derived from the key, itself
      *
      * @see self::setKeyLength()
      * @var bool
@@ -937,8 +937,8 @@ abstract class SymmetricKey
 
                 $salt = $func_args[0];
 
-                $rounds = isset($func_args[1]) ? $func_args[1] : 16;
-                $keylen = isset($func_args[2]) ? $func_args[2] : $this->key_length;
+                $rounds = isset($func_args[1])  $func_args[1] : 16;
+                $keylen = isset($func_args[2])  $func_args[2] : $this->key_length;
 
                 $key = Blowfish::bcrypt_pbkdf($password, $salt, $keylen + $this->block_size, $rounds);
 
@@ -950,16 +950,16 @@ abstract class SymmetricKey
             case 'pbkdf1':
             case 'pbkdf2':
                 // Hash function
-                $hash = isset($func_args[0]) ? strtolower($func_args[0]) : 'sha1';
+                $hash = isset($func_args[0])  strtolower($func_args[0]) : 'sha1';
                 $hashObj = new Hash();
                 $hashObj->setHash($hash);
 
                 // WPA and WPA2 use the SSID as the salt
-                $salt = isset($func_args[1]) ? $func_args[1] : $this->password_default_salt;
+                $salt = isset($func_args[1])  $func_args[1] : $this->password_default_salt;
 
                 // RFC2898#section-4.2 uses 1,000 iterations by default
                 // WPA and WPA2 use 4,096.
-                $count = isset($func_args[2]) ? $func_args[2] : 1000;
+                $count = isset($func_args[2])  $func_args[2] : 1000;
 
                 // Keylength
                 if (isset($func_args[3])) {
@@ -968,8 +968,8 @@ abstract class SymmetricKey
                     }
                     $dkLen = $func_args[3];
                 } else {
-                    $key_length = $this->explicit_key_length !== false ? $this->explicit_key_length : $this->key_length;
-                    $dkLen = $method == 'pbkdf1' ? 2 * $key_length : $key_length;
+                    $key_length = $this->explicit_key_length !== false  $this->explicit_key_length : $this->key_length;
+                    $dkLen = $method == 'pbkdf1'  2 * $key_length : $key_length;
                 }
 
                 switch (true) {
@@ -1195,7 +1195,7 @@ abstract class SymmetricKey
                     return $this->openssl_ctr_process($plaintext, $this->encryptIV, $this->enbuffer);
                 case self::MODE_CFB:
                     // cfb loosely routines inspired by openssl's:
-                    // {@link http://cvs.openssl.org/fileview?f=openssl/crypto/modes/cfb128.c&v=1.3.2.2.2.1}
+                    // {@link http://cvs.openssl.org/fileviewf=openssl/crypto/modes/cfb128.c&v=1.3.2.2.2.1}
                     $ciphertext = '';
                     if ($this->continuousBuffer) {
                         $iv = &$this->encryptIV;
@@ -1403,7 +1403,7 @@ abstract class SymmetricKey
                 break;
             case self::MODE_CFB:
                 // cfb loosely routines inspired by openssl's:
-                // {@link http://cvs.openssl.org/fileview?f=openssl/crypto/modes/cfb128.c&v=1.3.2.2.2.1}
+                // {@link http://cvs.openssl.org/fileviewf=openssl/crypto/modes/cfb128.c&v=1.3.2.2.2.1}
                 if ($this->continuousBuffer) {
                     $iv = &$this->encryptIV;
                     $pos = &$buffer['pos'];
@@ -1586,7 +1586,7 @@ abstract class SymmetricKey
                     break;
                 case self::MODE_CFB:
                     // cfb loosely routines inspired by openssl's:
-                    // {@link http://cvs.openssl.org/fileview?f=openssl/crypto/modes/cfb128.c&v=1.3.2.2.2.1}
+                    // {@link http://cvs.openssl.org/fileviewf=openssl/crypto/modes/cfb128.c&v=1.3.2.2.2.1}
                     $plaintext = '';
                     if ($this->continuousBuffer) {
                         $iv = &$this->decryptIV;
@@ -1658,7 +1658,7 @@ abstract class SymmetricKey
                     $plaintext = $this->openssl_ofb_process($ciphertext, $this->decryptIV, $this->debuffer);
             }
 
-            return $this->paddable ? $this->unpad($plaintext) : $plaintext;
+            return $this->paddable  $this->unpad($plaintext) : $plaintext;
         }
 
         if ($this->engine === self::ENGINE_MCRYPT) {
@@ -1718,7 +1718,7 @@ abstract class SymmetricKey
 
             restore_error_handler();
 
-            return $this->paddable ? $this->unpad($plaintext) : $plaintext;
+            return $this->paddable  $this->unpad($plaintext) : $plaintext;
         }
 
         if ($this->engine === self::ENGINE_EVAL) {
@@ -1878,7 +1878,7 @@ abstract class SymmetricKey
                 $plaintext = $this->decryptBlock($ciphertext);
                 break;
         }
-        return $this->paddable ? $this->unpad($plaintext) : $plaintext;
+        return $this->paddable  $this->unpad($plaintext) : $plaintext;
     }
 
     /**
@@ -1911,7 +1911,7 @@ abstract class SymmetricKey
             throw new \LengthException('The authentication tag must be between 4 and 16 bytes long');
         }
 
-        return $length == 16 ?
+        return $length == 16 
             $this->newtag :
             substr($this->newtag, 0, $length);
     }
@@ -1955,7 +1955,7 @@ abstract class SymmetricKey
      */
     protected function getIV($iv)
     {
-        return $this->mode == self::MODE_ECB ? str_repeat("\0", $this->block_size) : $iv;
+        return $this->mode == self::MODE_ECB  str_repeat("\0", $this->block_size) : $iv;
     }
 
     /**
@@ -2327,8 +2327,8 @@ abstract class SymmetricKey
             $reverseMap = array_map('strtolower', self::ENGINE_MAP);
             $reverseMap = array_flip($reverseMap);
         }
-        $engine = is_string($engine) ? strtolower($engine) : '';
-        $this->preferredEngine = isset($reverseMap[$engine]) ? $reverseMap[$engine] : self::ENGINE_LIBSODIUM;
+        $engine = is_string($engine)  strtolower($engine) : '';
+        $this->preferredEngine = isset($reverseMap[$engine])  $reverseMap[$engine] : self::ENGINE_LIBSODIUM;
 
         $this->setEngine();
     }
@@ -2518,7 +2518,7 @@ abstract class SymmetricKey
                     if ($this->mode == self::MODE_CFB) {
                         $this->ecb = mcrypt_module_open($this->cipher_name_mcrypt, '', MCRYPT_MODE_ECB, '');
                     }
-                } // else should mcrypt_generic_deinit be called?
+                } // else should mcrypt_generic_deinit be called
 
                 if ($this->mode == self::MODE_CFB) {
                     mcrypt_generic_init($this->ecb, $this->key, str_repeat("\0", $this->block_size));
@@ -2772,9 +2772,9 @@ abstract class SymmetricKey
         $block_size = $this->block_size;
 
         // optional
-        $init_crypt    = isset($cipher_code['init_crypt'])    ? $cipher_code['init_crypt']    : '';
-        $init_encrypt  = isset($cipher_code['init_encrypt'])  ? $cipher_code['init_encrypt']  : '';
-        $init_decrypt  = isset($cipher_code['init_decrypt'])  ? $cipher_code['init_decrypt']  : '';
+        $init_crypt    = isset($cipher_code['init_crypt'])     $cipher_code['init_crypt']    : '';
+        $init_encrypt  = isset($cipher_code['init_encrypt'])   $cipher_code['init_encrypt']  : '';
+        $init_decrypt  = isset($cipher_code['init_decrypt'])   $cipher_code['init_decrypt']  : '';
         // required
         $encrypt_block = $cipher_code['encrypt_block'];
         $decrypt_block = $cipher_code['decrypt_block'];
@@ -3222,7 +3222,7 @@ abstract class SymmetricKey
         }
 
         if (self::$use_reg_intval) {
-            return PHP_INT_SIZE == 4 && PHP_VERSION_ID >= 80100 ? intval($x) : $x;
+            return PHP_INT_SIZE == 4 && PHP_VERSION_ID >= 80100  intval($x) : $x;
         }
 
         return (fmod($x, 0x80000000) & 0x7FFFFFFF) |
@@ -3237,10 +3237,10 @@ abstract class SymmetricKey
     protected static function safe_intval_inline()
     {
         if (self::$use_reg_intval) {
-            return PHP_INT_SIZE == 4 && PHP_VERSION_ID >= 80100 ? 'intval(%s)' : '%s';
+            return PHP_INT_SIZE == 4 && PHP_VERSION_ID >= 80100  'intval(%s)' : '%s';
         }
 
-        $safeint = '(is_int($temp = %s) ? $temp : (fmod($temp, 0x80000000) & 0x7FFFFFFF) | ';
+        $safeint = '(is_int($temp = %s)  $temp : (fmod($temp, 0x80000000) & 0x7FFFFFFF) | ';
         return $safeint . '((fmod(floor($temp / 0x80000000), 2) & 1) << 31))';
     }
 
@@ -3387,7 +3387,7 @@ abstract class SymmetricKey
     }
 
     /**
-     * Is the continuous buffer enabled?
+     * Is the continuous buffer enabled
      *
      * @return boolean
      */

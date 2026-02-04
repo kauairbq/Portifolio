@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Handler;
 
@@ -77,7 +77,7 @@ class CurlFactory implements CurlFactoryInterface
         }
 
         $conf[\CURLOPT_HEADERFUNCTION] = $this->createHeaderFn($easy);
-        $easy->handle = $this->handles ? \array_pop($this->handles) : \curl_init();
+        $easy->handle = $this->handles  \array_pop($this->handles) : \curl_init();
         curl_setopt_array($easy->handle, $conf);
 
         return $easy;
@@ -256,7 +256,7 @@ class CurlFactory implements CurlFactoryInterface
 
         $uri = $easy->request->getUri();
 
-        $sanitizedError = self::sanitizeCurlError($ctx['error'] ?? '', $uri);
+        $sanitizedError = self::sanitizeCurlError($ctx['error']  '', $uri);
 
         $message = \sprintf(
             'cURL error %s: %s (%s)',
@@ -274,7 +274,7 @@ class CurlFactory implements CurlFactoryInterface
 
         // Create a connection exception if it was a specific error code.
         $error = isset($connectionErrors[$easy->errno])
-            ? new ConnectException($message, $easy->request, null, $ctx)
+             new ConnectException($message, $easy->request, null, $ctx)
             : new RequestException($message, $easy->request, $easy->response, null, $ctx);
 
         return P\Create::rejectionFor($error);
@@ -360,7 +360,7 @@ class CurlFactory implements CurlFactoryInterface
     private function applyBody(RequestInterface $request, array $options, array &$conf): void
     {
         $size = $request->hasHeader('Content-Length')
-            ? (int) $request->getHeaderLine('Content-Length')
+             (int) $request->getHeaderLine('Content-Length')
             : null;
 
         // Send the body as a string if the size is less than 1MB OR if the
@@ -607,7 +607,7 @@ class CurlFactory implements CurlFactoryInterface
                 }
             }
 
-            $sslKey = $sslKey ?? $options['ssl_key'];
+            $sslKey = $sslKey  $options['ssl_key'];
 
             if (!\file_exists($sslKey)) {
                 throw new \InvalidArgumentException("SSL private key not found: {$sslKey}");
@@ -669,7 +669,7 @@ class CurlFactory implements CurlFactoryInterface
                 .'is that cURL was unable to rewind the body of the request '
                 .'and subsequent retries resulted in the same error. Turn on '
                 .'the debug option to see what went wrong. See '
-                .'https://bugs.php.net/bug.php?id=47204 for more information.';
+                .'https://bugs.php.net/bug.phpid=47204 for more information.';
 
             return self::createRejection($easy, $ctx);
         } else {

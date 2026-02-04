@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Base Class for all asymmetric key ciphers
@@ -161,12 +161,12 @@ abstract class AsymmetricKey
         }
 
         $components['format'] = $format;
-        $components['secret'] = isset($components['secret']) ? $components['secret'] : '';
-        $comment = isset($components['comment']) ? $components['comment'] : null;
+        $components['secret'] = isset($components['secret'])  $components['secret'] : '';
+        $comment = isset($components['comment'])  $components['comment'] : null;
         $new = static::onLoad($components);
         $new->format = $format;
         $new->comment = $comment;
-        return $new instanceof PrivateKey ?
+        return $new instanceof PrivateKey 
             $new->withPassword($password) :
             $new;
     }
@@ -241,11 +241,11 @@ abstract class AsymmetricKey
         }
 
         $components['format'] = $format;
-        $components['secret'] = isset($components['secret']) ? $components['secret'] : '';
+        $components['secret'] = isset($components['secret'])  $components['secret'] : '';
 
         $new = static::onLoad($components);
         $new->format = $format;
-        return $new instanceof PrivateKey ?
+        return $new instanceof PrivateKey 
             $new->withPassword($password) :
             $new;
     }
@@ -574,7 +574,7 @@ abstract class AsymmetricKey
     {
         $z1 = $this->bits2int($in);
         $z2 = $z1->subtract($this->q);
-        return $z2->compare(self::$zero) < 0 ?
+        return $z2->compare(self::$zero) < 0 
             $this->int2octets($z1) :
             $this->int2octets($z2);
     }

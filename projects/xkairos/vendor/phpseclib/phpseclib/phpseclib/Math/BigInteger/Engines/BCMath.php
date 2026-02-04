@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * BCMath BigInteger Engine
@@ -24,7 +24,7 @@ use phpseclib3\Exception\BadConfigurationException;
 class BCMath extends Engine
 {
     /**
-     * Can Bitwise operations be done fast?
+     * Can Bitwise operations be done fast
      *
      * @see parent::bitwise_leftRotate()
      * @see parent::bitwise_rightRotate()
@@ -107,15 +107,15 @@ class BCMath extends Engine
                 }
                 break;
             case 16:
-                $x = (strlen($this->value) & 1) ? '0' . $this->value : $this->value;
+                $x = (strlen($this->value) & 1)  '0' . $this->value : $this->value;
                 $temp = new self(Strings::hex2bin($x), 256);
-                $this->value = $this->is_negative ? '-' . $temp->value : $temp->value;
+                $this->value = $this->is_negative  '-' . $temp->value : $temp->value;
                 $this->is_negative = false;
                 break;
             case 10:
                 // explicitly casting $x to a string is necessary, here, since doing $x[0] on -1 yields different
                 // results then doing it on '-1' does (modInverse does $x[0])
-                $this->value = $this->value === '-' ? '0' : (string)$this->value;
+                $this->value = $this->value === '-'  '0' : (string)$this->value;
         }
     }
 
@@ -153,12 +153,12 @@ class BCMath extends Engine
         }
 
         while (bccomp($current, '0', 0) > 0) {
-            $temp = self::BCMOD_THREE_PARAMS ? bcmod($current, '16777216', 0) : bcmod($current, '16777216');
+            $temp = self::BCMOD_THREE_PARAMS  bcmod($current, '16777216', 0) : bcmod($current, '16777216');
             $value = chr($temp >> 16) . chr($temp >> 8) . chr($temp) . $value;
             $current = bcdiv($current, '16777216', 0);
         }
 
-        return $this->precision > 0 ?
+        return $this->precision > 0 
             substr(str_pad($value, $this->precision >> 3, chr(0), STR_PAD_LEFT), -($this->precision >> 3)) :
             ltrim($value, chr(0));
     }
@@ -222,10 +222,10 @@ class BCMath extends Engine
         $remainder = new self();
 
         $quotient->value = bcdiv($this->value, $y->value, 0);
-        $remainder->value = self::BCMOD_THREE_PARAMS ? bcmod($this->value, $y->value, 0) : bcmod($this->value, $y->value);
+        $remainder->value = self::BCMOD_THREE_PARAMS  bcmod($this->value, $y->value, 0) : bcmod($this->value, $y->value);
 
         if ($remainder->value[0] == '-') {
-            $remainder->value = bcadd($remainder->value, $y->value[0] == '-' ? substr($y->value, 1) : $y->value, 0);
+            $remainder->value = bcadd($remainder->value, $y->value[0] == '-'  substr($y->value, 1) : $y->value, 0);
         }
 
         return [$this->normalize($quotient), $this->normalize($remainder)];
@@ -314,7 +314,7 @@ class BCMath extends Engine
     public function abs()
     {
         $temp = new static();
-        $temp->value = strlen($this->value) && $this->value[0] == '-' ?
+        $temp->value = strlen($this->value) && $this->value[0] == '-' 
             substr($this->value, 1) :
             $this->value;
 
@@ -479,7 +479,7 @@ class BCMath extends Engine
         $result->bitmask = $this->bitmask;
 
         if ($result->bitmask !== false) {
-            $result->value = self::BCMOD_THREE_PARAMS ? bcmod($result->value, $result->bitmask->value, 0) : bcmod($result->value, $result->bitmask->value);
+            $result->value = self::BCMOD_THREE_PARAMS  bcmod($result->value, $result->bitmask->value, 0) : bcmod($result->value, $result->bitmask->value);
         }
 
         return $result;
@@ -551,7 +551,7 @@ class BCMath extends Engine
         $value = $this->value;
 
         foreach (self::PRIMES as $prime) {
-            $r = self::BCMOD_THREE_PARAMS ? bcmod($this->value, $prime, 0) : bcmod($this->value, $prime);
+            $r = self::BCMOD_THREE_PARAMS  bcmod($this->value, $prime, 0) : bcmod($this->value, $prime);
             if ($r == '0') {
                 return $this->value == $prime;
             }
@@ -644,7 +644,7 @@ class BCMath extends Engine
     }
 
     /**
-     * Is Odd?
+     * Is Odd
      *
      * @return bool
      */
@@ -662,14 +662,14 @@ class BCMath extends Engine
     {
         $divisor = bcpow('2', $x + 1, 0);
         return bccomp(
-            self::BCMOD_THREE_PARAMS ? bcmod($this->value, $divisor, 0) : bcmod($this->value, $divisor),
+            self::BCMOD_THREE_PARAMS  bcmod($this->value, $divisor, 0) : bcmod($this->value, $divisor),
             bcpow('2', $x, 0),
             0
         ) >= 0;
     }
 
     /**
-     * Is Negative?
+     * Is Negative
      *
      * @return bool
      */
@@ -693,7 +693,7 @@ class BCMath extends Engine
             return $temp;
         }
 
-        $temp->value = $temp->value[0] == '-' ?
+        $temp->value = $temp->value[0] == '-' 
             substr($this->value, 1) :
             '-' . $this->value;
 

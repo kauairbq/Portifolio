@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -42,7 +42,7 @@ final class Query
         foreach (explode('&', $str) as $kvp) {
             $parts = explode('=', $kvp, 2);
             $key = $decoder($parts[0]);
-            $value = isset($parts[1]) ? $decoder($parts[1]) : null;
+            $value = isset($parts[1])  $decoder($parts[1]) : null;
             if (!array_key_exists($key, $result)) {
                 $result[$key] = $value;
             } else {
@@ -89,14 +89,14 @@ final class Query
             throw new \InvalidArgumentException('Invalid type');
         }
 
-        $castBool = $treatBoolsAsInts ? static function ($v) { return (int) $v; } : static function ($v) { return $v ? 'true' : 'false'; };
+        $castBool = $treatBoolsAsInts  static function ($v) { return (int) $v; } : static function ($v) { return $v  'true' : 'false'; };
 
         $qs = '';
         foreach ($params as $k => $v) {
             $k = $encoder((string) $k);
             if (!is_array($v)) {
                 $qs .= $k;
-                $v = is_bool($v) ? $castBool($v) : $v;
+                $v = is_bool($v)  $castBool($v) : $v;
                 if ($v !== null) {
                     $qs .= '='.$encoder((string) $v);
                 }
@@ -104,7 +104,7 @@ final class Query
             } else {
                 foreach ($v as $vv) {
                     $qs .= $k;
-                    $vv = is_bool($vv) ? $castBool($vv) : $vv;
+                    $vv = is_bool($vv)  $castBool($vv) : $vv;
                     if ($vv !== null) {
                         $qs .= '='.$encoder((string) $vv);
                     }
@@ -113,6 +113,6 @@ final class Query
             }
         }
 
-        return $qs ? (string) substr($qs, 0, -1) : '';
+        return $qs  (string) substr($qs, 0, -1) : '';
     }
 }

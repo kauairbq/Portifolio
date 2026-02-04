@@ -1,4 +1,4 @@
-<?php
+<php
 /*******************************************************************************
 * Class to parse and subset TrueType fonts                                     *
 *                                                                              *
@@ -669,7 +669,7 @@ class TTFParser
 
 	function Read($n)
 	{
-		return $n>0 ? fread($this->f, $n) : '';
+		return $n>0  fread($this->f, $n) : '';
 	}
 
 	function ReadUShort()
@@ -711,4 +711,4 @@ class TTFParser
 		throw new Exception($msg);
 	}
 }
-?>
+>

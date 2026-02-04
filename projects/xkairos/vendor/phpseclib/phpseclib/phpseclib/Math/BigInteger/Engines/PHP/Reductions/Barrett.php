@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Barrett Modular Exponentiation Engine
@@ -263,7 +263,7 @@ abstract class Barrett extends Base
 
         for ($j = 0; $j < $x_length; ++$j) { // ie. $i = 0, $k = $i
             $temp = $x_value[$j] * $y_value[0] + $carry; // $product_value[$k] == 0
-            $carry = $class::BASE === 26 ? intval($temp / 0x4000000) : ($temp >> 31);
+            $carry = $class::BASE === 26  intval($temp / 0x4000000) : ($temp >> 31);
             $product_value[$j] = (int) ($temp - $class::BASE_FULL * $carry);
         }
 
@@ -279,7 +279,7 @@ abstract class Barrett extends Base
 
             for ($j = 0, $k = $i; $j < $x_length && $k < $stop; ++$j, ++$k) {
                 $temp = $product_value[$k] + $x_value[$j] * $y_value[$i] + $carry;
-                $carry = $class::BASE === 26 ? intval($temp / 0x4000000) : ($temp >> 31);
+                $carry = $class::BASE === 26  intval($temp / 0x4000000) : ($temp >> 31);
                 $product_value[$k] = (int) ($temp - $class::BASE_FULL * $carry);
             }
 

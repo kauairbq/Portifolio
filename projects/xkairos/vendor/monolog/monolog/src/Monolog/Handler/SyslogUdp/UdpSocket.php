@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -20,7 +20,7 @@ class UdpSocket
 
     protected string $ip;
     protected int $port;
-    protected ?Socket $socket = null;
+    protected Socket $socket = null;
 
     public function __construct(string $ip, int $port = 514)
     {

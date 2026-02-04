@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Cookie;
 
@@ -48,7 +48,7 @@ class SetCookie
             $cookieParts = \explode('=', $part, 2);
             $key = \trim($cookieParts[0]);
             $value = isset($cookieParts[1])
-                ? \trim($cookieParts[1], " \n\r\t\0\x0B")
+                 \trim($cookieParts[1], " \n\r\t\0\x0B")
                 : true;
 
             // Only check for non-cookies when cookies have been found
@@ -138,13 +138,13 @@ class SetCookie
 
     public function __toString()
     {
-        $str = $this->data['Name'].'='.($this->data['Value'] ?? '').'; ';
+        $str = $this->data['Name'].'='.($this->data['Value']  '').'; ';
         foreach ($this->data as $k => $v) {
             if ($k !== 'Name' && $k !== 'Value' && $v !== null && $v !== false) {
                 if ($k === 'Expires') {
                     $str .= 'Expires='.\gmdate('D, d M Y H:i:s \G\M\T', $v).'; ';
                 } else {
-                    $str .= ($v === true ? $k : "{$k}={$v}").'; ';
+                    $str .= ($v === true  $k : "{$k}={$v}").'; ';
                 }
             }
         }
@@ -226,7 +226,7 @@ class SetCookie
             trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing a string or null to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
         }
 
-        $this->data['Domain'] = null === $domain ? null : (string) $domain;
+        $this->data['Domain'] = null === $domain  null : (string) $domain;
     }
 
     /**
@@ -260,7 +260,7 @@ class SetCookie
      */
     public function getMaxAge()
     {
-        return null === $this->data['Max-Age'] ? null : (int) $this->data['Max-Age'];
+        return null === $this->data['Max-Age']  null : (int) $this->data['Max-Age'];
     }
 
     /**
@@ -274,7 +274,7 @@ class SetCookie
             trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing an int or null to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
         }
 
-        $this->data['Max-Age'] = $maxAge === null ? null : (int) $maxAge;
+        $this->data['Max-Age'] = $maxAge === null  null : (int) $maxAge;
     }
 
     /**
@@ -298,7 +298,7 @@ class SetCookie
             trigger_deprecation('guzzlehttp/guzzle', '7.4', 'Not passing an int, string or null to %s::%s() is deprecated and will cause an error in 8.0.', __CLASS__, __FUNCTION__);
         }
 
-        $this->data['Expires'] = null === $timestamp ? null : (\is_numeric($timestamp) ? (int) $timestamp : \strtotime((string) $timestamp));
+        $this->data['Expires'] = null === $timestamp  null : (\is_numeric($timestamp)  (int) $timestamp : \strtotime((string) $timestamp));
     }
 
     /**
@@ -470,7 +470,7 @@ class SetCookie
         )) {
             return 'Cookie name must not contain invalid characters: ASCII '
                 .'Control characters (0-31;127), space, tab and the '
-                .'following characters: ()<>@,;:\"/?={}';
+                .'following characters: ()<>@,;:\"/={}';
         }
 
         // Value must not be null. 0 and empty string are valid. Empty strings

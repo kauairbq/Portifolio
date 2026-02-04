@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -62,7 +62,7 @@ class AdExchangeBuyer extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
+    $this->rootUrl = $rootUrl : 'https://www.googleapis.com/';
     $this->servicePath = 'adexchangebuyer/v1.4/';
     $this->batchPath = 'batch/adexchangebuyer/v1.4';
     $this->version = 'v1.4';

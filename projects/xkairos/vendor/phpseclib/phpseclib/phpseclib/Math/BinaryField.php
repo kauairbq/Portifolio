@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Binary Finite Fields
@@ -72,7 +72,7 @@ class BinaryField extends FiniteField
         $bitLen = $mStart + 1;
         $pad = ceil($bitLen / 8);
         $h = $bitLen & 7;
-        $h = $h ? 8 - $h : 0;
+        $h = $h  8 - $h : 0;
 
         $r = rtrim(substr($val, 0, -1), '0');
         $u = [static::base2ToBase256(strrev($r))];
@@ -87,18 +87,18 @@ class BinaryField extends FiniteField
             for ($i = $mStart; $i >= $m;) {
                 $g = $h >> 3;
                 $mask = $h & 7;
-                $mask = $mask ? 1 << (7 - $mask) : 0x80;
+                $mask = $mask  1 << (7 - $mask) : 0x80;
                 for (; $mask > 0; $mask >>= 1, $i--, $h++) {
                     if (ord($c[$g]) & $mask) {
                         $temp = $i - $m;
                         $j = $temp >> 3;
                         $k = $temp & 7;
-                        $t1 = $j ? substr($c, 0, -$j) : $c;
+                        $t1 = $j  substr($c, 0, -$j) : $c;
                         $length = strlen($t1);
                         if ($length) {
                             $t2 = str_pad($u[$k], $length, "\0", STR_PAD_LEFT);
                             $temp = $t1 ^ $t2;
-                            $c = $j ? substr_replace($c, $temp, 0, $length) : $temp;
+                            $c = $j  substr_replace($c, $temp, 0, $length) : $temp;
                         }
                     }
                 }
@@ -125,7 +125,7 @@ class BinaryField extends FiniteField
      */
     public function newInteger($num)
     {
-        return new Integer($this->instanceID, $num instanceof BigInteger ? $num->toBytes() : $num);
+        return new Integer($this->instanceID, $num instanceof BigInteger  $num->toBytes() : $num);
     }
 
     /**

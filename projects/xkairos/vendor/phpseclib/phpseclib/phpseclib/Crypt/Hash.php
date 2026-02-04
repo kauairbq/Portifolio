@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Wrapper around hash() and hash_hmac() functions supporting truncated hashes
@@ -10,7 +10,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $hash = new \phpseclib3\Crypt\Hash('sha512');
@@ -18,7 +18,7 @@
  *    $hash->setKey('abcdefg');
  *
  *    echo base64_encode($hash->hash('abcdefg'));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -270,7 +270,7 @@ class Hash
             return;
         }
 
-        $this->computedKey = is_array($this->algo) ?
+        $this->computedKey = is_array($this->algo) 
             call_user_func($this->algo, $this->key) :
             hash($this->algo, $this->key, true);
     }
@@ -357,7 +357,7 @@ class Hash
                 $this->length = 64;
                 break;
             default:
-                if (preg_match('#^(shake(?:128|256))-(\d+)$#', $hash, $matches)) {
+                if (preg_match('#^(shake(:128|256))-(\d+)$#', $hash, $matches)) {
                     $this->paddingType = self::PADDING_SHAKE;
                     $hash = $matches[1];
                     $this->length = $matches[2] >> 3;
@@ -420,7 +420,7 @@ class Hash
                     'length' => $this->length,
                     'padding' => $this->paddingType
                 ];
-                $hash = ['phpseclib3\Crypt\Hash', PHP_INT_SIZE == 8 ? 'sha3_64' : 'sha3_32'];
+                $hash = ['phpseclib3\Crypt\Hash', PHP_INT_SIZE == 8  'sha3_64' : 'sha3_32'];
             }
         }
 
@@ -429,7 +429,7 @@ class Hash
             // http://php.net/ChangeLog-7.php#7.1.0
             if (version_compare(PHP_VERSION, '7.1.0') < 0) {
                 // from http://csrc.nist.gov/publications/fips/fips180-4/fips-180-4.pdf#page=24
-                $initial = $hash == 'sha512/256' ?
+                $initial = $hash == 'sha512/256' 
                     [
                         '22312194FC2BF72C', '9F555FA3C84C64C2', '2393B86B6F53B151', '963877195940EABD',
                         '96283EE2A88EFFE3', 'BE5E1E2553863992', '2B0199FC2C85B8AA', '0EB72DDC81C52CA2'
@@ -449,7 +449,7 @@ class Hash
 
                 $this->parameters = compact('initial');
 
-                $hash = ['phpseclib3\Crypt\Hash', PHP_INT_SIZE == 8 ? 'sha512_64' : 'sha512'];
+                $hash = ['phpseclib3\Crypt\Hash', PHP_INT_SIZE == 8  'sha512_64' : 'sha512'];
             }
         }
 
@@ -496,7 +496,7 @@ class Hash
         //
         if ($taglen <= 8) {
             $last = strlen($nonce) - 1;
-            $mask = $taglen == 4 ? "\3" : "\1";
+            $mask = $taglen == 4  "\3" : "\1";
             $index = $nonce[$last] & $mask;
             $nonce[$last] = $nonce[$last] ^ $index;
         }
@@ -518,7 +518,7 @@ class Hash
 
         // we could use ord() but per https://paragonie.com/blog/2016/06/constant-time-encoding-boring-cryptography-rfc-4648-and-you
         // unpack() doesn't leak timing info
-        return $taglen <= 8 ?
+        return $taglen <= 8 
             substr($t, unpack('C', $index)[1] * $taglen, $taglen) :
             substr($t, 0, $taglen);
     }
@@ -559,7 +559,7 @@ class Hash
             $L3Key2_i = substr($L3Key2, $i * 4, 4);
 
             $a = self::L1Hash($L1Key_i, $m);
-            $b = strlen($m) <= 1024 ? "\0\0\0\0\0\0\0\0$a" : self::L2Hash($L2Key_i, $a);
+            $b = strlen($m) <= 1024  "\0\0\0\0\0\0\0\0$a" : self::L2Hash($L2Key_i, $a);
             $c = self::L3Hash($L3Key1_i, $L3Key2_i, $b);
             $y .= $c;
         }
@@ -594,7 +594,7 @@ class Hash
 
         for ($i = 0; $i < count($m) - 1; $i++) {
             $m[$i] = pack('N*', ...unpack('V*', $m[$i])); // ENDIAN-SWAP
-            $y .= PHP_INT_SIZE == 8 ?
+            $y .= PHP_INT_SIZE == 8 
                 static::nh64($k, $m[$i], $length) :
                 static::nh32($k, $m[$i], $length);
         }
@@ -603,13 +603,13 @@ class Hash
         // For the last chunk: pad to 32-byte boundary, endian-adjust,
         // NH hash and add bit-length.  Concatenate the result to Y.
         //
-        $length = count($m) ? strlen($m[$i]) : 0;
+        $length = count($m)  strlen($m[$i]) : 0;
         $pad = 32 - ($length % 32);
         $pad = max(32, $length + $pad % 32);
-        $m[$i] = str_pad(isset($m[$i]) ? $m[$i] : '', $pad, "\0"); // zeropad
+        $m[$i] = str_pad(isset($m[$i])  $m[$i] : '', $pad, "\0"); // zeropad
         $m[$i] = pack('N*', ...unpack('V*', $m[$i])); // ENDIAN-SWAP
 
-        $y .= PHP_INT_SIZE == 8 ?
+        $y .= PHP_INT_SIZE == 8 
             static::nh64($k, $m[$i], $length * 8) :
             static::nh32($k, $m[$i], $length * 8);
 
@@ -1016,14 +1016,14 @@ class Hash
                 $l->setPrecision(128);
                 $l = $l->bitwise_leftShift(1)->toBytes();
                 // make it constant time
-                $k1 = $msb ? $l ^ $constRb : $l | $constZero;
+                $k1 = $msb  $l ^ $constRb : $l | $constZero;
 
                 $msb = ($k1 & "\x80") == "\x80";
                 $k2 = new BigInteger($k1, 256);
                 $k2->setPrecision(128);
                 $k2 = $k2->bitwise_leftShift(1)->toBytes();
                 // make it constant time
-                $k2 = $msb ? $k2 ^ $constRb : $k2 | $constZero;
+                $k2 = $msb  $k2 ^ $constRb : $k2 | $constZero;
 
                 $this->k1 = $k1;
                 $this->k2 = $k2;
@@ -1031,7 +1031,7 @@ class Hash
 
             $len = strlen($text);
             $const_Bsize = 16;
-            $M = strlen($text) ? str_split($text, $const_Bsize) : [''];
+            $M = strlen($text)  str_split($text, $const_Bsize) : [''];
 
             // Step 2
             $n = ceil($len / $const_Bsize);
@@ -1043,7 +1043,7 @@ class Hash
                 $flag = $len % $const_Bsize == 0;
             }
             // Step 4
-            $M_last = $flag ?
+            $M_last = $flag 
                 $M[$n - 1] ^ $k1 :
                 self::OMAC_padding($M[$n - 1], $const_Bsize) ^ $k2;
             // Step 5
@@ -1127,12 +1127,12 @@ class Hash
             return substr($output, 0, $this->length);
         }
 
-        $output = !empty($this->key) || is_string($this->key) ?
+        $output = !empty($this->key) || is_string($this->key) 
             hash_hmac($algo, $text, $this->computedKey, true) :
             hash($algo, $text, true);
 
         return strlen($output) > $this->length
-            ? substr($output, 0, $this->length)
+             substr($output, 0, $this->length)
             : $output;
     }
 
@@ -1197,7 +1197,7 @@ class Hash
             //case self::PADDING_SHA3:
             default:
                 // from https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf#page=36
-                return $padLength == 1 ? chr(0x86) : chr(0x06) . str_repeat("\0", $padLength - 2) . chr(0x80);
+                return $padLength == 1  chr(0x86) : chr(0x06) . str_repeat("\0", $padLength - 2) . chr(0x80);
         }
     }
 
@@ -1216,7 +1216,7 @@ class Hash
      * 64-bit integers, which complicates addition, whereas that limitation isn't an issue
      * for SHA3.
      *
-     * In https://ws680.nist.gov/publication/get_pdf.cfm?pub_id=919061#page=16 KECCAK[C] is
+     * In https://ws680.nist.gov/publication/get_pdf.cfmpub_id=919061#page=16 KECCAK[C] is
      * defined as "the KECCAK instance with KECCAK-f[1600] as the underlying permutation and
      * capacity c". This is relevant because, altho the KECCAK standard defines a mode
      * (KECCAK-f[800]) designed for 32-bit machines that mode is incompatible with SHA3

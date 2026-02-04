@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#8 Formatted DSA Key Handler
@@ -67,7 +67,7 @@ abstract class PKCS8 extends Progenitor
     {
         $key = parent::load($key, $password);
 
-        $type = isset($key['privateKey']) ? 'privateKey' : 'publicKey';
+        $type = isset($key['privateKey'])  'privateKey' : 'publicKey';
 
         $decoded = ASN1::decodeBER($key[$type . 'Algorithm']['parameters']->element);
         if (!$decoded) {
@@ -83,7 +83,7 @@ abstract class PKCS8 extends Progenitor
             throw new \RuntimeException('Unable to decode BER');
         }
 
-        $var = $type == 'privateKey' ? 'x' : 'y';
+        $var = $type == 'privateKey'  'x' : 'y';
         $components[$var] = ASN1::asn1map($decoded[0], Maps\DSAPublicKey::MAP);
         if (!$components[$var] instanceof BigInteger) {
             throw new \RuntimeException('Unable to perform ASN1 mapping');

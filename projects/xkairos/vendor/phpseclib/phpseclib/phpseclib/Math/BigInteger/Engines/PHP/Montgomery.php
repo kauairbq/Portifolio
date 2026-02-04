@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Montgomery Modular Exponentiation Engine
@@ -46,7 +46,7 @@ abstract class Montgomery extends Base
      */
     protected static function slidingWindow(Engine $x, Engine $e, Engine $n, $class)
     {
-        // is the modulo odd?
+        // is the modulo odd
         if ($n->value[0] & 1) {
             return parent::slidingWindow($x, $e, $n, $class);
         }
@@ -69,7 +69,7 @@ abstract class Montgomery extends Base
         $mod2->value = [1];
         $mod2->lshift($j);
 
-        $part1 = $mod1->value != [1] ? parent::slidingWindow($x, $e, $mod1, $class) : new $class();
+        $part1 = $mod1->value != [1]  parent::slidingWindow($x, $e, $mod1, $class) : new $class();
         $part2 = PowerOfTwo::slidingWindow($x, $e, $mod2, $class);
 
         $y1 = $mod2->modInverse($mod1);

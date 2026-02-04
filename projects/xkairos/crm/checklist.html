@@ -56,7 +56,7 @@ function loadChecklist() {
         ul.innerHTML = '';
         data.forEach(item=>{
             const li = document.createElement('li');
-            li.innerHTML = `<input type="checkbox" data-etapa="${item.etapa}" ${item.concluida==1?'checked':''}> ${item.etapa}`;
+            li.innerHTML = `<input type="checkbox" data-etapa="${item.etapa}" ${item.concluida==1'checked':''}> ${item.etapa}`;
             if(item.concluida==1) li.classList.add('completed');
             ul.appendChild(li);
         });
@@ -88,7 +88,7 @@ function loadChecklist() {
 document.getElementById('saveBtn').addEventListener('click', ()=>{
     const data = {};
     document.querySelectorAll('#checklist input').forEach(chk=>{
-        data[chk.dataset.etapa] = chk.checked ? 1 : 0;
+        data[chk.dataset.etapa] = chk.checked  1 : 0;
     });
 
     fetch('checklist_api.php', {

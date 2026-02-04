@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP ANSI Decoder
@@ -253,8 +253,8 @@ class ANSI
                         $this->screen[$this->y] = str_repeat(' ', $this->x);
                         $this->attrs[$this->y] = $this->attr_row;
                         break;
-                    case "\x1B[?1h": // set cursor key to application
-                    case "\x1B[?25h": // show the cursor
+                    case "\x1B[1h": // set cursor key to application
+                    case "\x1B[25h": // show the cursor
                     case "\x1B(B": // set united states g0 character set
                         break;
                     case "\x1BE": // Move to next line
@@ -286,7 +286,7 @@ class ANSI
                                 break;
                             case preg_match('#\x1B\[(\d+);(\d+)r#', $this->ansi, $match): // Set top and bottom lines of a window
                                 break;
-                            case preg_match('#\x1B\[(\d*(?:;\d*)*)m#', $this->ansi, $match): // character attributes
+                            case preg_match('#\x1B\[(\d*(:;\d*)*)m#', $this->ansi, $match): // character attributes
                                 $attr_cell = &$this->attr_cell;
                                 $mods = explode(';', $match[1]);
                                 foreach ($mods as $mod) {
@@ -311,10 +311,10 @@ class ANSI
                                             $attr_cell->foreground = $temp;
                                             break;
                                         default: // set colors
-                                            //$front = $attr_cell->reverse ? &$attr_cell->background : &$attr_cell->foreground;
-                                            $front = &$attr_cell->{ $attr_cell->reverse ? 'background' : 'foreground' };
-                                            //$back = $attr_cell->reverse ? &$attr_cell->foreground : &$attr_cell->background;
-                                            $back = &$attr_cell->{ $attr_cell->reverse ? 'foreground' : 'background' };
+                                            //$front = $attr_cell->reverse  &$attr_cell->background : &$attr_cell->foreground;
+                                            $front = &$attr_cell->{ $attr_cell->reverse  'background' : 'foreground' };
+                                            //$back = $attr_cell->reverse  &$attr_cell->foreground : &$attr_cell->background;
+                                            $back = &$attr_cell->{ $attr_cell->reverse  'foreground' : 'background' };
                                             switch ($mod) {
                                                 // @codingStandardsIgnoreStart
                                                 case '30': $front = 'black'; break;
@@ -503,7 +503,7 @@ class ANSI
         for ($i = 0; $i <= $this->max_y; $i++) {
             for ($j = 0; $j <= $this->max_x; $j++) {
                 $cur_attr = $this->attrs[$i][$j];
-                $output .= $this->processCoordinate($last_attr, $cur_attr, isset($this->screen[$i][$j]) ? $this->screen[$i][$j] : '');
+                $output .= $this->processCoordinate($last_attr, $cur_attr, isset($this->screen[$i][$j])  $this->screen[$i][$j] : '');
                 $last_attr = $this->attrs[$i][$j];
             }
             $output .= "\r\n";
@@ -536,7 +536,7 @@ class ANSI
         for ($i = 0; $i < count($this->history); $i++) {
             for ($j = 0; $j <= $this->max_x + 1; $j++) {
                 $cur_attr = $this->history_attrs[$i][$j];
-                $scrollback .= $this->processCoordinate($last_attr, $cur_attr, isset($this->history[$i][$j]) ? $this->history[$i][$j] : '');
+                $scrollback .= $this->processCoordinate($last_attr, $cur_attr, isset($this->history[$i][$j])  $this->history[$i][$j] : '');
                 $last_attr = $this->history_attrs[$i][$j];
             }
             $scrollback .= "\r\n";

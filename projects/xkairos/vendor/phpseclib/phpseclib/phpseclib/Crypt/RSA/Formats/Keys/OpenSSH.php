@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * OpenSSH Formatted RSA Key Handler
@@ -99,11 +99,11 @@ abstract class OpenSSH extends Progenitor
     {
         $RSAPublicKey = Strings::packSSH2('sii', 'ssh-rsa', $e, $n);
 
-        if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+        if (isset($options['binary'])  $options['binary'] : self::$binary) {
             return $RSAPublicKey;
         }
 
-        $comment = isset($options['comment']) ? $options['comment'] : self::$comment;
+        $comment = isset($options['comment'])  $options['comment'] : self::$comment;
         $RSAPublicKey = 'ssh-rsa ' . base64_encode($RSAPublicKey) . ' ' . $comment;
 
         return $RSAPublicKey;

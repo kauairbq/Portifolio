@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Common String Functions
@@ -129,8 +129,8 @@ abstract class Strings
                     $unpacked = unpack('Nupper/Nlower', self::shift($data, 8));
                     $upper = $unpacked['upper'];
                     $lower = $unpacked['lower'];
-                    $temp = $upper ? 4294967296 * $upper : 0;
-                    $temp += $lower < 0 ? ($lower & 0x7FFFFFFFF) + 0x80000000 : $lower;
+                    $temp = $upper  4294967296 * $upper : 0;
+                    $temp += $lower < 0  ($lower & 0x7FFFFFFFF) + 0x80000000 : $lower;
                     // $temp = hexdec(bin2hex(self::shift($data, 8)));
                     $result[] = $temp;
                     continue 2;
@@ -182,7 +182,7 @@ abstract class Strings
                     if (!is_bool($element)) {
                         throw new \InvalidArgumentException('A boolean parameter was expected.');
                     }
-                    $result .= $element ? "\1" : "\0";
+                    $result .= $element  "\1" : "\0";
                     break;
                 case 'Q':
                     if (!is_int($element) && !is_float($element)) {
@@ -263,7 +263,7 @@ abstract class Strings
         /*
         // the pure-PHP approach is faster than the GMP approach
         if (function_exists('gmp_export')) {
-             return strlen($x) ? gmp_export(gmp_init($x, 2)) : gmp_init(0);
+             return strlen($x)  gmp_export(gmp_init($x, 2)) : gmp_init(0);
         }
         */
 
@@ -288,10 +288,10 @@ abstract class Strings
         $parts = str_split($x, $block_size);
         $str = '';
         foreach ($parts as $part) {
-            $xor = $part[0] == '1' ? PHP_INT_MIN : 0;
+            $xor = $part[0] == '1'  PHP_INT_MIN : 0;
             $part[0] = '0';
             $str .= pack(
-                PHP_INT_SIZE == 4 ? 'N' : 'J',
+                PHP_INT_SIZE == 4  'N' : 'J',
                 $xor ^ eval('return 0b' . $part . ';')
             );
         }
@@ -333,7 +333,7 @@ abstract class Strings
             }
         }
 
-        return $trim ? ltrim($bits, '0') : $bits;
+        return $trim  ltrim($bits, '0') : $bits;
     }
 
     /**
@@ -431,7 +431,7 @@ abstract class Strings
      */
     public static function base64_decode($data)
     {
-        return function_exists('sodium_base642bin') ?
+        return function_exists('sodium_base642bin') 
             sodium_base642bin($data, SODIUM_BASE64_VARIANT_ORIGINAL_NO_PADDING, '=') :
             Base64::decode($data);
     }
@@ -446,7 +446,7 @@ abstract class Strings
     {
         // return self::base64_decode(str_replace(['-', '_'], ['+', '/'], $data));
 
-        return function_exists('sodium_base642bin') ?
+        return function_exists('sodium_base642bin') 
             sodium_base642bin($data, SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING, '=') :
             Base64UrlSafe::decode($data);
     }
@@ -459,7 +459,7 @@ abstract class Strings
      */
     public static function base64_encode($data)
     {
-        return function_exists('sodium_bin2base64') ?
+        return function_exists('sodium_bin2base64') 
             sodium_bin2base64($data, SODIUM_BASE64_VARIANT_ORIGINAL) :
             Base64::encode($data);
     }
@@ -474,7 +474,7 @@ abstract class Strings
     {
         // return str_replace(['+', '/'], ['-', '_'], self::base64_encode($data));
 
-        return function_exists('sodium_bin2base64') ?
+        return function_exists('sodium_bin2base64') 
             sodium_bin2base64($data, SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING) :
             Base64UrlSafe::encode($data);
     }
@@ -487,7 +487,7 @@ abstract class Strings
      */
     public static function hex2bin($data)
     {
-        return function_exists('sodium_hex2bin') ?
+        return function_exists('sodium_hex2bin') 
             sodium_hex2bin($data) :
             Hex::decode($data);
     }
@@ -500,7 +500,7 @@ abstract class Strings
      */
     public static function bin2hex($data)
     {
-        return function_exists('sodium_bin2hex') ?
+        return function_exists('sodium_bin2hex') 
             sodium_bin2hex($data) :
             Hex::encode($data);
     }

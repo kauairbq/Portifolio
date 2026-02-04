@@ -1,9 +1,9 @@
-<?php
+<php
 include 'includes/config.php';
 
 try {
     $id = 1;
-    $stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE id=?');
+    $stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE id=');
     $stmt->execute([$id]);
     $s = $stmt->fetch();
 
@@ -23,4 +23,4 @@ try {
 } catch (PDOException $e) {
     die("Erro: " . $e->getMessage());
 }
-?>
+>

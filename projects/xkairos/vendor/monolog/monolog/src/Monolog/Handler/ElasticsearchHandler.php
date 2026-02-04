@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -51,10 +51,10 @@ use Elastic\Elasticsearch\Client as Client8;
  *     op_type: 'index'|'create'
  * }
  * @phpstan-type InputOptions array{
- *     index?: string,
- *     type?: string,
- *     ignore_error?: bool,
- *     op_type?: 'index'|'create'
+ *     index: string,
+ *     type: string,
+ *     ignore_error: bool,
+ *     op_type: 'index'|'create'
  * }
  */
 class ElasticsearchHandler extends AbstractProcessingHandler
@@ -165,7 +165,7 @@ class ElasticsearchHandler extends AbstractProcessingHandler
 
             foreach ($records as $record) {
                 $params['body'][] = [
-                    $this->options['op_type'] => $this->needsType ? [
+                    $this->options['op_type'] => $this->needsType  [
                         '_index' => $record['_index'],
                         '_type'  => $record['_type'],
                     ] : [
@@ -199,7 +199,7 @@ class ElasticsearchHandler extends AbstractProcessingHandler
      */
     protected function createExceptionFromResponses($responses): Throwable
     {
-        foreach ($responses['items'] ?? [] as $item) {
+        foreach ($responses['items']  [] as $item) {
             if (isset($item['index']['error'])) {
                 return $this->createExceptionFromError($item['index']['error']);
             }
@@ -223,7 +223,7 @@ class ElasticsearchHandler extends AbstractProcessingHandler
      */
     protected function createExceptionFromError(array $error): Throwable
     {
-        $previous = isset($error['caused_by']) ? $this->createExceptionFromError($error['caused_by']) : null;
+        $previous = isset($error['caused_by'])  $this->createExceptionFromError($error['caused_by']) : null;
 
         if (class_exists(ElasticInvalidArgumentException::class)) {
             return new ElasticInvalidArgumentException($error['type'] . ': ' . $error['reason'], 0, $previous);

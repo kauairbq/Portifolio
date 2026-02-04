@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -43,7 +43,7 @@ class ProjectsLocationsPersistentResources extends \Google\Service\Resource
    * @opt_param string persistentResourceId Required. The ID to use for the
    * PersistentResource, which become the final component of the
    * PersistentResource's resource name. The maximum length is 63 characters, and
-   * valid characters are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
+   * valid characters are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])$/`.
    * @return GoogleLongrunningOperation
    * @throws \Google\Service\Exception
    */

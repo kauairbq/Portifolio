@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Dynamic Barrett Modular Exponentiation Engine
@@ -107,7 +107,7 @@ abstract class EvalBarrett extends Base
 
         $cutoff = count($m) + (count($m) >> 1);
 
-        $code = $correctionNeeded ?
+        $code = $correctionNeeded 
             'array_unshift($n, 0);' :
             '';
 
@@ -133,7 +133,7 @@ abstract class EvalBarrett extends Base
         $code .= self::generateInlineMultiply('temp', $u, 'temp2', $class);
         $code .= self::generateInlineTrim('temp2');
 
-        $code .= $class::BASE == 26 ?
+        $code .= $class::BASE == 26 
             '$temp = array_slice($temp2, ' . (count($m) + 1) . ');' :
             '$temp = array_slice($temp2, ' . ((count($m) >> 1) + 1) . ');';
         $code .= self::generateInlineMultiply('temp', $m, 'temp2', $class);
@@ -213,10 +213,10 @@ abstract class EvalBarrett extends Base
         for ($i = 0; $i < count($arr); $i++) {
             $regular .= '
                 $subtemp = $' . $input . '[0] * ' . $arr[$i];
-            $regular .= $i ? ' + $carry;' : ';';
+            $regular .= $i  ' + $carry;' : ';';
 
             $regular .= '$carry = ';
-            $regular .= $class::BASE === 26 ?
+            $regular .= $class::BASE === 26 
             'intval($subtemp / 0x4000000);' :
             '$subtemp >> 31;';
             $regular .=
@@ -225,7 +225,7 @@ abstract class EvalBarrett extends Base
                 $regular .= '(int) (';
             }
             $regular .= '$subtemp - ' . $class::BASE_FULL . ' * $carry';
-            $regular .= $class::BASE === 26 ? ');' : ';';
+            $regular .= $class::BASE === 26  ');' : ';';
         }
 
         $regular .= '$' . $output . '[' . count($arr) . '] = $carry;';
@@ -234,13 +234,13 @@ abstract class EvalBarrett extends Base
             for ($i = 1; $i < $length; ++$i) {';
 
         for ($j = 0; $j < count($arr); $j++) {
-            $regular .= $j ? '$k++;' : '$k = $i;';
+            $regular .= $j  '$k++;' : '$k = $i;';
             $regular .= '
                 $subtemp = $' . $output . '[$k] + $' . $input . '[$i] * ' . $arr[$j];
-            $regular .= $j ? ' + $carry;' : ';';
+            $regular .= $j  ' + $carry;' : ';';
 
             $regular .= '$carry = ';
-            $regular .= $class::BASE === 26 ?
+            $regular .= $class::BASE === 26 
                 'intval($subtemp / 0x4000000);' :
                 '$subtemp >> 31;';
             $regular .=
@@ -249,7 +249,7 @@ abstract class EvalBarrett extends Base
                 $regular .= '(int) (';
             }
             $regular .= '$subtemp - ' . $class::BASE_FULL . ' * $carry';
-            $regular .= $class::BASE === 26 ? ');' : ';';
+            $regular .= $class::BASE === 26  ');' : ';';
         }
 
         $regular .= '$' . $output . '[++$k] = $carry; $carry = 0;';
@@ -283,9 +283,9 @@ abstract class EvalBarrett extends Base
                            + $' . $result . '[$i] + $_' . $y . '[$i] +
                            $carry;
                 $carry = $sum >= ' . self::float2string($class::MAX_DIGIT2) . ';
-                $sum = $carry ? $sum - ' . self::float2string($class::MAX_DIGIT2) . ' : $sum;';
+                $sum = $carry  $sum - ' . self::float2string($class::MAX_DIGIT2) . ' : $sum;';
 
-            $code .= $class::BASE === 26 ?
+            $code .= $class::BASE === 26 
                 '$upper = intval($sum / 0x4000000); $' . $result . '[$i] = (int) ($sum - ' . $class::BASE_FULL . ' * $upper);' :
                 '$upper = $sum >> 31; $' . $result . '[$i] = $sum - ' . $class::BASE_FULL . ' * $upper;';
             $code .= '
@@ -294,7 +294,7 @@ abstract class EvalBarrett extends Base
             if ($j == $length) {
                 $sum = $' . $result . '[$i] + $_' . $y . '[$i] + $carry;
                 $carry = $sum >= ' . self::float2string($class::BASE_FULL) . ';
-                $' . $result . '[$i] = $carry ? $sum - ' . self::float2string($class::BASE_FULL) . ' : $sum;
+                $' . $result . '[$i] = $carry  $sum - ' . self::float2string($class::BASE_FULL) . ' : $sum;
                 ++$i;
             }
             if ($carry) {
@@ -334,7 +334,7 @@ abstract class EvalBarrett extends Base
                     $sum+= ' . self::float2string($class::MAX_DIGIT2) . ';
                 }
                 $subtemp = ';
-        $code .= $class::BASE === 26 ?
+        $code .= $class::BASE === 26 
             'intval($sum / 0x4000000);' :
             '$sum >> 31;';
         $code .= '$' . $result . '[$i] = ';
@@ -351,7 +351,7 @@ abstract class EvalBarrett extends Base
             if ($j == $size) {
                 $sum = $' . $known . '[$i] - $' . $unknown . '[$i] - $carry;
                 $carry = $sum < 0;
-                $' . $result . '[$i] = $carry ? $sum + ' . $class::BASE_FULL . ' : $sum;
+                $' . $result . '[$i] = $carry  $sum + ' . $class::BASE_FULL . ' : $sum;
                 ++$i;
             }
 
@@ -393,7 +393,7 @@ abstract class EvalBarrett extends Base
                     $sum+= ' . self::float2string($class::MAX_DIGIT2) . ';
                 }
                 $subtemp = ';
-            $code .= $class::BASE === 26 ?
+            $code .= $class::BASE === 26 
                 'intval($sum / 0x4000000);' :
                 '$sum >> 31;';
             $code .= '
@@ -415,7 +415,7 @@ abstract class EvalBarrett extends Base
             $code .= '
                 $sum = $' . $unknown . '[' . $i . '] - ' . $known[$i] . ' - $carry;
                 $carry = $sum < 0;
-                $' . $result . '[' . $i . '] = $carry ? $sum + ' . $class::BASE_FULL . ' : $sum;
+                $' . $result . '[' . $i . '] = $carry  $sum + ' . $class::BASE_FULL . ' : $sum;
                 ++$i;';
         }
 

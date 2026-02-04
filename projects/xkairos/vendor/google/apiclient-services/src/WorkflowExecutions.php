@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -54,8 +54,8 @@ class WorkflowExecutions extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://workflowexecutions.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://workflowexecutions.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://workflowexecutions.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://workflowexecutions.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';

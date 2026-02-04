@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2011 Google Inc.
  *
@@ -91,7 +91,7 @@ class Model implements \ArrayAccess
             $this->processed[$key] = true;
         }
 
-        return isset($this->modelData[$key]) ? $this->modelData[$key] : null;
+        return isset($this->modelData[$key])  $this->modelData[$key] : null;
     }
 
     /**
@@ -265,7 +265,7 @@ class Model implements \ArrayAccess
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
-        return isset($this->$offset) ?
+        return isset($this->$offset) 
         $this->$offset :
         $this->__get($offset);
     }

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -107,7 +107,7 @@ class WebProcessor implements ProcessorInterface
     private function appendExtraFields(array $extra): array
     {
         foreach ($this->extraFields as $extraName => $serverName) {
-            $extra[$extraName] = $this->serverData[$serverName] ?? null;
+            $extra[$extraName] = $this->serverData[$serverName]  null;
         }
 
         return $extra;

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -29,10 +29,10 @@ class AsMonologProcessor
      * @param int|null    $priority The priority of the processor so the order can be determined.
      */
     public function __construct(
-        public readonly ?string $channel = null,
-        public readonly ?string $handler = null,
-        public readonly ?string $method = null,
-        public readonly ?int $priority = null
+        public readonly string $channel = null,
+        public readonly string $handler = null,
+        public readonly string $method = null,
+        public readonly int $priority = null
     ) {
     }
 }

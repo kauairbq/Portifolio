@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -175,14 +175,14 @@ class ServiceAccountCredentials extends CredentialsLoader implements
             'scope' => $scope,
             'signingAlgorithm' => 'RS256',
             'signingKey' => $jsonKey['private_key'],
-            'signingKeyId' => $jsonKey['private_key_id'] ?? null,
+            'signingKeyId' => $jsonKey['private_key_id']  null,
             'sub' => $sub,
             'tokenCredentialUri' => self::TOKEN_CREDENTIAL_URI,
             'additionalClaims' => $additionalClaims,
         ]);
 
-        $this->projectId = $jsonKey['project_id'] ?? null;
-        $this->universeDomain = $jsonKey['universe_domain'] ?? self::DEFAULT_UNIVERSE_DOMAIN;
+        $this->projectId = $jsonKey['project_id']  null;
+        $this->universeDomain = $jsonKey['universe_domain']  self::DEFAULT_UNIVERSE_DOMAIN;
     }
 
     /**
@@ -212,7 +212,7 @@ class ServiceAccountCredentials extends CredentialsLoader implements
      *     @type string $token_type
      * }
      */
-    public function fetchAuthToken(?callable $httpHandler = null, array $headers = [])
+    public function fetchAuthToken(callable $httpHandler = null, array $headers = [])
     {
         if ($this->useSelfSignedJwt()) {
             $jwtCreds = $this->createJwtAccessCredentials();
@@ -252,7 +252,7 @@ class ServiceAccountCredentials extends CredentialsLoader implements
         }
         return $this->auth->fetchAuthToken(
             $httpHandler,
-            $this->applyTokenEndpointMetrics($headers, $this->isIdTokenRequest ? 'it' : 'at')
+            $this->applyTokenEndpointMetrics($headers, $this->isIdTokenRequest  'it' : 'at')
         );
     }
 
@@ -287,7 +287,7 @@ class ServiceAccountCredentials extends CredentialsLoader implements
         // If self-signed JWTs are being used, fetch the last received token
         // from memory. Else, fetch it from OAuth2
         return $this->useSelfSignedJwt()
-            ? $this->lastReceivedJwtAccessToken
+             $this->lastReceivedJwtAccessToken
             : $this->auth->getLastReceivedToken();
     }
 
@@ -299,7 +299,7 @@ class ServiceAccountCredentials extends CredentialsLoader implements
      * @param callable|null $httpHandler Not used by this credentials type.
      * @return string|null
      */
-    public function getProjectId(?callable $httpHandler = null)
+    public function getProjectId(callable $httpHandler = null)
     {
         return $this->projectId;
     }
@@ -315,7 +315,7 @@ class ServiceAccountCredentials extends CredentialsLoader implements
     public function updateMetadata(
         $metadata,
         $authUri = null,
-        ?callable $httpHandler = null
+        callable $httpHandler = null
     ) {
         // scope exists. use oauth implementation
         if (!$this->useSelfSignedJwt()) {
@@ -376,7 +376,7 @@ class ServiceAccountCredentials extends CredentialsLoader implements
      * @param callable|null $httpHandler Not used by this credentials type.
      * @return string
      */
-    public function getClientName(?callable $httpHandler = null)
+    public function getClientName(callable $httpHandler = null)
     {
         return $this->auth->getIssuer();
     }

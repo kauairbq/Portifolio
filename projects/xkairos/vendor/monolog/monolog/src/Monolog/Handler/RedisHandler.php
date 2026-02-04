@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -69,7 +69,7 @@ class RedisHandler extends AbstractProcessingHandler
     protected function writeCapped(LogRecord $record): void
     {
         if ($this->redisClient instanceof Redis) {
-            $mode = \defined('Redis::MULTI') ? Redis::MULTI : 1;
+            $mode = \defined('Redis::MULTI')  Redis::MULTI : 1;
             $this->redisClient->multi($mode)
                 ->rPush($this->redisKey, $record->formatted)
                 ->ltrim($this->redisKey, -$this->capSize, -1)

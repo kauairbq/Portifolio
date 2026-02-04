@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -53,7 +53,7 @@ class AccountsReposScans extends \Google\Service\Resource
   /**
    * Gets a repo scan. By default, only the name and results_uri fields are
    * returned. You can include other fields by listing them in the `fields` URL
-   * query parameter. For example, `?fields=name,sources` will return the name and
+   * query parameter. For example, `fields=name,sources` will return the name and
    * sources fields. (scans.get)
    *
    * @param string $name Required. Resource name of the repo scan. Example:

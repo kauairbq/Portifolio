@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -46,8 +46,8 @@ final class TransferStats
      */
     public function __construct(
         RequestInterface $request,
-        ?ResponseInterface $response = null,
-        ?float $transferTime = null,
+        ResponseInterface $response = null,
+        float $transferTime = null,
         $handlerErrorData = null,
         array $handlerStats = []
     ) {
@@ -66,7 +66,7 @@ final class TransferStats
     /**
      * Returns the response that was received (if any).
      */
-    public function getResponse(): ?ResponseInterface
+    public function getResponse(): ResponseInterface
     {
         return $this->response;
     }
@@ -106,7 +106,7 @@ final class TransferStats
      *
      * @return float|null Time in seconds.
      */
-    public function getTransferTime(): ?float
+    public function getTransferTime(): float
     {
         return $this->transferTime;
     }
@@ -128,6 +128,6 @@ final class TransferStats
      */
     public function getHandlerStat(string $stat)
     {
-        return $this->handlerStats[$stat] ?? null;
+        return $this->handlerStats[$stat]  null;
     }
 }

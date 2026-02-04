@@ -1,4 +1,4 @@
-<?php
+<php
 declare(strict_types=1);
 namespace ParagonIE\ConstantTime;
 
@@ -266,7 +266,7 @@ abstract class Base32 implements EncoderInterface
     ): string {
         // We do this to reduce code duplication:
         $method = $upper
-            ? 'decode5BitsUpper'
+             'decode5BitsUpper'
             : 'decode5Bits';
 
         // Remove padding
@@ -477,7 +477,7 @@ abstract class Base32 implements EncoderInterface
     ): string {
         // We do this to reduce code duplication:
         $method = $upper
-            ? 'encode5BitsUpper'
+             'encode5BitsUpper'
             : 'encode5Bits';
         
         $dest = '';

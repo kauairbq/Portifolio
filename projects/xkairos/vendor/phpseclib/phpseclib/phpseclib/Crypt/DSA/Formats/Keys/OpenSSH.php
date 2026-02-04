@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * OpenSSH Formatted DSA Key Handler
@@ -86,11 +86,11 @@ abstract class OpenSSH extends Progenitor
         // mpint     y
         $DSAPublicKey = Strings::packSSH2('siiii', 'ssh-dss', $p, $q, $g, $y);
 
-        if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+        if (isset($options['binary'])  $options['binary'] : self::$binary) {
             return $DSAPublicKey;
         }
 
-        $comment = isset($options['comment']) ? $options['comment'] : self::$comment;
+        $comment = isset($options['comment'])  $options['comment'] : self::$comment;
         $DSAPublicKey = 'ssh-dss ' . base64_encode($DSAPublicKey) . ' ' . $comment;
 
         return $DSAPublicKey;

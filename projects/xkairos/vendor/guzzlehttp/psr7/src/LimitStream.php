@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -57,7 +57,7 @@ final class LimitStream implements StreamInterface
     /**
      * Returns the size of the limited subset of data
      */
-    public function getSize(): ?int
+    public function getSize(): int
     {
         if (null === ($length = $this->stream->getSize())) {
             return null;

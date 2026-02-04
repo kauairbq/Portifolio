@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2023 Google Inc.
  *
@@ -30,13 +30,13 @@ use UnexpectedValueException;
 class UrlSource implements ExternalAccountCredentialSourceInterface
 {
     private string $url;
-    private ?string $format;
-    private ?string $subjectTokenFieldName;
+    private string $format;
+    private string $subjectTokenFieldName;
 
     /**
      * @var array<string, string|string[]>
      */
-    private ?array $headers;
+    private array $headers;
 
     /**
      * @param string $url                        The URL to fetch the subject token from.
@@ -47,9 +47,9 @@ class UrlSource implements ExternalAccountCredentialSourceInterface
      */
     public function __construct(
         string $url,
-        ?string $format = null,
-        ?string $subjectTokenFieldName = null,
-        ?array $headers = null
+        string $format = null,
+        string $subjectTokenFieldName = null,
+        array $headers = null
     ) {
         $this->url = $url;
 
@@ -64,7 +64,7 @@ class UrlSource implements ExternalAccountCredentialSourceInterface
         $this->headers = $headers;
     }
 
-    public function fetchSubjectToken(?callable $httpHandler = null): string
+    public function fetchSubjectToken(callable $httpHandler = null): string
     {
         if (is_null($httpHandler)) {
             $httpHandler = HttpHandlerFactory::build(HttpClientCache::getHttpClient());
@@ -73,7 +73,7 @@ class UrlSource implements ExternalAccountCredentialSourceInterface
         $request = new Request(
             'GET',
             $this->url,
-            $this->headers ?: []
+            $this->headers : []
         );
 
         $response = $httpHandler($request);
@@ -100,9 +100,9 @@ class UrlSource implements ExternalAccountCredentialSourceInterface
      * The format for the cache key is:
      * URL
      *
-     * @return ?string
+     * @return string
      */
-    public function getCacheKey(): ?string
+    public function getCacheKey(): string
     {
         return $this->url;
     }

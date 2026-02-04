@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -98,7 +98,7 @@ final class UriNormalizer
      * However, the order of parameters in a URI may be significant (this is not defined by the standard).
      * So this normalization is not safe and may change the semantics of the URI.
      *
-     * Example: ?lang=en&article=fred → ?article=fred&lang=en
+     * Example: lang=en&article=fred → article=fred&lang=en
      *
      * Note: The sorting is neither locale nor Unicode aware (the URI query does not get decoded at all) as the
      * purpose is to be able to compare URIs in a reproducible way, not to have the params sorted perfectly.
@@ -112,7 +112,7 @@ final class UriNormalizer
      * This methods adds additional normalizations that can be configured with the $flags parameter.
      *
      * PSR-7 UriInterface cannot distinguish between an empty component and a missing component as
-     * getQuery(), getFragment() etc. always return a string. This means the URIs "/?#" and "/" are
+     * getQuery(), getFragment() etc. always return a string. This means the URIs "/#" and "/" are
      * treated equivalent which is not necessarily true according to RFC 3986. But that difference
      * is highly uncommon in reality. So this potential normalization is implied in PSR-7 as well.
      *
@@ -183,7 +183,7 @@ final class UriNormalizer
 
     private static function capitalizePercentEncoding(UriInterface $uri): UriInterface
     {
-        $regex = '/(?:%[A-Fa-f0-9]{2})++/';
+        $regex = '/(:%[A-Fa-f0-9]{2})++/';
 
         $callback = function (array $match): string {
             return strtoupper($match[0]);
@@ -199,7 +199,7 @@ final class UriNormalizer
 
     private static function decodeUnreservedCharacters(UriInterface $uri): UriInterface
     {
-        $regex = '/%(?:2D|2E|5F|7E|3[0-9]|[46][1-9A-F]|[57][0-9A])/i';
+        $regex = '/%(:2D|2E|5F|7E|3[0-9]|[46][1-9A-F]|[57][0-9A])/i';
 
         $callback = function (array $match): string {
             return rawurldecode($match[0]);

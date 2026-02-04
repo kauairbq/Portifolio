@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP ssh-agent client.
@@ -9,7 +9,7 @@
  *
  * Here are some examples of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $agent = new \phpseclib3\System\SSH\Agent();
@@ -21,7 +21,7 @@
  *
  *    echo $ssh->exec('pwd');
  *    echo $ssh->exec('ls -la');
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -206,7 +206,7 @@ class Agent
     /**
      * Returns the SSH Agent identity matching a given public key or null if no identity is found
      *
-     * @return ?Identity
+     * @return Identity
      */
     public function findIdentityByPublicKey(PublicKey $key)
     {

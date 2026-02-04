@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#8 Formatted DH Key Handler
@@ -63,7 +63,7 @@ abstract class PKCS8 extends Progenitor
     {
         $key = parent::load($key, $password);
 
-        $type = isset($key['privateKey']) ? 'privateKey' : 'publicKey';
+        $type = isset($key['privateKey'])  'privateKey' : 'publicKey';
 
         $decoded = ASN1::decodeBER($key[$type . 'Algorithm']['parameters']->element);
         if (empty($decoded)) {

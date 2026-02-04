@@ -1,4 +1,4 @@
-<?php
+<php
 
 /*
  * Copyright 2022 Google Inc.
@@ -91,7 +91,7 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
     public function __construct(
         string|array|null $scope,
         string|array $jsonKey,
-        private ?string $targetAudience = null
+        private string $targetAudience = null
     ) {
         if (is_string($jsonKey)) {
             if (!file_exists($jsonKey)) {
@@ -127,7 +127,7 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
                 // an ID token, the narrowest scope we can request is `iam`.
                 $scope = self::IAM_SCOPE;
             }
-            $jsonKey['source_credentials'] = match ($jsonKey['source_credentials']['type'] ?? null) {
+            $jsonKey['source_credentials'] = match ($jsonKey['source_credentials']['type']  null) {
                 // Do not pass $defaultScope to ServiceAccountCredentials
                 'service_account' => new ServiceAccountCredentials($scope, $jsonKey['source_credentials']),
                 'authorized_user' => new UserRefreshCredentials($scope, $jsonKey['source_credentials']),
@@ -136,9 +136,9 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
             };
         }
 
-        $this->targetScope = $scope ?? [];
-        $this->lifetime = $jsonKey['lifetime'] ?? 3600;
-        $this->delegates = $jsonKey['delegates'] ?? [];
+        $this->targetScope = $scope  [];
+        $this->lifetime = $jsonKey['lifetime']  3600;
+        $this->delegates = $jsonKey['delegates']  [];
 
         $this->serviceAccountImpersonationUrl = $jsonKey['service_account_impersonation_url'];
         $this->impersonatedServiceAccountName = $this->getImpersonatedServiceAccountNameFromUrl(
@@ -172,7 +172,7 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
      * @param callable|null $unusedHttpHandler not used by this credentials type.
      * @return string Token issuer email
      */
-    public function getClientName(?callable $unusedHttpHandler = null)
+    public function getClientName(callable $unusedHttpHandler = null)
     {
         return $this->impersonatedServiceAccountName;
     }
@@ -190,9 +190,9 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
      *     @type string $id_token
      * }
      */
-    public function fetchAuthToken(?callable $httpHandler = null)
+    public function fetchAuthToken(callable $httpHandler = null)
     {
-        $httpHandler = $httpHandler ?? HttpHandlerFactory::build(HttpClientCache::getHttpClient());
+        $httpHandler = $httpHandler  HttpHandlerFactory::build(HttpClientCache::getHttpClient());
 
         // The FetchAuthTokenInterface technically does not have a "headers" argument, but all of
         // the implementations do. Additionally, passing in more parameters than the function has
@@ -206,8 +206,8 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
         $headers = $this->applyTokenEndpointMetrics([
             'Content-Type' => 'application/json',
             'Cache-Control' => 'no-store',
-            'Authorization' => sprintf('Bearer %s', $authToken['access_token'] ?? $authToken['id_token']),
-        ], $this->isIdTokenRequest() ? 'it' : 'at');
+            'Authorization' => sprintf('Bearer %s', $authToken['access_token']  $authToken['id_token']),
+        ], $this->isIdTokenRequest()  'it' : 'at');
 
         $body = match ($this->isIdTokenRequest()) {
             true => [
@@ -223,7 +223,7 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
 
         $url = $this->serviceAccountImpersonationUrl;
         if ($this->isIdTokenRequest()) {
-            $regex = '/serviceAccounts\/(?<email>[^:]+):generateAccessToken$/';
+            $regex = '/serviceAccounts\/(<email>[^:]+):generateAccessToken$/';
             if (!preg_match($regex, $url, $matches)) {
                 throw new InvalidArgumentException(
                     'Invalid service account impersonation URL - unable to parse service account email'
@@ -289,7 +289,7 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
     public function getUniverseDomain(): string
     {
         return $this->sourceCredentials instanceof GetUniverseDomainInterface
-            ? $this->sourceCredentials->getUniverseDomain()
+             $this->sourceCredentials->getUniverseDomain()
             : self::DEFAULT_UNIVERSE_DOMAIN;
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<php
 $dist = dirname(__DIR__).'/dist';
 if (!is_dir($dist)) {
     mkdir($dist, 0755);

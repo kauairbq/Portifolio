@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP PKCS#1 (v2.1) compliant implementation of RSA.
@@ -7,7 +7,7 @@
  *
  * Here's an example of how to encrypt and decrypt text with this library:
  * <code>
- * <?php
+ * <php
  * include 'vendor/autoload.php';
  *
  * $private = Crypt\RSA::createKey();
@@ -18,12 +18,12 @@
  * $ciphertext = $public->encrypt($plaintext);
  *
  * echo $private->decrypt($ciphertext);
- * ?>
+ * >
  * </code>
  *
  * Here's an example of how to create signatures and verify signatures with this library:
  * <code>
- * <?php
+ * <php
  * include 'vendor/autoload.php';
  *
  * $private = Crypt\RSA::createKey();
@@ -33,14 +33,14 @@
  *
  * $signature = $private->sign($plaintext);
  *
- * echo $public->verify($plaintext, $signature) ? 'verified' : 'unverified';
- * ?>
+ * echo $public->verify($plaintext, $signature)  'verified' : 'unverified';
+ * >
  * </code>
  *
  * One thing to consider when using this: so phpseclib uses PSS mode by default.
  * Technically, id-RSASSA-PSS has a different key format than rsaEncryption. So
  * should phpseclib save to the id-RSASSA-PSS format by default or the
- * rsaEncryption format? For stand-alone keys I figure rsaEncryption is better
+ * rsaEncryption format For stand-alone keys I figure rsaEncryption is better
  * because SSH doesn't use PSS and idk how many SSH servers would be able to
  * decode an id-RSASSA-PSS key. For X.509 certificates the id-RSASSA-PSS
  * format is used by default (unless you change it up to use PKCS1 instead)
@@ -221,7 +221,7 @@ abstract class RSA extends AsymmetricKey
     private static $defaultExponent = 65537;
 
     /**
-     * Enable Blinding?
+     * Enable Blinding
      *
      * @var bool
      */
@@ -231,7 +231,7 @@ abstract class RSA extends AsymmetricKey
      * OpenSSL configuration file name.
      *
      * @see self::createKey()
-     * @var ?string
+     * @var string
      */
     protected static $configFile;
 
@@ -379,7 +379,7 @@ abstract class RSA extends AsymmetricKey
                 // textbook RSA implementations use Euler's totient function instead of the least common multiple.
                 // see http://en.wikipedia.org/wiki/Euler%27s_totient_function
                 $lcm['top'] = $lcm['top']->multiply($temp);
-                $lcm['bottom'] = $lcm['bottom'] === false ? $temp : $lcm['bottom']->gcd($temp);
+                $lcm['bottom'] = $lcm['bottom'] === false  $temp : $lcm['bottom']->gcd($temp);
             }
 
             list($temp) = $lcm['top']->divide($lcm['bottom']);
@@ -437,7 +437,7 @@ abstract class RSA extends AsymmetricKey
      */
     protected static function onLoad(array $components)
     {
-        $key = $components['isPublicKey'] ?
+        $key = $components['isPublicKey'] 
             new PublicKey() :
             new PrivateKey();
 
@@ -687,7 +687,7 @@ abstract class RSA extends AsymmetricKey
      */
     public function getLength()
     {
-        return !isset($this->modulus) ? 0 : $this->modulus->getLength();
+        return !isset($this->modulus)  0 : $this->modulus->getLength();
     }
 
     /**
@@ -794,7 +794,7 @@ abstract class RSA extends AsymmetricKey
      */
     public function getSaltLength()
     {
-        return $this->sLen !== null ? $this->sLen : $this->hLen;
+        return $this->sLen !== null  $this->sLen : $this->hLen;
     }
 
     /**
@@ -908,7 +908,7 @@ abstract class RSA extends AsymmetricKey
         if (!isset(self::$engines['PHP'])) {
             self::useBestEngine();
         }
-        return self::$engines['OpenSSL'] && self::$defaultExponent == 65537 ?
+        return self::$engines['OpenSSL'] && self::$defaultExponent == 65537 
             'OpenSSL' :
             'PHP';
     }

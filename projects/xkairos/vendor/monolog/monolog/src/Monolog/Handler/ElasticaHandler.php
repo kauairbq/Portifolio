@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -41,9 +41,9 @@ use Monolog\LogRecord;
  *     ignore_error: bool
  * }
  * @phpstan-type InputOptions array{
- *     index?: string,
- *     type?: string,
- *     ignore_error?: bool
+ *     index: string,
+ *     type: string,
+ *     ignore_error: bool
  * }
  */
 class ElasticaHandler extends AbstractProcessingHandler

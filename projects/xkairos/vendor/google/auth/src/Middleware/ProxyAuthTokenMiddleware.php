@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -45,7 +45,7 @@ class ProxyAuthTokenMiddleware
     private $fetcher;
 
     /**
-     * @var ?callable
+     * @var callable
      */
     private $tokenCallback;
 
@@ -58,8 +58,8 @@ class ProxyAuthTokenMiddleware
      */
     public function __construct(
         FetchAuthTokenInterface $fetcher,
-        ?callable $httpHandler = null,
-        ?callable $tokenCallback = null
+        callable $httpHandler = null,
+        callable $tokenCallback = null
     ) {
         $this->fetcher = $fetcher;
         $this->httpHandler = $httpHandler;

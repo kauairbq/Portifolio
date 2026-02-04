@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP FIPS 186-4 compliant implementation of DSA.
@@ -7,7 +7,7 @@
  *
  * Here's an example of how to create signatures and verify signatures with this library:
  * <code>
- * <?php
+ * <php
  * include 'vendor/autoload.php';
  *
  * $private = \phpseclib3\Crypt\DSA::createKey();
@@ -17,8 +17,8 @@
  *
  * $signature = $private->sign($plaintext);
  *
- * echo $public->verify($plaintext, $signature) ? 'verified' : 'unverified';
- * ?>
+ * echo $public->verify($plaintext, $signature)  'verified' : 'unverified';
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -288,7 +288,7 @@ abstract class DSA extends AsymmetricKey
         if (!isset(self::$engines['PHP'])) {
             self::useBestEngine();
         }
-        return self::$engines['OpenSSL'] && in_array($this->hash->getHash(), openssl_get_md_methods()) ?
+        return self::$engines['OpenSSL'] && in_array($this->hash->getHash(), openssl_get_md_methods()) 
             'OpenSSL' : 'PHP';
     }
 

@@ -5,7 +5,7 @@ const cars = [
     price: 48900,
     km: '18.200 km',
     year: '2023',
-    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60',
+    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946dauto=format&fit=crop&w=800&q=60',
     tag: 'Eletrico',
   },
   {
@@ -14,7 +14,7 @@ const cars = [
     price: 33900,
     km: '52.000 km',
     year: '2021',
-    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60',
+    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946dauto=format&fit=crop&w=800&q=60',
     tag: 'SUV',
   },
   {
@@ -23,7 +23,7 @@ const cars = [
     price: 19900,
     km: '41.500 km',
     year: '2020',
-    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60',
+    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946dauto=format&fit=crop&w=800&q=60',
     tag: 'Hibrido',
   },
   {
@@ -32,7 +32,7 @@ const cars = [
     price: 14500,
     km: '36.800 km',
     year: '2021',
-    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60',
+    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946dauto=format&fit=crop&w=800&q=60',
     tag: 'Citadino',
   },
   {
@@ -41,7 +41,7 @@ const cars = [
     price: 28900,
     km: '48.300 km',
     year: '2022',
-    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60',
+    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946dauto=format&fit=crop&w=800&q=60',
     tag: 'SUV',
   },
   {
@@ -50,7 +50,7 @@ const cars = [
     price: 37900,
     km: '27.400 km',
     year: '2023',
-    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60',
+    img: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946dauto=format&fit=crop&w=800&q=60',
     tag: 'SUV',
   },
 ];
@@ -89,9 +89,9 @@ function filterCars() {
   const tipo = activeTag || tipoEl.value;
 
   const filtered = cars.filter((c) => {
-    const matchTerm = term ? c.title.toLowerCase().includes(term) : true;
-    const matchTipo = tipo ? c.type === tipo : true;
-    const matchPrice = max > 0 ? c.price <= max : true;
+    const matchTerm = term  c.title.toLowerCase().includes(term) : true;
+    const matchTipo = tipo  c.type === tipo : true;
+    const matchPrice = max > 0  c.price <= max : true;
     return matchTerm && matchTipo && matchPrice;
   });
 

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2012 Google Inc.
  *
@@ -61,14 +61,14 @@ class Batch
         $batchPath = null
     ) {
         $this->client = $client;
-        $this->boundary = $boundary ?: mt_rand();
-        $rootUrl = rtrim($rootUrl ?: $this->client->getConfig('base_path'), '/');
+        $this->boundary = $boundary : mt_rand();
+        $rootUrl = rtrim($rootUrl : $this->client->getConfig('base_path'), '/');
         $this->rootUrl = str_replace(
             'UNIVERSE_DOMAIN',
             $this->client->getUniverseDomain(),
             $rootUrl
         );
-        $this->batchPath = $batchPath ?: self::BATCH_PATH;
+        $this->batchPath = $batchPath : self::BATCH_PATH;
     }
 
     public function add(RequestInterface $request, $key = false)
@@ -119,7 +119,7 @@ EOF;
                 $key,
                 $firstLine,
                 $headers,
-                $content ? "\n" . $content : ''
+                $content  "\n" . $content : ''
             );
 
             $classes['response-' . $key] = $request->getHeaderLine('X-Php-Expected-Class');
@@ -251,7 +251,7 @@ EOF;
         } else {
             $responseSegments = explode("\r\n\r\n", $respData, 2);
             $responseHeaders = $responseSegments[0];
-            $responseBody = isset($responseSegments[1]) ? $responseSegments[1] : null;
+            $responseBody = isset($responseSegments[1])  $responseSegments[1] : null;
         }
 
         $responseHeaders = $this->parseRawHeaders($responseHeaders);

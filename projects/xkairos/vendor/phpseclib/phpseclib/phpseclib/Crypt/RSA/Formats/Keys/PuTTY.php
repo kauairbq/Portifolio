@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PuTTY Formatted RSA Key Handler

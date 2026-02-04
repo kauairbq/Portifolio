@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -57,7 +57,7 @@ class UserUsageReport extends \Google\Service\Resource
    * name[parameter value],...`. In this example, the `<>` 'not equal to' operator
    * is URL-encoded in the request's query string (%3C%3E): GET
    * https://www.googleapis.com/admin/reports/v1/usage/users/all/dates/2013-03-03
-   * ?parameters=accounts:last_login_time
+   * parameters=accounts:last_login_time
    * &filters=accounts:last_login_time%3C%3E2010-10-28T10:26:35.000Z The
    * relational operators include: - `==` - 'equal to'. - `<>` - 'not equal to'.
    * It is URL-encoded (%3C%3E). - `<` - 'less than'. It is URL-encoded (%3C). -

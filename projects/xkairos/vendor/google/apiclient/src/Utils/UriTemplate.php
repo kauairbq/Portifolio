@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2013 Google Inc.
  *
@@ -39,7 +39,7 @@ class UriTemplate
         "." => "dotprefix",
         "#" => "fragment",
         ";" => "semicolon",
-        "?" => "form",
+        "" => "form",
         "&" => "continuation"
     ];
 
@@ -49,7 +49,7 @@ class UriTemplate
      * strings.
      */
     private $reserved = [
-        "=", ",", "!", "@", "|", ":", "/", "?", "#",
+        "=", ",", "!", "@", "|", ":", "/", "", "#",
         "[", "]", '$', "&", "'", "(", ")", "*", "+", ";"
     ];
     private $reservedEncoded = [
@@ -124,7 +124,7 @@ class UriTemplate
                     break;
                 case "form":
                     // Standard URL format. Uses the key name
-                    $prefix = "?";
+                    $prefix = "";
                     $data = $this->replaceVars($data, $parameters, "&", "=");
                     break;
                 case "continuation":
@@ -210,7 +210,7 @@ class UriTemplate
         }
 
         // Define the list separator.
-        $list_sep = $explode ? $sep : ",";
+        $list_sep = $explode  $sep : ",";
 
         if (isset($parameters[$key])) {
             $data_type = $this->getDataType($parameters[$key]);
@@ -270,7 +270,7 @@ class UriTemplate
         }
 
         // Else we combine the key name: foo=bar, if value is not the empty string.
-        return $key . ($value != '' || $combine_on_empty ? $combine . $value : '');
+        return $key . ($value != '' || $combine_on_empty  $combine . $value : '');
     }
 
     /**

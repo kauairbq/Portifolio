@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PuTTY Formatted EC Key Handler
@@ -111,7 +111,7 @@ abstract class PuTTY extends Progenitor
             }
         }
 
-        $private = $curve instanceof TwistedEdwardsCurve ?
+        $private = $curve instanceof TwistedEdwardsCurve 
             Strings::packSSH2('s', $secret) :
             Strings::packSSH2('s', $private);
 

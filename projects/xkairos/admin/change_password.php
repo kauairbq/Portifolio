@@ -1,4 +1,4 @@
-<?php
+<php
 session_start();
 if (!isset($_SESSION['admin_logged_in'])) {
     header('Location: login.php');
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($admin && password_verify($current_password, $admin['password'])) {
         if ($new_password === $confirm_password) {
             $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare('UPDATE admin SET password = ? WHERE id = 1');
+            $stmt = $pdo->prepare('UPDATE admin SET password =  WHERE id = 1');
             $stmt->execute([$hashed_password]);
             $success = 'Senha alterada com sucesso!';
         } else {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = 'Senha atual incorreta.';
     }
 }
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -68,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="password" id="confirm_password" name="confirm_password" required style="width: 100%; padding: 8px; margin-top: 5px;">
                 </div>
                 <button type="submit" style="background: #00F0FF; color: #1F1F1F; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Alterar Senha</button>
-                <?php if(isset($error)) echo "<p style='color: red; margin-top: 10px;'>$error</p>"; ?>
-                <?php if(isset($success)) echo "<p style='color: green; margin-top: 10px;'>$success</p>"; ?>
+                <php if(isset($error)) echo "<p style='color: red; margin-top: 10px;'>$error</p>"; >
+                <php if(isset($success)) echo "<p style='color: green; margin-top: 10px;'>$success</p>"; >
             </form>
         </div>
     </div>

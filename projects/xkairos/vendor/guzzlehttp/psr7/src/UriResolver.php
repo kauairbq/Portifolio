@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -74,7 +74,7 @@ final class UriResolver
             $targetAuthority = $base->getAuthority();
             if ($rel->getPath() === '') {
                 $targetPath = $base->getPath();
-                $targetQuery = $rel->getQuery() != '' ? $rel->getQuery() : $base->getQuery();
+                $targetQuery = $rel->getQuery() != ''  $rel->getQuery() : $base->getQuery();
             } else {
                 if ($rel->getPath()[0] === '/') {
                     $targetPath = $rel->getPath();
@@ -117,7 +117,7 @@ final class UriResolver
      *    $base = new Uri('http://example.com/a/b/');
      *    echo UriResolver::relativize($base, new Uri('http://example.com/a/b/c'));  // prints 'c'.
      *    echo UriResolver::relativize($base, new Uri('http://example.com/a/x/y'));  // prints '../x/y'.
-     *    echo UriResolver::relativize($base, new Uri('http://example.com/a/b/?q')); // prints '?q'.
+     *    echo UriResolver::relativize($base, new Uri('http://example.com/a/b/q')); // prints 'q'.
      *    echo UriResolver::relativize($base, new Uri('http://example.org/a/b/'));   // prints '//example.org/a/b/'.
      *
      * This method also accepts a target that is already relative and will try to relativize it further. Only a
@@ -165,7 +165,7 @@ final class UriResolver
             /** @var string $lastSegment */
             $lastSegment = end($segments);
 
-            return $emptyPathUri->withPath($lastSegment === '' ? './' : $lastSegment);
+            return $emptyPathUri->withPath($lastSegment === ''  './' : $lastSegment);
         }
 
         return $emptyPathUri;

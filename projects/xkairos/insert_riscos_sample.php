@@ -1,8 +1,8 @@
-<?php
+<php
 include "includes/config.php";
 
 try {
-    $stmt = $pdo->prepare("INSERT INTO riscos (projeto_id, descricao, categoria, probabilidade, impacto) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO riscos (projeto_id, descricao, categoria, probabilidade, impacto) VALUES (, , , , )");
     $stmt->execute([1, 'Variação de preços de peças', 'Financeiro', 'Media', 'Alta']);
     $stmt->execute([1, 'Falta de estoque / atraso do fornecedor', 'Operacional', 'Media', 'Media']);
     $stmt->execute([1, 'Erro na montagem / incompatibilidade', 'Técnico', 'Baixa', 'Alta']);
@@ -10,7 +10,7 @@ try {
     $stmt->execute([1, 'Problemas na geração de PDF', 'Sistema', 'Baixa', 'Media']);
     $stmt->execute([1, 'Problemas de pagamento MBWay', 'Financeiro', 'Baixa', 'Alta']);
 
-    $stmt2 = $pdo->prepare("INSERT INTO mitigacoes (risco_id, acao) VALUES (?, ?)");
+    $stmt2 = $pdo->prepare("INSERT INTO mitigacoes (risco_id, acao) VALUES (, )");
     $stmt2->execute([1, 'Atualizar orçamentos automaticamente e avisar o cliente de alterações.']);
     $stmt2->execute([2, 'Ter fornecedores alternativos e notificação automática de atraso.']);
     $stmt2->execute([3, 'Checklist completo e validação de compatibilidade antes de gerar orçamento.']);
@@ -22,4 +22,4 @@ try {
 } catch (PDOException $e) {
     die("Erro: " . $e->getMessage());
 }
-?>
+>

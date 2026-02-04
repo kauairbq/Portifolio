@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -25,7 +25,7 @@ class PsrLogMessageProcessor implements ProcessorInterface
 {
     public const SIMPLE_DATE = "Y-m-d\TH:i:s.uP";
 
-    private ?string $dateFormat;
+    private string $dateFormat;
 
     private bool $removeUsedContextFields;
 
@@ -33,7 +33,7 @@ class PsrLogMessageProcessor implements ProcessorInterface
      * @param string|null $dateFormat              The format of the timestamp: one supported by DateTime::format
      * @param bool        $removeUsedContextFields If set to true the fields interpolated into message gets unset
      */
-    public function __construct(?string $dateFormat = null, bool $removeUsedContextFields = false)
+    public function __construct(string $dateFormat = null, bool $removeUsedContextFields = false)
     {
         $this->dateFormat = $dateFormat;
         $this->removeUsedContextFields = $removeUsedContextFields;
@@ -65,10 +65,10 @@ class PsrLogMessageProcessor implements ProcessorInterface
                     // so that it follows the useMicroseconds flag
                     $replacements[$placeholder] = (string) $val;
                 } else {
-                    $replacements[$placeholder] = $val->format($this->dateFormat ?? static::SIMPLE_DATE);
+                    $replacements[$placeholder] = $val->format($this->dateFormat  static::SIMPLE_DATE);
                 }
             } elseif ($val instanceof \UnitEnum) {
-                $replacements[$placeholder] = $val instanceof \BackedEnum ? $val->value : $val->name;
+                $replacements[$placeholder] = $val instanceof \BackedEnum  $val->value : $val->name;
             } elseif (\is_object($val)) {
                 $replacements[$placeholder] = '[object '.Utils::getClass($val).']';
             } elseif (\is_array($val)) {

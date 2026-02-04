@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of Rijndael.
@@ -27,7 +27,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $rijndael = new \phpseclib3\Crypt\Rijndael('ctr');
@@ -41,7 +41,7 @@
  *    }
  *
  *    echo $rijndael->decrypt($rijndael->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -294,7 +294,7 @@ class Rijndael extends BlockCipher
                 break;
             case self::ENGINE_MCRYPT:
                 $this->cipher_name_mcrypt = 'rijndael-' . ($this->block_size << 3);
-                if ($this->key_length % 8) { // is it a 160/224-bit key?
+                if ($this->key_length % 8) { // is it a 160/224-bit key
                     // mcrypt is not usable for them, only for 128/192/256-bit keys
                     return false;
                 }

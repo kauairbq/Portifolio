@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Fingerprint Trait for Public Keys

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -334,7 +334,7 @@ class Files extends \Google\Service\Resource
    * applicable. * `starred`: Whether the user has starred the file. *
    * `viewedByMeTime`: The last time the file was viewed by the user. Each key
    * sorts ascending by default, but can be reversed with the `desc` modifier.
-   * Example usage: `?orderBy=folder,modifiedTime desc,name`.
+   * Example usage: `orderBy=folder,modifiedTime desc,name`.
    * @opt_param int pageSize The maximum number of files to return per page.
    * Partial or empty result pages are possible even before the end of the files
    * list has been reached.

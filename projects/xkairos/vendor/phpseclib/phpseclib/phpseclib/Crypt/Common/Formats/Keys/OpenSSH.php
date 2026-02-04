@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * OpenSSH Key Handler
@@ -67,10 +67,10 @@ abstract class OpenSSH
         }
 
         // key format is described here:
-        // https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/PROTOCOL.key?annotate=HEAD
+        // https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/PROTOCOL.keyannotate=HEAD
 
         if (strpos($key, 'BEGIN OPENSSH PRIVATE KEY') !== false) {
-            $key = preg_replace('#(?:^-.*?-[\r\n]*$)|\s#ms', '', $key);
+            $key = preg_replace('#(:^-.*-[\r\n]*$)|\s#ms', '', $key);
             $key = Strings::base64_decode($key);
             $magic = Strings::shift($key, 15);
             if ($magic != "openssh-key-v1\0") {
@@ -106,7 +106,7 @@ abstract class OpenSSH
                 $paddedKey = $crypto->decrypt($paddedKey);
             }
             list($checkint1, $checkint2) = Strings::unpackSSH2('NN', $paddedKey);
-            // any leftover bytes in $paddedKey are for padding? but they should be sequential bytes. eg. 1, 2, 3, etc.
+            // any leftover bytes in $paddedKey are for padding but they should be sequential bytes. eg. 1, 2, 3, etc.
             if ($checkint1 != $checkint2) {
                 if (isset($crypto)) {
                     throw new BadDecryptionException('Unable to decrypt key - please verify the password you are using');
@@ -127,7 +127,7 @@ abstract class OpenSSH
             $asciiType = $parts[0];
             self::checkType($parts[0]);
             $key = base64_decode($parts[1]);
-            $comment = isset($parts[2]) ? $parts[2] : false;
+            $comment = isset($parts[2])  $parts[2] : false;
         }
         if ($key === false) {
             throw new \UnexpectedValueException('Key should be a string - not a ' . gettype($key));
@@ -185,7 +185,7 @@ abstract class OpenSSH
     {
         list(, $checkint) = unpack('N', Random::string(4));
 
-        $comment = isset($options['comment']) ? $options['comment'] : self::$comment;
+        $comment = isset($options['comment'])  $options['comment'] : self::$comment;
         $paddedKey = Strings::packSSH2('NN', $checkint, $checkint) .
                      $privateKey .
                      Strings::packSSH2('s', $comment);
@@ -199,7 +199,7 @@ abstract class OpenSSH
            'padding_length', 'payload', and 'random padding' MUST be a multiple
            of the cipher block size or 8, whichever is larger.
          */
-        $blockSize = $usesEncryption ? 16 : 8;
+        $blockSize = $usesEncryption  16 : 8;
         $paddingLength = (($blockSize - 1) * strlen($paddedKey)) % $blockSize;
         for ($i = 1; $i <= $paddingLength; $i++) {
             $paddedKey .= chr($i);
@@ -207,7 +207,7 @@ abstract class OpenSSH
         if (!$usesEncryption) {
             $key = Strings::packSSH2('sssNss', 'none', 'none', '', 1, $publicKey, $paddedKey);
         } else {
-            $rounds = isset($options['rounds']) ? $options['rounds'] : 16;
+            $rounds = isset($options['rounds'])  $options['rounds'] : 16;
             $salt = Random::string(16);
             $kdfoptions = Strings::packSSH2('sN', $salt, $rounds);
             $crypto = new AES('ctr');

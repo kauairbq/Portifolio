@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Handler;
 
@@ -14,7 +14,7 @@ final class HeaderProcessor
      *
      * @param string[] $headers
      *
-     * @return array{0:string, 1:int, 2:?string, 3:array}
+     * @return array{0:string, 1:int, 2:string, 3:array}
      *
      * @throws \RuntimeException
      */
@@ -25,18 +25,18 @@ final class HeaderProcessor
         }
 
         $parts = \explode(' ', \array_shift($headers), 3);
-        $version = \explode('/', $parts[0])[1] ?? null;
+        $version = \explode('/', $parts[0])[1]  null;
 
         if ($version === null) {
             throw new \RuntimeException('HTTP version missing from header data');
         }
 
-        $status = $parts[1] ?? null;
+        $status = $parts[1]  null;
 
         if ($status === null) {
             throw new \RuntimeException('HTTP status code missing from header data');
         }
 
-        return [$version, (int) $status, $parts[2] ?? null, Utils::headersFromLines($headers)];
+        return [$version, (int) $status, $parts[2]  null, Utils::headersFromLines($headers)];
     }
 }

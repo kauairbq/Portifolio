@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -36,7 +36,7 @@ class ProcessHandler extends AbstractProcessingHandler
 
     private string $command;
 
-    private ?string $cwd;
+    private string $cwd;
 
     /**
      * @var resource[]
@@ -61,7 +61,7 @@ class ProcessHandler extends AbstractProcessingHandler
      * @param  float                     $timeout The maximum timeout (in seconds) for the stream_select() function.
      * @throws \InvalidArgumentException
      */
-    public function __construct(string $command, int|string|Level $level = Level::Debug, bool $bubble = true, ?string $cwd = null, float $timeout = 1.0)
+    public function __construct(string $command, int|string|Level $level = Level::Debug, bool $bubble = true, string $cwd = null, float $timeout = 1.0)
     {
         if ($command === '') {
             throw new \InvalidArgumentException('The command argument must be a non-empty string.');

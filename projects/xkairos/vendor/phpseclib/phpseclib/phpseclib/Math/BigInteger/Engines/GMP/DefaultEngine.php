@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * GMP Modular Exponentiation Engine

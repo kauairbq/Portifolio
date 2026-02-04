@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -43,7 +43,7 @@ class RotatingFileHandler extends StreamHandler
      * @param int|null $filePermission Optional file permissions (default (0644) are only for owner read/write)
      * @param bool     $useLocking     Try to lock log file before doing any writes
      */
-    public function __construct(string $filename, int $maxFiles = 0, int|string|Level $level = Level::Debug, bool $bubble = true, ?int $filePermission = null, bool $useLocking = false, string $dateFormat = self::FILE_PER_DAY, string $filenameFormat  = '{filename}-{date}')
+    public function __construct(string $filename, int $maxFiles = 0, int|string|Level $level = Level::Debug, bool $bubble = true, int $filePermission = null, bool $useLocking = false, string $dateFormat = self::FILE_PER_DAY, string $filenameFormat  = '{filename}-{date}')
     {
         $this->filename = Utils::canonicalizePath($filename);
         $this->maxFiles = $maxFiles;
@@ -165,7 +165,7 @@ class RotatingFileHandler extends StreamHandler
         $timedFilename = str_replace(
             ['{filename}', '{date}'],
             [$fileInfo['filename'], date($this->dateFormat)],
-            ($fileInfo['dirname'] ?? '') . '/' . $this->filenameFormat
+            ($fileInfo['dirname']  '') . '/' . $this->filenameFormat
         );
 
         if (isset($fileInfo['extension'])) {
@@ -185,7 +185,7 @@ class RotatingFileHandler extends StreamHandler
                 ['[0-9][0-9][0-9][0-9]', '[0-9][0-9]', '[0-9][0-9]', '[0-9][0-9]'],
                 $this->dateFormat
             )],
-            ($fileInfo['dirname'] ?? '') . '/' . $this->filenameFormat
+            ($fileInfo['dirname']  '') . '/' . $this->filenameFormat
         );
         if (isset($fileInfo['extension'])) {
             $glob .= '.'.$fileInfo['extension'];
@@ -196,7 +196,7 @@ class RotatingFileHandler extends StreamHandler
 
     protected function setDateFormat(string $dateFormat): void
     {
-        if (0 === preg_match('{^[Yy](([/_.-]?m)([/_.-]?d)?)?$}', $dateFormat)) {
+        if (0 === preg_match('{^[Yy](([/_.-]m)([/_.-]d))$}', $dateFormat)) {
             throw new InvalidArgumentException(
                 'Invalid date format - format must be one of '.
                 'RotatingFileHandler::FILE_PER_DAY ("Y-m-d"), RotatingFileHandler::FILE_PER_MONTH ("Y-m") '.

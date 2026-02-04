@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * JSON Web Key (RFC7517) Handler

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Binary Finite Fields
@@ -146,7 +146,7 @@ class Integer extends Base
     {
         $x = ltrim($x, "\0");
         $xbit = decbin(ord($x[0]));
-        $xlen = $xbit == '0' ? 0 : strlen($xbit);
+        $xlen = $xbit == '0'  0 : strlen($xbit);
         $len = strlen($x);
         if (!$len) {
             return -1;
@@ -172,7 +172,7 @@ class Integer extends Base
             $s = '1' . str_repeat('0', $degr - $d);
             $s = BinaryField::base2ToBase256($s);
             $length = max(strlen($s), strlen($q));
-            $q = !isset($q) ? $s :
+            $q = !isset($q)  $s :
                 str_pad($q, $length, "\0", STR_PAD_LEFT) ^
                 str_pad($s, $length, "\0", STR_PAD_LEFT);
             $s = static::polynomialMultiply($s, $y);
@@ -241,7 +241,7 @@ class Integer extends Base
 
         switch (true) {
             case PHP_INT_SIZE == 8 && $length <= 4:
-                return $length != 4 ?
+                return $length != 4 
                     self::subMultiply(str_pad($x, 4, "\0", STR_PAD_LEFT), str_pad($y, 4, "\0", STR_PAD_LEFT)) :
                     self::subMultiply($x, $y);
             case PHP_INT_SIZE == 4 || $length > 32:

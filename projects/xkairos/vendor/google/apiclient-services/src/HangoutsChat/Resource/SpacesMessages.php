@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -158,7 +158,7 @@ class SpacesMessages extends \Google\Service\Resource
    * commands](https://developers.google.com/workspace/chat/slash-commands) that
    * invoke the Chat app. -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` with
-   * [administrator approval](https://support.google.com/a?p=chat-app-auth)
+   * [administrator approval](https://support.google.com/ap=chat-app-auth)
    * (available in [Developer
    * Preview](https://developers.google.com/workspace/preview)). When using this
    * authentication scope, this method returns details about a public message in a
@@ -197,7 +197,7 @@ class SpacesMessages extends \Google\Service\Resource
    * authorize): - [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-
    * authorize-chat-app) with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) in [Developer
+   * approval](https://support.google.com/ap=chat-app-auth) in [Developer
    * Preview](https://developers.google.com/workspace/preview) with the
    * authorization scope: -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PuTTY Formatted Key Handler
@@ -150,14 +150,14 @@ abstract class PuTTY
             $in_value = false;
             foreach ($lines as $line) {
                 switch (true) {
-                    case preg_match('#^(.*?): (.*)#', $line, $match):
+                    case preg_match('#^(.*): (.*)#', $line, $match):
                         $in_value = $line[strlen($line) - 1] == '\\';
                         $current = strtolower($match[1]);
-                        $values[$current] = $in_value ? substr($match[2], 0, -1) : $match[2];
+                        $values[$current] = $in_value  substr($match[2], 0, -1) : $match[2];
                         break;
                     case $in_value:
                         $in_value = $line[strlen($line) - 1] == '\\';
-                        $values[$current] .= $in_value ? substr($line, 0, -1) : $line;
+                        $values[$current] .= $in_value  substr($line, 0, -1) : $line;
                         break;
                     default:
                         $data .= $line;
@@ -186,7 +186,7 @@ abstract class PuTTY
         }
         $components['type'] = $type = rtrim($key[0]);
         if (!in_array($type, static::$types)) {
-            $error = count(static::$types) == 1 ?
+            $error = count(static::$types) == 1 
                 'Only ' . static::$types[0] . ' keys are supported. ' :
                 '';
             throw new UnsupportedAlgorithmException($error . 'This is an unsupported ' . $type . ' key');
@@ -286,9 +286,9 @@ abstract class PuTTY
      */
     protected static function wrapPrivateKey($public, $private, $type, $password, array $options = [])
     {
-        $encryption = (!empty($password) || is_string($password)) ? 'aes256-cbc' : 'none';
-        $comment = isset($options['comment']) ? $options['comment'] : self::$comment;
-        $version = isset($options['version']) ? $options['version'] : self::$version;
+        $encryption = (!empty($password) || is_string($password))  'aes256-cbc' : 'none';
+        $comment = isset($options['comment'])  $options['comment'] : self::$comment;
+        $version = isset($options['version'])  $options['version'] : self::$version;
 
         $key = "PuTTY-User-Key-File-$version: $type\r\n";
         $key .= "Encryption: $encryption\r\n";

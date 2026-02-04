@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -25,16 +25,16 @@ class Promise implements PromiseInterface
      * @param callable $cancelFn Fn that when invoked cancels the promise.
      */
     public function __construct(
-        ?callable $waitFn = null,
-        ?callable $cancelFn = null
+        callable $waitFn = null,
+        callable $cancelFn = null
     ) {
         $this->waitFn = $waitFn;
         $this->cancelFn = $cancelFn;
     }
 
     public function then(
-        ?callable $onFulfilled = null,
-        ?callable $onRejected = null
+        callable $onFulfilled = null,
+        callable $onRejected = null
     ): PromiseInterface {
         if ($this->state === self::PENDING) {
             $p = new Promise(null, [$this, 'cancel']);
@@ -49,14 +49,14 @@ class Promise implements PromiseInterface
         if ($this->state === self::FULFILLED) {
             $promise = Create::promiseFor($this->result);
 
-            return $onFulfilled ? $promise->then($onFulfilled) : $promise;
+            return $onFulfilled  $promise->then($onFulfilled) : $promise;
         }
 
         // It's either cancelled or rejected, so return a rejected promise
         // and immediately invoke any callbacks.
         $rejection = Create::rejectionFor($this->result);
 
-        return $onRejected ? $rejection->then(null, $onRejected) : $rejection;
+        return $onRejected  $rejection->then(null, $onRejected) : $rejection;
     }
 
     public function otherwise(callable $onRejected): PromiseInterface
@@ -128,7 +128,7 @@ class Promise implements PromiseInterface
                 return;
             }
             throw $this->state === $state
-                ? new \LogicException("The promise is already {$state}.")
+                 new \LogicException("The promise is already {$state}.")
                 : new \LogicException("Cannot change a {$this->state} promise to {$state}");
         }
 
@@ -151,7 +151,7 @@ class Promise implements PromiseInterface
         // If the value was not a settled promise or a thenable, then resolve
         // it in the task queue using the correct ID.
         if (!is_object($value) || !method_exists($value, 'then')) {
-            $id = $state === self::FULFILLED ? 1 : 2;
+            $id = $state === self::FULFILLED  1 : 2;
             // It's a success, so resolve the handlers in the queue.
             Utils::queue()->add(static function () use ($id, $value, $handlers): void {
                 foreach ($handlers as $handler) {

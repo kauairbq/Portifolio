@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -59,7 +59,7 @@ final class BufferStream implements StreamInterface
         return null;
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         return strlen($this->buffer);
     }
@@ -142,6 +142,6 @@ final class BufferStream implements StreamInterface
             return $this->hwm;
         }
 
-        return $key ? null : [];
+        return $key  null : [];
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Montgomery Private Key Handler

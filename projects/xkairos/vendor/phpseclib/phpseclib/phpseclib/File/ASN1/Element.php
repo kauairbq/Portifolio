@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * ASN.1 Raw Element

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP 32-bit BigInteger Engine

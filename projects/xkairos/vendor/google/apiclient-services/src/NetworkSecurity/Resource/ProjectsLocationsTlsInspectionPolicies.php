@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -121,7 +121,7 @@ class ProjectsLocationsTlsInspectionPolicies extends \Google\Service\Resource
    * @param string $name Required. Name of the resource. Name is of the form proje
    * cts/{project}/locations/{location}/tlsInspectionPolicies/{tls_inspection_poli
    * cy} tls_inspection_policy should match the
-   * pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])$).
    * @param TlsInspectionPolicy $postBody
    * @param array $optParams Optional parameters.
    *

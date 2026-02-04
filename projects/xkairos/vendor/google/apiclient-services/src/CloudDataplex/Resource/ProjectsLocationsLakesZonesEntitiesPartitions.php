@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -103,7 +103,7 @@ class ProjectsLocationsLakesZonesEntitiesPartitions extends \Google\Service\Reso
    * logic operators: AND, OR comparison operators: <, >, >=, <= ,=, != LIKE
    * operators: The right hand of a LIKE operator supports "." and "*" for
    * wildcard searches, for example "value1 LIKE ".*oo.*" parenthetical grouping:
-   * ( )Sample filter expression: `?filter="key1 < value1 OR key2 > value2"Notes:
+   * ( )Sample filter expression: `filter="key1 < value1 OR key2 > value2"Notes:
    * Keys to the left of operators are case insensitive. Partition results are
    * sorted first by creation time, then by lexicographic order. Up to 20 key
    * value filter pairs are allowed, but due to performance considerations, only

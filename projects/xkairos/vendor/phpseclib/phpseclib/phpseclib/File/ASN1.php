@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP ASN.1 Parser
@@ -104,7 +104,7 @@ abstract class ASN1
     /**
      * Filters
      *
-     * If the mapping type is self::TYPE_ANY what do we actually encode it as?
+     * If the mapping type is self::TYPE_ANY what do we actually encode it as
      *
      * @var array
      * @see self::encode_der()
@@ -189,7 +189,7 @@ abstract class ASN1
      * Serves a similar purpose to openssl's asn1parse
      *
      * @param Element|string $encoded
-     * @return ?array
+     * @return array
      */
     public static function decodeBER($encoded)
     {
@@ -479,7 +479,7 @@ abstract class ASN1
             case self::TYPE_GENERAL_STRING:
                 // All registered C and G sets, space and delete
             case self::TYPE_UTF8_STRING:
-                // ????
+                // 
             case self::TYPE_BMP_STRING:
                 if ($constructed) {
                     return false;
@@ -644,7 +644,7 @@ abstract class ASN1
                 }
 
                 // Fail mapping if all input items have not been consumed.
-                return $i < $n ? null : $map;
+                return $i < $n  null : $map;
 
             // the main diff between sets and sequences is the encapsulation of the foreach in another for loop
             case self::TYPE_SET:
@@ -724,7 +724,7 @@ abstract class ASN1
                 }
                 return $map;
             case self::TYPE_OBJECT_IDENTIFIER:
-                return isset(self::$oids[$decoded['content']]) ? self::$oids[$decoded['content']] : $decoded['content'];
+                return isset(self::$oids[$decoded['content']])  self::$oids[$decoded['content']] : $decoded['content'];
             case self::TYPE_UTC_TIME:
             case self::TYPE_GENERALIZED_TIME:
                 // for explicitly tagged optional stuff
@@ -737,7 +737,7 @@ abstract class ASN1
                 if (!is_object($decoded['content'])) {
                     $decoded['content'] = self::decodeTime($decoded['content'], $decoded['type']);
                 }
-                return $decoded['content'] ? $decoded['content']->format(self::$format) : false;
+                return $decoded['content']  $decoded['content']->format(self::$format) : false;
             case self::TYPE_BIT_STRING:
                 if (isset($mapping['mapping'])) {
                     $offset = ord($decoded['content'][0]);
@@ -750,7 +750,7 @@ abstract class ASN1
                         therefore ensure that different semantics are not associated with such values which differ only in the number of trailing
                         0 bits."
                     */
-                    $bits = count($mapping['mapping']) == $size ? [] : array_fill(0, count($mapping['mapping']) - $size, false);
+                    $bits = count($mapping['mapping']) == $size  [] : array_fill(0, count($mapping['mapping']) - $size, false);
                     for ($i = strlen($decoded['content']) - 1; $i > 0; $i--) {
                         $current = ord($decoded['content'][$i]);
                         for ($j = $offset; $j < 8; $j++) {
@@ -797,7 +797,7 @@ abstract class ASN1
                         return false;
                     }
                     $temp = (int) $temp;
-                    return isset($mapping['mapping'][$temp]) ?
+                    return isset($mapping['mapping'][$temp]) 
                         $mapping['mapping'][$temp] :
                         false;
                 }
@@ -1019,7 +1019,7 @@ abstract class ASN1
                 break;
             case self::TYPE_UTC_TIME:
             case self::TYPE_GENERALIZED_TIME:
-                $format = $mapping['type'] == self::TYPE_UTC_TIME ? 'y' : 'Y';
+                $format = $mapping['type'] == self::TYPE_UTC_TIME  'y' : 'Y';
                 $format .= 'mdHis';
                 // if $source does _not_ include timezone information within it then assume that the timezone is GMT
                 $date = new \DateTime($source, new \DateTimeZone('GMT'));
@@ -1043,7 +1043,7 @@ abstract class ASN1
                     }
 
                     $offset = 8 - (($size + 1) & 7);
-                    $offset = $offset !== 8 ? $offset : 0;
+                    $offset = $offset !== 8  $offset : 0;
 
                     $value = chr($offset);
 
@@ -1123,7 +1123,7 @@ abstract class ASN1
                 $value = $source;
                 break;
             case self::TYPE_BOOLEAN:
-                $value = $source ? "\xFF" : "\x00";
+                $value = $source  "\xFF" : "\x00";
                 break;
             default:
                 throw new \RuntimeException('Mapping provides no type definition for ' . implode('/', self::$location));
@@ -1221,8 +1221,8 @@ abstract class ASN1
             $forty = new BigInteger(40);
         }
 
-        if (!preg_match('#(?:\d+\.)+#', $source)) {
-            $oid = isset(self::$reverseOIDs[$source]) ? self::$reverseOIDs[$source] : false;
+        if (!preg_match('#(:\d+\.)+#', $source)) {
+            $oid = isset(self::$reverseOIDs[$source])  self::$reverseOIDs[$source] : false;
         } else {
             $oid = $source;
         }
@@ -1289,7 +1289,7 @@ abstract class ASN1
             if (preg_match('#^(\d{10})(Z|[+-]\d{4})$#', $content, $matches)) {
                 $content = $matches[1] . '00' . $matches[2];
             }
-            $prefix = substr($content, 0, 2) >= 50 ? '19' : '20';
+            $prefix = substr($content, 0, 2) >= 50  '19' : '20';
             $content = $prefix . $content;
         } elseif (strpos($content, '.') !== false) {
             $format .= '.u';
@@ -1424,7 +1424,7 @@ abstract class ASN1
                         return false;
                     }
                     break;
-                case ($c & (PHP_INT_SIZE == 8 ? 0x80000000 : (1 << 31))) != 0:
+                case ($c & (PHP_INT_SIZE == 8  0x80000000 : (1 << 31))) != 0:
                     return false;
                 case $c >= 0x04000000:
                     $v .= chr(0x80 | ($c & 0x3F));
@@ -1475,15 +1475,15 @@ abstract class ASN1
         if (strlen($str) > ini_get('pcre.backtrack_limit')) {
             $temp = $str;
         } else {
-            $temp = preg_replace('#.*?^-+[^-]+-+[\r\n ]*$#ms', '', $str, 1);
+            $temp = preg_replace('#.*^-+[^-]+-+[\r\n ]*$#ms', '', $str, 1);
             $temp = preg_replace('#-+END.*[\r\n ]*.*#ms', '', $temp, 1);
         }
         // remove new lines
         $temp = str_replace(["\r", "\n", ' '], '', $temp);
         // remove the -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- stuff
         $temp = preg_replace('#^-+[^-]+-+|-+[^-]+-+$#', '', $temp);
-        $temp = preg_match('#^[a-zA-Z\d/+]*={0,2}$#', $temp) ? Strings::base64_decode($temp) : false;
-        return $temp != false ? $temp : $str;
+        $temp = preg_match('#^[a-zA-Z\d/+]*={0,2}$#', $temp)  Strings::base64_decode($temp) : false;
+        return $temp != false  $temp : $str;
     }
 
     /**
@@ -1525,6 +1525,6 @@ abstract class ASN1
      */
     public static function getOID($name)
     {
-        return isset(self::$reverseOIDs[$name]) ? self::$reverseOIDs[$name] : $name;
+        return isset(self::$reverseOIDs[$name])  self::$reverseOIDs[$name] : $name;
     }
 }

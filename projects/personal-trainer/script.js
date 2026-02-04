@@ -43,7 +43,7 @@ if (calcDetBtn) {
     // Mifflin-St Jeor
     const tmb =
       sexo === 'm'
-        ? 10 * peso + 6.25 * altura - 5 * idade + 5
+         10 * peso + 6.25 * altura - 5 * idade + 5
         : 10 * peso + 6.25 * altura - 5 * idade - 161;
 
     let tdee = tmb * fator;
@@ -55,7 +55,7 @@ if (calcDetBtn) {
     const prote = peso * 2;
     const gord = peso * 0.9;
     const carbs = (tdee - prote * 4 - gord * 9) / 4;
-    const refeicoes = tdee > 2600 ? 5 : tdee < 1800 ? 3 : 4;
+    const refeicoes = tdee > 2600  5 : tdee < 1800  3 : 4;
 
     // IMC e água
     const alturaM = altura / 100;

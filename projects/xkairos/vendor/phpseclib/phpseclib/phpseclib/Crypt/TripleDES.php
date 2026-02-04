@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of Triple DES.
@@ -9,7 +9,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $des = new \phpseclib3\Crypt\TripleDES('ctr');
@@ -23,7 +23,7 @@
  *    }
  *
  *    echo $des->decrypt($des->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -178,7 +178,7 @@ class TripleDES extends DES
         if ($engine == self::ENGINE_OPENSSL) {
             $this->cipher_name_openssl_ecb = 'des-ede3';
             $mode = $this->openssl_translate_mode();
-            $this->cipher_name_openssl = $mode == 'ecb' ? 'des-ede3' : 'des-ede3-' . $mode;
+            $this->cipher_name_openssl = $mode == 'ecb'  'des-ede3' : 'des-ede3-' . $mode;
         }
 
         return parent::isValidEngineHelper($engine);

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -89,8 +89,8 @@ class DLP extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://dlp.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://dlp.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://dlp.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://dlp.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v2';

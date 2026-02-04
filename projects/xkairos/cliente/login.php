@@ -1,10 +1,10 @@
-<?php
+<php
 include '../includes/config.php';
 session_start();
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $stmt = $pdo->prepare('SELECT * FROM clientes WHERE email=?');
+    $stmt = $pdo->prepare('SELECT * FROM clientes WHERE email=');
     $stmt->execute([$email]);
     $cliente = $stmt->fetch();
     if($cliente && password_verify($senha,$cliente['senha'])){
@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         header('Location: dashboard.php'); exit;
     } else $erro = 'Email ou senha incorretos!';
 }
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -127,9 +127,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                 <label for="senha">Senha</label>
             </div>
             <button type="submit" class="btn">Entrar</button>
-            <?php if(isset($erro)) echo "<p class='error'>$erro</p>"; ?>
+            <php if(isset($erro)) echo "<p class='error'>$erro</p>"; >
             <div class="register-link">
-                <a href="register.php">Não tem conta? Registre-se</a>
+                <a href="register.php">Não tem conta Registre-se</a>
             </div>
         </form>
     </div>

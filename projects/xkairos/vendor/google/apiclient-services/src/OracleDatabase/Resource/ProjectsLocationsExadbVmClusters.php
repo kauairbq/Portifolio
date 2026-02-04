@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -41,7 +41,7 @@ class ProjectsLocationsExadbVmClusters extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string exadbVmClusterId Required. The ID of the ExadbVmCluster to
-   * create. This value is restricted to (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and
+   * create. This value is restricted to (^[a-z]([a-z0-9-]{0,61}[a-z0-9])$) and
    * must be a maximum of 63 characters in length. The value must start with a
    * letter and end with a letter or a number.
    * @opt_param string requestId Optional. An optional request ID to identify

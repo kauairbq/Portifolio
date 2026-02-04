@@ -151,14 +151,14 @@
       // Toggle menu drawer
       const navToggle = document.getElementById('nav-toggle');
       const menuDrawer = document.getElementById('menu-drawer');
-      navToggle?.addEventListener('click', () => {
+      navToggle.addEventListener('click', () => {
         const open = document.body.classList.toggle('menu-open');
         navToggle.setAttribute('aria-expanded', String(open));
       });
-      menuDrawer?.addEventListener('click', (ev) => {
+      menuDrawer.addEventListener('click', (ev) => {
         if (ev.target.classList.contains('menu-overlay')) {
           document.body.classList.remove('menu-open');
-          navToggle?.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-expanded', 'false');
         }
       });
     </script>

@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Firebase\JWT;
 
@@ -52,7 +52,7 @@ class JWK
      *
      * @uses parseKey
      */
-    public static function parseKeySet(array $jwks, ?string $defaultAlg = null): array
+    public static function parseKeySet(array $jwks, string $defaultAlg = null): array
     {
         $keys = [];
 
@@ -65,7 +65,7 @@ class JWK
         }
 
         foreach ($jwks['keys'] as $k => $v) {
-            $kid = isset($v['kid']) ? $v['kid'] : $k;
+            $kid = isset($v['kid'])  $v['kid'] : $k;
             if ($key = self::parseKey($v, $defaultAlg)) {
                 $keys[(string) $kid] = $key;
             }
@@ -93,7 +93,7 @@ class JWK
      *
      * @uses createPemFromModulusAndExponent
      */
-    public static function parseKey(array $jwk, ?string $defaultAlg = null): ?Key
+    public static function parseKey(array $jwk, string $defaultAlg = null): Key
     {
         if (empty($jwk)) {
             throw new InvalidArgumentException('JWK must not be empty');

@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -197,7 +197,7 @@ trait MessageTrait
             if (!is_scalar($value) && null !== $value) {
                 throw new \InvalidArgumentException(sprintf(
                     'Header value must be scalar or null but %s provided.',
-                    is_object($value) ? get_class($value) : gettype($value)
+                    is_object($value)  get_class($value) : gettype($value)
                 ));
             }
 
@@ -218,7 +218,7 @@ trait MessageTrait
         if (!is_string($header)) {
             throw new \InvalidArgumentException(sprintf(
                 'Header name must be a string but %s provided.',
-                is_object($header) ? get_class($header) : gettype($header)
+                is_object($header)  get_class($header) : gettype($header)
             ));
         }
 

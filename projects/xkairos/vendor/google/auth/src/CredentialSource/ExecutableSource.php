@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2024 Google Inc.
  *
@@ -84,7 +84,7 @@ class ExecutableSource implements ExternalAccountCredentialSourceInterface
 
     private string $command;
     private ExecutableHandler $executableHandler;
-    private ?string $outputFile;
+    private string $outputFile;
 
     /**
      * @param string $command    The string command to run to get the subject token.
@@ -92,12 +92,12 @@ class ExecutableSource implements ExternalAccountCredentialSourceInterface
      */
     public function __construct(
         string $command,
-        ?string $outputFile,
-        ?ExecutableHandler $executableHandler = null,
+        string $outputFile,
+        ExecutableHandler $executableHandler = null,
     ) {
         $this->command = $command;
         $this->outputFile = $outputFile;
-        $this->executableHandler = $executableHandler ?: new ExecutableHandler();
+        $this->executableHandler = $executableHandler : new ExecutableHandler();
     }
 
     /**
@@ -105,9 +105,9 @@ class ExecutableSource implements ExternalAccountCredentialSourceInterface
      * The format for the cache key is:
      * Command.OutputFile
      *
-     * @return ?string
+     * @return string
      */
-    public function getCacheKey(): ?string
+    public function getCacheKey(): string
     {
         return $this->command . '.' . $this->outputFile;
     }
@@ -118,7 +118,7 @@ class ExecutableSource implements ExternalAccountCredentialSourceInterface
      * @throws RuntimeException if the executable is not allowed to run.
      * @throws ExecutableResponseError if the executable response is invalid.
      */
-    public function fetchSubjectToken(?callable $httpHandler = null): string
+    public function fetchSubjectToken(callable $httpHandler = null): string
     {
         // Check if the executable is allowed to run.
         if (getenv(self::GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES) !== '1') {
@@ -138,7 +138,7 @@ class ExecutableSource implements ExternalAccountCredentialSourceInterface
             if ($exitCode !== 0) {
                 throw new ExecutableResponseError(
                     'The executable failed to run'
-                    . ($output ? ' with the following error: ' . $output : '.'),
+                    . ($output  ' with the following error: ' . $output : '.'),
                     (string) $exitCode
                 );
             }
@@ -158,14 +158,14 @@ class ExecutableSource implements ExternalAccountCredentialSourceInterface
 
         // Return subject token field based on the token type
         return $executableResponse['token_type'] === self::SAML_SUBJECT_TOKEN_TYPE
-            ? $executableResponse['saml_response']
+             $executableResponse['saml_response']
             : $executableResponse['id_token'];
     }
 
     /**
      * @return array<string, mixed>|null
      */
-    private function getCachedExecutableResponse(): ?array
+    private function getCachedExecutableResponse(): array
     {
         if (
             $this->outputFile

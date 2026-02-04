@@ -1,9 +1,9 @@
-<?php
+<php
 include "includes/config.php";
 session_start();
 $is_logged_in = isset($_SESSION['cliente_id']);
-$cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
-?>
+$cliente_nome = $is_logged_in  $_SESSION['cliente_nome'] : '';
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -66,11 +66,11 @@ $cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="orcamentos.php">OrÃƒÆ’Ã‚Â§amentos</a></li>
                     <li><a href="#contato">Contacto</a></li>
-                    <?php if ($is_logged_in): ?>
+                    <php if ($is_logged_in): >
                         <li><a href="cliente/dashboard.php"><i class="fas fa-user"></i> ÃƒÆ’rea do Cliente</a></li>
-                    <?php else: ?>
+                    <php else: >
                         <li><a href="cliente/login.php"><i class="fas fa-user"></i> Login</a></li>
-                    <?php endif; ?>
+                    <php endif; >
                 </ul>
             </div>
         </div>
@@ -121,7 +121,7 @@ $cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
             <p>Montagem, manutenÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o e consultoria com garantia e suporte dedicado.</p>
         </div>
         <div class="services-grid">
-            <a href="orcamentos.php?tipo=montagem" class="service-card">
+            <a href="orcamentos.phptipo=montagem" class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fas fa-microchip"></i>
                     <div class="service-glow"></div>
@@ -137,7 +137,7 @@ $cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
                 <span class="cta">Pedir orÃƒÆ’Ã‚Â§amento</span>
             </a>
 
-            <a href="orcamentos.php?tipo=manutencao" class="service-card">
+            <a href="orcamentos.phptipo=manutencao" class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fas fa-screwdriver-wrench"></i>
                     <div class="service-glow"></div>
@@ -153,7 +153,7 @@ $cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
                 <span class="cta">Agendar serviÃƒÆ’Ã‚Â§o</span>
             </a>
 
-            <a href="orcamentos.php?tipo=consultoria" class="service-card">
+            <a href="orcamentos.phptipo=consultoria" class="service-card">
                 <div class="service-icon-wrapper">
                     <i class="fas fa-headset"></i>
                     <div class="service-glow"></div>
@@ -210,7 +210,7 @@ $cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
 
     <footer class="footer">
         <div class="footer-inner">
-            <span>Ãƒâ€šÃ‚Â© <?php echo date('Y'); ?> Xkairos Tech</span>
+            <span>Ãƒâ€šÃ‚Â© <php echo date('Y'); > Xkairos Tech</span>
             <span>Montagem Ãƒâ€šÃ‚Â· ManutenÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o Ãƒâ€šÃ‚Â· Consultoria</span>
         </div>
     </footer>
@@ -219,14 +219,14 @@ $cliente_nome = $is_logged_in ? $_SESSION['cliente_nome'] : '';
       // Toggle menu drawer
       const navToggle = document.getElementById('nav-toggle');
       const menuDrawer = document.getElementById('menu-drawer');
-      navToggle?.addEventListener('click', () => {
+      navToggle.addEventListener('click', () => {
         const open = document.body.classList.toggle('menu-open');
         navToggle.setAttribute('aria-expanded', String(open));
       });
-      menuDrawer?.addEventListener('click', (ev) => {
+      menuDrawer.addEventListener('click', (ev) => {
         if (ev.target.classList.contains('menu-overlay')) {
           document.body.classList.remove('menu-open');
-          navToggle?.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-expanded', 'false');
         }
       });
     </script>

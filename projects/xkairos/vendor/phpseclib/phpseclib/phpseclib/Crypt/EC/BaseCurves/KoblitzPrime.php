@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Generalized Koblitz Curves over y^2 = x^3 + b.
@@ -82,7 +82,7 @@ class KoblitzPrime extends Prime
                 $inv->add($s),
                 $inv->subtract($s)
             ];
-            $this->beta = $betas[0]->compare($betas[1]) < 0 ? $betas[0] : $betas[1];
+            $this->beta = $betas[0]->compare($betas[1]) < 0  $betas[0] : $betas[1];
             //echo strtoupper($this->beta->toHex(true)) . "\n"; exit;
         }
 
@@ -102,7 +102,7 @@ class KoblitzPrime extends Prime
 
             $lhs = $this->multiplyPoint($this->p, $lambdas[0])[0];
             $rhs = $this->p[0]->multiply($this->beta);
-            $lambda = $lhs->equals($rhs) ? $lambdas[0] : $lambdas[1];
+            $lambda = $lhs->equals($rhs)  $lambdas[0] : $lambdas[1];
 
             $this->basis = static::extendedGCD($lambda->toBigInteger(), $this->order);
             ///*

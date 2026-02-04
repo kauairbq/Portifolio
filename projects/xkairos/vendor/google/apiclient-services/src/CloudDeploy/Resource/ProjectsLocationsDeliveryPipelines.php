@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -192,7 +192,7 @@ class ProjectsLocationsDeliveryPipelines extends \Google\Service\Resource
    *
    * @param string $name Identifier. Name of the `DeliveryPipeline`. Format is `pr
    * ojects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}`.
-   * The `deliveryPipeline` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
+   * The `deliveryPipeline` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])`
    * @param DeliveryPipeline $postBody
    * @param array $optParams Optional parameters.
    *

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * XML Formatted EC Key Handler
@@ -71,7 +71,7 @@ abstract class XML
 
         $use_errors = libxml_use_internal_errors(true);
 
-        if (substr($key, 0, 5) != '<?xml') {
+        if (substr($key, 0, 5) != '<xml') {
             $key = '<xml>' . $key . '</xml>';
         }
 
@@ -97,7 +97,7 @@ abstract class XML
 
         $pubkey = self::query($xpath, 'publickey', 'Public Key is not present');
 
-        $QA = self::query($xpath, 'ecdsakeyvalue')->length ?
+        $QA = self::query($xpath, 'ecdsakeyvalue')->length 
             self::extractPointRFC4050($xpath, $curve) :
             self::extractPoint("\0" . $pubkey, $curve);
 
@@ -130,7 +130,7 @@ abstract class XML
         if (!$result->length) {
             throw new \RuntimeException($error);
         }
-        return $decode ? self::decodeValue($result->item(0)->textContent) : $result->item(0)->textContent;
+        return $decode  self::decodeValue($result->item(0)->textContent) : $result->item(0)->textContent;
     }
 
     /**
@@ -419,7 +419,7 @@ abstract class XML
 
         if (isset($result['namedCurve'])) {
             $namedCurve = '<' . $pre . 'NamedCurve URI="urn:oid:' . self::$curveOIDs[$result['namedCurve']] . '" />';
-            return self::$rfc4050 ?
+            return self::$rfc4050 
                 '<DomainParameters>' . str_replace('URI', 'URN', $namedCurve) . '</DomainParameters>' :
                 $namedCurve;
         }

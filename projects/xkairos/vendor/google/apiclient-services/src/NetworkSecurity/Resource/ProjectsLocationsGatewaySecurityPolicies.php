@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -117,7 +117,7 @@ class ProjectsLocationsGatewaySecurityPolicies extends \Google\Service\Resource
    * @param string $name Required. Name of the resource. Name is of the form proje
    * cts/{project}/locations/{location}/gatewaySecurityPolicies/{gateway_security_
    * policy} gateway_security_policy should match the
-   * pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])$).
    * @param GatewaySecurityPolicy $postBody
    * @param array $optParams Optional parameters.
    *

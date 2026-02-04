@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -88,7 +88,7 @@ class Statements extends \Google\Service\Resource
    * port are considered to be a part of the site and thus belong to the web
    * asset. Example: the asset with the site `https://www.google.com` contains all
    * these URLs: * `https://www.google.com/` * `https://www.google.com:443/` *
-   * `https://www.google.com/foo` * `https://www.google.com/foo?bar` *
+   * `https://www.google.com/foo` * `https://www.google.com/foobar` *
    * `https://www.google.com/foo#bar` * `https://user@password:www.google.com/`
    * But it does not contain these URLs: * `http://www.google.com/` (wrong scheme)
    * * `https://google.com/` (hostname does not match) *

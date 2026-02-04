@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2018 Google Inc. All Rights Reserved.
  *
@@ -111,7 +111,7 @@ class SysVCacheItemPool implements CacheItemPoolInterface
         $this->loadItems();
         $items = [];
         foreach ($keys as $key) {
-            $items[$key] = $this->hasItem($key) ?
+            $items[$key] = $this->hasItem($key) 
                 clone $this->items[$key] :
                 new TypedItem($key);
         }

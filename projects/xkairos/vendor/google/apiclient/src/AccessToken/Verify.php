@@ -1,4 +1,4 @@
-<?php
+<php
 
 /*
  * Copyright 2008 Google Inc.
@@ -67,9 +67,9 @@ class Verify
      * to the discretion of the caller.
      */
     public function __construct(
-        ?ClientInterface $http = null,
-        ?CacheItemPoolInterface $cache = null,
-        ?JWT $jwt = null
+        ClientInterface $http = null,
+        CacheItemPoolInterface $cache = null,
+        JWT $jwt = null
     ) {
         if (null === $http) {
             $http = new Client();
@@ -81,7 +81,7 @@ class Verify
 
         $this->http = $http;
         $this->cache = $cache;
-        $this->jwt = $jwt ?: $this->getJwtService();
+        $this->jwt = $jwt : $this->getJwtService();
     }
 
     /**

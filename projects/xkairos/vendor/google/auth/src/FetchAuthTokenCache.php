@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2010 Google Inc.
  *
@@ -50,8 +50,8 @@ class FetchAuthTokenCache implements
      */
     public function __construct(
         FetchAuthTokenInterface $fetcher,
-        ?array $cacheConfig = null,
-        ?CacheItemPoolInterface $cache = null
+        array $cacheConfig = null,
+        CacheItemPoolInterface $cache = null
     ) {
         $this->fetcher = $fetcher;
         $this->cache = $cache;
@@ -80,7 +80,7 @@ class FetchAuthTokenCache implements
      * @return array<mixed> the response
      * @throws \Exception
      */
-    public function fetchAuthToken(?callable $httpHandler = null)
+    public function fetchAuthToken(callable $httpHandler = null)
     {
         if ($cached = $this->fetchAuthTokenFromCache()) {
             return $cached;
@@ -115,7 +115,7 @@ class FetchAuthTokenCache implements
      * @param callable|null $httpHandler An HTTP handler to deliver PSR7 requests.
      * @return string
      */
-    public function getClientName(?callable $httpHandler = null)
+    public function getClientName(callable $httpHandler = null)
     {
         if (!$this->fetcher instanceof SignBlobInterface) {
             throw new \RuntimeException(
@@ -154,7 +154,7 @@ class FetchAuthTokenCache implements
             || $this->fetcher instanceof Credentials\ImpersonatedServiceAccountCredentials
         ) {
             $cached = $this->fetchAuthTokenFromCache();
-            $accessToken = $cached['access_token'] ?? null;
+            $accessToken = $cached['access_token']  null;
             return $this->fetcher->signBlob($stringToSign, $forceOpenSsl, $accessToken);
         }
 
@@ -184,7 +184,7 @@ class FetchAuthTokenCache implements
      * @throws \RuntimeException If the fetcher does not implement
      *     `Google\Auth\ProvidesProjectIdInterface`.
      */
-    public function getProjectId(?callable $httpHandler = null)
+    public function getProjectId(callable $httpHandler = null)
     {
         if (!$this->fetcher instanceof ProjectIdProviderInterface) {
             throw new \RuntimeException(
@@ -198,7 +198,7 @@ class FetchAuthTokenCache implements
         // access token when a cached token exists.
         if ($this->fetcher instanceof Credentials\ExternalAccountCredentials) {
             $cached = $this->fetchAuthTokenFromCache();
-            $accessToken = $cached['access_token'] ?? null;
+            $accessToken = $cached['access_token']  null;
             return $this->fetcher->getProjectId($httpHandler, $accessToken);
         }
 
@@ -235,7 +235,7 @@ class FetchAuthTokenCache implements
     public function updateMetadata(
         $metadata,
         $authUri = null,
-        ?callable $httpHandler = null
+        callable $httpHandler = null
     ) {
         if (!$this->fetcher instanceof UpdateMetadataInterface) {
             throw new \RuntimeException(
@@ -288,7 +288,7 @@ class FetchAuthTokenCache implements
 
         // if $authUri is set, use it as the cache key
         $cacheKey = $authUri
-            ? $this->getFullCacheKey($authUri)
+             $this->getFullCacheKey($authUri)
             : $this->fetcher->getCacheKey();
 
         $cached = $this->getCachedValue($cacheKey);
@@ -318,7 +318,7 @@ class FetchAuthTokenCache implements
             isset($authToken['id_token'])) {
             // if $authUri is set, use it as the cache key
             $cacheKey = $authUri
-                ? $this->getFullCacheKey($authUri)
+                 $this->getFullCacheKey($authUri)
                 : $this->fetcher->getCacheKey();
 
             $this->setCachedValue($cacheKey, $authToken);

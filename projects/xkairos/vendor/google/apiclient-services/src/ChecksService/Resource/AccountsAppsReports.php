@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -33,7 +33,7 @@ class AccountsAppsReports extends \Google\Service\Resource
   /**
    * Gets a report. By default, only the name and results_uri fields are returned.
    * You can include other fields by listing them in the `fields` URL query
-   * parameter. For example, `?fields=name,checks` will return the name and checks
+   * parameter. For example, `fields=name,checks` will return the name and checks
    * fields. (reports.get)
    *
    * @param string $name Required. Resource name of the report. Example:
@@ -57,7 +57,7 @@ class AccountsAppsReports extends \Google\Service\Resource
    * Lists reports for the specified app. By default, only the name and
    * results_uri fields are returned. You can include other fields by listing them
    * in the `fields` URL query parameter. For example,
-   * `?fields=reports(name,checks)` will return the name and checks fields.
+   * `fields=reports(name,checks)` will return the name and checks fields.
    * (reports.listAccountsAppsReports)
    *
    * @param string $parent Required. Resource name of the app. Example:

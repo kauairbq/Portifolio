@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Montgomery Modular Exponentiation Engine
@@ -71,7 +71,7 @@ abstract class Montgomery extends Progenitor
 
         for ($i = 0; $i < $k; ++$i) {
             $temp = $result[self::VALUE][$i] * $cache[self::DATA][$key];
-            $temp = $temp - $class::BASE_FULL * ($class::BASE === 26 ? intval($temp / 0x4000000) : ($temp >> 31));
+            $temp = $temp - $class::BASE_FULL * ($class::BASE === 26  intval($temp / 0x4000000) : ($temp >> 31));
             $temp = $class::regularMultiply([$temp], $n);
             $temp = array_merge(self::array_repeat(0, $i), $temp);
             $result = $class::addHelper($result[self::VALUE], false, $temp, false);
@@ -118,7 +118,7 @@ abstract class Montgomery extends Progenitor
         $result = ($result * (2 - $x * $result)) & 0xF; // x**-1 mod 2**4
         $result = ($result * (2 - ($x & 0xFF) * $result))  & 0xFF; // x**-1 mod 2**8
         $result = ($result * ((2 - ($x & 0xFFFF) * $result) & 0xFFFF)) & 0xFFFF; // x**-1 mod 2**16
-        $result = $class::BASE == 26 ?
+        $result = $class::BASE == 26 
             fmod($result * (2 - fmod($x * $result, $class::BASE_FULL)), $class::BASE_FULL) : // x**-1 mod 2**26
             ($result * (2 - ($x * $result) % $class::BASE_FULL)) % $class::BASE_FULL;
         return $result & $class::MAX_DIGIT;

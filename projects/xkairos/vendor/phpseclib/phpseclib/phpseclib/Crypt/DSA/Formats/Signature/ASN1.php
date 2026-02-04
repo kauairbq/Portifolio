@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * ASN1 Signature Handler

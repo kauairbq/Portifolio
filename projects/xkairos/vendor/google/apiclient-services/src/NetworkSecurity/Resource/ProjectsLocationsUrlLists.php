@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -109,7 +109,7 @@ class ProjectsLocationsUrlLists extends \Google\Service\Resource
    *
    * @param string $name Required. Name of the resource provided by the user. Name
    * is of the form projects/{project}/locations/{location}/urlLists/{url_list}
-   * url_list should match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   * url_list should match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])$).
    * @param UrlList $postBody
    * @param array $optParams Optional parameters.
    *

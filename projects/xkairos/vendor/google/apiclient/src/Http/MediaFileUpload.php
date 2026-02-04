@@ -1,4 +1,4 @@
-<?php
+<php
 /**
  * Copyright 2012 Google Inc.
  *
@@ -228,17 +228,17 @@ class MediaFileUpload
             Uri::withQueryValue($request->getUri(), 'uploadType', $uploadType)
         );
 
-        $mimeType = $this->mimeType ?: $request->getHeaderLine('content-type');
+        $mimeType = $this->mimeType : $request->getHeaderLine('content-type');
 
         if (self::UPLOAD_RESUMABLE_TYPE == $uploadType) {
             $contentType = $mimeType;
-            $postBody = is_string($meta) ? $meta : json_encode($meta);
+            $postBody = is_string($meta)  $meta : json_encode($meta);
         } elseif (self::UPLOAD_MEDIA_TYPE == $uploadType) {
             $contentType = $mimeType;
             $postBody = $this->data;
         } elseif (self::UPLOAD_MULTIPART_TYPE == $uploadType) {
             // This is a multipart/related upload.
-            $boundary = $this->boundary ?: mt_rand();
+            $boundary = $this->boundary : mt_rand();
             $boundary = str_replace('"', '', $boundary);
             $contentType = 'multipart/related; boundary=' . $boundary;
             $related = "--$boundary\r\n";

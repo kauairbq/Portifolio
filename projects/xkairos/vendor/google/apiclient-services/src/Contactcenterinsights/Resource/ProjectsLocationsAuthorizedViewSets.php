@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -42,7 +42,7 @@ class ProjectsLocationsAuthorizedViewSets extends \Google\Service\Resource
    * AuthorizedViewSet. This ID will become the final component of the
    * AuthorizedViewSet's resource name. If no ID is specified, a server-generated
    * ID will be used. This value should be 4-64 characters and must match the
-   * regular expression `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. See
+   * regular expression `^[a-z]([a-z0-9-]{0,61}[a-z0-9])$`. See
    * https://google.aip.dev/122#resource-id-segments
    * @return GoogleCloudContactcenterinsightsV1AuthorizedViewSet
    * @throws \Google\Service\Exception

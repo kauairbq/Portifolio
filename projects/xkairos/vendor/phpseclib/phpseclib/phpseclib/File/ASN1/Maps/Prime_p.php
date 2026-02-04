@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Prime_p

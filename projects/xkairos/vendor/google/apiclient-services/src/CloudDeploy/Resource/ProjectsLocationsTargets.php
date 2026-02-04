@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -182,7 +182,7 @@ class ProjectsLocationsTargets extends \Google\Service\Resource
    *
    * @param string $name Identifier. Name of the `Target`. Format is
    * `projects/{project}/locations/{location}/targets/{target}`. The `target`
-   * component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
+   * component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])`
    * @param Target $postBody
    * @param array $optParams Optional parameters.
    *

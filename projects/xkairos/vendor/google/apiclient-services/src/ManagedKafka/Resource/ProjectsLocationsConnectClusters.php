@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -44,7 +44,7 @@ class ProjectsLocationsConnectClusters extends \Google\Service\Resource
    * @opt_param string connectClusterId Required. The ID to use for the Connect
    * cluster, which will become the final component of the cluster's name. The ID
    * must be 1-63 characters long, and match the regular expression
-   * `[a-z]([-a-z0-9]*[a-z0-9])?` to comply with RFC 1035. This value is
+   * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC 1035. This value is
    * structured like: `my-cluster-id`.
    * @opt_param string requestId Optional. An optional request ID to identify
    * requests. Specify a unique request ID to avoid duplication of requests. If a

@@ -1,4 +1,4 @@
-<?php
+<php
 session_start();
 require_once '../includes/config.php';
 
@@ -7,14 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     try {
-        $stmt = $pdo->prepare('INSERT INTO admin (username, password) VALUES (?, ?)');
+        $stmt = $pdo->prepare('INSERT INTO admin (username, password) VALUES (, )');
         $stmt->execute([$username, $password]);
         $success = 'Admin registrado com sucesso!';
     } catch (PDOException $e) {
         $error = 'Erro: ' . $e->getMessage();
     }
 }
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -39,8 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Senha</label>
                 </div>
                 <button type="submit" class="btn">Registrar</button>
-                <?php if(isset($error)) echo "<p style='color: #00F0FF; text-align: center; margin-top: 10px;'>$error</p>"; ?>
-                <?php if(isset($success)) echo "<p style='color: #00F0FF; text-align: center; margin-top: 10px;'>$success</p>"; ?>
+                <php if(isset($error)) echo "<p style='color: #00F0FF; text-align: center; margin-top: 10px;'>$error</p>"; >
+                <php if(isset($success)) echo "<p style='color: #00F0FF; text-align: center; margin-top: 10px;'>$success</p>"; >
             </form>
         </div>
     </div>

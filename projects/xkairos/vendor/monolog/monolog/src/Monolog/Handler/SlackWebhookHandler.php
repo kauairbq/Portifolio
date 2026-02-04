@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -49,10 +49,10 @@ class SlackWebhookHandler extends AbstractProcessingHandler
      */
     public function __construct(
         string $webhookUrl,
-        ?string $channel = null,
-        ?string $username = null,
+        string $channel = null,
+        string $username = null,
         bool $useAttachment = true,
-        ?string $iconEmoji = null,
+        string $iconEmoji = null,
         bool $useShortAttachment = false,
         bool $includeContextAndExtra = false,
         $level = Level::Critical,

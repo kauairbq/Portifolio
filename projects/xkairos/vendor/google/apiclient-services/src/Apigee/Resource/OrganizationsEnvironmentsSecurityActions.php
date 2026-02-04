@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -44,7 +44,7 @@ class OrganizationsEnvironmentsSecurityActions extends \Google\Service\Resource
    * @opt_param string securityActionId Required. The ID to use for the
    * SecurityAction, which will become the final component of the action's
    * resource name. This value should be 0-61 characters, and valid format is
-   * (^[a-z]([a-z0-9-]{​0,61}[a-z0-9])?$).
+   * (^[a-z]([a-z0-9-]{​0,61}[a-z0-9])$).
    * @return GoogleCloudApigeeV1SecurityAction
    * @throws \Google\Service\Exception
    */

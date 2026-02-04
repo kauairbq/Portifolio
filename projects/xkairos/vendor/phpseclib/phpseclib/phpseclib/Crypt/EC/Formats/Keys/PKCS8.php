@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#8 Formatted EC Key Handler
@@ -75,7 +75,7 @@ abstract class PKCS8 extends Progenitor
 
         $key = parent::load($key, $password);
 
-        $type = isset($key['privateKey']) ? 'privateKey' : 'publicKey';
+        $type = isset($key['privateKey'])  'privateKey' : 'publicKey';
 
         switch ($key[$type . 'Algorithm']['algorithm']) {
             case 'id-Ed25519':
@@ -112,7 +112,7 @@ abstract class PKCS8 extends Progenitor
 
         $components['dA'] = new BigInteger($key['privateKey'], 256);
         $components['curve']->rangeCheck($components['dA']);
-        $components['QA'] = isset($key['publicKey']) ?
+        $components['QA'] = isset($key['publicKey']) 
             self::extractPoint($key['publicKey'], $components['curve']) :
             $components['curve']->multiplyPoint($components['curve']->getBasePoint(), $components['dA']);
 
@@ -129,7 +129,7 @@ abstract class PKCS8 extends Progenitor
         $components = [];
 
         if (isset($key['privateKey'])) {
-            $components['curve'] = $key['privateKeyAlgorithm']['algorithm'] == 'id-Ed25519' ? new Ed25519() : new Ed448();
+            $components['curve'] = $key['privateKeyAlgorithm']['algorithm'] == 'id-Ed25519'  new Ed25519() : new Ed448();
             $expected = chr(ASN1::TYPE_OCTET_STRING) . ASN1::encodeLength($components['curve']::SIZE);
             if (substr($key['privateKey'], 0, 2) != $expected) {
                 throw new \RuntimeException(
@@ -145,7 +145,7 @@ abstract class PKCS8 extends Progenitor
 
         if (isset($key['publicKey'])) {
             if (!isset($components['curve'])) {
-                $components['curve'] = $key['publicKeyAlgorithm']['algorithm'] == 'id-Ed25519' ? new Ed25519() : new Ed448();
+                $components['curve'] = $key['publicKeyAlgorithm']['algorithm'] == 'id-Ed25519'  new Ed25519() : new Ed448();
             }
 
             $components['QA'] = self::extractPoint($key['publicKey'], $components['curve']);
@@ -178,7 +178,7 @@ abstract class PKCS8 extends Progenitor
             return self::wrapPublicKey(
                 $curve->encodePoint($publicKey),
                 null,
-                $curve instanceof Ed25519 ? 'id-Ed25519' : 'id-Ed448',
+                $curve instanceof Ed25519  'id-Ed25519' : 'id-Ed448',
                 $options
             );
         }
@@ -215,7 +215,7 @@ abstract class PKCS8 extends Progenitor
                 [],
                 null,
                 $password,
-                $curve instanceof Ed25519 ? 'id-Ed25519' : 'id-Ed448'
+                $curve instanceof Ed25519  'id-Ed25519' : 'id-Ed448'
             );
         }
 

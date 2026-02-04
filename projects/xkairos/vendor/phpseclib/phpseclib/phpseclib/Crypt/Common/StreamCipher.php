@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Base Class for all stream ciphers

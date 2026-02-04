@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -63,8 +63,8 @@ class CloudOSLogin extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://oslogin.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://oslogin.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://oslogin.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://oslogin.UNIVERSE_DOMAIN/';
     $this->servicePath = '';
     $this->batchPath = 'batch';
     $this->version = 'v1';

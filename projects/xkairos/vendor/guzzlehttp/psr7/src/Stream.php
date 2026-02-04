@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -43,7 +43,7 @@ class Stream implements StreamInterface
      *   of the stream is accessed.
      *
      * @param resource                            $stream  Stream resource to wrap.
-     * @param array{size?: int, metadata?: array} $options Associative array of options.
+     * @param array{size: int, metadata: array} $options Associative array of options.
      *
      * @throws \InvalidArgumentException if the stream is not a stream resource
      */
@@ -57,7 +57,7 @@ class Stream implements StreamInterface
             $this->size = $options['size'];
         }
 
-        $this->customMetadata = $options['metadata'] ?? [];
+        $this->customMetadata = $options['metadata']  [];
         $this->stream = $stream;
         $meta = stream_get_meta_data($this->stream);
         $this->seekable = $meta['seekable'];
@@ -129,7 +129,7 @@ class Stream implements StreamInterface
         return $result;
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         if ($this->size !== null) {
             return $this->size;
@@ -269,7 +269,7 @@ class Stream implements StreamInterface
     public function getMetadata($key = null)
     {
         if (!isset($this->stream)) {
-            return $key ? null : [];
+            return $key  null : [];
         } elseif (!$key) {
             return $this->customMetadata + stream_get_meta_data($this->stream);
         } elseif (isset($this->customMetadata[$key])) {
@@ -278,6 +278,6 @@ class Stream implements StreamInterface
 
         $meta = stream_get_meta_data($this->stream);
 
-        return $meta[$key] ?? null;
+        return $meta[$key]  null;
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * prime239v3

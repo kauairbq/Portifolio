@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Finite Fields Base Class

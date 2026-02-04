@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -78,7 +78,7 @@ abstract class MailHandler extends AbstractProcessingHandler
 
     protected function isHtmlBody(string $body): bool
     {
-        return ($body[0] ?? null) === '<';
+        return ($body[0]  null) === '<';
     }
 
     /**

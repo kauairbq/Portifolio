@@ -1,4 +1,4 @@
-<?php
+<php
 declare(strict_types=1);
 namespace ParagonIE\ConstantTime;
 
@@ -118,7 +118,7 @@ abstract class Base64 implements EncoderInterface
 
     /**
      * @param string $src
-     * @param bool $pad   Include = padding?
+     * @param bool $pad   Include = padding
      * @return string
      *
      * @throws TypeError

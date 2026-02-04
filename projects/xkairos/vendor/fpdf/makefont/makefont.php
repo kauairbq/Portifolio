@@ -1,4 +1,4 @@
-<?php
+<php
 /*******************************************************************************
 * Utility to generate font definition files                                    *
 *                                                                              *
@@ -350,7 +350,7 @@ function SaveToFile($file, $s, $mode)
 
 function MakeDefinitionFile($file, $type, $enc, $embed, $subset, $map, $info)
 {
-	$s = "<?php\n";
+	$s = "<php\n";
 	$s .= '$type = \''.$type."';\n";
 	$s .= '$name = \''.$info['FontName']."';\n";
 	$s .= '$desc = '.MakeFontDescriptor($info).";\n";
@@ -377,7 +377,7 @@ function MakeDefinitionFile($file, $type, $enc, $embed, $subset, $map, $info)
 				$s .= "\$subsetted = true;\n";
 		}
 	}
-	$s .= "?>\n";
+	$s .= ">\n";
 	SaveToFile($file, $s, 't');
 }
 
@@ -444,4 +444,4 @@ if(PHP_SAPI=='cli')
 		$subset = true;
 	MakeFont($fontfile, $enc, $embed, $subset);
 }
-?>
+>

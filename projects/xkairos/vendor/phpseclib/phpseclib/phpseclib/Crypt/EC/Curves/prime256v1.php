@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * prime256v1

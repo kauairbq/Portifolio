@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -72,7 +72,7 @@ class AccountsMerchantReviews extends \Google\Service\Resource
    * @param array $optParams Optional parameters.
    *
    * @opt_param string dataSource Required. The data source of the [merchantreview
-   * ](https://support.google.com/merchants/answer/7045996?sjid=525358124421758197
+   * ](https://support.google.com/merchants/answer/7045996sjid=525358124421758197
    * 6-EU) Format: `accounts/{account}/dataSources/{datasource}`.
    * @return MerchantReview
    * @throws \Google\Service\Exception

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PHP Default Modular Exponentiation Engine

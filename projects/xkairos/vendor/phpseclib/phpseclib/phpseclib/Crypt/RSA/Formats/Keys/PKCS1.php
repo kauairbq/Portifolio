@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#1 Formatted RSA Key Handler
@@ -130,7 +130,7 @@ abstract class PKCS1 extends Progenitor
     {
         $num_primes = count($primes);
         $key = [
-            'version' => $num_primes == 2 ? 'two-prime' : 'multi',
+            'version' => $num_primes == 2  'two-prime' : 'multi',
             'modulus' => $n,
             'publicExponent' => $e,
             'privateExponent' => $d,
@@ -180,7 +180,7 @@ abstract class PKCS1 extends Progenitor
      */
     private static function makePositive(BigInteger $x)
     {
-        return $x->isNegative() ?
+        return $x->isNegative() 
             new BigInteger($x->toBytes(true), 256) :
             $x;
     }

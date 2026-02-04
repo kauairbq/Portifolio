@@ -1,4 +1,4 @@
-<?php
+<php
 session_start();
 require_once '../includes/config.php';
 
@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     try {
-        $stmt = $pdo->prepare('SELECT password FROM admin WHERE username = ?');
+        $stmt = $pdo->prepare('SELECT password FROM admin WHERE username = ');
         $stmt->execute([$username]);
         $admin = $stmt->fetch();
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = 'Erro no banco de dados';
     }
 }
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Senha</label>
                 </div>
                 <button type="submit" class="btn">Entrar</button>
-                <?php if(isset($error)) echo "<p style='color: #00F0FF; text-align: center; margin-top: 10px;'>$error</p>"; ?>
+                <php if(isset($error)) echo "<p style='color: #00F0FF; text-align: center; margin-top: 10px;'>$error</p>"; >
             </form>
 
             <!-- Formulário de Registro (para efeito 3D) -->

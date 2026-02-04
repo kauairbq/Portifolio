@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of ChaCha20.
@@ -121,7 +121,7 @@ class ChaCha20 extends Salsa20
     private function encrypt_with_libsodium($plaintext)
     {
         $params = [$plaintext, $this->aad, $this->nonce, $this->key];
-        $ciphertext = strlen($this->nonce) == 8 ?
+        $ciphertext = strlen($this->nonce) == 8 
             sodium_crypto_aead_chacha20poly1305_encrypt(...$params) :
             sodium_crypto_aead_chacha20poly1305_ietf_encrypt(...$params);
         if (!$this->usePoly1305) {
@@ -130,7 +130,7 @@ class ChaCha20 extends Salsa20
 
         $newciphertext = substr($ciphertext, 0, strlen($plaintext));
 
-        $this->newtag = $this->usingGeneratedPoly1305Key && strlen($this->nonce) == 12 ?
+        $this->newtag = $this->usingGeneratedPoly1305Key && strlen($this->nonce) == 12 
             substr($ciphertext, strlen($plaintext)) :
             $this->poly1305($newciphertext);
 
@@ -168,7 +168,7 @@ class ChaCha20 extends Salsa20
             $this->oldtag = false;
         }
 
-        $plaintext = strlen($this->nonce) == 8 ?
+        $plaintext = strlen($this->nonce) == 8 
             sodium_crypto_aead_chacha20poly1305_encrypt(...$params) :
             sodium_crypto_aead_chacha20poly1305_ietf_encrypt(...$params);
 

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * EC Public Key
@@ -88,10 +88,10 @@ final class PublicKey extends EC implements Common\PublicKey
             $A = $curve->encodePoint($this->QA);
 
             if ($curve instanceof Ed25519) {
-                $dom2 = !isset($this->context) ? '' :
+                $dom2 = !isset($this->context)  '' :
                     'SigEd25519 no Ed25519 collisions' . "\0" . chr(strlen($this->context)) . $this->context;
             } else {
-                $context = isset($this->context) ? $this->context : '';
+                $context = isset($this->context)  $this->context : '';
                 $dom2 = 'SigEd448' . "\0" . chr(strlen($context)) . $context;
             }
 
@@ -119,7 +119,7 @@ final class PublicKey extends EC implements Common\PublicKey
         $s = $params['s'];
 
         if (self::$engines['OpenSSL'] && in_array($this->hash->getHash(), openssl_get_md_methods())) {
-            $sig = $format != 'ASN1' ? ASN1Signature::save($r, $s) : $signature;
+            $sig = $format != 'ASN1'  ASN1Signature::save($r, $s) : $signature;
 
             $result = openssl_verify($message, $sig, $this->toString('PKCS8', ['namedCurve' => false]), $this->hash->getHash());
 
@@ -137,7 +137,7 @@ final class PublicKey extends EC implements Common\PublicKey
         $e = new BigInteger($e, 256);
 
         $Ln = $this->hash->getLength() - $order->getLength();
-        $z = $Ln > 0 ? $e->bitwise_rightShift($Ln) : $e;
+        $z = $Ln > 0  $e->bitwise_rightShift($Ln) : $e;
 
         $w = $s->modInverse($order);
         list(, $u1) = $z->multiply($w)->divide($order);

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /*
  * This file is part of Composer.
@@ -11,7 +11,7 @@
  */
 
 setupEnvironment();
-process(is_array($argv) ? $argv : array());
+process(is_array($argv)  $argv : array());
 
 /**
  * Initializes various values
@@ -90,7 +90,7 @@ function process($argv)
             showWarnings($warnings);
             showSecurityWarning($disableTls);
         }
-        exit($ok ? 0 : 1);
+        exit($ok  0 : 1);
     }
 
     if ($ok || $force) {
@@ -188,7 +188,7 @@ function outputSupportsColor()
 
     $stat = fstat(STDOUT);
     // Check if formatted mode is S_IFCHR
-    return $stat ? 0020000 === ($stat['mode'] & 0170000) : false;
+    return $stat  0020000 === ($stat['mode'] & 0170000) : false;
 }
 
 /**
@@ -367,7 +367,7 @@ function getPlatformIssues(&$errors, &$warnings, $install)
         );
     }
     if (extension_loaded('ionCube Loader') && function_exists('ioncube_loader_iversion') && call_user_func('ioncube_loader_iversion') < 40009) {
-        $ioncube = function_exists('ioncube_loader_version') ? call_user_func('ioncube_loader_version') : 'unknown';
+        $ioncube = function_exists('ioncube_loader_version')  call_user_func('ioncube_loader_version') : 'unknown';
         $errors['ioncube'] = array(
             'Your ionCube Loader extension ('.$ioncube.') is incompatible with Phar files.',
             'Upgrade to ionCube 4.0.9 or higher or remove this line (path may be different) from your `php.ini` to disable it:',
@@ -400,7 +400,7 @@ function getPlatformIssues(&$errors, &$warnings, $install)
         // Attempt to parse version number out, fallback to whole string value.
         $opensslVersion = trim(strstr(OPENSSL_VERSION_TEXT, ' '));
         $opensslVersion = substr($opensslVersion, 0, strpos($opensslVersion, ' '));
-        $opensslVersion = $opensslVersion ? $opensslVersion : OPENSSL_VERSION_TEXT;
+        $opensslVersion = $opensslVersion  $opensslVersion : OPENSSL_VERSION_TEXT;
 
         $warnings['openssl_version'] = array(
             'The OpenSSL library ('.$opensslVersion.') used by PHP does not support TLSv1.2 or TLSv1.1.',
@@ -461,14 +461,14 @@ function getPlatformIssues(&$errors, &$warnings, $install)
     ob_start();
     phpinfo(INFO_GENERAL);
     $phpinfo = (string) ob_get_clean();
-    if (preg_match('{Configure Command(?: *</td><td class="v">| *=> *)(.*?)(?:</td>|$)}m', $phpinfo, $match)) {
+    if (preg_match('{Configure Command(: *</td><td class="v">| *=> *)(.*)(:</td>|$)}m', $phpinfo, $match)) {
         $configure = $match[1];
 
         if (false !== strpos($configure, '--enable-sigchild')) {
             $warnings['sigchild'] = array(
                 'PHP was compiled with --enable-sigchild which can cause issues on some platforms.',
                 'Recompile it without this flag if possible, see also:',
-                '    https://bugs.php.net/bug.php?id=22999'
+                '    https://bugs.php.net/bug.phpid=22999'
             );
         }
 
@@ -608,7 +608,7 @@ function getHomeDir()
  */
 function getUserDir()
 {
-    $userEnv = defined('PHP_WINDOWS_VERSION_MAJOR') ? 'APPDATA' : 'HOME';
+    $userEnv = defined('PHP_WINDOWS_VERSION_MAJOR')  'APPDATA' : 'HOME';
     $userDir = getenv($userEnv);
 
     if (!$userDir) {
@@ -741,7 +741,7 @@ class Installer
             }
 
             if ($result && $channel !== 'stable' && !$version && defined('PHP_BINARY')) {
-                $null = (defined('PHP_WINDOWS_VERSION_MAJOR') ? 'NUL' : '/dev/null');
+                $null = (defined('PHP_WINDOWS_VERSION_MAJOR')  'NUL' : '/dev/null');
                 @exec(escapeshellarg(PHP_BINARY) .' '.escapeshellarg($this->target).' self-update --'.$channel.' --set-channel-only -q > '.$null.' 2> '.$null, $output);
             }
         } catch (Exception $e) {
@@ -770,8 +770,8 @@ class Installer
      */
     protected function initTargets($installDir, $filename)
     {
-        $this->displayPath = ($installDir ? rtrim($installDir, '/').'/' : '').$filename;
-        $installDir = $installDir ? realpath($installDir) : getcwd();
+        $this->displayPath = ($installDir  rtrim($installDir, '/').'/' : '').$filename;
+        $installDir = $installDir  realpath($installDir) : getcwd();
 
         if (!is_writeable($installDir)) {
             throw new RuntimeException('The installation directory "'.$installDir.'" is not writable');
@@ -780,7 +780,7 @@ class Installer
         $this->target = $installDir.DIRECTORY_SEPARATOR.$filename;
         $this->tmpFile = $installDir.DIRECTORY_SEPARATOR.basename($this->target, '.phar').'-temp.phar';
 
-        $uriScheme = $this->disableTls ? 'http' : 'https';
+        $uriScheme = $this->disableTls  'http' : 'https';
         $this->baseUrl = $uriScheme.'://getcomposer.org';
     }
 
@@ -798,7 +798,7 @@ class Installer
             throw new RuntimeException('SHA384 is not supported by your openssl extension');
         }
 
-        $this->algo = defined('OPENSSL_ALGO_SHA384') ? OPENSSL_ALGO_SHA384 : 'SHA384';
+        $this->algo = defined('OPENSSL_ALGO_SHA384')  OPENSSL_ALGO_SHA384 : 'SHA384';
         $home = $this->getComposerHome();
 
         $this->pubKeys = array(
@@ -1108,7 +1108,7 @@ class Installer
     protected function verifySignature($version, $signature, $file)
     {
         if (!$result = $this->disableTls) {
-            $path = preg_match('{^[0-9a-f]{40}$}', $version) ? $this->pubKeys['dev'] : $this->pubKeys['tags'];
+            $path = preg_match('{^[0-9a-f]{40}$}', $version)  $this->pubKeys['dev'] : $this->pubKeys['tags'];
             $pubkeyid = openssl_pkey_get_public('file://'.$path);
 
             $result = 1 === openssl_verify(
@@ -1285,7 +1285,7 @@ class ErrorHandler
         if ($this->message) {
             $this->message .= PHP_EOL;
         }
-        $this->message .= preg_replace('{^file_get_contents\(.*?\): }', '', $msg);
+        $this->message .= preg_replace('{^file_get_contents\(.*\): }', '', $msg);
     }
 
     /**
@@ -1323,7 +1323,7 @@ class NoProxyPattern
     public function __construct($pattern)
     {
         $rules = preg_split('{[\s,]+}', $pattern, -1, PREG_SPLIT_NO_EMPTY);
-        if ($matches = preg_grep('{getcomposer\.org(?::\d+)?}i', $rules)) {
+        if ($matches = preg_grep('{getcomposer\.org(::\d+)}i', $rules)) {
             $this->composerInNoProxy = true;
 
             foreach ($matches as $match) {
@@ -1390,7 +1390,7 @@ class HttpClient {
         $result = file_get_contents($url, false, $context);
 
         if ($result && extension_loaded('zlib')) {
-            $headers = PHP_VERSION_ID >= 80400 ? http_get_last_response_headers() : $http_response_header;
+            $headers = PHP_VERSION_ID >= 80400  http_get_last_response_headers() : $http_response_header;
             $decode = false;
             foreach ($headers as $header) {
                 if (preg_match('{^content-encoding: *gzip *$}i', $header)) {
@@ -1530,7 +1530,7 @@ class HttpClient {
 
         // Handle HTTP_PROXY/http_proxy on CLI only for security reasons
         if ((PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg') && (!empty($_SERVER['HTTP_PROXY']) || !empty($_SERVER['http_proxy']))) {
-            $proxy = parse_url(!empty($_SERVER['http_proxy']) ? $_SERVER['http_proxy'] : $_SERVER['HTTP_PROXY']);
+            $proxy = parse_url(!empty($_SERVER['http_proxy'])  $_SERVER['http_proxy'] : $_SERVER['HTTP_PROXY']);
         }
 
         // Prefer CGI_HTTP_PROXY if available
@@ -1540,20 +1540,20 @@ class HttpClient {
 
         // Override with HTTPS proxy if present and URL is https
         if (preg_match('{^https://}i', $url) && (!empty($_SERVER['HTTPS_PROXY']) || !empty($_SERVER['https_proxy']))) {
-            $proxy = parse_url(!empty($_SERVER['https_proxy']) ? $_SERVER['https_proxy'] : $_SERVER['HTTPS_PROXY']);
+            $proxy = parse_url(!empty($_SERVER['https_proxy'])  $_SERVER['https_proxy'] : $_SERVER['HTTPS_PROXY']);
         }
 
         // Remove proxy if URL matches no_proxy directive
         if (!empty($_SERVER['NO_PROXY']) || !empty($_SERVER['no_proxy']) && parse_url($url, PHP_URL_HOST)) {
-            $pattern = new NoProxyPattern(!empty($_SERVER['no_proxy']) ? $_SERVER['no_proxy'] : $_SERVER['NO_PROXY']);
+            $pattern = new NoProxyPattern(!empty($_SERVER['no_proxy'])  $_SERVER['no_proxy'] : $_SERVER['NO_PROXY']);
             if ($pattern->test($url)) {
                 unset($proxy);
             }
         }
 
         if (!empty($proxy)) {
-            $proxyURL = isset($proxy['scheme']) ? $proxy['scheme'] . '://' : '';
-            $proxyURL .= isset($proxy['host']) ? $proxy['host'] : '';
+            $proxyURL = isset($proxy['scheme'])  $proxy['scheme'] . '://' : '';
+            $proxyURL .= isset($proxy['host'])  $proxy['host'] : '';
 
             if (isset($proxy['port'])) {
                 $proxyURL .= ":" . $proxy['port'];
@@ -1682,7 +1682,7 @@ class HttpClient {
             '/usr/ssl/certs/ca-bundle.crt', // Cygwin
             '/opt/local/share/curl/curl-ca-bundle.crt', // OS X macports, curl-ca-bundle package
             '/usr/local/share/curl/curl-ca-bundle.crt', // Default cURL CA bunde path (without --with-ca-bundle option)
-            '/usr/share/ssl/certs/ca-bundle.crt', // Really old RedHat?
+            '/usr/share/ssl/certs/ca-bundle.crt', // Really old RedHat
             '/etc/ssl/cert.pem', // OpenBSD
             '/usr/local/etc/ssl/cert.pem', // FreeBSD 10.x
             '/usr/local/etc/openssl/cert.pem', // OS X homebrew, openssl package

@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -41,7 +41,7 @@ class Media extends \Google\Service\Resource
    * and the second body part contains the binary upload. Include the header
    * `X-Goog-Upload-Protocol: multipart`. ``` POST https://checks.googleapis.com/u
    * pload/v1alpha/{parent=accounts/apps}/reports:analyzeUpload HTTP/1.1 X-Goog-
-   * Upload-Protocol: multipart Content-Length: ? Content-Type: multipart/related;
+   * Upload-Protocol: multipart Content-Length:  Content-Type: multipart/related;
    * boundary=BOUNDARY --BOUNDARY Content-Type: application/json
    * {"code_reference_id":"db5bcc20f94055fb5bc08cbb9b0e7a5530308786"} --BOUNDARY
    * --BOUNDARY-- ``` *Note:* Metadata-only requests are not supported.

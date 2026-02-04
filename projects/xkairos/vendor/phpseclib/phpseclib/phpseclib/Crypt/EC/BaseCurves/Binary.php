@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Curves over y^2 + x*y = x^3 + a*x^2 + b
@@ -125,8 +125,8 @@ class Binary extends Base
             throw new \RuntimeException('setModulo needs to be called before this method');
         }
         $this->p = [
-            is_string($x) ? $this->factory->newInteger(pack('H*', $x)) : $x,
-            is_string($y) ? $this->factory->newInteger(pack('H*', $y)) : $y
+            is_string($x)  $this->factory->newInteger(pack('H*', $x)) : $x,
+            is_string($y)  $this->factory->newInteger(pack('H*', $y)) : $y
         ];
     }
 
@@ -174,7 +174,7 @@ class Binary extends Base
         }
 
         if ($p[0]->equals($q[0])) {
-            return !$p[1]->equals($q[1]) ? [] : $this->doublePoint($p);
+            return !$p[1]->equals($q[1])  [] : $this->doublePoint($p);
         }
 
         // formulas from http://hyperelliptic.org/EFD/g12o/auto-shortw-jacobian.html

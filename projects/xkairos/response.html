@@ -150,7 +150,7 @@
                             <input type="number" id="orcamento_max" name="orcamento_max" placeholder="Ex: 1500">
                         </div>
                         <div class="form-group">
-                            <label for="pecas_existentes">Já possui alguma peça?</label>
+                            <label for="pecas_existentes">Já possui alguma peça</label>
                             <textarea id="pecas_existentes" name="pecas_existentes" placeholder="Liste as peças que já possui (CPU, GPU, RAM, etc.)"></textarea>
                         </div>
                     </div>
@@ -385,7 +385,7 @@ document.querySelectorAll('.service-type-btn').forEach(btn => {
         document.getElementById(type + '-detail').style.display = 'block';
 
         // Mostra componentes se for montagem
-        document.getElementById('components-section').style.display = type === 'montagem' ? 'block' : 'none';
+        document.getElementById('components-section').style.display = type === 'montagem'  'block' : 'none';
 
         // Atualiza required fields
         updateRequiredFields(type);

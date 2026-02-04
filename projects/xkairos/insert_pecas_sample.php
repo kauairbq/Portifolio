@@ -1,4 +1,4 @@
-<?php
+<php
 require_once 'includes/config.php';
 
 $pecas = [
@@ -17,7 +17,7 @@ $pecas = [
 ];
 
 try {
-    $stmt = $pdo->prepare('INSERT INTO pecas (tipo, nome, preco, estoque, categoria, descricao) VALUES (?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE preco = VALUES(preco), estoque = VALUES(estoque)');
+    $stmt = $pdo->prepare('INSERT INTO pecas (tipo, nome, preco, estoque, categoria, descricao) VALUES (, , , , , ) ON DUPLICATE KEY UPDATE preco = VALUES(preco), estoque = VALUES(estoque)');
 
     foreach ($pecas as $peca) {
         $stmt->execute([$peca['tipo'], $peca['nome'], $peca['preco'], $peca['estoque'], $peca['categoria'], $peca['descricao']]);
@@ -27,4 +27,4 @@ try {
 } catch (PDOException $e) {
     echo 'Erro: ' . $e->getMessage();
 }
-?>
+>

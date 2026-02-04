@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -130,7 +130,7 @@ class ProjectsLocationsTriggers extends \Google\Service\Resource
    *
    * @opt_param string filter Filter field. Used to filter the Triggers to be
    * listed. Possible filters are described in https://google.aip.dev/160. For
-   * example, using "?filter=destination:gke" would list only Triggers with a gke
+   * example, using "filter=destination:gke" would list only Triggers with a gke
    * destination.
    * @opt_param string orderBy The sorting order of the resources returned. Value
    * should be a comma-separated list of fields. The default sorting order is

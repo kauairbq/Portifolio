@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PBES2params

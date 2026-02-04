@@ -1,4 +1,4 @@
-<?php
+<php
 
 /*
  * Copyright 2022 Google Inc.
@@ -54,7 +54,7 @@ trait IamSignerTrait
         $signer = $this->iam;
         if (!$signer) {
             $signer = $this instanceof GetUniverseDomainInterface
-                ? new Iam($httpHandler, $this->getUniverseDomain())
+                 new Iam($httpHandler, $this->getUniverseDomain())
                 : new Iam($httpHandler);
         }
 
@@ -63,7 +63,7 @@ trait IamSignerTrait
         if (is_null($accessToken)) {
             $previousToken = $this->getLastReceivedToken();
             $accessToken = $previousToken
-                ? $previousToken['access_token']
+                 $previousToken['access_token']
                 : $this->fetchAuthToken($httpHandler)['access_token'];
         }
 

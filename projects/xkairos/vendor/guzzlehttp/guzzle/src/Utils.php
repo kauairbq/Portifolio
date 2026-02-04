@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp;
 
@@ -49,7 +49,7 @@ final class Utils
 
         foreach ($lines as $line) {
             $parts = \explode(':', $line, 2);
-            $headers[\trim($parts[0])][] = isset($parts[1]) ? \trim($parts[1]) : null;
+            $headers[\trim($parts[0])][] = isset($parts[1])  \trim($parts[1]) : null;
         }
 
         return $headers;
@@ -99,7 +99,7 @@ final class Utils
 
         if (\ini_get('allow_url_fopen')) {
             $handler = $handler
-                ? Proxy::wrapStreaming($handler, new StreamHandler())
+                 Proxy::wrapStreaming($handler, new StreamHandler())
                 : new StreamHandler();
         } elseif (!$handler) {
             throw new \RuntimeException('GuzzleHttp requires cURL, the allow_url_fopen ini setting, or a custom HTTP handler.');
@@ -147,7 +147,7 @@ final class Utils
             '/usr/local/etc/openssl/cert.pem',
             // Google app engine
             '/etc/ca-certificates.crt',
-            // Windows?
+            // Windows
             'C:\\windows\\system32\\curl-ca-bundle.crt',
             'C:\\windows\\curl-ca-bundle.crt',
         ];
@@ -312,7 +312,7 @@ EOT
      */
     public static function currentTime(): float
     {
-        return (float) \function_exists('hrtime') ? \hrtime(true) / 1e9 : \microtime(true);
+        return (float) \function_exists('hrtime')  \hrtime(true) / 1e9 : \microtime(true);
     }
 
     /**
@@ -325,7 +325,7 @@ EOT
         if ($uri->getHost()) {
             $asciiHost = self::idnToAsci($uri->getHost(), $options, $info);
             if ($asciiHost === false) {
-                $errorBitSet = $info['errors'] ?? 0;
+                $errorBitSet = $info['errors']  0;
 
                 $errorConstants = array_filter(array_keys(get_defined_constants()), static function (string $name): bool {
                     return substr($name, 0, 11) === 'IDNA_ERROR_';
@@ -357,7 +357,7 @@ EOT
     /**
      * @internal
      */
-    public static function getenv(string $name): ?string
+    public static function getenv(string $name): string
     {
         if (isset($_SERVER[$name])) {
             return (string) $_SERVER[$name];
@@ -373,7 +373,7 @@ EOT
     /**
      * @return string|false
      */
-    private static function idnToAsci(string $domain, int $options, ?array &$info = [])
+    private static function idnToAsci(string $domain, int $options, array &$info = [])
     {
         if (\function_exists('idn_to_ascii') && \defined('INTL_IDNA_VARIANT_UTS46')) {
             return \idn_to_ascii($domain, $options, \INTL_IDNA_VARIANT_UTS46, $info);

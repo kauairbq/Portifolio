@@ -498,7 +498,7 @@ a message.
 
 ## `GuzzleHttp\Psr7\Utils::readLine`
 
-`public static function readLine(StreamInterface $stream, ?int $maxLength = null): string`
+`public static function readLine(StreamInterface $stream, int $maxLength = null): string`
 
 Read a line from the stream up to the maximum allowed buffer length.
 
@@ -681,7 +681,7 @@ termed a relative-path reference.
 
 ### `GuzzleHttp\Psr7\Uri::isSameDocumentReference`
 
-`public static function isSameDocumentReference(UriInterface $uri, ?UriInterface $base = null): bool`
+`public static function isSameDocumentReference(UriInterface $uri, UriInterface $base = null): bool`
 
 Whether the URI is a same-document reference. A same-document reference refers to a URI that is, aside from its
 fragment component, identical to the base URI. When no base URI is given, only an empty URI reference
@@ -781,7 +781,7 @@ to reduce the document size or offer self-contained downloadable document archiv
 $base = new Uri('http://example.com/a/b/');
 echo UriResolver::relativize($base, new Uri('http://example.com/a/b/c'));  // prints 'c'.
 echo UriResolver::relativize($base, new Uri('http://example.com/a/x/y'));  // prints '../x/y'.
-echo UriResolver::relativize($base, new Uri('http://example.com/a/b/?q')); // prints '?q'.
+echo UriResolver::relativize($base, new Uri('http://example.com/a/b/q')); // prints 'q'.
 echo UriResolver::relativize($base, new Uri('http://example.org/a/b/'));   // prints '//example.org/a/b/'.
 ```
 
@@ -858,7 +858,7 @@ of normalizations to apply. The following normalizations are available:
     significant (this is not defined by the standard). So this normalization is not safe and may change the semantics
     of the URI.
 
-    Example: `?lang=en&article=fred` → `?article=fred&lang=en`
+    Example: `lang=en&article=fred` → `article=fred&lang=en`
 
 ### `GuzzleHttp\Psr7\UriNormalizer::isEquivalent`
 
@@ -884,4 +884,4 @@ Guzzle is made available under the MIT License (MIT). Please see [License File](
 
 Available as part of the Tidelift Subscription
 
-The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-psr7?utm_source=packagist-guzzlehttp-psr7&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-psr7utm_source=packagist-guzzlehttp-psr7&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)

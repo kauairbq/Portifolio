@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Generic EC Key Parsing Helper functions
@@ -124,7 +124,7 @@ trait Common
                 'sect193r2' => '1.3.132.0.25',
                 'sect239k1' => '1.3.132.0.3',
 
-                // from http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.202.2977&rep=rep1&type=pdf#page=36
+                // from http://citeseerx.ist.psu.edu/viewdoc/downloaddoi=10.1.1.202.2977&rep=rep1&type=pdf#page=36
                 /*
                 'c2pnb163v1' => '1.2.840.10045.3.0.1', // J.4.1, example 1
                 'c2pnb163v2' => '1.2.840.10045.3.0.2', // J.4.1, example 2
@@ -334,7 +334,7 @@ trait Common
     /**
      * Encode Parameters
      *
-     * @todo Maybe at some point this could be moved to __toString() for each of the curves?
+     * @todo Maybe at some point this could be moved to __toString() for each of the curves
      * @param BaseCurve $curve
      * @param bool $returnArray optional
      * @param array $options optional
@@ -342,7 +342,7 @@ trait Common
      */
     private static function encodeParameters(BaseCurve $curve, $returnArray = false, array $options = [])
     {
-        $useNamedCurves = isset($options['namedCurve']) ? $options['namedCurve'] : self::$useNamedCurves;
+        $useNamedCurves = isset($options['namedCurve'])  $options['namedCurve'] : self::$useNamedCurves;
 
         $reflect = new \ReflectionClass($curve);
         $name = $reflect->getShortName();
@@ -352,7 +352,7 @@ trait Common
                     $reflect = $reflect->getParentClass();
                     $name = $reflect->getShortName();
                 }
-                return $returnArray ?
+                return $returnArray 
                     ['namedCurve' => $name] :
                     ASN1::encodeDER(['namedCurve' => $name], Maps\ECParameters::MAP);
             }
@@ -391,7 +391,7 @@ trait Common
                             break;
                         }
 
-                        return $returnArray ?
+                        return $returnArray 
                             ['namedCurve' => $testName] :
                             ASN1::encodeDER(['namedCurve' => $testName], Maps\ECParameters::MAP);
                     case 'Binary':
@@ -417,7 +417,7 @@ trait Common
                             break;
                         }
 
-                        return $returnArray ?
+                        return $returnArray 
                             ['namedCurve' => $testName] :
                             ASN1::encodeDER(['namedCurve' => $testName], Maps\ECParameters::MAP);
                 }
@@ -462,7 +462,7 @@ trait Common
                 'order' => $order
             ];
 
-            return $returnArray ?
+            return $returnArray 
                 ['specifiedCurve' => $data] :
                 ASN1::encodeDER(['specifiedCurve' => $data], Maps\ECParameters::MAP);
         }
@@ -516,7 +516,7 @@ trait Common
                 'order' => $order
             ];
 
-            return $returnArray ?
+            return $returnArray 
                 ['specifiedCurve' => $data] :
                 ASN1::encodeDER(['specifiedCurve' => $data], Maps\ECParameters::MAP);
         }

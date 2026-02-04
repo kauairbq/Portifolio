@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * PKCS#8 Formatted Key Handler
@@ -138,7 +138,7 @@ abstract class PKCS8 extends PKCS
      */
     private static function getPBES1EncryptionObject($algo)
     {
-        $algo = preg_match('#^pbeWith(?:MD2|MD5|SHA1|SHA)And(.*?)-CBC$#', $algo, $matches) ?
+        $algo = preg_match('#^pbeWith(:MD2|MD5|SHA1|SHA)And(.*)-CBC$#', $algo, $matches) 
             $matches[1] :
             substr($algo, 13); // strlen('pbeWithSHAAnd') == 13
 
@@ -188,8 +188,8 @@ abstract class PKCS8 extends PKCS
      */
     private static function getPBES1Hash($algo)
     {
-        if (preg_match('#^pbeWith(MD2|MD5|SHA1|SHA)And.*?-CBC$#', $algo, $matches)) {
-            return $matches[1] == 'SHA' ? 'sha1' : $matches[1];
+        if (preg_match('#^pbeWith(MD2|MD5|SHA1|SHA)And.*-CBC$#', $algo, $matches)) {
+            return $matches[1] == 'SHA'  'sha1' : $matches[1];
         }
 
         return 'sha1';
@@ -262,7 +262,7 @@ abstract class PKCS8 extends PKCS
         }
 
         if (!static::$childOIDsLoaded) {
-            ASN1::loadOIDs(is_array(static::OID_NAME) ?
+            ASN1::loadOIDs(is_array(static::OID_NAME) 
                 array_combine(static::OID_NAME, static::OID_VALUE) :
                 [static::OID_NAME => static::OID_VALUE]);
             static::$childOIDsLoaded = true;
@@ -561,7 +561,7 @@ abstract class PKCS8 extends PKCS
         $key = [
             'version' => 'v1',
             'privateKeyAlgorithm' => [
-                'algorithm' => is_string(static::OID_NAME) ? static::OID_NAME : $oid
+                'algorithm' => is_string(static::OID_NAME)  static::OID_NAME : $oid
              ],
             'privateKey' => $key
         ];
@@ -579,10 +579,10 @@ abstract class PKCS8 extends PKCS
         if (!empty($password) && is_string($password)) {
             $salt = Random::string(8);
 
-            $iterationCount = isset($options['iterationCount']) ? $options['iterationCount'] : self::$defaultIterationCount;
-            $encryptionAlgorithm = isset($options['encryptionAlgorithm']) ? $options['encryptionAlgorithm'] : self::$defaultEncryptionAlgorithm;
-            $encryptionScheme = isset($options['encryptionScheme']) ? $options['encryptionScheme'] : self::$defaultEncryptionScheme;
-            $prf = isset($options['PRF']) ? $options['PRF'] : self::$defaultPRF;
+            $iterationCount = isset($options['iterationCount'])  $options['iterationCount'] : self::$defaultIterationCount;
+            $encryptionAlgorithm = isset($options['encryptionAlgorithm'])  $options['encryptionAlgorithm'] : self::$defaultEncryptionAlgorithm;
+            $encryptionScheme = isset($options['encryptionScheme'])  $options['encryptionScheme'] : self::$defaultEncryptionScheme;
+            $prf = isset($options['PRF'])  $options['PRF'] : self::$defaultPRF;
 
             if ($encryptionAlgorithm == 'id-PBES2') {
                 $crypto = self::getPBES2EncryptionObject($encryptionScheme);
@@ -645,7 +645,7 @@ abstract class PKCS8 extends PKCS
 
             $key = ASN1::encodeDER($key, Maps\EncryptedPrivateKeyInfo::MAP);
 
-            if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+            if (isset($options['binary'])  $options['binary'] : self::$binary) {
                 return $key;
             }
 
@@ -654,7 +654,7 @@ abstract class PKCS8 extends PKCS
                    "-----END ENCRYPTED PRIVATE KEY-----";
         }
 
-        if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+        if (isset($options['binary'])  $options['binary'] : self::$binary) {
             return $key;
         }
 
@@ -677,7 +677,7 @@ abstract class PKCS8 extends PKCS
 
         $key = [
             'publicKeyAlgorithm' => [
-                'algorithm' => is_string(static::OID_NAME) ? static::OID_NAME : $oid
+                'algorithm' => is_string(static::OID_NAME)  static::OID_NAME : $oid
             ],
             'publicKey' => "\0" . $key
         ];
@@ -688,7 +688,7 @@ abstract class PKCS8 extends PKCS
 
         $key = ASN1::encodeDER($key, Maps\PublicKeyInfo::MAP);
 
-        if (isset($options['binary']) ? $options['binary'] : self::$binary) {
+        if (isset($options['binary'])  $options['binary'] : self::$binary) {
             return $key;
         }
 

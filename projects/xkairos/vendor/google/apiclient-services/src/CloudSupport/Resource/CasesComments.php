@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -40,7 +40,7 @@ class CasesComments extends \Google\Service\Resource
    * import googleapiclient.discovery api_version = "v2" supportApiService =
    * googleapiclient.discovery.build( serviceName="cloudsupport",
    * version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.co
-   * m/$discovery/rest?version={api_version}", ) request = (
+   * m/$discovery/restversion={api_version}", ) request = (
    * supportApiService.cases() .comments() .create( parent="projects/some-
    * project/cases/43595344", body={"body": "This is a test comment."}, ) )
    * print(request.execute()) ``` (comments.create)
@@ -66,7 +66,7 @@ class CasesComments extends \Google\Service\Resource
    * import googleapiclient.discovery api_version = "v2" supportApiService =
    * googleapiclient.discovery.build( serviceName="cloudsupport",
    * version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.co
-   * m/$discovery/rest?version={api_version}", ) request = (
+   * m/$discovery/restversion={api_version}", ) request = (
    * supportApiService.cases() .comments() .list(parent="projects/some-
    * project/cases/43595344") ) print(request.execute()) ```
    * (comments.listCasesComments)

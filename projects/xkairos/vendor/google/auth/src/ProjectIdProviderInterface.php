@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2020 Google LLC
  *
@@ -28,5 +28,5 @@ interface ProjectIdProviderInterface
      * @param callable|null $httpHandler Callback which delivers psr7 request
      * @return string|null
      */
-    public function getProjectId(?callable $httpHandler = null);
+    public function getProjectId(callable $httpHandler = null);
 }

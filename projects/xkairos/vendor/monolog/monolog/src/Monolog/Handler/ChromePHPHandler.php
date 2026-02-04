@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -42,7 +42,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
     /**
      * Regular expression to detect supported browsers (matches any Chrome, or Firefox 43+)
      */
-    protected const USER_AGENT_REGEX = '{\b(?:Chrome/\d+(?:\.\d+)*|HeadlessChrome|Firefox/(?:4[3-9]|[5-9]\d|\d{3,})(?:\.\d)*)\b}';
+    protected const USER_AGENT_REGEX = '{\b(:Chrome/\d+(:\.\d+)*|HeadlessChrome|Firefox/(:4[3-9]|[5-9]\d|\d{3,})(:\.\d)*)\b}';
 
     protected static bool $initialized = false;
 
@@ -138,7 +138,7 @@ class ChromePHPHandler extends AbstractProcessingHandler
                 return;
             }
 
-            self::$json['request_uri'] = $_SERVER['REQUEST_URI'] ?? '';
+            self::$json['request_uri'] = $_SERVER['REQUEST_URI']  '';
         }
 
         $json = Utils::jsonEncode(self::$json, Utils::DEFAULT_JSON_FLAGS & ~JSON_UNESCAPED_UNICODE, true);

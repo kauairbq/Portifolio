@@ -1,4 +1,4 @@
-<?php
+<php
 include '../includes/config.php';
 session_start();
 if(!isset($_SESSION['cliente_id'])){
@@ -8,10 +8,10 @@ $cliente_id = $_SESSION['cliente_id'];
 $cliente_nome = $_SESSION['cliente_nome'];
 
 // Buscar solicitações do cliente
-$stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE cliente_id = ? ORDER BY data_solicitacao DESC');
+$stmt = $pdo->prepare('SELECT * FROM solicitacoes WHERE cliente_id =  ORDER BY data_solicitacao DESC');
 $stmt->execute([$cliente_id]);
 $solicitacoes = $stmt->fetchAll();
-?>
+>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -271,7 +271,7 @@ $solicitacoes = $stmt->fetchAll();
                 <div class="user-info">
                     <div class="user-menu">
                         <button class="user-menu-btn" onclick="toggleUserMenu()">
-                            <i class="fas fa-user"></i> <?php echo htmlspecialchars($cliente_nome); ?>
+                            <i class="fas fa-user"></i> <php echo htmlspecialchars($cliente_nome); >
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="user-dropdown" id="userDropdown">
@@ -300,13 +300,13 @@ $solicitacoes = $stmt->fetchAll();
                     </a>
                 </div>
 
-                <?php if (empty($solicitacoes)): ?>
+                <php if (empty($solicitacoes)): >
                     <div class="no-solicitacoes">
                         <i class="fas fa-inbox fa-3x" style="color: rgba(255, 255, 255, 0.3); margin-bottom: 20px;"></i>
                         <p>Você ainda não fez nenhuma solicitação.</p>
                         <p>Clique em "Nova Solicitação" para começar!</p>
                     </div>
-                <?php else: ?>
+                <php else: >
                     <table class="solicitacoes-table">
                         <thead>
                             <tr>
@@ -319,61 +319,61 @@ $solicitacoes = $stmt->fetchAll();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($solicitacoes as $solicitacao): ?>
+                            <php foreach ($solicitacoes as $solicitacao): >
                                 <tr>
-                                    <td>#<?php echo $solicitacao['id']; ?></td>
-                                    <td><?php echo date('d/m/Y', strtotime($solicitacao['data_solicitacao'])); ?></td>
-                                    <td><?php echo htmlspecialchars($solicitacao['tipo_servico'] ?: 'Montagem PC'); ?></td>
-                                    <td>€<?php echo number_format($solicitacao['total'], 2, ',', '.'); ?></td>
+                                    <td>#<php echo $solicitacao['id']; ></td>
+                                    <td><php echo date('d/m/Y', strtotime($solicitacao['data_solicitacao'])); ></td>
+                                    <td><php echo htmlspecialchars($solicitacao['tipo_servico'] : 'Montagem PC'); ></td>
+                                    <td>€<php echo number_format($solicitacao['total'], 2, ',', '.'); ></td>
                                     <td>
-                                        <span class="status-badge status-<?php echo strtolower($solicitacao['status']); ?>">
-                                            <?php echo htmlspecialchars($solicitacao['status']); ?>
+                                        <span class="status-badge status-<php echo strtolower($solicitacao['status']); >">
+                                            <php echo htmlspecialchars($solicitacao['status']); >
                                         </span>
                                     </td>
                                     <td>
-                                        <button class="expand-btn" id="btn-<?php echo $solicitacao['id']; ?>" onclick="toggleDetails(<?php echo $solicitacao['id']; ?>)">
+                                        <button class="expand-btn" id="btn-<php echo $solicitacao['id']; >" onclick="toggleDetails(<php echo $solicitacao['id']; >)">
                                             <i class="fas fa-chevron-down"></i> Ver Detalhes
                                         </button>
                                     </td>
                                 </tr>
-                                <tr id="details-<?php echo $solicitacao['id']; ?>" style="display: none;">
+                                <tr id="details-<php echo $solicitacao['id']; >" style="display: none;">
                                     <td colspan="6">
                                         <div class="solicitacao-details">
                                             <div class="detail-row">
                                                 <span class="detail-label">CPU:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['cpu'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['cpu'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">GPU:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['gpu'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['gpu'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">RAM:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['ram'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['ram'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">Armazenamento:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['ssd'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['ssd'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">Placa Mãe:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['placa_mae'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['placa_mae'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">Fonte:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['cooler'] ?: 'N/A'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['cooler'] : 'N/A'); ></span>
                                             </div>
                                             <div class="detail-row">
                                                 <span class="detail-label">Observações:</span>
-                                                <span class="detail-value"><?php echo htmlspecialchars($solicitacao['observacoes'] ?: 'Nenhuma'); ?></span>
+                                                <span class="detail-value"><php echo htmlspecialchars($solicitacao['observacoes'] : 'Nenhuma'); ></span>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <php endforeach; >
                         </tbody>
                     </table>
-                <?php endif; ?>
+                <php endif; >
             </section>
         </main>
     </div>

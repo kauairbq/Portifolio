@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace Psr\Cache;
 
@@ -77,7 +77,7 @@ interface CacheItemInterface
     /**
      * Sets the expiration time for this cache item.
      *
-     * @param ?\DateTimeInterface $expiration
+     * @param \DateTimeInterface $expiration
      *   The point in time after which the item MUST be considered expired.
      *   If null is passed explicitly, a default value MAY be used. If none is set,
      *   the value should be stored permanently or for as long as the
@@ -86,7 +86,7 @@ interface CacheItemInterface
      * @return static
      *   The called object.
      */
-    public function expiresAt(?\DateTimeInterface $expiration): static;
+    public function expiresAt(\DateTimeInterface $expiration): static;
 
     /**
      * Sets the expiration time for this cache item.

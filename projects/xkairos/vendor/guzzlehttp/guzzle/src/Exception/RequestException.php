@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Exception;
 
@@ -31,12 +31,12 @@ class RequestException extends TransferException implements RequestExceptionInte
     public function __construct(
         string $message,
         RequestInterface $request,
-        ?ResponseInterface $response = null,
-        ?\Throwable $previous = null,
+        ResponseInterface $response = null,
+        \Throwable $previous = null,
         array $handlerContext = []
     ) {
         // Set the code of the exception if the response is set and not future.
-        $code = $response ? $response->getStatusCode() : 0;
+        $code = $response  $response->getStatusCode() : 0;
         parent::__construct($message, $code, $previous);
         $this->request = $request;
         $this->response = $response;
@@ -48,7 +48,7 @@ class RequestException extends TransferException implements RequestExceptionInte
      */
     public static function wrapException(RequestInterface $request, \Throwable $e): RequestException
     {
-        return $e instanceof RequestException ? $e : new RequestException($e->getMessage(), $request, null, $e);
+        return $e instanceof RequestException  $e : new RequestException($e->getMessage(), $request, null, $e);
     }
 
     /**
@@ -62,10 +62,10 @@ class RequestException extends TransferException implements RequestExceptionInte
      */
     public static function create(
         RequestInterface $request,
-        ?ResponseInterface $response = null,
-        ?\Throwable $previous = null,
+        ResponseInterface $response = null,
+        \Throwable $previous = null,
         array $handlerContext = [],
-        ?BodySummarizerInterface $bodySummarizer = null
+        BodySummarizerInterface $bodySummarizer = null
     ): self {
         if (!$response) {
             return new self(
@@ -102,7 +102,7 @@ class RequestException extends TransferException implements RequestExceptionInte
             $response->getReasonPhrase()
         );
 
-        $summary = ($bodySummarizer ?? new BodySummarizer())->summarize($response);
+        $summary = ($bodySummarizer  new BodySummarizer())->summarize($response);
 
         if ($summary !== null) {
             $message .= ":\n{$summary}\n";
@@ -122,7 +122,7 @@ class RequestException extends TransferException implements RequestExceptionInte
     /**
      * Get the associated response
      */
-    public function getResponse(): ?ResponseInterface
+    public function getResponse(): ResponseInterface
     {
         return $this->response;
     }

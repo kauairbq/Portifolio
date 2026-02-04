@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -78,7 +78,7 @@ class OrganizationsApiproducts extends \Google\Service\Resource
    * app associated with the product can make calls to *any* API in your entire
    * organization. - If you don't specify an environment in the request body, the
    * product allows access to all environments. For more information, see What is
-   * an API product? (apiproducts.create)
+   * an API product (apiproducts.create)
    *
    * @param string $parent Required. Name of the organization in which the API
    * product will be created. Use the following structure in your request:

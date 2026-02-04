@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -51,8 +51,8 @@ class Groupssettings extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
-    $this->rootUrlTemplate = $rootUrl ?: 'https://www.UNIVERSE_DOMAIN/';
+    $this->rootUrl = $rootUrl : 'https://www.googleapis.com/';
+    $this->rootUrlTemplate = $rootUrl : 'https://www.UNIVERSE_DOMAIN/';
     $this->servicePath = 'groups/v1/groups/';
     $this->batchPath = 'batch/groupssettings/v1';
     $this->version = 'v1';

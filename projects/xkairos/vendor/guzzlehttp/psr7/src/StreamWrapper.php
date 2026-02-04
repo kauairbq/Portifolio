@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -36,7 +36,7 @@ final class StreamWrapper
         self::register();
 
         if ($stream->isReadable()) {
-            $mode = $stream->isWritable() ? 'r+' : 'r';
+            $mode = $stream->isWritable()  'r+' : 'r';
         } elseif ($stream->isWritable()) {
             $mode = 'w';
         } else {
@@ -69,7 +69,7 @@ final class StreamWrapper
         }
     }
 
-    public function stream_open(string $path, string $mode, int $options, ?string &$opened_path = null): bool
+    public function stream_open(string $path, string $mode, int $options, string &$opened_path = null): bool
     {
         $options = stream_context_get_options($this->context);
 
@@ -118,7 +118,7 @@ final class StreamWrapper
         $stream = clone $this->stream;
         $resource = $stream->detach();
 
-        return $resource ?? false;
+        return $resource  false;
     }
 
     /**
@@ -160,7 +160,7 @@ final class StreamWrapper
             'uid' => 0,
             'gid' => 0,
             'rdev' => 0,
-            'size' => $this->stream->getSize() ?: 0,
+            'size' => $this->stream->getSize() : 0,
             'atime' => 0,
             'mtime' => 0,
             'ctime' => 0,

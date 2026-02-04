@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of EC.
@@ -7,7 +7,7 @@
  *
  * Here's an example of how to create signatures and verify signatures with this library:
  * <code>
- * <?php
+ * <php
  * include 'vendor/autoload.php';
  *
  * $private = \phpseclib3\Crypt\EC::createKey('secp256k1');
@@ -17,8 +17,8 @@
  *
  * $signature = $private->sign($plaintext);
  *
- * echo $public->verify($plaintext, $signature) ? 'verified' : 'unverified';
- * ?>
+ * echo $public->verify($plaintext, $signature)  'verified' : 'unverified';
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -165,7 +165,7 @@ abstract class EC extends AsymmetricKey
         $privatekey = new PrivateKey();
 
         $curveName = $curve;
-        if (preg_match('#(?:^curve|^ed)\d+$#', $curveName)) {
+        if (preg_match('#(:^curve|^ed)\d+$#', $curveName)) {
             $curveName = ucfirst($curveName);
         } elseif (substr($curveName, 0, 10) == 'brainpoolp') {
             $curveName = 'brainpoolP' . substr($curveName, 10);
@@ -177,13 +177,13 @@ abstract class EC extends AsymmetricKey
         }
 
         $reflect = new \ReflectionClass($curve);
-        $curveName = $reflect->isFinal() ?
+        $curveName = $reflect->isFinal() 
             $reflect->getParentClass()->getShortName() :
             $reflect->getShortName();
 
         $curve = new $curve();
         if ($curve instanceof TwistedEdwardsCurve) {
-            $arr = $curve->extractSecret(Random::string($curve instanceof Ed448 ? 57 : 32));
+            $arr = $curve->extractSecret(Random::string($curve instanceof Ed448  57 : 32));
             $privatekey->dA = $dA = $arr['dA'];
             $privatekey->secret = $arr['secret'];
         } else {
@@ -230,7 +230,7 @@ abstract class EC extends AsymmetricKey
             return $new;
         }
 
-        $new = isset($components['dA']) ?
+        $new = isset($components['dA']) 
             new PrivateKey() :
             new PublicKey();
         $new->curve = $components['curve'];
@@ -275,12 +275,12 @@ abstract class EC extends AsymmetricKey
         }
 
         if ($this->curve instanceof MontgomeryCurve) {
-            $this->curveName = $this->curve instanceof Curve25519 ? 'Curve25519' : 'Curve448';
+            $this->curveName = $this->curve instanceof Curve25519  'Curve25519' : 'Curve448';
             return $this->curveName;
         }
 
         if ($this->curve instanceof TwistedEdwardsCurve) {
-            $this->curveName = $this->curve instanceof Ed25519 ? 'Ed25519' : 'Ed448';
+            $this->curveName = $this->curve instanceof Ed25519  'Ed25519' : 'Ed448';
             return $this->curveName;
         }
 
@@ -333,11 +333,11 @@ abstract class EC extends AsymmetricKey
             self::useBestEngine();
         }
         if ($this->curve instanceof TwistedEdwardsCurve) {
-            return $this->curve instanceof Ed25519 && self::$engines['libsodium'] && !isset($this->context) ?
+            return $this->curve instanceof Ed25519 && self::$engines['libsodium'] && !isset($this->context) 
                 'libsodium' : 'PHP';
         }
 
-        return self::$engines['OpenSSL'] && in_array($this->hash->getHash(), openssl_get_md_methods()) ?
+        return self::$engines['OpenSSL'] && in_array($this->hash->getHash(), openssl_get_md_methods()) 
             'OpenSSL' : 'PHP';
     }
 

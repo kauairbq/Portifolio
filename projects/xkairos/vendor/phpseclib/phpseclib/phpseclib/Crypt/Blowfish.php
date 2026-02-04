@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of Blowfish.
@@ -94,7 +94,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $blowfish = new \phpseclib3\Crypt\Blowfish('ctr');
@@ -104,7 +104,7 @@
  *    $plaintext = str_repeat('a', 1024);
  *
  *    echo $blowfish->decrypt($blowfish->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>
@@ -628,7 +628,7 @@ class Blowfish extends BlockCipher
         // @codingStandardsIgnoreEnd
 
         list($sbox[0], $sbox[1]) = self::encryptBlockHelperFast($data[2] ^ $p[16], $data[3] ^ $p[17], $sbox, $p);
-        for ($i = 2, $j = 4; $i < 1024; $i += 2, $j = ($j + 2) % 16) { // instead of 16 maybe count($data) would be better?
+        for ($i = 2, $j = 4; $i < 1024; $i += 2, $j = ($j + 2) % 16) { // instead of 16 maybe count($data) would be better
             list($sbox[$i], $sbox[$i + 1]) = self::encryptBlockHelperFast($data[$j] ^ $sbox[$i - 2], $data[$j + 1] ^ $sbox[$i - 1], $sbox, $p);
         }
     }
@@ -649,7 +649,7 @@ class Blowfish extends BlockCipher
         $l = $in[1];
         $r = $in[2];
 
-        list($r, $l) = PHP_INT_SIZE == 4 ?
+        list($r, $l) = PHP_INT_SIZE == 4 
             self::encryptBlockHelperSlow($l, $r, $sb, $p) :
             self::encryptBlockHelperFast($l, $r, $sb, $p);
 

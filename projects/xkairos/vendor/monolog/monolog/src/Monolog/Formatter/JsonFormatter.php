@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -76,7 +76,7 @@ class JsonFormatter extends NormalizerFormatter
     {
         $normalized = $this->normalizeRecord($record);
 
-        return $this->toJson($normalized, true) . ($this->appendNewline ? "\n" : '');
+        return $this->toJson($normalized, true) . ($this->appendNewline  "\n" : '');
     }
 
     /**

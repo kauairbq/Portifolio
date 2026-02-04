@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -111,7 +111,7 @@ class NativeMailerHandler extends MailHandler
      */
     protected function send(string $content, array $records): void
     {
-        $contentType = $this->getContentType() ?? ($this->isHtmlBody($content) ? 'text/html' : 'text/plain');
+        $contentType = $this->getContentType()  ($this->isHtmlBody($content)  'text/html' : 'text/plain');
 
         if ($contentType !== 'text/html') {
             $content = wordwrap($content, $this->maxColumnWidth);
@@ -132,7 +132,7 @@ class NativeMailerHandler extends MailHandler
         }
     }
 
-    public function getContentType(): ?string
+    public function getContentType(): string
     {
         return $this->contentType;
     }

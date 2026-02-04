@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * RC2CBCParameter

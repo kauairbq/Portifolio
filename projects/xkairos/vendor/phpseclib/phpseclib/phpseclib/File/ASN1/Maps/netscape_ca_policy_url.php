@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * netscape_ca_policy_url

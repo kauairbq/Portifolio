@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * "PKCS1" Formatted EC Key Handler

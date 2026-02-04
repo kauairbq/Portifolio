@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2015 Google Inc.
  *
@@ -75,7 +75,7 @@ class UserRefreshCredentials extends CredentialsLoader implements GetQuotaProjec
     public function __construct(
         $scope,
         $jsonKey,
-        ?string $targetAudience = null
+        string $targetAudience = null
     ) {
         if (is_string($jsonKey)) {
             if (!file_exists($jsonKey)) {
@@ -141,11 +141,11 @@ class UserRefreshCredentials extends CredentialsLoader implements GetQuotaProjec
      *     @type string $id_token
      * }
      */
-    public function fetchAuthToken(?callable $httpHandler = null, array $headers = [])
+    public function fetchAuthToken(callable $httpHandler = null, array $headers = [])
     {
         return $this->auth->fetchAuthToken(
             $httpHandler,
-            $this->applyTokenEndpointMetrics($headers, $this->isIdTokenRequest ? 'it' : 'at')
+            $this->applyTokenEndpointMetrics($headers, $this->isIdTokenRequest  'it' : 'at')
         );
     }
 

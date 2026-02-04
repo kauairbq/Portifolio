@@ -1,4 +1,4 @@
-<?php
+<php
 /*
  * Copyright 2014 Google Inc.
  *
@@ -55,7 +55,7 @@ class Webmasters extends \Google\Service
   public function __construct($clientOrConfig = [], $rootUrl = null)
   {
     parent::__construct($clientOrConfig);
-    $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
+    $this->rootUrl = $rootUrl : 'https://www.googleapis.com/';
     $this->servicePath = 'webmasters/v3/';
     $this->batchPath = 'batch/webmasters/v3';
     $this->version = 'v3';

@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -36,9 +36,9 @@ class NormalizerFormatter implements FormatterInterface
     /**
      * @param string|null $dateFormat The format of the timestamp: one supported by DateTime::format
      */
-    public function __construct(?string $dateFormat = null)
+    public function __construct(string $dateFormat = null)
     {
-        $this->dateFormat = null === $dateFormat ? static::SIMPLE_DATE : $dateFormat;
+        $this->dateFormat = null === $dateFormat  static::SIMPLE_DATE : $dateFormat;
     }
 
     /**
@@ -181,7 +181,7 @@ class NormalizerFormatter implements FormatterInterface
         if (null === $data || \is_scalar($data)) {
             if (\is_float($data)) {
                 if (is_infinite($data)) {
-                    return ($data > 0 ? '' : '-') . 'INF';
+                    return ($data > 0  '' : '-') . 'INF';
                 }
                 if (is_nan($data)) {
                     return 'NaN';

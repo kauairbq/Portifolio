@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -39,15 +39,15 @@ final class PumpStream implements StreamInterface
      *                                                     amount of data to return. The callable MUST
      *                                                     return a string when called, or false|null on error
      *                                                     or EOF.
-     * @param array{size?: int, metadata?: array} $options Stream options:
+     * @param array{size: int, metadata: array} $options Stream options:
      *                                                     - metadata: Hash of metadata to use with stream.
      *                                                     - size: Size of the stream, if known.
      */
     public function __construct(callable $source, array $options = [])
     {
         $this->source = $source;
-        $this->size = $options['size'] ?? null;
-        $this->metadata = $options['metadata'] ?? [];
+        $this->size = $options['size']  null;
+        $this->metadata = $options['metadata']  [];
         $this->buffer = new BufferStream();
     }
 
@@ -78,7 +78,7 @@ final class PumpStream implements StreamInterface
         return null;
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         return $this->size;
     }
@@ -158,7 +158,7 @@ final class PumpStream implements StreamInterface
             return $this->metadata;
         }
 
-        return $this->metadata[$key] ?? null;
+        return $this->metadata[$key]  null;
     }
 
     private function pump(int $length): void

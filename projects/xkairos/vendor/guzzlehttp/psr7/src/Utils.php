@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -197,11 +197,11 @@ final class Utils
 
         if ($request instanceof ServerRequestInterface) {
             $new = (new ServerRequest(
-                $changes['method'] ?? $request->getMethod(),
+                $changes['method']  $request->getMethod(),
                 $uri,
                 $headers,
-                $changes['body'] ?? $request->getBody(),
-                $changes['version'] ?? $request->getProtocolVersion(),
+                $changes['body']  $request->getBody(),
+                $changes['version']  $request->getProtocolVersion(),
                 $request->getServerParams()
             ))
             ->withParsedBody($request->getParsedBody())
@@ -217,11 +217,11 @@ final class Utils
         }
 
         return new Request(
-            $changes['method'] ?? $request->getMethod(),
+            $changes['method']  $request->getMethod(),
             $uri,
             $headers,
-            $changes['body'] ?? $request->getBody(),
-            $changes['version'] ?? $request->getProtocolVersion()
+            $changes['body']  $request->getBody(),
+            $changes['version']  $request->getProtocolVersion()
         );
     }
 
@@ -231,7 +231,7 @@ final class Utils
      * @param StreamInterface $stream    Stream to read from
      * @param int|null        $maxLength Maximum buffer length
      */
-    public static function readLine(StreamInterface $stream, ?int $maxLength = null): string
+    public static function readLine(StreamInterface $stream, int $maxLength = null): string
     {
         $buffer = '';
         $size = 0;
@@ -294,7 +294,7 @@ final class Utils
      *   buffered and used in subsequent reads.
      *
      * @param resource|string|int|float|bool|StreamInterface|callable|\Iterator|null $resource Entity body data
-     * @param array{size?: int, metadata?: array}                                    $options  Additional options
+     * @param array{size: int, metadata: array}                                    $options  Additional options
      *
      * @throws \InvalidArgumentException if the $resource arg is not valid.
      */
@@ -318,7 +318,7 @@ final class Utils
                  */
 
                 /** @var resource $resource */
-                if ((\stream_get_meta_data($resource)['uri'] ?? '') === 'php://input') {
+                if ((\stream_get_meta_data($resource)['uri']  '') === 'php://input') {
                     $stream = self::tryFopen('php://temp', 'w+');
                     stream_copy_to_stream($resource, $stream);
                     fseek($stream, 0);

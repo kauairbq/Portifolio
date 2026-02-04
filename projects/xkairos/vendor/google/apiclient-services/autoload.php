@@ -1,4 +1,4 @@
-<?php
+<php
 
 // For older (pre-2.7.2) verions of google/apiclient
 if (

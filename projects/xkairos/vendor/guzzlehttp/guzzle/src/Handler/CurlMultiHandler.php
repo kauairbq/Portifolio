@@ -1,4 +1,4 @@
-<?php
+<php
 
 namespace GuzzleHttp\Handler;
 
@@ -68,7 +68,7 @@ class CurlMultiHandler
      */
     public function __construct(array $options = [])
     {
-        $this->factory = $options['handle_factory'] ?? new CurlFactory(50);
+        $this->factory = $options['handle_factory']  new CurlFactory(50);
 
         if (isset($options['select_timeout'])) {
             $this->selectTimeout = $options['select_timeout'];
@@ -79,7 +79,7 @@ class CurlMultiHandler
             $this->selectTimeout = 1;
         }
 
-        $this->options = $options['options'] ?? [];
+        $this->options = $options['options']  [];
 
         // unsetting the property forces the first access to go through
         // __get().
@@ -168,7 +168,7 @@ class CurlMultiHandler
 
         if ($this->active && \curl_multi_select($this->_mh, $this->selectTimeout) === -1) {
             // Perform a usleep if a select returns -1.
-            // See: https://bugs.php.net/bug.php?id=61141
+            // See: https://bugs.php.net/bug.phpid=61141
             \usleep(250);
         }
 

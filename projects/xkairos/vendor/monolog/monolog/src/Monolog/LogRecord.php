@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -119,7 +119,7 @@ class LogRecord implements ArrayAccess
     public function with(mixed ...$args): self
     {
         foreach (['message', 'context', 'level', 'channel', 'datetime', 'extra'] as $prop) {
-            $args[$prop] ??= $this->{$prop};
+            $args[$prop] = $this->{$prop};
         }
 
         return new self(...$args);

@@ -1,4 +1,4 @@
-<?php
+<php
 
 /**
  * Pure-PHP implementation of DES.
@@ -15,7 +15,7 @@
  *
  * Here's a short example of how to use this library:
  * <code>
- * <?php
+ * <php
  *    include 'vendor/autoload.php';
  *
  *    $des = new \phpseclib3\Crypt\DES('ctr');
@@ -29,7 +29,7 @@
  *    }
  *
  *    echo $des->decrypt($des->encrypt($plaintext));
- * ?>
+ * >
  * </code>
  *
  * @author    Jim Wigginton <terrafrost@php.net>

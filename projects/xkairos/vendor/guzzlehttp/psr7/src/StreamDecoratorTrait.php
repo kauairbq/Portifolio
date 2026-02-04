@@ -1,4 +1,4 @@
-<?php
+<php
 
 declare(strict_types=1);
 
@@ -73,7 +73,7 @@ trait StreamDecoratorTrait
         $result = ($callable)(...$args);
 
         // Always return the wrapped object if the result is a return $this
-        return $result === $this->stream ? $this : $result;
+        return $result === $this->stream  $this : $result;
     }
 
     public function close(): void
@@ -94,7 +94,7 @@ trait StreamDecoratorTrait
         return $this->stream->detach();
     }
 
-    public function getSize(): ?int
+    public function getSize(): int
     {
         return $this->stream->getSize();
     }

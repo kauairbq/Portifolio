@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<php declare(strict_types=1);
 
 /*
  * This file is part of the Monolog package.
@@ -36,7 +36,7 @@ class FallbackGroupHandler extends GroupHandler
                 $handler->handle(clone $record);
                 break;
             } catch (Throwable $e) {
-                // What throwable?
+                // What throwable
             }
         }
 
@@ -61,7 +61,7 @@ class FallbackGroupHandler extends GroupHandler
                 $handler->handleBatch(array_map(fn ($record) => clone $record, $records));
                 break;
             } catch (Throwable $e) {
-                // What throwable?
+                // What throwable
             }
         }
     }
