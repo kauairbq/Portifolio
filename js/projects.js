@@ -109,8 +109,12 @@ function createProjectCard(project, index) {
     const requiresServer = project.requiresServer === true;
     const githubFallback = getGitHubFallback(project);
 
+    const imageSrc = project.image
+        ? (project.image.startsWith('http') || project.image.startsWith('/') ? project.image : `/${project.image}`)
+        : '/assets/img/projects/placeholder.png';
+
     card.innerHTML = `
-        <img src="${project.image}" alt="${project.title}" loading="lazy">
+        <img src="${imageSrc}" alt="${project.title}" loading="lazy" onerror="this.src='/assets/img/projects/placeholder.png'">
         <div class="project-card-content">
             <h3>${project.title}</h3>
             <p>${project.description}</p>
