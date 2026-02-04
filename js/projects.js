@@ -217,7 +217,11 @@ function createFilterButtons() {
     `;
 
     const projectsGrid = document.getElementById('projects-grid');
-    projectsSection.insertBefore(filterContainer, projectsGrid);
+    if (projectsGrid && projectsGrid.parentNode) {
+        projectsGrid.parentNode.insertBefore(filterContainer, projectsGrid);
+    } else {
+        projectsSection.appendChild(filterContainer);
+    }
 }
 
 // Filtrar projetos
