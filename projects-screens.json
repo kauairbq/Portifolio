@@ -1,0 +1,97 @@
+[
+  {
+    "id": 100,
+    "title": "E-commerce Completo (React + Node.js)",
+    "link": "projects/ecommerce/frontend/ecommerce-frontend/build/index.html"
+  },
+  {
+    "id": 13,
+    "title": "CRM LookCar (Vue + Express)",
+    "link": "projects/crm-lookcar/client/dist/index.html"
+  },
+  {
+    "id": 14,
+    "title": "Xkairos Tech",
+    "link": "projects/xkairos/index.php"
+  },
+  {
+    "id": 101,
+    "title": "SmartConnect Home",
+    "link": "projects/smartconnect-home/index.html"
+  },
+  {
+    "id": "Calculadora de Media de Notas",
+    "title": "Calculadora de Media de Notas",
+    "link": "calculadora-media.html"
+  },
+  {
+    "id": 11,
+    "title": "Contador de Cliques",
+    "link": "projects/contador de cliques/index.html"
+  },
+  {
+    "id": 99,
+    "title": "Site da Banda Rock Band",
+    "link": "projects/banda/index.html"
+  },
+  {
+    "id": 3,
+    "title": "Dashboard Analytics",
+    "link": "projects/Dashboard Analytics/index.html"
+  },
+  {
+    "id": 4,
+    "title": "Blog Pessoal",
+    "link": "projects/Blog Pessoal/index.html"
+  },
+  {
+    "id": 5,
+    "title": "Jogo da Memoria",
+    "link": "projects/jogo da memoria/index.html"
+  },
+  {
+    "id": 6,
+    "title": "API REST para Gestao",
+    "link": "projects/API REST para Gestao/swagger.html"
+  },
+  {
+    "id": 7,
+    "title": "Landing Page Institucional",
+    "link": "projects/Landing Page Institucional/index.html"
+  },
+  {
+    "id": 8,
+    "title": "Sistema de Chat em Tempo Real",
+    "link": "projects/Sistema de Chat em Tempo Real/public/index.html"
+  },
+  {
+    "id": 12,
+    "title": "Catalogo de Produtos (POO + API)",
+    "link": "projects/sistema-gestao-catalogo-produtos/index.html"
+  },
+  {
+    "id": 10,
+    "title": "Aplicativo de Tarefas",
+    "link": "projects/todo-app/frontend/public/index.html"
+  },
+  {
+    "id": 15,
+    "title": "Site para Advogados",
+    "link": "projects/Site para Advogados/index.html"
+  },
+  {
+    "id": 102,
+    "title": "Gestao de Projetos (React + TS)",
+    "link": "projects/gestao-projetos-react-ts/dist/index.html"
+  },
+  {
+    "id": 104,
+    "title": "Personal Trainer (Landing)",
+    "link": "projects/personal-trainer/index.html"
+  },
+  {
+    "id": 105,
+    "title": "Stand Automoveis",
+    "link": "projects/lookcar-stand/index.html"
+  }
+]
