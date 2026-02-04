@@ -31,6 +31,16 @@
         "featured": false
     },
     {
+        "id": 101,
+        "title": "SmartConnect Home",
+        "description": "App de automacao residencial com perfis (admin/utilizador), packs modulares, dispositivos, suporte e auditoria.",
+        "image": "assets/img/projects/smartconnect-home.png",
+        "technologies": ["Flutter", "Firebase", "IoT", "MQTT", "Android", "iOS"],
+        "link": "projects/smartconnect-home/index.html",
+        "github": "",
+        "featured": false
+    },
+    {
         "id": 0,
         "title": "Calculadora de Media de Notas",
         "description": "Aplicacao web para calcular a media de notas com validacao de dados (0-20), lista de notas, estatisticas completas e interface responsiva com modo escuro.",

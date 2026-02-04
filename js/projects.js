@@ -11,7 +11,7 @@ let projectsData = [];
 // Carregar projetos do arquivo JSON
 async function loadProjects() {
     try {
-        const response = await fetch('data/projects.json');
+        const response = await fetch(`data/projects.json?v=${Date.now()}`);
         if (!response.ok) {
             throw new Error('Erro ao carregar projetos');
         }
