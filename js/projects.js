@@ -121,7 +121,7 @@ function createProjectCard(project, index) {
 
     const isInternalLink = !project.link.startsWith('http');
     const safeLink = isInternalLink ? encodeURI(project.link) : project.link;
-    const requiresServer = project.requiresServer === true;
+      const requiresServer = project.requiresServer === true;
     const githubFallback = getGitHubFallback(project);
 
     const imageSrc = project.image
@@ -145,23 +145,20 @@ function createProjectCard(project, index) {
 
     // Apenas o botão "Ver Projeto" controla a abertura
     const viewBtn = card.querySelector('.btn');
-    if (viewBtn) {
-        viewBtn.addEventListener('click', (e) => {
-            if (requiresServer) {
-                e.preventDefault();
-                alert('Este projeto precisa de servidor para funcionar. Vou abrir o repositorio no GitHub.');
-                if (githubFallback) {
-                    window.open(githubFallback, '_blank', 'noopener');
-                }
-                return;
-            }
-            if (!isInternalLink) {
-                e.preventDefault();
-                openProjectModal(project);
-            }
-            // links internos navegam pelo href normalmente
-        });
-    }
+      if (viewBtn) {
+          viewBtn.addEventListener('click', (e) => {
+              if (requiresServer && githubFallback && !isInternalLink) {
+                  e.preventDefault();
+                  window.open(githubFallback, '_blank', 'noopener');
+                  return;
+              }
+              if (!isInternalLink) {
+                  e.preventDefault();
+                  openProjectModal(project);
+              }
+              // links internos navegam pelo href normalmente
+          });
+      }
 
     card.addEventListener('mouseenter', () => addHoverEffect(card));
     card.addEventListener('mouseleave', () => removeHoverEffect(card));
