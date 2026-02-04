@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": 100,
     "title": "E-commerce Completo (React + Node.js)",
@@ -19,7 +19,7 @@
   {
     "id": 13,
     "title": "CRM LookCar (Vue + Express)",
-    "description": "CRM para leads de stand automotivo com paineis, gestao de clientes/negocios e importador de contactos.",
+    "description": "CRM para leads de stand automotivo com paineis, gest?o de clientes/negocios e importador de contactos.",
     "image": "assets/img/projects/covers/13.png",
     "technologies": [
       "Vue 3",
@@ -70,7 +70,7 @@
   {
     "id": 0,
     "title": "Calculadora de Media de Notas",
-    "description": "Aplicacao web para calcular a media de notas com validacao de dados (0-20), lista de notas, estatisticas completas e interface responsiva com modo escuro.",
+    "description": "Aplicacao web para calcular a media de notas com valida??o de dados (0-20), lista de notas, estatisticas completas e interface responsiva com modo escuro.",
     "image": "assets/img/projects/covers/calculadora-de-media-de-notas.png",
     "technologies": [
       "HTML",
@@ -85,7 +85,7 @@
   {
     "id": 11,
     "title": "Contador de Cliques",
-    "description": "Mini app de contador com animacoes, prevencao de negativos e persistencia em localStorage.",
+    "description": "Mini app de contador com animacoes, prevencao de negativos e persist?ncia em localStorage.",
     "image": "assets/img/projects/covers/11.png",
     "technologies": [
       "HTML",
@@ -156,8 +156,8 @@
   },
   {
     "id": 6,
-    "title": "API REST para Gestao",
-    "description": "API REST robusta para gestao de utilizadores, autenticacao JWT, validacao de dados e documentacao completa com Swagger.",
+    "title": "API REST para Gest?o",
+    "description": "API REST robusta para gest?o de utilizadores, autentica??o JWT, valida??o de dados e documenta??o completa com Swagger.",
     "image": "assets/img/projects/covers/6.png",
     "technologies": [
       "Node.js",
@@ -202,7 +202,7 @@
   {
     "id": 12,
     "title": "Catalogo de Produtos (POO + API)",
-    "description": "Sistema de gestao de catalogo com POO, edicao inline, filtros, persistencia em localStorage e detalhes via Fake Store API.",
+    "description": "Sistema de gest?o de catalogo com POO, edicao inline, filtros, persist?ncia em localStorage e detalhes via Fake Store API.",
     "image": "assets/img/projects/covers/12.png",
     "technologies": [
       "JavaScript",
@@ -251,8 +251,8 @@
   },
   {
     "id": 102,
-    "title": "Gestao de Projetos (React + TS)",
-    "description": "Dashboard de projetos e tarefas com validacao e progresso, persistencia local.",
+    "title": "Gest?o de Projetos (React + TS)",
+    "description": "Dashboard de projetos e tarefas com valida??o e progresso, persist?ncia local.",
     "image": "assets/img/projects/covers/102.png",
     "technologies": [
       "React",
