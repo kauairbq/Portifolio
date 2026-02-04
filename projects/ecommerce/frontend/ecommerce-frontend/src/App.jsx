@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     // Fetch products from backend
-    fetch('http://localhost:5000/api/products')
+    fetch('/api/products')
       .then(response => response.json())
       .then(data => {
         setProducts(data);
@@ -22,14 +22,14 @@ function App() {
       });
 
     // Fetch cart from backend
-    fetch('http://localhost:5000/api/cart')
+    fetch('/api/cart')
       .then(response => response.json())
       .then(data => setCart(data))
       .catch(error => console.error('Error fetching cart:', error));
   }, []);
 
   const addToCart = (productId, quantity = 1) => {
-    fetch('http://localhost:5000/api/cart', {
+    fetch('/api/cart', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ productId, quantity })
@@ -40,7 +40,7 @@ function App() {
   };
 
   const updateCartItem = (productId, quantity) => {
-    fetch(`http://localhost:5000/api/cart/${productId}`, {
+    fetch(`/api/cart/${productId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity })
@@ -51,7 +51,7 @@ function App() {
   };
 
   const removeFromCart = (productId) => {
-    fetch(`http://localhost:5000/api/cart/${productId}`, {
+    fetch(`/api/cart/${productId}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
