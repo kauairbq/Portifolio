@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": 100,
     "title": "E-commerce Completo (React + Node.js)",
@@ -293,7 +293,7 @@
   },
   {
     "id": 106,
-    "title": "API Gest?o Pro",
+    "title": "API Gestão Pro",
     "category": "Backend",
     "description": "API REST com JWT, RBAC, PostgreSQL, Swagger e testes automatizados.",
     "image": "assets/img/projects/covers/106.png",
