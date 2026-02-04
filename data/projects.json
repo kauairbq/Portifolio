@@ -45,9 +45,9 @@
       "CSS",
       "Font Awesome"
     ],
-    "link": "projects/xkairos/index.php",
-    "github": "",
-    "requiresServer": true,
+    "link": "http://localhost/Fullstack%20MD/projects/xkairos/index.php",
+    "github": "https://github.com/kauairbq/Portifolio/tree/main/projects/xkairos",
+    "requiresServer": false,
     "featured": false
   },
   {
