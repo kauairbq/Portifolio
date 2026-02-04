@@ -130,7 +130,7 @@
   {
     "id": 4,
     "title": "Blog Pessoal",
-    "description": "Blog responsivo com sistema de comentarios, integracao com redes sociais, SEO optimizado e painel de administracao intuitivo.",
+    "description": "Blog responsivo com sistema de comentarios, integracao com redes sociais, SEO otimizado e painel de administracao intuitivo.",
     "image": "assets/img/projects/covers/4.png",
     "technologies": [
       "WordPress",
@@ -173,7 +173,7 @@
   {
     "id": 7,
     "title": "Landing Page Institucional",
-    "description": "Pagina institucional moderna e responsiva com animacoes suaves, formulario de contacto integrado e optimizacao para conversoes.",
+    "description": "Pagina institucional moderna e responsiva com animacoes suaves, formulario de contacto integrado e otimiza??o para conversoes.",
     "image": "assets/img/projects/covers/7.png",
     "technologies": [
       "HTML",
@@ -297,16 +297,16 @@
     "category": "Backend",
     "description": "API REST com JWT, RBAC, PostgreSQL, Swagger e testes automatizados.",
     "image": "assets/img/projects/covers/106.png",
-    "tech": [
+    "link": "projects/api-gestao-pro/index.html",
+    "github": "",
+    "technologies": [
       "Node.js",
       "Express",
       "PostgreSQL",
       "JWT",
       "Swagger",
       "Jest"
-    ],
-    "link": "projects/api-gestao-pro/index.html",
-    "github": ""
+    ]
   },
   {
     "id": 107,
@@ -314,13 +314,13 @@
     "category": "Frontend",
     "description": "Dashboard React + TypeScript com dados reais da API p?blica CoinGecko.",
     "image": "assets/img/projects/covers/107.png",
-    "tech": [
+    "link": "projects/dashboard-dados-reais/dist/index.html",
+    "github": "",
+    "technologies": [
       "React",
       "TypeScript",
       "Vite",
       "API"
-    ],
-    "link": "projects/dashboard-dados-reais/dist/index.html",
-    "github": ""
+    ]
   }
 ]
