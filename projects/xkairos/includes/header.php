@@ -26,7 +26,7 @@
                     <li><a href="orcamentos.php">Orçamento</a></li>
                     <li><a href="termos.php">Termos</a></li>
                     <li><a href="privacidade.php">Privacidade</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </nav>

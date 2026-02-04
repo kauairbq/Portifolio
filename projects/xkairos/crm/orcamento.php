@@ -159,7 +159,7 @@ $pdf->SetY(-50);
 $pdf->SetFont('Arial', '', 8);
 $pdf->SetTextColor(100, 100, 100);
 $pdf->Cell(0, 5, encode('Xkairos Tech - Tecnologia e Inovação'), 0, 1, 'C');
-$pdf->Cell(0, 5, encode('Contato: +351 XXX XXX XXX | Email: info@xkairost.tech'), 0, 1, 'C');
+$pdf->Cell(0, 5, encode('Contacto: +351 XXX XXX XXX | Email: info@xkairost.tech'), 0, 1, 'C');
 $pdf->Cell(0, 5, encode('Orçamento válido por 30 dias | Data de emissão: ') . date('d/m/Y'), 0, 1, 'C');
 
 // Link de pagamento

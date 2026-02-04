@@ -56,7 +56,7 @@ document.getElementById('generate-budget').addEventListener('click', function() 
 // Contact form submission
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    alert('Mensagem enviada com sucesso! Entraremos em contacto em breve.');
     this.reset();
 });
 

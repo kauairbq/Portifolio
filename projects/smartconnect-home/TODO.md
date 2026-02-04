@@ -22,7 +22,7 @@ Este documento organiza o desenvolvimento do app SmartConnect Home em fases. Vam
 - [x] Definir tema corporativo e design system
 - [x] Harmonizar paleta e UI/UX (login + app)
 - [x] Configurar navegacao (Router)
-- [x] Criar modelos base (Usuario, Dispositivo, Pack, Garantia, Ticket)
+- [x] Criar modelos base (Utuario, Dispositivo, Pack, Garantia, Ticket)
 - [x] Definir regras de acesso (Admin vs Utilizador)
 
 ## Fase 2 - Autenticacao e Perfis

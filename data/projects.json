@@ -73,7 +73,7 @@
     {
         "id": 3,
         "title": "Dashboard Analytics",
-        "description": "Painel administrativo interativo com graficos em tempo real, relatorios personalizaveis e integracao com multiplas fontes de dados.",
+        "description": "Painel administrativo interativo com graficos em tempo real, relat?rios personaliz?veis e integracao com multiplas fontes de dados.",
         "image": "assets/img/projects/dashboard-analytics.svg",
         "technologies": ["Vue.js", "D3.js", "Express", "PostgreSQL"],
         "link": "projects/Dashboard Analytics/index.html",

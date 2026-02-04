@@ -478,7 +478,7 @@ tr:hover {
 
     <div class="header">
         <h1><i class="fas fa-tachometer-alt"></i> Bem-vindo, <= $is_admin  'Administrador' : $_SESSION['cliente_nome'] ></h1>
-        <p><= $is_admin  'Painel de administração - Gerencie clientes, projetos e sistema' : 'Gerencie seus projetos e acompanhe o progresso em tempo real' ></p>
+        <p><= $is_admin  'Painel de administração - Gerencie clientes, projetos e sistema' : 'Gerencie teus projetos e acompanhe o progresso em tempo real' ></p>
     </div>
 
     <!-- Admin Statistics -->
@@ -533,7 +533,7 @@ tr:hover {
         <div class="stat-card">
             <i class="fas fa-check-circle"></i>
             <h3><= count($solicitacoes) ></h3>
-            <p>Suas Solicitações</p>
+            <p>A tuas Solicitações</p>
         </div>
     </div>
     <php endif; >
@@ -608,7 +608,7 @@ tr:hover {
 
     <!-- Client-specific content -->
     <php if ($is_client): >
-    <h3>Suas solicitações</h3>
+    <h3>A tuas solicitações</h3>
 <php if(count($solicitacoes)===0) echo '<p>Nenhuma solicitação encontrada.</p>'; >
 <table border='1' cellpadding='10'>
 <tr><th>ID</th><th>CPU</th><th>GPU</th><th>RAM</th><th>SSD</th><th>Total (€)</th><th>Status</th><th>Data</th><th>PDF</th><th>Pagar</th></tr>

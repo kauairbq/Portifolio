@@ -18,7 +18,7 @@ include "includes/header.php";
                 <div class="intro-card">
                     <i class="fas fa-shield-alt"></i>
                     <h2>1. Introdução</h2>
-                    <p>A Xkairos Tech ("nós", "nosso" ou "empresa") respeita a sua privacidade e está comprometida em proteger as suas informações pessoais. Esta Política de Privacidade explica como recolhemos, utilizamos, divulgamos e protegemos as suas informações quando utiliza o nosso website e serviços.</p>
+                    <p>A Xkairos Tech ("nós", "nosso" ou "empresa") respeita a tua privacidade e está comprometida em proteger as tuas informações pessoais. Esta Política de Privacidade explica como recolhemos, utilizamos, divulgamos e protegemos as tuas informações quando utiliza o nosso website e serviços.</p>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@ include "includes/header.php";
                     <ul>
                         <li><i class="fas fa-user"></i> Nome e informações de contacto</li>
                         <li><i class="fas fa-credit-card"></i> Informações de faturação e pagamento</li>
-                        <li><i class="fas fa-project-diagram"></i> Informações sobre os seus projetos e requisitos</li>
+                        <li><i class="fas fa-project-diagram"></i> Informações sobre os teus projetos e requisitos</li>
                         <li><i class="fas fa-envelope"></i> Comunicações connosco</li>
                     </ul>
                 </div>
@@ -48,12 +48,12 @@ include "includes/header.php";
             </div>
 
             <div class="policy-section">
-                <h2><i class="fas fa-cogs"></i> 3. Como Utilizamos as Suas Informações</h2>
+                <h2><i class="fas fa-cogs"></i> 3. Como Utilizamos as A tuas Informações</h2>
                 <p>Utilizamos as informações recolhidas para:</p>
                 <ul>
                     <li><i class="fas fa-tools"></i> Fornecer e melhorar os nossos serviços</li>
                     <li><i class="fas fa-shopping-cart"></i> Processar pedidos e pagamentos</li>
-                    <li><i class="fas fa-comments"></i> Comunicar consigo sobre os seus projetos</li>
+                    <li><i class="fas fa-comments"></i> Comunicar consigo sobre os teus projetos</li>
                     <li><i class="fas fa-gavel"></i> Cumprir obrigações legais</li>
                     <li><i class="fas fa-user-friends"></i> Melhorar a experiência do utilizador</li>
                 </ul>
@@ -61,9 +61,9 @@ include "includes/header.php";
 
             <div class="policy-section">
                 <h2><i class="fas fa-share-alt"></i> 4. Partilha de Informações</h2>
-                <p>Não vendemos, alugamos ou partilhamos as suas informações pessoais com terceiros, exceto:</p>
+                <p>Não vendemos, alugamos ou partilhamos as tuas informações pessoais com terceiros, exceto:</p>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i> Com o seu consentimento explícito</li>
+                    <li><i class="fas fa-check-circle"></i> Com o teu consentimento explícito</li>
                     <li><i class="fas fa-balance-scale"></i> Para cumprir obrigações legais</li>
                     <li><i class="fas fa-lock"></i> Para proteger os nossos direitos e segurança</li>
                     <li><i class="fas fa-handshake"></i> Com prestadores de serviços que nos ajudam a operar (sob acordos de confidencialidade)</li>
@@ -72,21 +72,21 @@ include "includes/header.php";
 
             <div class="policy-section">
                 <h2><i class="fas fa-shield-alt"></i> 5. Segurança dos Dados</h2>
-                <p>Implementamos medidas de segurança técnicas e organizacionais apropriadas para proteger as suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                <p>Implementamos medidas de segurança técnicas e organizacionais apropriadas para proteger as tuas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
             </div>
 
             <div class="policy-section">
                 <h2><i class="fas fa-cookie-bite"></i> 6. Cookies</h2>
-                <p>Utilizamos cookies para melhorar a sua experiência no nosso website. Pode controlar as definições de cookies através do seu navegador.</p>
+                <p>Utilizamos cookies para melhorar a tua experiência no nosso website. Pode controlar as definições de cookies através do teu navegador.</p>
             </div>
 
             <div class="policy-section">
-                <h2><i class="fas fa-user-check"></i> 7. Os Seus Direitos</h2>
+                <h2><i class="fas fa-user-check"></i> 7. Os O teus Direitos</h2>
                 <p>De acordo com a legislação aplicável, tem o direito de:</p>
                 <ul>
-                    <li><i class="fas fa-eye"></i> Aceder às suas informações pessoais</li>
+                    <li><i class="fas fa-eye"></i> Aceder às tuas informações pessoais</li>
                     <li><i class="fas fa-edit"></i> Corrigir informações inexatas</li>
-                    <li><i class="fas fa-trash-alt"></i> Eliminar as suas informações</li>
+                    <li><i class="fas fa-trash-alt"></i> Eliminar as tuas informações</li>
                     <li><i class="fas fa-ban"></i> Restringir ou opor-se ao processamento</li>
                     <li><i class="fas fa-download"></i> Portabilidade dos dados</li>
                 </ul>
@@ -94,7 +94,7 @@ include "includes/header.php";
 
             <div class="policy-section">
                 <h2><i class="fas fa-envelope"></i> 8. Contacto</h2>
-                <p>Se tiver dúvidas sobre esta Política de Privacidade ou quiser exercer os seus direitos, contacte-nos através de:</p>
+                <p>Se tiver dúvidas sobre esta Política de Privacidade ou quiser exercer os teus direitos, contacte-nos através de:</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -106,7 +106,7 @@ include "includes/header.php";
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Viseu, Portugal</span>
+                        <span>Viteu, Portugal</span>
                     </div>
                 </div>
             </div>

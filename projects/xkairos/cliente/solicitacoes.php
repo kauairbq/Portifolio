@@ -289,7 +289,7 @@ $solicitacoes = $stmt->fetchAll();
         <main class="dashboard-content">
             <section class="welcome-section">
                 <h2>Minhas Solicitações</h2>
-                <p>Acompanhe o status de todos os seus pedidos</p>
+                <p>Acompanhe o status de todos os teus pedidos</p>
             </section>
 
             <section class="solicitacoes-section">

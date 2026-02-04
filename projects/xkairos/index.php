@@ -65,7 +65,7 @@ $cliente_nome = $is_logged_in  $_SESSION['cliente_nome'] : '';
                     <li><a href="#servicos">ServiÃƒÆ’Ã‚Â§os</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="orcamentos.php">OrÃƒÆ’Ã‚Â§amentos</a></li>
-                    <li><a href="#contato">Contacto</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                     <php if ($is_logged_in): >
                         <li><a href="cliente/dashboard.php"><i class="fas fa-user"></i> ÃƒÆ’rea do Cliente</a></li>
                     <php else: >
@@ -100,7 +100,7 @@ $cliente_nome = $is_logged_in  $_SESSION['cliente_nome'] : '';
                 </div>
             </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-vitual">
             <div class="floating-elements">
                 <div class="floating-icon icon-1"><i class="fas fa-cogs"></i></div>
                 <div class="floating-icon icon-2"><i class="fas fa-microchip"></i></div>
@@ -197,7 +197,7 @@ $cliente_nome = $is_logged_in  $_SESSION['cliente_nome'] : '';
     </section>
 
     <!-- CONTACTO -->
-    <section id="contato" class="contact-section">
+    <section id="contacto" class="contact-section">
         <div class="contact-card">
             <h2>Fale com a equipa</h2>
             <p>Respondemos em 1 dia ÃƒÆ’Ã‚Âºtil. OrÃƒÆ’Ã‚Â§amentos rÃƒÆ’Ã‚Â¡pidos e transparentes.</p>

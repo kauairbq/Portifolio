@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="form-container sign-in-container">
       <form action="#" method="POST">
         <h1>Entrar</h1>
-        <span>use suas credenciais</span>
+        <span>use tuas credenciais</span>
 
         <php if (isset($error)): >
           <div class="error-message" style="color: red; text-align: center; margin-bottom: 15px;"><php echo $error; ></div>
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="overlay">
         <div class="overlay-panel overlay-right">
           <h1>Bem-vindo ao Painel!</h1>
-          <p>Entre com suas credenciais para acessar o sistema administrativo da Xkairos Tech</p>
+          <p>Entre com tuas credenciais para acessar o sistema administrativo da Xkairos Tech</p>
         </div>
       </div>
     </div>

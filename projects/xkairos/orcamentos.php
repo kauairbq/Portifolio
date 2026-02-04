@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xkairos Tech - Solicite o seu orÃ§amento</title>
+    <title>Xkairos Tech - Solicite o teu orÃ§amento</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/servicos.css">
@@ -67,7 +67,7 @@
                     <li><a href="index.php#servicos">ServiÃ§os</a></li>
                     <li><a href="index.php#projetos">Projetos</a></li>
                     <li><a href="orcamentos.php">OrÃ§amentos</a></li>
-                    <li><a href="index.php#contato">Contacto</a></li>
+                    <li><a href="index.php#contacto">Contacto</a></li>
                     <li><a href="cliente/login.php"><i class="fas fa-user"></i> Login / Ãrea do Cliente</a></li>
                 </ul>
             </div>
@@ -76,7 +76,7 @@
 
     <div class="hero-section" id="hero">
         <div class="hero-content">
-            <div class="hero-badge"><i class="fas fa-rocket"></i> Solicite o seu orÃ§amento</div>
+            <div class="hero-badge"><i class="fas fa-rocket"></i> Solicite o teu orÃ§amento</div>
             <h2>Montagem, manutenÃ§Ã£o ou consultoria</h2>
             <p>Preencha os detalhes e retornamos em atÃ© 24 horas. Este formulÃ¡rio Ã© demonstrativo no ambiente estÃ¡tico.</p>
         </div>
@@ -96,11 +96,11 @@
                     </div>
                     <div>
                         <label for="nome">Nome</label>
-                        <input id="nome" name="nome" placeholder="Seu nome" />
+                        <input id="nome" name="nome" placeholder="O teu nome" />
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="seu@email.com" />
+                        <input id="email" name="email" type="email" placeholder="teu@email.com" />
                     </div>
                     <div>
                         <label for="telefone">Telefone</label>

@@ -1,7 +1,7 @@
 ﻿# Resultados Esperados e Impacto
 
 ## Contribuicoes tecnicas
-1. Integracao suave de dispositivos e protocolos.
+1. Integracao tuave de dispositivos e protocolos.
 2. Experiencia personalizada por perfil.
 3. Alto nivel de seguranca e privacidade.
 4. Suporte tecnico eficiente e proativo.

@@ -291,7 +291,7 @@ $pagamentos = $stmt->fetchAll();
         <main class="dashboard-content">
             <section class="welcome-section">
                 <h2>Meus Pagamentos</h2>
-                <p>Acompanhe o histórico de todos os seus pagamentos</p>
+                <p>Acompanhe o histórico de todos os teus pagamentos</p>
             </section>
 
             <php

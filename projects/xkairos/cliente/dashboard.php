@@ -293,7 +293,7 @@ $solicitacoes = $stmt->fetchAll();
         <main class="dashboard-content">
             <section class="welcome-section">
                 <h2>Bem-vindo, <php echo htmlspecialchars($cliente_nome); >!</h2>
-                <p>Gerencie suas supervisão e acompanhe o andamento de seus projetos</p>
+                <p>Gerencie tuas supervisão e acompanhe o andamento de teus projetos</p>
             </section>
 
             <div class="stats-grid">

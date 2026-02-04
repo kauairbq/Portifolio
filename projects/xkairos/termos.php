@@ -37,12 +37,12 @@ include "includes/header.php";
                 <h2><i class="fas fa-clipboard-check"></i> 3. Condições de Serviço</h2>
                 <div class="subsection">
                     <h3>3.1 Elegibilidade</h3>
-                    <p>Para utilizar os nossos serviços, deve ter pelo menos 18 anos ou ter autorização dos seus pais/tutores.</p>
+                    <p>Para utilizar os nossos serviços, deve ter pelo menos 18 anos ou ter autorização dos teus pais/tutores.</p>
                 </div>
 
                 <div class="subsection">
                     <h3>3.2 Precisão das Informações</h3>
-                    <p>Concorda em fornecer informações precisas e atualizadas sobre si e os seus requisitos de serviço.</p>
+                    <p>Concorda em fornecer informações precisas e atualizadas sobre si e os teus requisitos de serviço.</p>
                 </div>
 
                 <div class="subsection">
@@ -113,7 +113,7 @@ include "includes/header.php";
 
             <div class="terms-section">
                 <h2><i class="fas fa-lock"></i> 8. Privacidade</h2>
-                <p>As suas informações pessoais são tratadas de acordo com a nossa <a href="privacidade.php">Política de Privacidade</a>.</p>
+                <p>As tuas informações pessoais são tratadas de acordo com a nossa <a href="privacidade.php">Política de Privacidade</a>.</p>
             </div>
 
             <div class="terms-section">
@@ -135,7 +135,7 @@ include "includes/header.php";
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Viseu, Portugal</span>
+                        <span>Viteu, Portugal</span>
                     </div>
                 </div>
             </div>

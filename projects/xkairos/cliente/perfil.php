@@ -284,7 +284,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         <main class="dashboard-content">
             <section class="welcome-section">
                 <h2>Meu Perfil</h2>
-                <p>Gerencie suas informações pessoais</p>
+                <p>Gerencie tuas informações pessoais</p>
             </section>
 
             <section class="profile-section">

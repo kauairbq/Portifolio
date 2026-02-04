@@ -168,7 +168,7 @@
     color: #00F0FF;
 }
 
-.hero-visual {
+.hero-vitual {
     position: absolute;
     top: 0;
     left: 0;
@@ -511,7 +511,7 @@
     color: var(--text-light);
 }
 
-/* Contato */
+/* Contacto */
 .contact {
     padding: 80px 5%;
     background: var(--darker);

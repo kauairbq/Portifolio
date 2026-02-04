@@ -14,7 +14,7 @@ Fernando Miguel Soares Mamede dos Santos
 Jorge Manuel Duarte
 
 ## Instituicao
-Escola Superior de Tecnologia e Gestao de Lamego - Instituto Politecnico de Viseu
+Escola Superior de Tecnologia e Gestao de Lamego - Instituto Politecnico de Viteu
 
 ## Descricao do Projeto
 O SmartConnect Home e uma plataforma de automacao residencial que integra varios dispositivos e protocolos num ambiente centralizado e protegido. A solucao contempla duas aplicacoes: uma para o administrador/instalador, com controlo total e definicao de permissao, e outra para o utilizador final, com acesso limitado aos dispositivos autorizados.
