@@ -19,7 +19,7 @@ async function loadProjects() {
         displayProjects(projectsData);
     } catch (error) {
         console.error('Erro ao carregar projetos:', error);
-        // Carregar projetos de exemplo se o JSON n?o estiver dispon??vel
+        // Carregar projetos de exemplo se o JSON não estiver disponível
         loadFallbackProjects();
     }
 }
@@ -30,7 +30,7 @@ function loadFallbackProjects() {
         {
             id: 1,
             title: "Site de E-commerce",
-            description: "Plataforma completa de vendas online com carrinho de compras e integra??o com pagamentos.",
+            description: "Plataforma completa de vendas online com carrinho de compras e integração com pagamentos.",
             image: "assets/img/projects/ecommerce.png",
             technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
             link: "#",
@@ -39,7 +39,7 @@ function loadFallbackProjects() {
         {
             id: 2,
             title: "Aplicativo de Tarefas",
-            description: "App web para gerenciamento de tarefas com drag-and-drop e sincroniza??o em tempo real.",
+            description: "App web para gerenciamento de tarefas com drag-and-drop e sincronização em tempo real.",
             image: "assets/img/projects/todo-app.png",
             technologies: ["React", "Node.js", "MongoDB"],
             link: "#",
@@ -48,7 +48,7 @@ function loadFallbackProjects() {
         {
             id: 3,
             title: "Dashboard Analytics",
-            description: "Painel administrativo com gr?ficos interativos e relat?rios em tempo real.",
+            description: "Painel administrativo com gráficos interativos e relatórios em tempo real.",
             image: "assets/img/projects/dashboard.png",
             technologies: ["Vue.js", "D3.js", "Express"],
             link: "#",
@@ -57,7 +57,7 @@ function loadFallbackProjects() {
         {
             id: 4,
             title: "Blog Pessoal",
-            description: "Blog responsivo com sistema de coment?rios e integra??o com redes sociais.",
+            description: "Blog responsivo com sistema de comentários e integração com redes sociais.",
             image: "assets/img/projects/blog.png",
             technologies: ["WordPress", "PHP", "MySQL"],
             link: "#",
@@ -65,8 +65,8 @@ function loadFallbackProjects() {
         },
         {
             id: 5,
-            title: "Jogo da Mem?ria",
-            description: "Jogo interativo da mem?ria desenvolvido com JavaScript puro.",
+            title: "Jogo da Memória",
+            description: "Jogo interativo da memória desenvolvido com JavaScript puro.",
             image: "assets/img/projects/memory-game.png",
             technologies: ["HTML", "CSS", "JavaScript"],
             link: "#",
@@ -75,7 +75,7 @@ function loadFallbackProjects() {
         {
             id: 6,
             title: "API REST",
-            description: "API RESTful para gerenciamento de utilizadors e autentica??o JWT.",
+            description: "API RESTful para gerenciamento de utilizadores e autenticação JWT.",
             image: "assets/img/projects/api.png",
             technologies: ["Node.js", "Express", "MongoDB", "JWT"],
             link: "#",
@@ -85,7 +85,7 @@ function loadFallbackProjects() {
     displayProjects(projectsData);
 }
 
-// Exibir projetos na p?gina
+// Exibir projetos na página
 function displayProjects(projects) {
     const projectsGrid = document.getElementById('projects-grid');
     if (!projectsGrid) return;
@@ -124,7 +124,7 @@ function createProjectCard(project, index) {
         </div>
     `;
 
-    // Apenas o bot?o "Ver Projeto" controla a abertura
+    // Apenas o botão "Ver Projeto" controla a abertura
     const viewBtn = card.querySelector('.btn');
     if (viewBtn) {
         viewBtn.addEventListener('click', (e) => {
@@ -167,13 +167,13 @@ function initProjectFilters() {
         createFilterButtons();
     }
 
-    // Event listeners para bot?es de filtro
+    // Event listeners para botões de filtro
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('filter-btn')) {
             const filter = e.target.dataset.filter;
             filterProjects(filter);
 
-            // Atualizar bot?o ativo
+            // Atualizar botão ativo
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -182,7 +182,7 @@ function initProjectFilters() {
     });
 }
 
-// Criar bot?es de filtro
+// Criar botões de filtro
 function createFilterButtons() {
     const projectsSection = document.querySelector('.projects');
     if (!projectsSection) return;
@@ -312,7 +312,7 @@ function openProjectModal(project) {
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 
-    // Anima??o de entrada
+    // Animação de entrada
     setTimeout(() => {
         modal.classList.add('show');
     }, 10);
@@ -481,7 +481,7 @@ function addModalStyles() {
 // Adicionar estilos do modal
 addModalStyles();
 
-// Exportar fun??es para uso global
+// Exportar funções para uso global
 function getGitHubFallback(project) {
     if (project.github) return project.github;
     if (!project.link || project.link.startsWith('http')) return '';
