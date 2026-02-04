@@ -11,10 +11,27 @@ let projectsData = [];
 // Carregar projetos do arquivo JSON
 async function loadProjects() {
     try {
-        const response = await fetch(`/data/projects.json?v=${Date.now()}`);
-        if (!response.ok) {
+        const urls = [
+            `./data/projects.json?v=${Date.now()}`,
+            `/data/projects.json?v=${Date.now()}`,
+            `data/projects.json?v=${Date.now()}`
+        ];
+        let response = null;
+        for (const url of urls) {
+            response = await fetch(url, { cache: 'no-store' });
+            if (response.ok) break;
+        }
+        if (!response || !response.ok) {
             throw new Error('Erro ao carregar projetos');
         }
+        projectsData = await response.json();
+        displayProjects(projectsData);
+    } catch (error) {
+        console.error('Erro ao carregar projetos:', error);
+        // Carregar projetos de exemplo se o JSON n??o estiver dispon??vel
+        loadFallbackProjects();
+    }
+}
         projectsData = await response.json();
         displayProjects(projectsData);
     } catch (error) {
