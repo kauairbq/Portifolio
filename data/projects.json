@@ -37,7 +37,7 @@
     "id": 14,
     "title": "Xkairos Tech",
     "description": "Plataforma para orcamentos, area do cliente e CRM de montagens de PCs, com painel admin e automacoes.",
-    "image": "assets/img/projects/covers/14.png",
+      "image": "assets/img/projects/xkairos-cover.svg",
     "technologies": [
       "PHP",
       "MySQL",
