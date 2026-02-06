@@ -24,6 +24,7 @@ model Tenant {
   users     TenantUser[]
   roles     Role[]
   audits    AuditLog[]
+  invites   TenantInvite[]
 }
 
 model User {
@@ -47,6 +48,17 @@ model TenantUser {
   user      User       @relation(fields: [userId], references: [id])
 
   @@unique([tenantId, userId])
+}
+
+model TenantInvite {
+  id        String   @id @default(uuid())
+  tenantId  String
+  email     String
+  token     String   @unique
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  acceptedAt DateTime?
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
 }
 
 model Role {
