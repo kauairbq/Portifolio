@@ -30,6 +30,7 @@ Credenciais padrão do projeto:
 cd apps/api
 npm install
 npx prisma migrate dev --name init
+npx prisma db seed
 npm run start:dev
 ```
 API: `http://localhost:4010/api`
@@ -50,6 +51,12 @@ Backend (`apps/api/.env`):
 
 Frontend (`apps/web/.env`):
 - `VITE_API_URL=http://localhost:4010/api`
+
+## Testes
+```bash
+cd apps/api
+npm test
+```
 
 ## Status
 MVP funcional com CRUD de planos, subscrições e faturas.
