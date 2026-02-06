@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { api } from "../lib/api";
-import { Invoice } from "../lib/types";
+import type { Invoice } from "../lib/types";
 import { Topbar } from "../components/Topbar";
 
 const schema = z.object({
   userId: z.string().min(1, "ID do cliente obrigatório"),
   subscriptionId: z.string().min(1, "ID da subscrição obrigatório"),
-  amountCents: z.coerce.number().min(0, "Valor inválido"),
+  amountCents: z.number().min(0, "Valor inválido"),
   status: z.enum(["DRAFT", "OPEN", "PAID", "VOID"]).optional(),
 });
 
@@ -66,7 +66,11 @@ export function InvoicesPage() {
           </div>
           <div>
             <label className="text-sm font-semibold">Valor (cêntimos)</label>
-            <input className="input mt-1" type="number" {...form.register("amountCents")} />
+            <input
+              className="input mt-1"
+              type="number"
+              {...form.register("amountCents", { valueAsNumber: true })}
+            />
           </div>
           <div>
             <label className="text-sm font-semibold">Estado</label>

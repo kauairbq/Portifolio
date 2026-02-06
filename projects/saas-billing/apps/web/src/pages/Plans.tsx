@@ -11,7 +11,7 @@ const schema = z.object({
   description: z.string().optional(),
   priceCents: z.number().min(0, "Preço inválido"),
   interval: z.enum(["MONTHLY", "YEARLY"]),
-  active: z.boolean().default(true),
+  active: z.boolean(),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -43,7 +43,13 @@ export function PlansPage() {
       return data;
     },
     onSuccess: async () => {
-      form.reset();
+      form.reset({
+        name: "",
+        description: "",
+        priceCents: 0,
+        interval: "MONTHLY",
+        active: true,
+      });
       await queryClient.invalidateQueries({ queryKey: ["plans"] });
     },
   });

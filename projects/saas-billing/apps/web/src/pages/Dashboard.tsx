@@ -1,6 +1,6 @@
 ﻿import { useQuery } from "@tanstack/react-query";
 import { api } from "../lib/api";
-import { Invoice, Plan, Subscription } from "../lib/types";
+import type { Invoice, Plan, Subscription } from "../lib/types";
 import { StatCard } from "../components/StatCard";
 import { Topbar } from "../components/Topbar";
 

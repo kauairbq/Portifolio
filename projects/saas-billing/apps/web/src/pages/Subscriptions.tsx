@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { api } from "../lib/api";
-import { Plan, Subscription } from "../lib/types";
+import type { Plan, Subscription } from "../lib/types";
 import { Topbar } from "../components/Topbar";
 
 const schema = z.object({
