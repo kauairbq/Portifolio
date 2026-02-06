@@ -1,15 +1,16 @@
-import { IsEnum, IsOptional, IsString } from "class-validator";
+﻿import { IsDateString, IsEnum, IsOptional, IsString } from "class-validator";
 
 export enum SubscriptionStatusDto {
+  TRIALING = "TRIALING",
   ACTIVE = "ACTIVE",
   PAST_DUE = "PAST_DUE",
+  SUSPENDED = "SUSPENDED",
   CANCELED = "CANCELED",
-  TRIALING = "TRIALING",
 }
 
 export class CreateSubscriptionDto {
   @IsString()
-  userId: string;
+  organizationId: string;
 
   @IsString()
   planId: string;
@@ -17,4 +18,12 @@ export class CreateSubscriptionDto {
   @IsOptional()
   @IsEnum(SubscriptionStatusDto)
   status?: SubscriptionStatusDto;
+
+  @IsOptional()
+  @IsDateString()
+  trialEndsAt?: string;
+
+  @IsOptional()
+  @IsDateString()
+  currentPeriodEnd?: string;
 }

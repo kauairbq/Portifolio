@@ -1,16 +1,26 @@
-﻿import { Injectable, NotFoundException } from "@nestjs/common";
+﻿import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
-import { CreateSubscriptionDto } from "./dto/create-subscription.dto";
+import { CreateSubscriptionDto, SubscriptionStatusDto } from "./dto/create-subscription.dto";
 import { UpdateSubscriptionDto } from "./dto/update-subscription.dto";
+
+const STATUS_TRANSITIONS: Record<SubscriptionStatusDto, SubscriptionStatusDto[]> = {
+  TRIALING: ["ACTIVE", "CANCELED"],
+  ACTIVE: ["PAST_DUE", "SUSPENDED", "CANCELED"],
+  PAST_DUE: ["ACTIVE", "SUSPENDED", "CANCELED"],
+  SUSPENDED: ["ACTIVE", "CANCELED"],
+  CANCELED: [],
+};
 
 @Injectable()
 export class SubscriptionsService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(dto: CreateSubscriptionDto) {
-    const user = await this.prisma.user.findUnique({ where: { id: dto.userId } });
-    if (!user) {
-      throw new NotFoundException("Utilizador não encontrado");
+    const organization = await this.prisma.organization.findUnique({
+      where: { id: dto.organizationId },
+    });
+    if (!organization) {
+      throw new NotFoundException("Organização não encontrada");
     }
 
     const plan = await this.prisma.plan.findUnique({ where: { id: dto.planId } });
@@ -20,17 +30,19 @@ export class SubscriptionsService {
 
     return this.prisma.subscription.create({
       data: {
-        userId: dto.userId,
+        organizationId: dto.organizationId,
         planId: dto.planId,
         status: dto.status ?? undefined,
+        trialEndsAt: dto.trialEndsAt ? new Date(dto.trialEndsAt) : undefined,
+        currentPeriodEnd: dto.currentPeriodEnd ? new Date(dto.currentPeriodEnd) : undefined,
       },
-      include: { user: true, plan: true },
+      include: { organization: true, plan: true },
     });
   }
 
   findAll() {
     return this.prisma.subscription.findMany({
-      include: { user: true, plan: true },
+      include: { organization: true, plan: true },
       orderBy: { createdAt: "desc" },
     });
   }
@@ -38,7 +50,7 @@ export class SubscriptionsService {
   async findOne(id: string) {
     const subscription = await this.prisma.subscription.findUnique({
       where: { id },
-      include: { user: true, plan: true },
+      include: { organization: true, plan: true },
     });
 
     if (!subscription) {
@@ -49,16 +61,29 @@ export class SubscriptionsService {
   }
 
   async update(id: string, dto: UpdateSubscriptionDto) {
-    await this.findOne(id);
+    const current = await this.findOne(id);
+
+    if (dto.status && dto.status !== current.status) {
+      const allowed = STATUS_TRANSITIONS[current.status as SubscriptionStatusDto] ?? [];
+      if (!allowed.includes(dto.status)) {
+        throw new BadRequestException(
+          `Transição inválida de ${current.status} para ${dto.status}`,
+        );
+      }
+    }
 
     return this.prisma.subscription.update({
       where: { id },
       data: {
-        userId: dto.userId ?? undefined,
+        organizationId: dto.organizationId ?? undefined,
         planId: dto.planId ?? undefined,
         status: dto.status ?? undefined,
+        trialEndsAt: dto.trialEndsAt ? new Date(dto.trialEndsAt) : undefined,
+        currentPeriodEnd: dto.currentPeriodEnd ? new Date(dto.currentPeriodEnd) : undefined,
+        endDate: dto.endDate ? new Date(dto.endDate) : undefined,
+        cancelAt: dto.cancelAt ? new Date(dto.cancelAt) : undefined,
       },
-      include: { user: true, plan: true },
+      include: { organization: true, plan: true },
     });
   }
 

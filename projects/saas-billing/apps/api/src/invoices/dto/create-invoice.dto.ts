@@ -1,15 +1,16 @@
-﻿import { IsEnum, IsInt, IsOptional, IsString, Min } from "class-validator";
+﻿import { IsDateString, IsEnum, IsInt, IsOptional, IsString, Min } from "class-validator";
 
 export enum InvoiceStatusDto {
   DRAFT = "DRAFT",
   OPEN = "OPEN",
   PAID = "PAID",
   VOID = "VOID",
+  OVERDUE = "OVERDUE",
 }
 
 export class CreateInvoiceDto {
   @IsString()
-  userId: string;
+  organizationId: string;
 
   @IsString()
   subscriptionId: string;
@@ -25,4 +26,12 @@ export class CreateInvoiceDto {
   @IsOptional()
   @IsEnum(InvoiceStatusDto)
   status?: InvoiceStatusDto;
+
+  @IsOptional()
+  @IsDateString()
+  dueAt?: string;
+
+  @IsOptional()
+  @IsDateString()
+  paidAt?: string;
 }
