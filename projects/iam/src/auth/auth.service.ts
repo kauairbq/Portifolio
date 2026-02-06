@@ -4,7 +4,7 @@ import { PrismaService } from "../prisma/prisma.service";
 import { LoginDto } from "./dto/login.dto";
 import { RefreshDto } from "./dto/refresh.dto";
 import { LogoutDto } from "./dto/logout.dto";
-import * as argon2 from "argon2";
+import { hash, verify } from "@node-rs/argon2";
 import { randomUUID } from "crypto";
 import { AuditLogsService } from "../audit-logs/audit-logs.service";
 
@@ -20,7 +20,7 @@ export class AuthService {
     const user = await this.prisma.user.findUnique({ where: { email: dto.email } });
     if (!user) throw new UnauthorizedException("Credenciais invalidas");
 
-    const ok = await argon2.verify(user.password, dto.password);
+    const ok = await verify(user.password, dto.password);
     if (!ok) throw new UnauthorizedException("Credenciais invalidas");
 
     const tenantId = dto.tenantId;
@@ -38,7 +38,7 @@ export class AuthService {
       { expiresIn: "30d" }
     );
 
-    const refreshHash = await argon2.hash(refreshToken);
+    const refreshHash = await hash(refreshToken);
 
     await this.prisma.session.create({
       data: {
@@ -66,7 +66,7 @@ export class AuthService {
     const session = await this.prisma.session.findUnique({ where: { id: payload.sessionId } });
     if (!session || session.revokedAt) throw new UnauthorizedException("Sessao expirada");
 
-    const valid = await argon2.verify(session.refreshTokenHash, dto.refreshToken);
+    const valid = await verify(session.refreshTokenHash, dto.refreshToken);
     if (!valid) throw new UnauthorizedException("Refresh invalido");
 
     const membership = await this.prisma.tenantUser.findUnique({
@@ -82,7 +82,7 @@ export class AuthService {
 
     await this.prisma.session.update({
       where: { id: session.id },
-      data: { refreshTokenHash: await argon2.hash(newRefresh) },
+      data: { refreshTokenHash: await hash(newRefresh) },
     });
 
     const accessToken = await this.jwt.signAsync(

@@ -1,28 +1,33 @@
-﻿import { Injectable, NotFoundException, ForbiddenException } from "@nestjs/common";
+﻿import { Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { CreateTenantDto } from "./dto/create-tenant.dto";
 import { InviteTenantUserDto } from "./dto/invite-tenant-user.dto";
 import { AcceptInviteDto } from "./dto/accept-invite.dto";
 import { UpdateTenantRoleDto } from "./dto/update-tenant-role.dto";
 import { randomUUID } from "crypto";
+import { AuditLogsService } from "../audit-logs/audit-logs.service";
 
 @Injectable()
 export class TenantsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService, private audit: AuditLogsService) {}
 
-  create(dto: CreateTenantDto) {
-    return this.prisma.tenant.create({ data: dto });
+  async create(dto: CreateTenantDto) {
+    const tenant = await this.prisma.tenant.create({ data: dto });
+    await this.audit.create(tenant.id, "tenant.created", undefined, { slug: tenant.slug });
+    return tenant;
   }
 
   async invite(tenantId: string, dto: InviteTenantUserDto) {
     const token = randomUUID();
-    return this.prisma.tenantInvite.create({
+    const invite = await this.prisma.tenantInvite.create({
       data: {
         tenantId,
         email: dto.email,
         token,
       },
     });
+    await this.audit.create(tenantId, "tenant.invite", undefined, { email: dto.email });
+    return invite;
   }
 
   async acceptInvite(dto: AcceptInviteDto) {
@@ -43,6 +48,8 @@ export class TenantsService {
       data: { status: "ACCEPTED", acceptedAt: new Date() },
     });
 
+    await this.audit.create(invite.tenantId, "tenant.invite.accepted", user.id, { email: user.email });
+
     return { ok: true };
   }
 
@@ -59,9 +66,13 @@ export class TenantsService {
     });
     if (!membership) throw new NotFoundException("Utilizador nao pertence ao tenant");
 
-    return this.prisma.tenantUser.update({
+    const updated = await this.prisma.tenantUser.update({
       where: { tenantId_userId: { tenantId, userId } },
       data: { role: dto.role as any },
     });
+
+    await this.audit.create(tenantId, "tenant.role.updated", userId, { role: dto.role });
+
+    return updated;
   }
 }
