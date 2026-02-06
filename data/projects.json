@@ -156,8 +156,8 @@
   },
   {
     "id": 6,
-    "title": "API REST para Gest?o",
-    "description": "API REST robusta para gest?o de utilizadores, autentica??o JWT, valida??o de dados e documenta??o completa com Swagger.",
+    "title": "API REST para Gestão",
+    "description": "API REST robusta para gestão de utilizadores, autenticação JWT, validação de dados e documentação completa com Swagger.",
     "image": "assets/img/projects/covers/6.png",
     "technologies": [
       "Node.js",
