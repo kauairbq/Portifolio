@@ -19,17 +19,27 @@ export class OrganizationGuard implements CanActivate {
       throw new UnauthorizedException("Autenticação necessária");
     }
 
-    const orgIdHeader =
+    const orgHeader =
       request.headers["x-organization-id"] ?? request.headers["x-organization"];
 
-    if (!orgIdHeader || Array.isArray(orgIdHeader)) {
+    if (!orgHeader || Array.isArray(orgHeader)) {
       throw new ForbiddenException("Cabeçalho x-organization-id obrigatório");
     }
 
     const orgIdParam = request.params?.organizationId;
-    const orgId = orgIdParam ?? orgIdHeader;
+    const orgKey = String(orgHeader);
 
-    if (orgIdParam && orgIdParam !== orgIdHeader) {
+    const organization = await this.prisma.organization.findFirst({
+      where: {
+        OR: [{ id: orgKey }, { slug: orgKey }],
+      },
+    });
+
+    if (!organization) {
+      throw new ForbiddenException("Organização inválida");
+    }
+
+    if (orgIdParam && orgIdParam !== organization.id && orgIdParam !== organization.slug) {
       throw new ForbiddenException("Organização do cabeçalho não corresponde ao parâmetro");
     }
 
@@ -37,7 +47,7 @@ export class OrganizationGuard implements CanActivate {
       where: {
         userId_organizationId: {
           userId: user.id,
-          organizationId: orgId,
+          organizationId: organization.id,
         },
       },
       include: { organization: true },
@@ -47,7 +57,7 @@ export class OrganizationGuard implements CanActivate {
       throw new ForbiddenException("Utilizador sem acesso à organização");
     }
 
-    request.organizationId = orgId;
+    request.organizationId = organization.id;
     request.organizationRole = membership.role;
 
     return true;
