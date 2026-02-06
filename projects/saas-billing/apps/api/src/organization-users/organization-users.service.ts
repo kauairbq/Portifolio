@@ -1,13 +1,17 @@
 ﻿import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { AddOrganizationUserDto } from "./dto/organization-user.dto";
+import { AuditLogsService } from "../audit-logs/audit-logs.service";
 
 @Injectable()
 export class OrganizationUsersService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly auditLogs: AuditLogsService,
+  ) {}
 
-  async add(dto: AddOrganizationUserDto) {
-    const org = await this.prisma.organization.findUnique({ where: { id: dto.organizationId } });
+  async addMember(organizationId: string, dto: AddOrganizationUserDto, actorUserId?: string) {
+    const org = await this.prisma.organization.findUnique({ where: { id: organizationId } });
     if (!org) {
       throw new NotFoundException("Organização não encontrada");
     }
@@ -19,10 +23,11 @@ export class OrganizationUsersService {
 
     const subscription = await this.prisma.subscription.findFirst({
       where: {
-        organizationId: dto.organizationId,
+        organizationId,
         status: { in: ["ACTIVE", "TRIALING"] },
       },
       include: { plan: true },
+      orderBy: { createdAt: "desc" },
     });
 
     if (!subscription) {
@@ -30,21 +35,33 @@ export class OrganizationUsersService {
     }
 
     const memberCount = await this.prisma.organizationUser.count({
-      where: { organizationId: dto.organizationId },
+      where: { organizationId },
     });
 
     if (memberCount >= subscription.plan.maxUsers) {
       throw new BadRequestException("Limite de utilizadores do plano atingido");
     }
 
-    return this.prisma.organizationUser.create({
+    const membership = await this.prisma.organizationUser.create({
       data: {
-        organizationId: dto.organizationId,
+        organizationId,
         userId: dto.userId,
         role: dto.role,
       },
       include: { user: true, organization: true },
     });
+
+    await this.auditLogs.logAction({
+      organizationId,
+      actorUserId: actorUserId ?? null,
+      action: "organization_user.invited",
+      metadata: {
+        userId: dto.userId,
+        role: dto.role,
+      },
+    });
+
+    return membership;
   }
 
   listByOrganization(organizationId: string) {
@@ -55,11 +72,25 @@ export class OrganizationUsersService {
     });
   }
 
-  async remove(id: string) {
-    const membership = await this.prisma.organizationUser.findUnique({ where: { id } });
+  async removeMember(organizationId: string, userId: string, actorUserId?: string) {
+    const membership = await this.prisma.organizationUser.findUnique({
+      where: { userId_organizationId: { userId, organizationId } },
+    });
     if (!membership) {
       throw new NotFoundException("Associação não encontrada");
     }
-    return this.prisma.organizationUser.delete({ where: { id } });
+
+    const removed = await this.prisma.organizationUser.delete({
+      where: { id: membership.id },
+    });
+
+    await this.auditLogs.logAction({
+      organizationId,
+      actorUserId: actorUserId ?? null,
+      action: "organization_user.removed",
+      metadata: { userId },
+    });
+
+    return removed;
   }
 }

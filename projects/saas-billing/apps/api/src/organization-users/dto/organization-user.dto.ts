@@ -8,9 +8,6 @@ export enum OrganizationRoleDto {
 
 export class AddOrganizationUserDto {
   @IsString()
-  organizationId: string;
-
-  @IsString()
   userId: string;
 
   @IsEnum(OrganizationRoleDto)
