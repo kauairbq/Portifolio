@@ -1,4 +1,4 @@
-﻿import { Injectable, NotFoundException } from "@nestjs/common";
+﻿import { Injectable, NotFoundException, ForbiddenException } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { CreatePaymentDto, PaymentStatusDto, UpdatePaymentDto } from "./dto/payment.dto";
 import { AuditLogsService } from "../audit-logs/audit-logs.service";
@@ -10,10 +10,14 @@ export class PaymentsService {
     private readonly auditLogs: AuditLogsService,
   ) {}
 
-  async create(dto: CreatePaymentDto) {
+  async create(dto: CreatePaymentDto, organizationId: string) {
     const invoice = await this.prisma.invoice.findUnique({ where: { id: dto.invoiceId } });
     if (!invoice) {
       throw new NotFoundException("Fatura não encontrada");
+    }
+
+    if (invoice.organizationId !== organizationId) {
+      throw new ForbiddenException("Fatura não pertence à organização");
     }
 
     const payment = await this.prisma.payment.create({
@@ -41,17 +45,25 @@ export class PaymentsService {
     return payment;
   }
 
-  list() {
+  list(organizationId: string) {
     return this.prisma.payment.findMany({
+      where: { invoice: { organizationId } },
       include: { invoice: true },
       orderBy: { createdAt: "desc" },
     });
   }
 
-  async update(id: string, dto: UpdatePaymentDto) {
-    const payment = await this.prisma.payment.findUnique({ where: { id } });
+  async update(id: string, dto: UpdatePaymentDto, organizationId: string) {
+    const payment = await this.prisma.payment.findUnique({
+      where: { id },
+      include: { invoice: true },
+    });
     if (!payment) {
       throw new NotFoundException("Pagamento não encontrado");
+    }
+
+    if (payment.invoice.organizationId !== organizationId) {
+      throw new ForbiddenException("Pagamento não pertence à organização");
     }
 
     const updated = await this.prisma.payment.update({
