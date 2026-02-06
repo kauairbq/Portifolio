@@ -1,4 +1,5 @@
-﻿const { PrismaClient } = require("@prisma/client");
+﻿process.env.PRISMA_CLIENT_ENGINE_TYPE = "library";
+const { PrismaClient } = require("@prisma/client");
 const bcrypt = require("bcrypt");
 
 const prisma = new PrismaClient({});

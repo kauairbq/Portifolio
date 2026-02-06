@@ -1,4 +1,5 @@
-﻿import { PrismaClient } from "@prisma/client";
+﻿process.env.PRISMA_CLIENT_ENGINE_TYPE = "library";
+import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient({});
