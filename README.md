@@ -16,14 +16,36 @@ Portfólio web moderno e responsivo em HTML, CSS e JavaScript, com páginas est�
 - Páginas institucionais (sobre, serviços, contactos, galeria)
 - Componentes reutilizáveis em HTML
 
-## Tecnologias
+## Tecnologias (stack global do repositório)
 
+**Base do portfólio**
 - HTML5
 - CSS3
 - JavaScript (ES6+)
+- JSON (dados do site)
 - Node.js (server.js para servir localmente)
 - PHP (WAMP para projetos em `projects/` que usam PHP)
-- JSON (dados do site)
+
+**Frontend frameworks**
+- React (CRA e Vite)
+- Vue.js (Vite)
+- TypeScript (em projetos específicos)
+
+**Backend / APIs**
+- Node.js + Express
+- Socket.IO (tempo real)
+- JWT (auth)
+
+**Bases de dados**
+- PostgreSQL
+- MongoDB
+- MySQL
+
+**UI/UX e tooling**
+- Bootstrap, Tailwind CSS
+- Font Awesome
+- Swagger (documentação de API)
+- Jest (testes)
 
 ## Paginas principais
 
