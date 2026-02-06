@@ -8,34 +8,37 @@ export class InvoicesService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(dto: CreateInvoiceDto) {
-    const user = await this.prisma.user.findUnique({ where: { id: dto.userId } });
-    if (!user) {
-      throw new NotFoundException("Utilizador não encontrado");
+    const organization = await this.prisma.organization.findUnique({
+      where: { id: dto.organizationId },
+    });
+    if (!organization) {
+      throw new NotFoundException("Organização não encontrada");
     }
 
     const subscription = await this.prisma.subscription.findUnique({
       where: { id: dto.subscriptionId },
     });
-
     if (!subscription) {
       throw new NotFoundException("Subscrição não encontrada");
     }
 
     return this.prisma.invoice.create({
       data: {
-        userId: dto.userId,
+        organizationId: dto.organizationId,
         subscriptionId: dto.subscriptionId,
         amountCents: dto.amountCents,
-        currency: dto.currency ?? "EUR",
+        currency: dto.currency ?? undefined,
         status: dto.status ?? undefined,
+        dueAt: dto.dueAt ? new Date(dto.dueAt) : undefined,
+        paidAt: dto.paidAt ? new Date(dto.paidAt) : undefined,
       },
-      include: { user: true, subscription: true },
+      include: { organization: true, subscription: true },
     });
   }
 
   findAll() {
     return this.prisma.invoice.findMany({
-      include: { user: true, subscription: true },
+      include: { organization: true, subscription: true },
       orderBy: { issuedAt: "desc" },
     });
   }
@@ -43,7 +46,7 @@ export class InvoicesService {
   async findOne(id: string) {
     const invoice = await this.prisma.invoice.findUnique({
       where: { id },
-      include: { user: true, subscription: true },
+      include: { organization: true, subscription: true },
     });
 
     if (!invoice) {
@@ -59,13 +62,15 @@ export class InvoicesService {
     return this.prisma.invoice.update({
       where: { id },
       data: {
-        userId: dto.userId ?? undefined,
+        organizationId: dto.organizationId ?? undefined,
         subscriptionId: dto.subscriptionId ?? undefined,
         amountCents: dto.amountCents ?? undefined,
         currency: dto.currency ?? undefined,
         status: dto.status ?? undefined,
+        dueAt: dto.dueAt ? new Date(dto.dueAt) : undefined,
+        paidAt: dto.paidAt ? new Date(dto.paidAt) : undefined,
       },
-      include: { user: true, subscription: true },
+      include: { organization: true, subscription: true },
     });
   }
 
