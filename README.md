@@ -3,24 +3,26 @@
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222?logo=githubpages&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=white)
 
-Portfolio web moderno e responsivo em HTML, CSS e JavaScript, com paginas estaticas e dados dinamicos em JSON para projetos, servicos e precos.
+Portfólio web moderno e responsivo em HTML, CSS e JavaScript, com páginas estáticas e dados dinâmicos em JSON para projetos, serviços e preços.
 
 ## Funcionalidades
 
 - Design responsivo para desktop, tablet e mobile
-- Modo escuro/claro com preferencia salva
-- Animacoes e scroll suave
-- Galeria e pagina de projetos com dados em JSON
-- Paginas institucionais (sobre, servicos, contactos, galeria)
-- Componentes reutilizaveis em HTML
+- Modo escuro/claro com preferência salva
+- Animações e scroll suave
+- Galeria e página de projetos com dados em JSON
+- Páginas institucionais (sobre, serviços, contactos, galeria)
+- Componentes reutilizáveis em HTML
 
 ## Tecnologias
 
 - HTML5
 - CSS3
 - JavaScript (ES6+)
+- Node.js (server.js para servir localmente)
+- PHP (WAMP para projetos em `projects/` que usam PHP)
 - JSON (dados do site)
 
 ## Paginas principais
@@ -46,13 +48,13 @@ Projetos:
 | --- | --- | --- |
 | ![Ecommerce](assets/img/projects/ecommerce.svg) | ![CRM LookCar](assets/img/projects/crm-lookcar.svg) | ![App de Tarefas](assets/img/projects/app%20de%20tarefas.jpeg) |
 | Dashboard | Calculadora | Xkairos |
-| ![Dashboard](assets/img/projects/dashboard-analytics.svg) | ![Calculadora](assets/img/projects/calculadora.svg) | ![Xkairos](assets/img/projects/xkairos.svg) |
+| ![Dashboard](assets/img/projects/dashboard-analytics.svg) | ![Calculadora](assets/img/projects/calculadora.svg) | ![Xkairos](assets/img/projects/xkairos-cover.svg) |
 
 ## Estrutura do projeto
 
 ```
 Fullstack MD/
-|-- assets/                  # Recursos estaticos (imagens, etc.)
+|-- assets/                  # Recursos estáticos (imagens, etc.)
 |-- components/              # Componentes HTML reutilizaveis
 |-- css/                     # Estilos globais e paginas
 |-- data/                    # JSONs de projetos, servicos e precos
@@ -63,7 +65,7 @@ Fullstack MD/
 |-- scripts/                 # Scripts auxiliares
 |-- src/                     # Codigo fonte (se usado pelo build)
 |-- video/                   # Videos do site
-|-- curriculo-e-carta/       # CV e carta de apresentacao
+|-- curriculo-e-carta/       # CV e carta de apresentação
 |-- server.js                # Servidor local (quando usado)
 |-- package.json             # Dependencias
 |-- index.html
@@ -73,11 +75,11 @@ Fullstack MD/
 
 ## Dados dinamicos
 
-- `data/projects.json`: lista de projetos do portfolio
-- `data/services.json`: dados da secao de servicos
-- `data/pricing.json`: dados da tabela de precos
+- `data/projects.json`: lista de projetos do portfólio
+- `data/services.json`: dados da secção de serviços
+- `data/pricing.json`: dados da tabela de preços
 
-## Configuracao de ambiente (.env central)
+## Configuração de ambiente (.env central)
 
 1. Copie `.env.example` para `.env`
 2. Preencha os valores de banco
@@ -104,7 +106,7 @@ Fullstack MD/
 3. No backend, carregue o `.env` da raiz e use fallbacks do prefixo
 4. Para bancos SQL, crie a conexao no SQLTools usando as variaveis do `.env`
 
-## Como executar
+## Como executar (local)
 
 1. Abrir `index.html` no navegador
 2. Ou usar um servidor local:
@@ -113,11 +115,11 @@ Fullstack MD/
 # Python
 python -m http.server 8000
 
-# Node.js
-npx serve .
+# Node.js (servidor do portfólio)
+$env:PORT=8080; node server.js
 
-# PHP
-php -S localhost:8000
+# PHP (projetos em PHP)
+Use o WAMP (Apache) e aceda via http://localhost/
 ```
 
 ## Como atualizar projetos
@@ -126,14 +128,11 @@ php -S localhost:8000
 2. Adicione imagens em `assets/img/projects/` (ou o caminho usado no JSON)
 3. Confirme o link do projeto em `projects/` ou para um URL externo
 
-## Deploy (GitHub Pages)
+## Deploy (Vercel)
 
-1. Acesse `Settings -> Pages`
-2. Source: `Deploy from a branch`
-3. Branch: `main` e pasta `/(root)`
-4. Aguarde o build e acesse `https://kauairbq.github.io/Portifolio/`
+O repositório está ligado ao Vercel. Cada `git push` na branch `main` dispara um deploy automático.
 
-## Contribuicao
+## Contribuição
 
 - Abra uma issue descrevendo a melhoria
 - Crie um branch com o nome da feature
