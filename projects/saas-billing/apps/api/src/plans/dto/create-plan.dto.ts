@@ -1,4 +1,4 @@
-import { IsBoolean, IsEnum, IsInt, IsOptional, IsString, Min } from "class-validator";
+﻿import { IsBoolean, IsEnum, IsInt, IsOptional, IsString, Min } from "class-validator";
 
 export enum BillingIntervalDto {
   MONTHLY = "MONTHLY",
@@ -23,4 +23,17 @@ export class CreatePlanDto {
   @IsOptional()
   @IsBoolean()
   active?: boolean;
+
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  maxUsers?: number;
+
+  @IsOptional()
+  @IsBoolean()
+  canExport?: boolean;
+
+  @IsOptional()
+  @IsBoolean()
+  advancedReports?: boolean;
 }

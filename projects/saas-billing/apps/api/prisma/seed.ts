@@ -17,6 +17,25 @@ async function main() {
     },
   });
 
+  const organization = await prisma.organization.upsert({
+    where: { slug: "saas-demo" },
+    update: {},
+    create: {
+      name: "SaaS Demo Org",
+      slug: "saas-demo",
+    },
+  });
+
+  await prisma.organizationUser.upsert({
+    where: { userId_organizationId: { userId: admin.id, organizationId: organization.id } },
+    update: {},
+    create: {
+      userId: admin.id,
+      organizationId: organization.id,
+      role: "OWNER",
+    },
+  });
+
   const starter = await prisma.plan.upsert({
     where: { id: "starter-plan" },
     update: {},
@@ -27,6 +46,9 @@ async function main() {
       priceCents: 2900,
       interval: "MONTHLY",
       active: true,
+      maxUsers: 1,
+      canExport: false,
+      advancedReports: false,
     },
   });
 
@@ -40,6 +62,9 @@ async function main() {
       priceCents: 9900,
       interval: "MONTHLY",
       active: true,
+      maxUsers: 5,
+      canExport: true,
+      advancedReports: true,
     },
   });
 
@@ -53,6 +78,9 @@ async function main() {
       priceCents: 24900,
       interval: "MONTHLY",
       active: true,
+      maxUsers: 999,
+      canExport: true,
+      advancedReports: true,
     },
   });
 
@@ -61,18 +89,18 @@ async function main() {
     update: {},
     create: {
       id: "admin-subscription",
-      userId: admin.id,
+      organizationId: organization.id,
       planId: starter.id,
       status: "ACTIVE",
     },
   });
 
-  await prisma.invoice.upsert({
+  const invoice = await prisma.invoice.upsert({
     where: { id: "invoice-001" },
     update: {},
     create: {
       id: "invoice-001",
-      userId: admin.id,
+      organizationId: organization.id,
       subscriptionId: subscription.id,
       amountCents: starter.priceCents,
       currency: "EUR",
@@ -80,7 +108,24 @@ async function main() {
     },
   });
 
-  console.log("Seed concluído:", { admin: admin.email, plans: [starter.name, scale.name, enterprise.name] });
+  await prisma.payment.upsert({
+    where: { id: "payment-001" },
+    update: {},
+    create: {
+      id: "payment-001",
+      invoiceId: invoice.id,
+      amountCents: invoice.amountCents,
+      currency: "EUR",
+      status: "SUCCEEDED",
+      provider: "manual",
+    },
+  });
+
+  console.log("Seed concluído:", {
+    admin: admin.email,
+    organization: organization.name,
+    plans: [starter.name, scale.name, enterprise.name],
+  });
 }
 
 main()
