@@ -2,6 +2,7 @@
 import { PrismaService } from "../prisma/prisma.service";
 import { CreateSubscriptionDto, SubscriptionStatusDto } from "./dto/create-subscription.dto";
 import { UpdateSubscriptionDto } from "./dto/update-subscription.dto";
+import { AuditLogsService } from "../audit-logs/audit-logs.service";
 
 const STATUS_TRANSITIONS: Record<SubscriptionStatusDto, SubscriptionStatusDto[]> = {
   TRIALING: ["ACTIVE", "CANCELED"],
@@ -13,7 +14,10 @@ const STATUS_TRANSITIONS: Record<SubscriptionStatusDto, SubscriptionStatusDto[]>
 
 @Injectable()
 export class SubscriptionsService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly auditLogs: AuditLogsService,
+  ) {}
 
   async create(dto: CreateSubscriptionDto) {
     const organization = await this.prisma.organization.findUnique({
@@ -28,7 +32,7 @@ export class SubscriptionsService {
       throw new NotFoundException("Plano não encontrado");
     }
 
-    return this.prisma.subscription.create({
+    const created = await this.prisma.subscription.create({
       data: {
         organizationId: dto.organizationId,
         planId: dto.planId,
@@ -38,6 +42,14 @@ export class SubscriptionsService {
       },
       include: { organization: true, plan: true },
     });
+
+    await this.auditLogs.logAction({
+      organizationId: dto.organizationId,
+      action: "subscription.created",
+      metadata: { subscriptionId: created.id, planId: dto.planId, status: created.status },
+    });
+
+    return created;
   }
 
   findAll() {
@@ -72,7 +84,7 @@ export class SubscriptionsService {
       }
     }
 
-    return this.prisma.subscription.update({
+    const updated = await this.prisma.subscription.update({
       where: { id },
       data: {
         organizationId: dto.organizationId ?? undefined,
@@ -85,10 +97,23 @@ export class SubscriptionsService {
       },
       include: { organization: true, plan: true },
     });
+
+    await this.auditLogs.logAction({
+      organizationId: updated.organizationId,
+      action: "subscription.updated",
+      metadata: { subscriptionId: updated.id, status: updated.status },
+    });
+
+    return updated;
   }
 
   async remove(id: string) {
-    await this.findOne(id);
+    const current = await this.findOne(id);
+    await this.auditLogs.logAction({
+      organizationId: current.organizationId,
+      action: "subscription.deleted",
+      metadata: { subscriptionId: current.id },
+    });
     return this.prisma.subscription.delete({ where: { id } });
   }
 }

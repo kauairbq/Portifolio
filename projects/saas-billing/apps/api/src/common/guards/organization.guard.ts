@@ -19,11 +19,18 @@ export class OrganizationGuard implements CanActivate {
       throw new UnauthorizedException("Autenticação necessária");
     }
 
-    const orgId =
+    const orgIdHeader =
       request.headers["x-organization-id"] ?? request.headers["x-organization"];
 
-    if (!orgId || Array.isArray(orgId)) {
+    if (!orgIdHeader || Array.isArray(orgIdHeader)) {
       throw new ForbiddenException("Cabeçalho x-organization-id obrigatório");
+    }
+
+    const orgIdParam = request.params?.organizationId;
+    const orgId = orgIdParam ?? orgIdHeader;
+
+    if (orgIdParam && orgIdParam !== orgIdHeader) {
+      throw new ForbiddenException("Organização do cabeçalho não corresponde ao parâmetro");
     }
 
     const membership = await this.prisma.organizationUser.findUnique({

@@ -2,10 +2,14 @@
 import { PrismaService } from "../prisma/prisma.service";
 import { CreateInvoiceDto } from "./dto/create-invoice.dto";
 import { UpdateInvoiceDto } from "./dto/update-invoice.dto";
+import { AuditLogsService } from "../audit-logs/audit-logs.service";
 
 @Injectable()
 export class InvoicesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly auditLogs: AuditLogsService,
+  ) {}
 
   async create(dto: CreateInvoiceDto) {
     const organization = await this.prisma.organization.findUnique({
@@ -22,7 +26,7 @@ export class InvoicesService {
       throw new NotFoundException("Subscrição não encontrada");
     }
 
-    return this.prisma.invoice.create({
+    const invoice = await this.prisma.invoice.create({
       data: {
         organizationId: dto.organizationId,
         subscriptionId: dto.subscriptionId,
@@ -34,6 +38,14 @@ export class InvoicesService {
       },
       include: { organization: true, subscription: true },
     });
+
+    await this.auditLogs.logAction({
+      organizationId: dto.organizationId,
+      action: "invoice.created",
+      metadata: { invoiceId: invoice.id, amountCents: invoice.amountCents },
+    });
+
+    return invoice;
   }
 
   findAll() {
@@ -59,7 +71,7 @@ export class InvoicesService {
   async update(id: string, dto: UpdateInvoiceDto) {
     await this.findOne(id);
 
-    return this.prisma.invoice.update({
+    const updated = await this.prisma.invoice.update({
       where: { id },
       data: {
         organizationId: dto.organizationId ?? undefined,
@@ -72,10 +84,23 @@ export class InvoicesService {
       },
       include: { organization: true, subscription: true },
     });
+
+    await this.auditLogs.logAction({
+      organizationId: updated.organizationId,
+      action: "invoice.updated",
+      metadata: { invoiceId: updated.id, status: updated.status },
+    });
+
+    return updated;
   }
 
   async remove(id: string) {
-    await this.findOne(id);
+    const current = await this.findOne(id);
+    await this.auditLogs.logAction({
+      organizationId: current.organizationId,
+      action: "invoice.deleted",
+      metadata: { invoiceId: current.id },
+    });
     return this.prisma.invoice.delete({ where: { id } });
   }
 }

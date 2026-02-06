@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+﻿import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -8,6 +8,12 @@ import { UsersModule } from "./users/users.module";
 import { PlansModule } from "./plans/plans.module";
 import { SubscriptionsModule } from "./subscriptions/subscriptions.module";
 import { InvoicesModule } from "./invoices/invoices.module";
+import { OrganizationsModule } from "./organizations/organizations.module";
+import { OrganizationUsersModule } from "./organization-users/organization-users.module";
+import { PaymentsModule } from "./payments/payments.module";
+import { AuditLogsModule } from "./audit-logs/audit-logs.module";
+import { MetricsModule } from "./metrics/metrics.module";
+import { ReportsModule } from "./reports/reports.module";
 
 @Module({
   imports: [
@@ -18,6 +24,12 @@ import { InvoicesModule } from "./invoices/invoices.module";
     PlansModule,
     SubscriptionsModule,
     InvoicesModule,
+    OrganizationsModule,
+    OrganizationUsersModule,
+    PaymentsModule,
+    AuditLogsModule,
+    MetricsModule,
+    ReportsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
