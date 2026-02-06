@@ -14,10 +14,12 @@ import { PaymentsModule } from "./payments/payments.module";
 import { AuditLogsModule } from "./audit-logs/audit-logs.module";
 import { MetricsModule } from "./metrics/metrics.module";
 import { ReportsModule } from "./reports/reports.module";
+import { CommonModule } from "./common/common.module";
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    CommonModule,
     PrismaModule,
     AuthModule,
     UsersModule,
