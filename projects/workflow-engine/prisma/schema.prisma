@@ -1,0 +1,50 @@
+﻿// Prisma schema (Workflow Engine)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Workflow {
+  id        String @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  versions  WorkflowVersion[]
+}
+
+model WorkflowVersion {
+  id         String   @id @default(uuid())
+  workflowId String
+  version    Int
+  createdAt  DateTime @default(now())
+  workflow   Workflow @relation(fields: [workflowId], references: [id])
+  states     Json
+  transitions Json
+}
+
+model WorkflowInstance {
+  id              String   @id @default(uuid())
+  workflowVersionId String
+  status          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  events          WorkflowEvent[]
+}
+
+model WorkflowEvent {
+  id         String   @id @default(uuid())
+  instanceId String
+  type       String
+  payload    Json?
+  createdAt  DateTime @default(now())
+}
+
+model Rule {
+  id         String @id @default(uuid())
+  name       String
+  conditions Json
+}
