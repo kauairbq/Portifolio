@@ -15,7 +15,9 @@ import { AuditLogsModule } from "./audit-logs/audit-logs.module";
     RolesModule,
     PermissionsModule,
     AuditLogsModule,
-    ThrottlerModule.forRoot({ ttl: 60, limit: 100 }),
+    ThrottlerModule.forRoot({
+      throttlers: [{ ttl: 60, limit: 100 }],
+    }),
   ],
 })
 export class AppModule {}

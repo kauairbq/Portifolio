@@ -27,7 +27,9 @@ exports.AppModule = AppModule = __decorate([
             roles_module_1.RolesModule,
             permissions_module_1.PermissionsModule,
             audit_logs_module_1.AuditLogsModule,
-            throttler_1.ThrottlerModule.forRoot({ ttl: 60, limit: 100 }),
+            throttler_1.ThrottlerModule.forRoot({
+                throttlers: [{ ttl: 60, limit: 100 }],
+            }),
         ],
     })
 ], AppModule);
