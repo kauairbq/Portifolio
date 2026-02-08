@@ -1,4 +1,4 @@
-# PORTFÓLIO – TODO.md (Upgrade para Nível Sênior Premium)
+﻿# PORTFÓLIO – TODO.md (Upgrade para Nível Sênior Premium)
 
 Este checklist serve como **guia definitivo** para elevar o portfólio a um **padrão sênior premium**, com foco em **credibilidade, clareza, narrativa e impacto visual**.
 
@@ -6,10 +6,10 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 ## 1️⃣ OBJETIVO & POSICIONAMENTO (BASE)
 
-* [ ] Definir **headline clara e direta** (quem és + o que entregas)
+* [x] Definir **headline clara e direta** (quem és + o que entregas)
 
   * Ex: `Senior Full-Stack Engineer | Product, APIs & Scalable Systems`
-* [ ] Definir **sub-headline orientada a valor** (não stack)
+* [x] Definir **sub-headline orientada a valor** (não stack)
 * [ ] Eliminar frases genéricas ("apaixonado por tecnologia", etc.)
 * [ ] Garantir que em **5 segundos** o visitante entende teu nível
 
@@ -275,3 +275,4 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
+
