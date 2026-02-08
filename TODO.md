@@ -247,21 +247,21 @@ CARD DE PROJETO – PADRÃO VISUAL
 
 Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 
-* [ ] Hero comunica senioridade em <5 segundos
-* [ ] Máx. 7 projetos em destaque
-* [ ] Todos os projetos premium têm:
+* [x] Hero comunica senioridade em <5 segundos
+* [x] Máx. 7 projetos em destaque
+* [x] Todos os projetos premium têm:
 
   * screenshot real
   * descrição orientada a problema/solução
   * desafio técnico claro
   * stack visível
   * links funcionais
-* [ ] Projetos de curso NÃO aparecem
-* [ ] Layout consistente (grid, tipografia, cores)
-* [ ] CTA de contato claro
-* [ ] CV disponível para download
-* [ ] Mobile validado
-* [ ] Lighthouse sem alertas críticos
+* [x] Projetos de curso NÃO aparecem
+* [x] Layout consistente (grid, tipografia, cores)
+* [x] CTA de contato claro
+* [x] CV disponível para download
+* [x] Mobile validado
+* [x] Lighthouse sem alertas críticos
 
 ---
 
@@ -276,7 +276,7 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
 
-
+* [x] Definição de pronto confirmada
 
 
 
