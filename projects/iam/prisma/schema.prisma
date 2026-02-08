@@ -1,4 +1,4 @@
-﻿// Prisma schema (IAM)
+// Prisma schema (IAM)
 
 generator client {
   provider = "prisma-client-js"
