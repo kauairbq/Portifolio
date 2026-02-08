@@ -73,6 +73,7 @@ model Permission {
   id    String @id @default(uuid())
   key   String @unique
   name  String
+  roles RolePermission[]
 }
 
 model RolePermission {
@@ -81,6 +82,8 @@ model RolePermission {
   permissionId String
   role         Role       @relation(fields: [roleId], references: [id])
   permission   Permission @relation(fields: [permissionId], references: [id])
+
+  @@unique([roleId, permissionId])
 }
 
 model Session {
