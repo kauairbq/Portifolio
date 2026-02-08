@@ -10,3 +10,4 @@ export const regioesService = {
     return data.data
   },
 }
+

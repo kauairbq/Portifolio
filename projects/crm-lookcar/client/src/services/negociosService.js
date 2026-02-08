@@ -10,3 +10,4 @@ export const negociosService = {
     return data.data
   },
 }
+

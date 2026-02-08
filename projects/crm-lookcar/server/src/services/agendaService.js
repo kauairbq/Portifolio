@@ -24,3 +24,4 @@ export const agendaService = {
     return result.rows[0]
   },
 }
+

@@ -28,3 +28,4 @@ router.post('/', validateBody(['nome']), async (req, res) => {
 })
 
 export default router
+

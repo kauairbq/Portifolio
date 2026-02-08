@@ -10,3 +10,4 @@ export const distritosService = {
     return data.data
   },
 }
+

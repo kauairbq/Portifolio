@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+﻿import { defineStore } from 'pinia'
 import { useConfigStore } from './useConfigStore'
 
 const sampleClientes = [
@@ -95,3 +95,4 @@ export const useClientesStore = defineStore('clientes', {
     },
   },
 })
+
