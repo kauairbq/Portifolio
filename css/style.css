@@ -11,17 +11,36 @@
     --accent: #4A90E2;
     --background-light: #FFFFFF;
     --text-dark: #1E4DB7;
+    --bg-900: #0b1020;
+    --bg-800: #0f172a;
+    --bg-700: #16213a;
+    --surface-900: #111827;
+    --surface-800: #16213a;
+    --surface-700: #1c2a44;
+    --text-100: #f8fafc;
+    --text-300: #cbd5e1;
+    --text-500: #94a3b8;
+    --primary-500: #4f7cff;
+    --primary-600: #3b6fff;
+    --accent-500: #8b5cf6;
+    --accent-600: #7c3aed;
+    --border-700: rgba(148, 163, 184, 0.22);
+    --shadow-1: 0 12px 34px rgba(2, 6, 23, 0.35);
+    --shadow-2: 0 18px 48px rgba(2, 6, 23, 0.45);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
+    color: var(--text-100);
     background:
-        radial-gradient(circle at 20% 50%, rgba(30, 77, 183, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 25%, #E6F3FF 50%, #D1E9FF 75%, #B8D4FF 100%);
+        radial-gradient(circle at 15% 20%, rgba(79, 124, 255, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(30, 77, 183, 0.15) 0%, transparent 45%),
+        linear-gradient(135deg, #0b1020 0%, #0f172a 35%, #111827 70%, #0a1226 100%);
     background-attachment: fixed;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-x: hidden;
@@ -75,12 +94,21 @@ body::before {
 
 body.dark-mode {
     background:
-        radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(30, 77, 183, 0.1) 0%, transparent 50%),
-        linear-gradient(135deg, #0B1C3F 0%, #1E4DB7 25%, #0B1C3F 50%, #0A1A2E 75%, #051025 100%);
+        radial-gradient(circle at 15% 20%, rgba(79, 124, 255, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(30, 77, 183, 0.15) 0%, transparent 45%),
+        linear-gradient(135deg, #0b1020 0%, #0f172a 35%, #111827 70%, #0a1226 100%);
     background-attachment: fixed;
-    color: #FFFFFF;
+    color: var(--text-100);
+}
+
+body.light-mode {
+    color: #0B1C3F;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(30, 77, 183, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 25%, #E6F3FF 50%, #D1E9FF 75%, #B8D4FF 100%);
 }
 
 body.dark-mode::before {
@@ -3039,3 +3067,141 @@ body.dark-mode .project-links .btn.secondary {
 \n.projects-filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 20px;}\n.filter-btn{border:1px solid rgba(59,130,246,0.25);background:#f5f9ff;color:#1e3a8a;padding:8px 14px;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer;transition:all .2s ease;}\n.filter-btn.active{background:linear-gradient(135deg,#4A90E2,#1E4DB7);color:#fff;border-color:transparent;box-shadow:0 8px 18px rgba(30,77,183,0.3);}\nbody.dark-mode .filter-btn{background:rgba(15,23,42,0.8);color:#dbeafe;border-color:rgba(148,163,184,0.2);}\nbody.dark-mode .filter-btn.active{background:linear-gradient(135deg,#38bdf8,#2563eb);color:#fff;}\n
 \n.social-proof{padding:4.5rem 0;background:linear-gradient(180deg,#f7fbff 0%,#eef5ff 100%);}\n.social-proof h2{text-align:center;margin-bottom:.35rem;color:#0b1f4d;}\n.section-lede{text-align:center;color:#5b6b86;max-width:720px;margin:0 auto 24px;}\n.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:22px;}\n.proof-card{background:#fff;border:1px solid rgba(31,59,120,0.12);border-radius:14px;padding:18px;text-align:center;box-shadow:0 10px 26px rgba(15,23,42,0.08);}\n.proof-card h3{font-size:28px;margin:0 0 6px;color:#1e3a8a;}\n.proof-card p{margin:0;color:#5b6b86;}\n.logo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}\n.logo-row span{padding:6px 12px;border-radius:999px;background:rgba(59,130,246,0.12);color:#1e3a8a;font-weight:700;font-size:12px;}\nbody.dark-mode .social-proof{background:linear-gradient(180deg,#0b1224 0%,#0f172a 100%);}\nbody.dark-mode .social-proof h2{color:#e8f0ff;}\nbody.dark-mode .section-lede{color:#b6c2de;}\nbody.dark-mode .proof-card{background:#0f172a;border-color:rgba(148,163,184,0.18);box-shadow:0 12px 30px rgba(0,0,0,0.35);}\nbody.dark-mode .proof-card h3{color:#e8f0ff;}\nbody.dark-mode .proof-card p{color:#b6c2de;}\nbody.dark-mode .logo-row span{background:rgba(59,130,246,0.2);color:#dbeafe;}\n
 \n.contact-cta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;}\n.contact-cta .btn{margin-top:0;}\n
+
+/* ============== Design System Overrides (Dark-First) ============== */
+body,
+body.dark-mode {
+    color: var(--text-100);
+}
+
+body.light-mode {
+    color: #0b1c3f;
+}
+
+header,
+body.dark-mode header {
+    background: linear-gradient(135deg, #0b1020 0%, #0f172a 100%);
+    border-bottom: 1px solid var(--border-700);
+    box-shadow: var(--shadow-1);
+}
+
+body.light-mode header {
+    background: #0b1c3f;
+    border-bottom: 1px solid rgba(30, 77, 183, 0.25);
+}
+
+nav ul li a {
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, rgba(79, 124, 255, 0.9), rgba(30, 77, 183, 0.9));
+    color: #fff;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(135deg, rgba(79, 124, 255, 1), rgba(139, 92, 246, 0.95));
+    box-shadow: 0 8px 24px rgba(79, 124, 255, 0.35);
+}
+
+.hero,
+body.dark-mode .hero {
+    background: radial-gradient(circle at 20% 20%, rgba(79,124,255,0.18), transparent 35%), #0b1020;
+}
+
+.hero-copy h1,
+.hero-copy .lede {
+    color: var(--text-100);
+}
+
+.hero-copy .lede {
+    color: var(--text-300);
+}
+
+.btn,
+.hero-copy .btn,
+.project-links a,
+.contact-actions a {
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary,
+.hero-copy .btn.primary {
+    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(79, 124, 255, 0.35);
+}
+
+.btn.primary:hover,
+.hero-copy .btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(79, 124, 255, 0.45);
+}
+
+.btn.ghost,
+.hero-copy .btn.ghost {
+    background: rgba(15, 23, 42, 0.65);
+    color: var(--text-100);
+    border: 1px solid var(--border-700);
+}
+
+.btn.ghost:hover,
+.hero-copy .btn.ghost:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(2, 6, 23, 0.35);
+}
+
+.project-card,
+.contact-section,
+.hero-stats div,
+.filter-btn,
+.social-proof .badge {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-700);
+    background: rgba(17, 24, 39, 0.65);
+    box-shadow: var(--shadow-1);
+    backdrop-filter: blur(8px);
+}
+
+.project-card h3,
+.contact-section h2,
+.hero-stats strong {
+    color: var(--text-100);
+}
+
+.project-card p,
+.hero-stats span,
+.contact-section p,
+.contact-section label {
+    color: var(--text-300);
+}
+
+.tech-tag,
+.project-tag {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(15, 23, 42, 0.7);
+    color: var(--text-300);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    color: #fff;
+    border-color: transparent;
+}
+
+body.light-mode .project-card,
+body.light-mode .contact-section,
+body.light-mode .hero-stats div,
+body.light-mode .filter-btn,
+body.light-mode .social-proof .badge {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.08);
+    color: #0b1c3f;
+}
+
+body.light-mode .project-card p,
+body.light-mode .contact-section p,
+body.light-mode .hero-stats span {
+    color: #2c3b5f;
+}

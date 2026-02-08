@@ -163,11 +163,11 @@ CARD DE PROJETO – PADRÃO VISUAL
 
 ## 1️⃣1️⃣ UI / DESIGN SYSTEM
 
-* [ ] Paleta de cores consistente (baseada no logo)
-* [ ] Tipografia moderna e legível
-* [ ] Componentes reutilizáveis
-* [ ] Espaçamento consistente
-* [ ] Dark/Light mode (opcional)
+* [x] Paleta de cores consistente (baseada no logo)
+* [x] Tipografia moderna e legível
+* [x] Componentes reutilizáveis
+* [x] Espaçamento consistente
+* [x] Dark/Light mode (opcional)
 
 ---
 
@@ -275,7 +275,6 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
-
 
 
 
