@@ -1,4 +1,4 @@
-const tips = [
+﻿const tips = [
   { title: 'Proteína a cada refeição', text: 'Inclui 20-40 g de proteína em cada refeição para recuperar e preservar massa magra.' },
   { title: 'Passos diários', text: '8-10k passos ajudam na saúde metabólica e aumentam o NEAT (gasto não-treino).' },
   { title: 'Sono primeiro', text: '7-9 horas, quarto escuro e fresco. Sono ruim sabota ganho de força e perda de gordura.' },
@@ -67,13 +67,13 @@ if (calcDetBtn) {
     else faixa = 'Obesidade';
     const agua = (peso * 0.035).toFixed(2); // litros/dia (35 ml/kg)
 
-    detOut.textContent = `TMB: ${tmb.toFixed(0)} kcal · TDEE: ${tdee.toFixed(
+    detOut.textContent = `TMB: ${tmb.toFixed(0)} kcal • TDEE: ${tdee.toFixed(
       0
-    )} kcal · Macros: ${prote.toFixed(0)} g proteína · ${gord.toFixed(
+    )} kcal • Macros: ${prote.toFixed(0)} g proteína • ${gord.toFixed(
       0
-    )} g gordura · ${carbs.toFixed(0)} g hidratos · IMC: ${imc.toFixed(
+    )} g gordura • ${carbs.toFixed(0)} g hidratos • IMC: ${imc.toFixed(
       1
-    )} (${faixa}) · Água: ${agua} L/dia`;
+    )} (${faixa}) • Água: ${agua} L/dia`;
 
     detOut.innerHTML = `
       <div class="calc-output">
@@ -88,3 +88,5 @@ if (calcDetBtn) {
       </div>`;
   });
 }
+
+

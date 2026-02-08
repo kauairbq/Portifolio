@@ -182,27 +182,27 @@ CARD DE PROJETO – PADRÃO VISUAL
 
 ## 1️⃣3️⃣ PERFORMANCE & TÉCNICO
 
-* [ ] Imagens otimizadas
-* [ ] Lighthouse verde
-* [ ] SEO básico (title, meta, OG)
-* [ ] Acessibilidade básica (A11y)
+* [x] Imagens otimizadas
+* [x] Lighthouse verde
+* [x] SEO básico (title, meta, OG)
+* [x] Acessibilidade básica (A11y)
 
 ---
 
 ## 1️⃣4️⃣ COPY & TOM (SÊNIOR)
 
-* [ ] Linguagem direta
-* [ ] Sem exageros ou buzzwords vazias
-* [ ] Foco em impacto e responsabilidade
+* [x] Linguagem direta
+* [x] Sem exageros ou buzzwords vazias
+* [x] Foco em impacto e responsabilidade
 
 ---
 
 ## 1️⃣5️⃣ CHECK FINAL – PRONTO PARA VITRINE
 
-* [ ] Portfólio conta uma **história clara**
-* [ ] Projetos mostram **engenharia real**
-* [ ] Layout transmite **confiança e maturidade**
-* [ ] Visitante entende teu nível em <10s
+* [x] Portfólio conta uma **história clara**
+* [x] Projetos mostram **engenharia real**
+* [x] Layout transmite **confiança e maturidade**
+* [x] Visitante entende teu nível em <10s
 
 ---
 
@@ -275,9 +275,6 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
-
-
-
 
 
 

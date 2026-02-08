@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #111111;
   --panel: #1c1c1c;
   --card: #1c1c1c;
@@ -347,3 +347,5 @@ input, select {
     align-items: flex-start;
   }
 }
+
+

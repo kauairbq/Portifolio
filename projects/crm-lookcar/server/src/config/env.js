@@ -12,3 +12,5 @@ export const env = {
   jwtSecret: process.env.CRM_JWT_SECRET || process.env.JWT_SECRET || '',
 }
 
+
+

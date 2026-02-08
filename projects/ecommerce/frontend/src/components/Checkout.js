@@ -48,3 +48,5 @@ const Checkout = ({ cart, products, total, onCheckout, onBack }) => {
 
 export default Checkout;
 
+
+

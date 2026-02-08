@@ -63,3 +63,5 @@ const Cart = ({ cart, products, updateCartItem, removeFromCart }) => {
 
 export default Cart;
 
+
+
