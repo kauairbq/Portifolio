@@ -69,9 +69,9 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 ### Organização
 
-* [ ] Seção **Projetos em Destaque** (5–7 no máximo)
-* [ ] Seção **Outros Projetos Relevantes** (secundária)
-* [ ] Ocultar projetos de curso/júnior
+* [x] Seção **Projetos em Destaque** (5–7 no máximo)
+* [x] Seção **Outros Projetos Relevantes** (secundária)
+* [x] Ocultar projetos de curso/júnior
 
 ---
 
@@ -81,13 +81,13 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 > Estes projetos **definem tua senioridade**. São os que recrutadores e tech leads devem ver primeiro.
 
-* [ ] **SaaS B2B – Assinaturas & Billing** (produto, monetização, multi-tenant)
-* [ ] **IAM – Identity & Access Management** (segurança, RBAC, auditoria)
-* [ ] **Workflow Engine / Rule Engine** (processos, state machine, negócio)
-* [ ] **Smart Connect Home** (integrações, IoT, orquestração)
-* [ ] **CRM (gestão de clientes/leads)** (B2B, funil, dashboards)
-* [ ] **E-commerce Completo** (pagamentos, carrinho, admin)
-* [ ] **Dashboard Analytics (dados reais)** (KPIs, visualização, performance)
+* [x] **SaaS B2B – Assinaturas & Billing** (produto, monetização, multi-tenant)
+* [x] **IAM – Identity & Access Management** (segurança, RBAC, auditoria)
+* [x] **Workflow Engine / Rule Engine** (processos, state machine, negócio)
+* [x] **Smart Connect Home** (integrações, IoT, orquestração)
+* [x] **CRM (gestão de clientes/leads)** (B2B, funil, dashboards)
+* [x] **E-commerce Completo** (pagamentos, carrinho, admin)
+* [x] **Dashboard Analytics (dados reais)** (KPIs, visualização, performance)
 
 > ⚠️ Máximo recomendado: **5–7 projetos em destaque**. Mais que isso dilui impacto.
 
@@ -97,11 +97,11 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 > Mostram amplitude, visão comercial e front-end, mas **não são o foco principal**.
 
-* [ ] **Xkairos Tech** (assistência técnica / setups gamer – visão de negócio)
-* [ ] **Estande de Automóveis** (catálogo, filtros, UI/UX)
-* [ ] **Landing Pages Institucionais** (SEO, conversão)
-* [ ] **Personal Trainer Landing** (potencial comercial)
-* [ ] **Sistema de Chat em Tempo Real** (realtime / websockets)
+* [x] **Xkairos Tech** (assistência técnica / setups gamer – visão de negócio)
+* [x] **Estande de Automóveis** (catálogo, filtros, UI/UX)
+* [x] **Landing Pages Institucionais** (SEO, conversão)
+* [x] **Personal Trainer Landing** (potencial comercial)
+* [x] **Sistema de Chat em Tempo Real** (realtime / websockets)
 
 ---
 
@@ -109,16 +109,16 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 > **Não apagar do GitHub**, apenas **não expor no portfólio principal**.
 
-* [ ] Calculadora de média de notas
-* [ ] Contador de cliques
-* [ ] Blog pessoal (curso)
-* [ ] Jogo da memória
-* [ ] Site banda de rock
-* [ ] App de tarefas simples
-* [ ] Catálogo simples
-* [ ] Site genérico para advogados
-* [ ] Gestão de projetos simples
-* [ ] APIs REST genéricas sem domínio forte
+* [x] Calculadora de média de notas
+* [x] Contador de cliques
+* [x] Blog pessoal (curso)
+* [x] Jogo da memória
+* [x] Site banda de rock
+* [x] App de tarefas simples
+* [x] Catálogo simples
+* [x] Site genérico para advogados
+* [x] Gestão de projetos simples
+* [x] APIs REST genéricas sem domínio forte
 
 > Estes projetos são **material de curso / aprendizado** e **puxam a percepção para baixo** se exibidos.
 
@@ -128,11 +128,11 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 CARD DE PROJETO – PADRÃO VISUAL
 
-* [ ] Grid consistente (2–3 colunas desktop)
-* [ ] Hover clean (sombra leve / elevação)
-* [ ] Botões padronizados
-* [ ] Ícones consistentes para stack
-* [ ] Evitar texto excessivo
+* [x] Grid consistente (2–3 colunas desktop)
+* [x] Hover clean (sombra leve / elevação)
+* [x] Botões padronizados
+* [x] Ícones consistentes para stack
+* [x] Evitar texto excessivo
 
 ---
 
@@ -212,34 +212,34 @@ CARD DE PROJETO – PADRÃO VISUAL
 
 ### 📌 Inventário – Vitrine Premium
 
-* [ ] SaaS B2B – Assinaturas & Billing
-* [ ] IAM – Identity & Access Management
-* [ ] Workflow Engine / Rule Engine
-* [ ] Smart Connect Home
-* [ ] CRM (Gestão de Clientes / Leads)
-* [ ] E-commerce Completo
-* [ ] Dashboard Analytics (Dados Reais)
+* [x] SaaS B2B – Assinaturas & Billing
+* [x] IAM – Identity & Access Management
+* [x] Workflow Engine / Rule Engine
+* [x] Smart Connect Home
+* [x] CRM (Gestão de Clientes / Leads)
+* [x] E-commerce Completo
+* [x] Dashboard Analytics (Dados Reais)
 
 ### 📌 Inventário – Vitrine Secundária
 
-* [ ] Xkairos Tech (Assistência técnica / setups gamer)
-* [ ] Estande de Automóveis
-* [ ] Landing Pages Institucionais
-* [ ] Personal Trainer Landing
-* [ ] Sistema de Chat em Tempo Real
+* [x] Xkairos Tech (Assistência técnica / setups gamer)
+* [x] Estande de Automóveis
+* [x] Landing Pages Institucionais
+* [x] Personal Trainer Landing
+* [x] Sistema de Chat em Tempo Real
 
 ### 📌 Inventário – Arquivados (não exibir)
 
-* [ ] Calculadora de média de notas
-* [ ] Contador de cliques
-* [ ] Blog pessoal (curso)
-* [ ] Jogo da memória
-* [ ] Site banda de rock
-* [ ] App de tarefas simples
-* [ ] Catálogo simples
-* [ ] Site genérico para advogados
-* [ ] Gestão de projetos simples
-* [ ] APIs REST genéricas
+* [x] Calculadora de média de notas
+* [x] Contador de cliques
+* [x] Blog pessoal (curso)
+* [x] Jogo da memória
+* [x] Site banda de rock
+* [x] App de tarefas simples
+* [x] Catálogo simples
+* [x] Site genérico para advogados
+* [x] Gestão de projetos simples
+* [x] APIs REST genéricas
 
 ---
 
@@ -275,6 +275,10 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
+
+
+
+
 
 
 

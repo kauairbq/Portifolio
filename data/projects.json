@@ -15,7 +15,12 @@
         "archived":  false,
         "title":  "E-commerce Completo (React + Node.js)",
         "description":  "Plataforma de e-commerce com frontend em React, backend Node.js/Express, carrinho, checkout e integração com API.",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "Full-Stack",
+                           "E-commerce",
+                           "Produto"
+                       ]
     },
     {
         "id":  13,
@@ -33,7 +38,12 @@
         "archived":  false,
         "title":  "CRM LookCar (Vue + Express)",
         "description":  "CRM para leads de stand automóvel com painéis, gestão de clientes/negócios e importação de contactos.",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "Full-Stack",
+                           "CRM",
+                           "Produto"
+                       ]
     },
     {
         "id":  14,
@@ -51,7 +61,11 @@
         "title":  "Xkairos Tech",
         "description":  "Plataforma para orçamentos, área do cliente e CRM de montagens de PCs, com painel admin e automações.",
         "featured":  false,
-        "image":  "assets/img/projects/xkairos.svg"
+        "image":  "assets/img/projects/xkairos.svg",
+        "categories":  [
+                           "Full-Stack",
+                           "Produto"
+                       ]
     },
     {
         "id":  101,
@@ -69,7 +83,11 @@
         "archived":  false,
         "title":  "SmartConnect Home",
         "description":  "App de automação residencial com perfis (admin/utilizador), packs modulares, dispositivos, suporte e auditoria.",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "IoT",
+                           "Produto"
+                       ]
     },
     {
         "id":  0,
@@ -134,7 +152,11 @@
         "archived":  false,
         "title":  "Dashboard Analytics",
         "description":  "Painel administrativo interativo com gráficos, relatórios e integração com múltiplas fontes de dados.",
-        "featured":  false
+        "featured":  false,
+        "categories":  [
+                           "Frontend",
+                           "Produto"
+                       ]
     },
     {
         "id":  4,
@@ -199,7 +221,11 @@
         "archived":  false,
         "title":  "Landing Page Institucional",
         "description":  "Landing moderna e responsiva com animações suaves e foco em conversão.",
-        "featured":  false
+        "featured":  false,
+        "categories":  [
+                           "Frontend",
+                           "Produto"
+                       ]
     },
     {
         "id":  8,
@@ -216,7 +242,11 @@
         "archived":  false,
         "title":  "Sistema de Chat em Tempo Real",
         "description":  "Aplicação de chat com mensagens em tempo real via WebSocket e interface moderna.",
-        "featured":  false
+        "featured":  false,
+        "categories":  [
+                           "Full-Stack",
+                           "Produto"
+                       ]
     },
     {
         "id":  12,
@@ -301,7 +331,11 @@
         "archived":  false,
         "title":  "Personal Trainer (Landing)",
         "description":  "Portefólio estático com serviços, dicas, biblioteca de exercícios e calculadoras rápidas.",
-        "featured":  false
+        "featured":  false,
+        "categories":  [
+                           "Frontend",
+                           "Produto"
+                       ]
     },
     {
         "id":  105,
@@ -316,7 +350,11 @@
         "archived":  false,
         "title":  "Stand Automóveis",
         "description":  "Landing moderna para stand automóvel com filtros de stock, destaques e CTA.",
-        "featured":  false
+        "featured":  false,
+        "categories":  [
+                           "Frontend",
+                           "Produto"
+                       ]
     },
     {
         "id":  106,
@@ -335,7 +373,11 @@
         "archived":  false,
         "title":  "API Gestão Pro",
         "description":  "API REST com JWT, RBAC, PostgreSQL, Swagger e testes automatizados.",
-        "featured":  false
+        "featured":  false,
+        "categories":  [
+                           "Backend",
+                           "Produto"
+                       ]
     },
     {
         "id":  107,
@@ -352,7 +394,11 @@
         "archived":  false,
         "title":  "Dashboard Dados Reais",
         "description":  "Dashboard React + TypeScript com dados reais da API pública CoinGecko.",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "Frontend",
+                           "Produto"
+                       ]
     },
     {
         "image":  "assets/img/projects/dashboard-analytics.svg",
@@ -369,7 +415,12 @@
         "description":  "Plataforma SaaS multi-tenant com planos, billing, RBAC e auditoria.",
         "github":  "",
         "title":  "SaaS B2B – Assinaturas \u0026 Billing",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "SaaS",
+                           "Full-Stack",
+                           "Produto"
+                       ]
     },
     {
         "image":  "assets/img/projects/api-rest.svg",
@@ -386,7 +437,11 @@
         "description":  "Sistema de identidade com multi-tenant, RBAC, sessões, refresh token e audit logs.",
         "github":  "",
         "title":  "IAM – Identity \u0026 Access Management",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "Backend",
+                           "Produto"
+                       ]
     },
     {
         "image":  "assets/img/projects/api.svg",
@@ -403,6 +458,10 @@
         "description":  "Motor de workflows com versionamento, state machine, regras e auditoria.",
         "github":  "",
         "title":  "Workflow Engine / Rule Engine",
-        "featured":  true
+        "featured":  true,
+        "categories":  [
+                           "Backend",
+                           "Produto"
+                       ]
     }
 ]

@@ -42,6 +42,7 @@ async function loadProjects() {
 
     renderProjects(featuredGrid, featured);
     renderProjects(secondaryGrid, secondary);
+    initFilters();
   } catch (error) {
     console.error('Erro ao carregar projetos:', error);
     renderProjects(featuredGrid, PROJECTS_FALLBACK, true);
@@ -88,6 +89,13 @@ function createProjectCard(project, index, isFallback) {
     ? project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')
     : '';
 
+  const categories = Array.isArray(project.categories)
+    ? project.categories
+    : [];
+  if (categories.length) {
+    card.dataset.categories = categories.join(',');
+  }
+
   card.innerHTML = `
     <img src="${imageSrc}" alt="${project.title || 'Projeto'}" loading="lazy" onerror="this.src='/assets/img/projects/placeholder.png'">
     <div class="project-card-content">
@@ -105,6 +113,30 @@ function createProjectCard(project, index, isFallback) {
   card.addEventListener('mouseleave', () => removeHoverEffect(card));
 
   return card;
+}
+
+function initFilters() {
+  const filterContainer = document.getElementById('projects-filters');
+  if (!filterContainer) return;
+
+  filterContainer.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!target || !target.classList.contains('filter-btn')) return;
+
+    const filter = target.dataset.filter;
+    filterContainer.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    target.classList.add('active');
+
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      if (filter === 'all') {
+        card.style.display = '';
+        return;
+      }
+      const categories = card.dataset.categories ? card.dataset.categories.split(',') : [];
+      card.style.display = categories.includes(filter) ? '' : 'none';
+    });
+  });
 }
 
 function addHoverEffect(card) {
