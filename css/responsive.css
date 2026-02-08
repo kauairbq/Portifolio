@@ -81,6 +81,16 @@
         align-items: center;
     }
 
+    .hero-visual {
+        order: 2;
+        margin: 0 auto;
+        max-width: 360px;
+    }
+
+    .hero-copy {
+        order: 1;
+    }
+
     .hero-card,
     .hero-vitual {
         width: 100%;
@@ -142,6 +152,20 @@
         gap: 2rem;
     }
 
+    #projects-featured,
+    #projects-secondary {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
     .contact-content {
         display: grid;
         grid-template-columns: 1fr;
@@ -157,6 +181,16 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-contact .social-links {
+        justify-content: center;
     }
 }
 
@@ -196,6 +230,19 @@
 
     .hero-inner {
         gap: 1rem;
+    }
+
+    .hero-copy .btn-group,
+    .hero-copy .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-copy .btn,
+    .hero-copy .btn-group .btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero-card {
@@ -238,6 +285,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .projects-filters {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .contact-cta {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     footer .social-links a {

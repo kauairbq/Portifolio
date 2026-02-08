@@ -173,10 +173,10 @@ CARD DE PROJETO – PADRÃO VISUAL
 
 ## 1️⃣2️⃣ RESPONSIVIDADE
 
-* [ ] Mobile first
-* [ ] Cards reorganizam corretamente
-* [ ] Tipografia legível no mobile
-* [ ] CTA sempre acessível
+* [x] Mobile first
+* [x] Cards reorganizam corretamente
+* [x] Tipografia legível no mobile
+* [x] CTA sempre acessível
 
 ---
 
@@ -275,7 +275,6 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
-
 
 
 
