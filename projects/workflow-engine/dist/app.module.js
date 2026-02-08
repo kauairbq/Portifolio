@@ -27,7 +27,7 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             throttler_1.ThrottlerModule.forRoot({ throttlers: [{ ttl: 60, limit: 100 }] }),
             bull_1.BullModule.forRoot({
-                redis: { url: (_a = process.env.REDIS_URL) !== null && _a !== void 0 ? _a : "redis://localhost:6379" },
+                redis: (_a = process.env.REDIS_URL) !== null && _a !== void 0 ? _a : "redis://localhost:6379",
             }),
             prisma_module_1.PrismaModule,
             workflows_module_1.WorkflowsModule,
