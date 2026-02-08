@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadProjects() {
-  const grid = document.getElementById('projects-grid');
-  if (!grid) return;
+  const featuredGrid = document.getElementById('projects-featured');
+  const secondaryGrid = document.getElementById('projects-secondary');
+  if (!featuredGrid || !secondaryGrid) return;
 
   try {
     const origin = window.location.origin;
@@ -36,10 +37,15 @@ async function loadProjects() {
       throw new Error('Lista de projetos vazia');
     }
 
-    renderProjects(grid, projects);
+    const featured = projects.filter(project => project.featured === true && project.archived !== true);
+    const secondary = projects.filter(project => project.featured !== true && project.archived !== true);
+
+    renderProjects(featuredGrid, featured);
+    renderProjects(secondaryGrid, secondary);
   } catch (error) {
     console.error('Erro ao carregar projetos:', error);
-    renderProjects(grid, PROJECTS_FALLBACK, true);
+    renderProjects(featuredGrid, PROJECTS_FALLBACK, true);
+    renderProjects(secondaryGrid, [], true);
   }
 }
 

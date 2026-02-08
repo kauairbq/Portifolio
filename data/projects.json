@@ -1,326 +1,408 @@
-[
-  {
-    "id": 100,
-    "title": "E-commerce Completo (React + Node.js)",
-    "description": "Plataforma de e-commerce com frontend em React, backend Node.js/Express, carrinho, checkout e integracao com API.",
-    "image": "assets/img/projects/covers/100.png",
-    "technologies": [
-      "React",
-      "Node.js",
-      "Express",
-      "API",
-      "CSS",
-      "Responsivo"
-    ],
-    "link": "projects/ecommerce/frontend/ecommerce-frontend/build/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 13,
-    "title": "CRM LookCar (Vue + Express)",
-    "description": "CRM para leads de stand automotivo com paineis, gest?o de clientes/negocios e importador de contactos.",
-    "image": "assets/img/projects/covers/13.png",
-    "technologies": [
-      "Vue 3",
-      "Vite",
-      "Pinia",
-      "TailwindCSS",
-      "Express",
-      "PostgreSQL"
-    ],
-    "link": "projects/crm-lookcar/client/dist/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 14,
-    "title": "Xkairos Tech",
-    "description": "Plataforma para orcamentos, area do cliente e CRM de montagens de PCs, com painel admin e automacoes.",
-      "image": "assets/img/projects/xkairos-cover.svg",
-    "technologies": [
-      "PHP",
-      "MySQL",
-      "JavaScript",
-      "CSS",
-      "Font Awesome"
-    ],
-    "link": "http://localhost/xkairos/index.php",
-    "github": "https://github.com/kauairbq/Portifolio/tree/main/projects/xkairos",
-    "requiresServer": false,
-    "featured": false
-  },
-  {
-    "id": 101,
-    "title": "SmartConnect Home",
-    "description": "App de automacao residencial com perfis (admin/utilizador), packs modulares, dispositivos, suporte e auditoria.",
-    "image": "assets/img/projects/covers/101.png",
-    "technologies": [
-      "Flutter",
-      "Firebase",
-      "IoT",
-      "MQTT",
-      "Android",
-      "iOS"
-    ],
-    "link": "projects/smartconnect-home/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 0,
-    "title": "Calculadora de Media de Notas",
-    "description": "Aplicacao web para calcular a media de notas com valida??o de dados (0-20), lista de notas, estatisticas completas e interface responsiva com modo escuro.",
-    "image": "assets/img/projects/covers/calculadora-de-media-de-notas.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsivo"
-    ],
-    "link": "calculadora-media.html",
-    "github": "https://github.com/kauairbq",
-    "featured": true
-  },
-  {
-    "id": 11,
-    "title": "Contador de Cliques",
-    "description": "Mini app de contador com animacoes, prevencao de negativos e persist?ncia em localStorage.",
-    "image": "assets/img/projects/covers/11.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "LocalStorage"
-    ],
-    "link": "projects/contador de cliques/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 99,
-    "title": "Site da Banda Rock Band",
-    "description": "Site institucional de banda de rock alternativo, com agenda de concertos, albuns, galeria, contacto e modo escuro.",
-    "image": "assets/img/projects/covers/99.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Bootstrap",
-      "Acessibilidade"
-    ],
-    "link": "projects/banda/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 3,
-    "title": "Dashboard Analytics",
-    "description": "Painel administrativo interativo com graficos em tempo real, relat?rios personaliz?veis e integracao com multiplas fontes de dados.",
-    "image": "assets/img/projects/covers/3.png",
-    "technologies": [
-      "Vue.js",
-      "D3.js",
-      "Express",
-      "PostgreSQL"
-    ],
-    "link": "projects/Dashboard Analytics/index.html",
-    "github": "https://github.com/seuusuario/analytics-dashboard"
-  },
-  {
-    "id": 4,
-    "title": "Blog Pessoal",
-    "description": "Blog responsivo com sistema de comentarios, integracao com redes sociais, SEO otimizado e painel de administracao intuitivo.",
-    "image": "assets/img/projects/covers/4.png",
-    "technologies": [
-      "WordPress",
-      "PHP",
-      "MySQL",
-      "JavaScript"
-    ],
-    "link": "projects/Blog Pessoal/index.html",
-    "github": "https://github.com/seuusuario/personal-blog"
-  },
-  {
-    "id": 5,
-    "title": "Jogo da Memoria",
-    "description": "Jogo interativo da memoria desenvolvido com JavaScript puro, niveis de dificuldade e sistema de pontuacao.",
-    "image": "assets/img/projects/covers/5.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
-    "link": "projects/jogo da memoria/index.html",
-    "github": "https://github.com/seuusuario/memory-game"
-  },
-  {
-    "id": 6,
-    "title": "API REST para Gestão",
-    "description": "API REST robusta para gestão de utilizadores, autenticação JWT, validação de dados e documentação completa com Swagger.",
-    "image": "assets/img/projects/covers/6.png",
-    "technologies": [
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT",
-      "Swagger"
-    ],
-    "link": "projects/API REST para Gestao/swagger.html",
-    "github": "",
-    "requiresServer": true
-  },
-  {
-    "id": 7,
-    "title": "Landing Page Institucional",
-    "description": "Pagina institucional moderna e responsiva com animacoes suaves, formulario de contacto integrado e otimiza??o para conversoes.",
-    "image": "assets/img/projects/covers/7.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "GSAP"
-    ],
-    "link": "projects/Landing Page Institucional/index.html",
-    "github": "https://github.com/seuusuario/landing-page"
-  },
-  {
-    "id": 8,
-    "title": "Sistema de Chat em Tempo Real",
-    "description": "Aplicacao de chat com salas privadas, mensagens em tempo real via WebSocket, envio de ficheiros e interface moderna.",
-    "image": "assets/img/projects/covers/8.png",
-    "technologies": [
-      "React",
-      "Socket.io",
-      "Node.js",
-      "MongoDB"
-    ],
-    "link": "projects/Sistema de Chat em Tempo Real/public/index.html",
-    "github": "",
-    "requiresServer": true
-  },
-  {
-    "id": 12,
-    "title": "Catalogo de Produtos (POO + API)",
-    "description": "Sistema de gest?o de catalogo com POO, edicao inline, filtros, persist?ncia em localStorage e detalhes via Fake Store API.",
-    "image": "assets/img/projects/covers/12.png",
-    "technologies": [
-      "JavaScript",
-      "POO",
-      "Fetch",
-      "localStorage",
-      "API"
-    ],
-    "link": "projects/sistema-gestao-catalogo-produtos/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 10,
-    "title": "Aplicativo de Tarefas",
-    "description": "Aplicacao de tarefas em tempo real usando React, Node.js, MongoDB e Socket.io.",
-    "image": "assets/img/projects/covers/10.png",
-    "technologies": [
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Socket.io"
-    ],
-    "link": "projects/todo-app/frontend/public/index.html",
-    "github": "",
-    "requiresServer": true,
-    "featured": false
-  },
-  {
-    "id": 15,
-    "title": "Site para Advogados",
-    "description": "Website institucional para escritorios, com areas de atuacao, agendamento e formulario seguro.",
-    "image": "assets/img/projects/covers/15.png",
-    "technologies": [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "SEO",
-      "Calendly",
-      "CMS",
-      "GDPR"
-    ],
-    "link": "projects/Site para Advogados/index.html",
-    "github": ""
-  },
-  {
-    "id": 102,
-    "title": "Gest?o de Projetos (React + TS)",
-    "description": "Dashboard de projetos e tarefas com valida??o e progresso, persist?ncia local.",
-    "image": "assets/img/projects/covers/102.png",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "LocalStorage"
-    ],
-    "link": "projects/gestao-projetos-react-ts/dist/index.html",
-    "github": ""
-  },
-  {
-    "id": 104,
-    "title": "Personal Trainer (Landing)",
-    "description": "Portefolio estatico com servicos, dicas, biblioteca de exercicios e calculadoras rapidas para IMC e macros.",
-    "image": "assets/img/projects/covers/104.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsivo"
-    ],
-    "link": "projects/personal-trainer/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 105,
-    "title": "Stand Automoveis",
-    "description": "Landing moderna para stand automotivo com filtros de stock, destaques e CTA.",
-    "image": "assets/img/projects/covers/105.png",
-    "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript"
-    ],
-    "link": "projects/lookcar-stand/index.html",
-    "github": "",
-    "featured": false
-  },
-  {
-    "id": 106,
-    "title": "API Gestão Pro",
-    "category": "Backend",
-    "description": "API REST com JWT, RBAC, PostgreSQL, Swagger e testes automatizados.",
-    "image": "assets/img/projects/covers/106.png",
-    "link": "projects/api-gestao-pro/index.html",
-    "github": "",
-    "technologies": [
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-      "JWT",
-      "Swagger",
-      "Jest"
-    ]
-  },
-  {
-    "id": 107,
-    "title": "Dashboard Dados Reais",
-    "category": "Frontend",
-    "description": "Dashboard React + TypeScript com dados reais da API p?blica CoinGecko.",
-    "image": "assets/img/projects/covers/107.png",
-    "link": "projects/dashboard-dados-reais/dist/index.html",
-    "github": "",
-    "technologies": [
-      "React",
-      "TypeScript",
-      "Vite",
-      "API"
-    ]
-  }
+﻿[
+    {
+        "id":  100,
+        "image":  "assets/img/projects/covers/100.png",
+        "technologies":  [
+                             "React",
+                             "Node.js",
+                             "Express",
+                             "API",
+                             "CSS",
+                             "Responsivo"
+                         ],
+        "link":  "projects/ecommerce/frontend/ecommerce-frontend/build/index.html",
+        "github":  "",
+        "archived":  false,
+        "title":  "E-commerce Completo (React + Node.js)",
+        "description":  "Plataforma de e-commerce com frontend em React, backend Node.js/Express, carrinho, checkout e integração com API.",
+        "featured":  true
+    },
+    {
+        "id":  13,
+        "image":  "assets/img/projects/covers/13.png",
+        "technologies":  [
+                             "Vue 3",
+                             "Vite",
+                             "Pinia",
+                             "TailwindCSS",
+                             "Express",
+                             "PostgreSQL"
+                         ],
+        "link":  "projects/crm-lookcar/client/dist/index.html",
+        "github":  "",
+        "archived":  false,
+        "title":  "CRM LookCar (Vue + Express)",
+        "description":  "CRM para leads de stand automóvel com painéis, gestão de clientes/negócios e importação de contactos.",
+        "featured":  true
+    },
+    {
+        "id":  14,
+        "technologies":  [
+                             "PHP",
+                             "MySQL",
+                             "JavaScript",
+                             "CSS",
+                             "Font Awesome"
+                         ],
+        "link":  "http://localhost/xkairos/index.php",
+        "github":  "https://github.com/kauairbq/Portifolio/tree/main/projects/xkairos",
+        "requiresServer":  false,
+        "archived":  false,
+        "title":  "Xkairos Tech",
+        "description":  "Plataforma para orçamentos, área do cliente e CRM de montagens de PCs, com painel admin e automações.",
+        "featured":  false,
+        "image":  "assets/img/projects/xkairos.svg"
+    },
+    {
+        "id":  101,
+        "image":  "assets/img/projects/covers/101.png",
+        "technologies":  [
+                             "Flutter",
+                             "Firebase",
+                             "IoT",
+                             "MQTT",
+                             "Android",
+                             "iOS"
+                         ],
+        "link":  "projects/smartconnect-home/index.html",
+        "github":  "",
+        "archived":  false,
+        "title":  "SmartConnect Home",
+        "description":  "App de automação residencial com perfis (admin/utilizador), packs modulares, dispositivos, suporte e auditoria.",
+        "featured":  true
+    },
+    {
+        "id":  0,
+        "image":  "assets/img/projects/covers/calculadora-de-media-de-notas.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript",
+                             "Responsivo"
+                         ],
+        "link":  "calculadora-media.html",
+        "github":  "https://github.com/kauairbq",
+        "archived":  true,
+        "title":  "Calculadora de Média de Notas",
+        "description":  "Aplicação web para calcular médias com validação (0-20), estatísticas e interface responsiva.",
+        "featured":  false
+    },
+    {
+        "id":  11,
+        "image":  "assets/img/projects/covers/11.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript",
+                             "LocalStorage"
+                         ],
+        "link":  "projects/contador de cliques/index.html",
+        "github":  "",
+        "archived":  true,
+        "title":  "Contador de Cliques",
+        "description":  "Mini app de contador com animações, prevenção de negativos e persistência em localStorage.",
+        "featured":  false
+    },
+    {
+        "id":  99,
+        "image":  "assets/img/projects/covers/99.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript",
+                             "Bootstrap",
+                             "Acessibilidade"
+                         ],
+        "link":  "projects/banda/index.html",
+        "github":  "",
+        "archived":  true,
+        "title":  "Site da Banda Rock Band",
+        "description":  "Site institucional de banda com agenda, álbuns, galeria, contacto e modo escuro.",
+        "featured":  false
+    },
+    {
+        "id":  3,
+        "image":  "assets/img/projects/covers/3.png",
+        "technologies":  [
+                             "Vue.js",
+                             "D3.js",
+                             "Express",
+                             "PostgreSQL"
+                         ],
+        "link":  "projects/Dashboard Analytics/index.html",
+        "github":  "https://github.com/seuusuario/analytics-dashboard",
+        "archived":  false,
+        "title":  "Dashboard Analytics",
+        "description":  "Painel administrativo interativo com gráficos, relatórios e integração com múltiplas fontes de dados.",
+        "featured":  false
+    },
+    {
+        "id":  4,
+        "image":  "assets/img/projects/covers/4.png",
+        "technologies":  [
+                             "WordPress",
+                             "PHP",
+                             "MySQL",
+                             "JavaScript"
+                         ],
+        "link":  "projects/Blog Pessoal/index.html",
+        "github":  "https://github.com/seuusuario/personal-blog",
+        "archived":  true,
+        "title":  "Blog Pessoal",
+        "description":  "Blog responsivo com comentários, SEO otimizado e painel de administração.",
+        "featured":  false
+    },
+    {
+        "id":  5,
+        "image":  "assets/img/projects/covers/5.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript"
+                         ],
+        "link":  "projects/jogo da memoria/index.html",
+        "github":  "https://github.com/seuusuario/memory-game",
+        "archived":  true,
+        "title":  "Jogo da Memória",
+        "description":  "Jogo interativo com níveis de dificuldade e sistema de pontuação.",
+        "featured":  false
+    },
+    {
+        "id":  6,
+        "image":  "assets/img/projects/covers/6.png",
+        "technologies":  [
+                             "Node.js",
+                             "Express",
+                             "MongoDB",
+                             "JWT",
+                             "Swagger"
+                         ],
+        "link":  "projects/API REST para Gestao/swagger.html",
+        "github":  "",
+        "requiresServer":  true,
+        "archived":  true,
+        "title":  "API REST para Gestão",
+        "description":  "API REST com autenticação JWT, validação de dados e documentação Swagger.",
+        "featured":  false
+    },
+    {
+        "id":  7,
+        "image":  "assets/img/projects/covers/7.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript",
+                             "GSAP"
+                         ],
+        "link":  "projects/Landing Page Institucional/index.html",
+        "github":  "https://github.com/seuusuario/landing-page",
+        "archived":  false,
+        "title":  "Landing Page Institucional",
+        "description":  "Landing moderna e responsiva com animações suaves e foco em conversão.",
+        "featured":  false
+    },
+    {
+        "id":  8,
+        "image":  "assets/img/projects/covers/8.png",
+        "technologies":  [
+                             "React",
+                             "Socket.io",
+                             "Node.js",
+                             "MongoDB"
+                         ],
+        "link":  "projects/Sistema de Chat em Tempo Real/public/index.html",
+        "github":  "",
+        "requiresServer":  true,
+        "archived":  false,
+        "title":  "Sistema de Chat em Tempo Real",
+        "description":  "Aplicação de chat com mensagens em tempo real via WebSocket e interface moderna.",
+        "featured":  false
+    },
+    {
+        "id":  12,
+        "image":  "assets/img/projects/covers/12.png",
+        "technologies":  [
+                             "JavaScript",
+                             "POO",
+                             "Fetch",
+                             "localStorage",
+                             "API"
+                         ],
+        "link":  "projects/sistema-gestao-catalogo-produtos/index.html",
+        "github":  "",
+        "archived":  true,
+        "title":  "Catálogo de Produtos (POO + API)",
+        "description":  "Sistema de catálogo com POO, filtros, persistência em localStorage e integração de API.",
+        "featured":  false
+    },
+    {
+        "id":  10,
+        "image":  "assets/img/projects/covers/10.png",
+        "technologies":  [
+                             "React",
+                             "Node.js",
+                             "MongoDB",
+                             "Socket.io"
+                         ],
+        "link":  "projects/todo-app/frontend/public/index.html",
+        "github":  "",
+        "requiresServer":  true,
+        "archived":  true,
+        "title":  "Aplicativo de Tarefas",
+        "description":  "Aplicação de tarefas em tempo real com React, Node.js e Socket.io.",
+        "featured":  false
+    },
+    {
+        "id":  15,
+        "image":  "assets/img/projects/covers/15.png",
+        "technologies":  [
+                             "Next.js",
+                             "React",
+                             "TypeScript",
+                             "TailwindCSS",
+                             "SEO",
+                             "Calendly",
+                             "CMS",
+                             "GDPR"
+                         ],
+        "link":  "projects/Site para Advogados/index.html",
+        "github":  "",
+        "archived":  true,
+        "title":  "Site para Advogados",
+        "description":  "Website institucional para escritórios, com áreas de atuação e agendamento.",
+        "featured":  false
+    },
+    {
+        "id":  102,
+        "image":  "assets/img/projects/covers/102.png",
+        "technologies":  [
+                             "React",
+                             "TypeScript",
+                             "LocalStorage"
+                         ],
+        "link":  "projects/gestao-projetos-react-ts/dist/index.html",
+        "github":  "",
+        "archived":  true,
+        "title":  "Gestão de Projetos (React + TS)",
+        "description":  "Dashboard de projetos e tarefas com validação, progresso e persistência local.",
+        "featured":  false
+    },
+    {
+        "id":  104,
+        "image":  "assets/img/projects/covers/104.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript",
+                             "Responsivo"
+                         ],
+        "link":  "projects/personal-trainer/index.html",
+        "github":  "",
+        "archived":  false,
+        "title":  "Personal Trainer (Landing)",
+        "description":  "Portefólio estático com serviços, dicas, biblioteca de exercícios e calculadoras rápidas.",
+        "featured":  false
+    },
+    {
+        "id":  105,
+        "image":  "assets/img/projects/covers/105.png",
+        "technologies":  [
+                             "HTML",
+                             "CSS",
+                             "JavaScript"
+                         ],
+        "link":  "projects/lookcar-stand/index.html",
+        "github":  "",
+        "archived":  false,
+        "title":  "Stand Automóveis",
+        "description":  "Landing moderna para stand automóvel com filtros de stock, destaques e CTA.",
+        "featured":  false
+    },
+    {
+        "id":  106,
+        "category":  "Backend",
+        "image":  "assets/img/projects/covers/106.png",
+        "link":  "projects/api-gestao-pro/index.html",
+        "github":  "",
+        "technologies":  [
+                             "Node.js",
+                             "Express",
+                             "PostgreSQL",
+                             "JWT",
+                             "Swagger",
+                             "Jest"
+                         ],
+        "archived":  false,
+        "title":  "API Gestão Pro",
+        "description":  "API REST com JWT, RBAC, PostgreSQL, Swagger e testes automatizados.",
+        "featured":  false
+    },
+    {
+        "id":  107,
+        "category":  "Frontend",
+        "image":  "assets/img/projects/covers/107.png",
+        "link":  "projects/dashboard-dados-reais/dist/index.html",
+        "github":  "",
+        "technologies":  [
+                             "React",
+                             "TypeScript",
+                             "Vite",
+                             "API"
+                         ],
+        "archived":  false,
+        "title":  "Dashboard Dados Reais",
+        "description":  "Dashboard React + TypeScript com dados reais da API pública CoinGecko.",
+        "featured":  true
+    },
+    {
+        "image":  "assets/img/projects/dashboard-analytics.svg",
+        "link":  "projects/saas-billing/README.md",
+        "id":  108,
+        "technologies":  [
+                             "NestJS",
+                             "Prisma",
+                             "PostgreSQL",
+                             "JWT",
+                             "RBAC"
+                         ],
+        "archived":  false,
+        "description":  "Plataforma SaaS multi-tenant com planos, billing, RBAC e auditoria.",
+        "github":  "",
+        "title":  "SaaS B2B – Assinaturas \u0026 Billing",
+        "featured":  true
+    },
+    {
+        "image":  "assets/img/projects/api-rest.svg",
+        "link":  "projects/iam/README.md",
+        "id":  109,
+        "technologies":  [
+                             "NestJS",
+                             "Prisma",
+                             "PostgreSQL",
+                             "JWT",
+                             "Argon2id"
+                         ],
+        "archived":  false,
+        "description":  "Sistema de identidade com multi-tenant, RBAC, sessões, refresh token e audit logs.",
+        "github":  "",
+        "title":  "IAM – Identity \u0026 Access Management",
+        "featured":  true
+    },
+    {
+        "image":  "assets/img/projects/api.svg",
+        "link":  "projects/workflow-engine/README.md",
+        "id":  110,
+        "technologies":  [
+                             "NestJS",
+                             "Prisma",
+                             "PostgreSQL",
+                             "BullMQ",
+                             "Redis"
+                         ],
+        "archived":  false,
+        "description":  "Motor de workflows com versionamento, state machine, regras e auditoria.",
+        "github":  "",
+        "title":  "Workflow Engine / Rule Engine",
+        "featured":  true
+    }
 ]
