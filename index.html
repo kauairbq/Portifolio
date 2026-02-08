@@ -204,14 +204,17 @@
           <div class="container">
               <h2>Meus Projetos</h2>
               <p class="projects-lede">Curadoria focada em projetos com impacto real, arquitetura sólida e qualidade de entrega.</p>            
-              <div class="projects-filters" id="projects-filters" aria-label="Filtros de projetos">\r\n                
-                <button class="filter-btn active" data-filter="all">Todos</button>\r\n                
-                <button class="filter-btn" data-filter="Frontend">Front-end</button>\r\n                
-                <button class="filter-btn" data-filter="Backend">Back-end</button>\r\n                
-                <button class="filter-btn" data-filter="Full-Stack">Full-Stack</button>\r\n                
-                <button class="filter-btn" data-filter="SaaS">SaaS</button>\r\n                
-                <button class="filter-btn" data-filter="IoT">IoT</button>\r\n                
-                <button class="filter-btn" data-filter="CRM">CRM</button>\r\n                <button class="filter-btn" data-filter="E-commerce">E-commerce</button>\r\n                <button class="filter-btn" data-filter="Produto">Produto</button>\r\n              </div>
+              <div class="projects-filters" id="projects-filters" aria-label="Filtros de projetos">              
+                <button class="filter-btn active" data-filter="all">Todos</button>               
+                <button class="filter-btn" data-filter="Frontend">Front-end</button>              
+                <button class="filter-btn" data-filter="Backend">Back-end</button>               
+                <button class="filter-btn" data-filter="Full-Stack">Full-Stack</button>                
+                <button class="filter-btn" data-filter="SaaS">SaaS</button>               
+                <button class="filter-btn" data-filter="IoT">IoT</button>               
+                <button class="filter-btn" data-filter="CRM">CRM</button>               
+                <button class="filter-btn" data-filter="E-commerce">E-commerce</button>              
+                <button class="filter-btn" data-filter="Produto">Produto</button>            
+            </div>
               <h3 class="projects-subtitle">Projetos em Destaque</h3>
               <div class="projects-grid" id="projects-featured">
                   <!-- Projetos em destaque -->
@@ -221,37 +224,70 @@
                   <!-- Projetos secundários -->
               </div>
           </div>
-      </section>
+        </section>
 
-    <section id="contact" class="contact">
-    <div class="container">
-        <h2>Entre em Contacto</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Vamos Conversar!</h3>
-                <p>Estou sempre interessado em novos projetos e oportunidades de colaboração. Entre em contacto comigo!</p>
-                <div class="contact-details">
-                    <p><strong>Email:</strong> kauai_lucas@hotmail.com</p>
-                    <p><strong>Telefone:</strong> +351 961-150-993</p>
-                    <p><strong>Localizaçãoo:</strong> Portugal, Viseu</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://www.facebook.com/kauai.rocha.10/" class="social-link facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ka_roochaa/" class="social-link instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+      <section id="social-proof" class="social-proof">
+        <div class="container">
+          <h2>Prova Social</h2>
+          <p class="section-lede">Resultados consistentes, projetos reais e foco em qualidade técnica.</p>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <h3>+25</h3>
+              <p>projetos entregues com sucesso</p>
             </div>
-            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xjgbvzgz" method="POST" novalidate>
-                <input type="text" name="name" placeholder="O teu Nome" required minlength="3" maxlength="50">
-                <input type="email" name="email" placeholder="O teu Email" required>
-                <input type="text" name="subject" placeholder="Assunto" required>
-                <textarea name="message" placeholder="A tua Mensagem" required minlength="10" maxlength="1000"></textarea>
-                <button type="submit" class="btn">Enviar Mensagem</button>
-            </form>
+            <div class="proof-card">
+              <h3>98%</h3>
+              <p>uptime e estabilidade em produção</p>
+            </div>
+            <div class="proof-card">
+              <h3>5+</h3>
+              <p>anos de experiência full-stack</p>
+            </div>
+          </div>
+          <div class="logo-row" aria-label="Tecnologias e parceiros">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>PostgreSQL</span>
+            <span>Prisma</span>
+            <span>Docker</span>
+            <span>NestJS</span>
+          </div>
         </div>
-        <div id="form-feedback" role="alert"></div>
+      </section>
+  
+      <section id="contact" class="contact">
+  <div class="container">
+    <h2>Entre em Contacto</h2>
+    <p class="section-lede">Vamos conversar sobre o teu próximo produto ou evolução técnica.</p>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Contacto direto</h3>
+        <p>Respondo rapidamente e com foco no objetivo do projeto.</p>
+        <div class="contact-details">
+          <p><strong>Email:</strong> <a href="mailto:kauai_lucas@hotmail.com">kauai_lucas@hotmail.com</a></p>
+          <p><strong>Telefone:</strong> <a href="tel:+351961150993">+351 961-150-993</a></p>
+          <p><strong>Localização:</strong> Viseu, Portugal</p>
+        </div>
+        <div class="contact-cta">
+          <a class="btn primary" href="mailto:kauai_lucas@hotmail.com">Enviar email</a>
+          <a class="btn ghost" href="curriculo-e-carta/CV-PT.pdf" target="_blank" rel="noopener">Baixar CV</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/kauai-lucas-rocha-bozoli-quinup/" class="social-link linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/kauairbq" class="social-link github" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/ka_roochaa/" class="social-link instagram" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/xjgbvzgz" method="POST" novalidate>
+        <input type="text" name="name" placeholder="O teu nome" required minlength="3" maxlength="50">
+        <input type="email" name="email" placeholder="O teu email" required>
+        <input type="text" name="subject" placeholder="Assunto" required>
+        <textarea name="message" placeholder="A tua mensagem" required minlength="10" maxlength="1000"></textarea>
+        <button type="submit" class="btn">Enviar mensagem</button>
+      </form>
     </div>
+    <div id="form-feedback" role="alert"></div>
+  </div>
 </section>
 
     </main>
@@ -320,4 +356,16 @@
     <script src="js/scroll.js" defer></script>
     <script src="js/darkmode.js" defer></script>
     <script src="js/projects.js" defer></script>
-</
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

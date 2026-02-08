@@ -138,26 +138,26 @@ CARD DE PROJETO – PADRÃO VISUAL
 
 ## 8️⃣ FILTROS DE PROJETOS (UX)
 
-* [ ] Filtro por tipo: Front-end | Back-end | Full-Stack | SaaS
-* [ ] Filtro por domínio: Produto | IoT | CRM | E-commerce
+* [x] Filtro por tipo: Front-end | Back-end | Full-Stack | SaaS
+* [x] Filtro por domínio: Produto | IoT | CRM | E-commerce
 
 ---
 
 ## 9️⃣ PROVA SOCIAL (SE POSSÍVEL)
 
-* [ ] Depoimentos (clientes / colegas)
-* [ ] Projetos reais entregues
-* [ ] Logos de tecnologias
-* [ ] Métricas (ex: sistemas em produção, clientes atendidos)
+* [x] Depoimentos (clientes / colegas)
+* [x] Projetos reais entregues
+* [x] Logos de tecnologias
+* [x] Métricas (ex: sistemas em produção, clientes atendidos)
 
 ---
 
 ## 🔟 SEÇÃO CONTATO (CONVERSÃO)
 
-* [ ] CTA claro ("Vamos conversar")
-* [ ] Formulário simples e validado
-* [ ] Links visíveis (LinkedIn, GitHub, Email)
-* [ ] Feedback visual de envio
+* [x] CTA claro ("Vamos conversar")
+* [x] Formulário simples e validado
+* [x] Links visíveis (LinkedIn, GitHub, Email)
+* [x] Feedback visual de envio
 
 ---
 
@@ -275,6 +275,9 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
+
+
+
 
 
 
