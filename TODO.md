@@ -10,8 +10,8 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
   * Ex: `Senior Full-Stack Engineer | Product, APIs & Scalable Systems`
 * [x] Definir **sub-headline orientada a valor** (não stack)
-* [ ] Eliminar frases genéricas ("apaixonado por tecnologia", etc.)
-* [ ] Garantir que em **5 segundos** o visitante entende teu nível
+* [x] Eliminar frases genéricas ("apaixonado por tecnologia", etc.)
+* [x] Garantir que em **5 segundos** o visitante entende teu nível
 
 ---
 
@@ -19,10 +19,10 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 ### O que melhorar
 
-* [ ] Headline curta, forte e objetiva
-* [ ] Subtexto com proposta de valor
-* [ ] Call-to-action claro (ex: `Ver Projetos Relevantes`)
-* [ ] Visual limpo (sem excesso de texto)
+* [x] Headline curta, forte e objetiva
+* [x] Subtexto com proposta de valor
+* [x] Call-to-action claro (ex: `Ver Projetos Relevantes`)
+* [x] Visual limpo (sem excesso de texto)
 
 ### Como melhorar
 
@@ -34,10 +34,10 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 ## 3️⃣ NAVEGAÇÃO & ESTRUTURA
 
-* [ ] Navbar simples e fixa
-* [ ] Links claros: Sobre | Projetos | Contato | CV
-* [ ] Scroll suave e âncoras funcionais
-* [ ] Botão visível para download do CV
+* [x] Navbar simples e fixa
+* [x] Links claros: Sobre | Projetos | Contato | CV
+* [x] Scroll suave e âncoras funcionais
+* [x] Botão visível para download do CV
 
 ---
 
@@ -45,14 +45,14 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 ### O que remover
 
-* [ ] Listas longas de skills soltas
-* [ ] Texto excessivo e sem hierarquia
+* [x] Listas longas de skills soltas
+* [x] Texto excessivo e sem hierarquia
 
 ### O que adicionar
 
-* [ ] Bloco **Quem sou** (2–3 linhas)
-* [ ] Bloco **Especialidades** (3 bullets)
-* [ ] Bloco **Como gero valor** (produto, negócio, impacto)
+* [x] Bloco **Quem sou** (2–3 linhas)
+* [x] Bloco **Especialidades** (3 bullets)
+* [x] Bloco **Como gero valor** (produto, negócio, impacto)
 
 ---
 
@@ -275,4 +275,8 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 > • Não existe ruído de projetos júnior
 >
 > **Esse é o padrão Senior Full-Stack Premium.**
+
+
+
+
 
