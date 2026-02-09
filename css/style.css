@@ -2010,6 +2010,61 @@ body.dark-mode .member-role-badge {
     background: #4A90E2;
 }
 
+.member-stack-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.member-stack-icons .stack-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    color: #1d2b4a;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.member-stack-icons .stack-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+    color: #1d4ed8;
+}
+
+body.dark-mode .member-stack-icons .stack-icon {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #e7f0ff;
+}
+
+.member-stack-icons .stack-icon.react:hover { color: #61dafb; }
+.member-stack-icons .stack-icon.vue:hover { color: #42b883; }
+.member-stack-icons .stack-icon.node:hover { color: #68a063; }
+.member-stack-icons .stack-icon.express:hover { color: #1f2937; }
+.member-stack-icons .stack-icon.nest:hover { color: #e0234e; }
+.member-stack-icons .stack-icon.prisma:hover { color: #0c344b; }
+.member-stack-icons .stack-icon.postgres:hover { color: #336791; }
+.member-stack-icons .stack-icon.mongo:hover { color: #47a248; }
+.member-stack-icons .stack-icon.ts:hover { color: #3178c6; }
+.member-stack-icons .stack-icon.js:hover { color: #f7df1e; }
+.member-stack-icons .stack-icon.html:hover { color: #e34f26; }
+.member-stack-icons .stack-icon.css:hover { color: #1572b6; }
+.member-stack-icons .stack-icon.tailwind:hover { color: #38bdf8; }
+.member-stack-icons .stack-icon.bootstrap:hover { color: #7952b3; }
+.member-stack-icons .stack-icon.docker:hover { color: #0db7ed; }
+.member-stack-icons .stack-icon.git:hover { color: #f14e32; }
+.member-stack-icons .stack-icon.firebase:hover { color: #ffca28; }
+.member-stack-icons .stack-icon.flutter:hover { color: #02569b; }
+.member-stack-icons .stack-icon.redis:hover { color: #d82c20; }
+.member-stack-icons .stack-icon.swagger:hover { color: #85ea2d; }
+.member-stack-icons .stack-icon.bullmq:hover { color: #8b5cf6; }
+
 .member-info {
     padding: 2rem 1.5rem;
 }
