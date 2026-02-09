@@ -60,12 +60,12 @@ Este checklist serve como **guia definitivo** para elevar o portfólio a um **pa
 
 ### Estrutura obrigatória de cada projeto
 
-* [ ] Screenshot real (ou GIF curto)
-* [ ] Nome + descrição em 1–2 linhas
-* [ ] Problema que resolve
-* [ ] Desafio técnico principal
-* [ ] Stack (ícones, não texto longo)
-* [ ] Links: Demo | GitHub | Case (se houver)
+* [x] Screenshot real (ou GIF curto)
+* [x] Nome + descrição em 1–2 linhas
+* [x] Problema que resolve
+* [x] Desafio técnico principal
+* [x] Stack (ícones, não texto longo)
+* [x] Links: Demo | GitHub | Case (se houver)
 
 ### Organização
 

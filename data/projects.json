@@ -15,6 +15,8 @@
         "archived":  false,
         "title":  "E-commerce Completo (React + Node.js)",
         "description":  "Plataforma de e-commerce com frontend em React, backend Node.js/Express, carrinho, checkout e integração com API.",
+        "problem":  "Criar uma experiência completa de compra com fluxo consistente do catálogo ao checkout.",
+        "challenge":  "Orquestrar estado do carrinho, integrações de API e performance da vitrine.",
         "featured":  true,
         "categories":  [
                            "Full-Stack",
@@ -38,6 +40,8 @@
         "archived":  false,
         "title":  "CRM LookCar (Vue + Express)",
         "description":  "CRM para leads de stand automóvel com painéis, gestão de clientes/negócios e importação de contactos.",
+        "problem":  "Centralizar e organizar leads e negócios de vendas automóveis.",
+        "challenge":  "Fluxos de CRM com importação de contactos, filtros e performance em listas grandes.",
         "featured":  true,
         "categories":  [
                            "Full-Stack",
@@ -60,6 +64,8 @@
         "archived":  false,
         "title":  "Xkairos Tech",
         "description":  "Plataforma para orçamentos, área do cliente e CRM de montagens de PCs, com painel admin e automações.",
+        "problem":  "Digitalizar pedidos e gestão de clientes para um negócio técnico.",
+        "challenge":  "Fluxo de orçamentos e área do cliente com múltiplas páginas e componentes.",
         "featured":  false,
         "image":  "assets/img/projects/xkairos.svg",
         "categories":  [
@@ -83,6 +89,8 @@
         "archived":  false,
         "title":  "SmartConnect Home",
         "description":  "App de automação residencial com perfis (admin/utilizador), packs modulares, dispositivos, suporte e auditoria.",
+        "problem":  "Unificar dispositivos e protocolos numa experiência segura e simples.",
+        "challenge":  "Modelar perfis, packs e integrações IoT com manutenção de consistência.",
         "featured":  true,
         "categories":  [
                            "IoT",
@@ -152,6 +160,8 @@
         "archived":  false,
         "title":  "Dashboard Analytics",
         "description":  "Painel administrativo interativo com gráficos, relatórios e integração com múltiplas fontes de dados.",
+        "problem":  "Visualizar KPIs e métricas operacionais num único painel.",
+        "challenge":  "Layout de dados densos com clareza e performance.",
         "featured":  false,
         "categories":  [
                            "Frontend",
@@ -221,6 +231,8 @@
         "archived":  false,
         "title":  "Landing Page Institucional",
         "description":  "Landing moderna e responsiva com animações suaves e foco em conversão.",
+        "problem":  "Comunicar valor e gerar leads com alta conversão.",
+        "challenge":  "Equilibrar impacto visual, performance e acessibilidade.",
         "featured":  false,
         "categories":  [
                            "Frontend",
@@ -242,6 +254,8 @@
         "archived":  false,
         "title":  "Sistema de Chat em Tempo Real",
         "description":  "Aplicação de chat com mensagens em tempo real via WebSocket e interface moderna.",
+        "problem":  "Habilitar comunicação instantânea entre utilizadores.",
+        "challenge":  "Sincronização de mensagens e UI em tempo real.",
         "featured":  false,
         "categories":  [
                            "Full-Stack",
@@ -331,6 +345,8 @@
         "archived":  false,
         "title":  "Personal Trainer (Landing)",
         "description":  "Portefólio estático com serviços, dicas, biblioteca de exercícios e calculadoras rápidas.",
+        "problem":  "Apresentar serviços e gerar contactos com valor imediato.",
+        "challenge":  "Conteúdo útil e ferramentas rápidas sem backend.",
         "featured":  false,
         "categories":  [
                            "Frontend",
@@ -350,6 +366,8 @@
         "archived":  false,
         "title":  "Stand Automóveis",
         "description":  "Landing moderna para stand automóvel com filtros de stock, destaques e CTA.",
+        "problem":  "Expor stock e facilitar a pesquisa de viaturas.",
+        "challenge":  "Filtros rápidos e apresentação premium sem complexidade.",
         "featured":  false,
         "categories":  [
                            "Frontend",
@@ -373,6 +391,8 @@
         "archived":  false,
         "title":  "API Gestão Pro",
         "description":  "API REST com JWT, RBAC, PostgreSQL, Swagger e testes automatizados.",
+        "problem":  "Padronizar autenticação e permissões em APIs corporativas.",
+        "challenge":  "RBAC consistente com documentação e testes.",
         "featured":  false,
         "categories":  [
                            "Backend",
@@ -394,6 +414,8 @@
         "archived":  false,
         "title":  "Dashboard Dados Reais",
         "description":  "Dashboard React + TypeScript com dados reais da API pública CoinGecko.",
+        "problem":  "Exibir métricas reais de mercado com atualização constante.",
+        "challenge":  "Consumo de API pública com tipagem e performance.",
         "featured":  true,
         "categories":  [
                            "Frontend",
@@ -413,6 +435,9 @@
                          ],
         "archived":  false,
         "description":  "Plataforma SaaS multi-tenant com planos, billing, RBAC e auditoria.",
+        "problem":  "Gerir organizações, planos e faturação num produto B2B.",
+        "challenge":  "Multi-tenant, lifecycle de assinaturas e auditoria confiável.",
+        "case":  "projects/saas-billing/README.md",
         "github":  "",
         "title":  "SaaS B2B – Assinaturas \u0026 Billing",
         "featured":  true,
@@ -435,6 +460,9 @@
                          ],
         "archived":  false,
         "description":  "Sistema de identidade com multi-tenant, RBAC, sessões, refresh token e audit logs.",
+        "problem":  "Centralizar autenticação, autorização e auditoria por tenant.",
+        "challenge":  "RBAC + sessões + refresh token rotativo com segurança.",
+        "case":  "projects/iam/README.md",
         "github":  "",
         "title":  "IAM – Identity \u0026 Access Management",
         "featured":  true,
@@ -456,6 +484,9 @@
                          ],
         "archived":  false,
         "description":  "Motor de workflows com versionamento, state machine, regras e auditoria.",
+        "problem":  "Automatizar processos com estados e regras versionadas.",
+        "challenge":  "State machine imutável + execução de regras e jobs.",
+        "case":  "projects/workflow-engine/README.md",
         "github":  "",
         "title":  "Workflow Engine / Rule Engine",
         "featured":  true,
