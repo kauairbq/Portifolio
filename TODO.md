@@ -281,18 +281,20 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 ---
 
 19. Header — Limpeza e posicionamento final
-	•	Remover botão “Contactar” do cabeçalho
-	•	Remover qualquer link do header para /contactos.html
-	•	Ajustar menu principal para conter apenas:
-	•	Início
-	•	Sobre
-	•	Projetos
-	•	Serviços
+	•	[x] Remover botão “Contactar” do cabeçalho
+	•	[x] Remover qualquer link do header para /contactos.html
+	•	[x] Ajustar menu principal para conter apenas:
+	•	[x] Início
+	•	[x] Sobre
+	•	[x] Projetos
+	•	[x] Serviços
 	•	CV (download direto / nova aba)
 	•	Remover Galeria do menu principal
 	•	Remover Contacto do menu principal
 	•	Remover Xkairos do menu principal
 	•	Garantir header neutro, sem CTA chamativo
+
+	* [x] Concluído
 
 ⸻
 
@@ -306,6 +308,8 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	Definir CTA secundário discreto: Baixar CV
 	•	Padronizar estilo dos botões (cor, radius, hover)
 	•	Reduzir mistura excessiva de azul + roxo
+
+	* [x] Concluído
 
 ⸻
 
@@ -413,6 +417,4 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	recrutadores
 	•	clientes B2B
 	•	Portfólio pronto para uso profissional
-
-
 

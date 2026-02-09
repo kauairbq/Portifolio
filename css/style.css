@@ -3127,7 +3127,7 @@ body.dark-mode .hero {
 
 .btn.primary,
 .hero-copy .btn.primary {
-    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    background: #1e4db7;
     color: #fff;
     box-shadow: 0 10px 26px rgba(79, 124, 255, 0.35);
 }
@@ -3135,14 +3135,15 @@ body.dark-mode .hero {
 .btn.primary:hover,
 .hero-copy .btn.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 36px rgba(79, 124, 255, 0.45);
+    box-shadow: 0 16px 36px rgba(30, 77, 183, 0.45);
+    background: #1842a3;
 }
 
 .btn.ghost,
 .hero-copy .btn.ghost {
-    background: rgba(15, 23, 42, 0.65);
+    background: transparent;
     color: var(--text-100);
-    border: 1px solid var(--border-700);
+    border: 1px solid rgba(148, 163, 184, 0.35);
 }
 
 .btn.ghost:hover,
@@ -3185,7 +3186,7 @@ body.dark-mode .hero {
 }
 
 .filter-btn.active {
-    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    background: #1e4db7;
     color: #fff;
     border-color: transparent;
 }
