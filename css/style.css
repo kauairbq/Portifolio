@@ -297,10 +297,11 @@ body.dark-mode .about {
 }
 
 .profile-img {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: 50% 20%;
     border: 4px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -1972,8 +1973,9 @@ body.dark-mode .team-member {
 
 .team-member img {
     width: 100%;
-    height: 250px;
+    height: 380px;
     object-fit: cover;
+    object-position: 50% 60%;
     transition: transform 0.3s ease;
 }
 
@@ -3318,34 +3320,42 @@ body.dark-mode .project-challenge {
 .project-stack-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 0.5rem 0 0.9rem;
+    gap: 12px;
+    margin: 0.65rem 0 1rem;
 }
 
 .project-stack-icons .stack-icon {
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    background: rgba(15, 23, 42, 0.08);
-    border: 1px solid rgba(15, 23, 42, 0.15);
-    color: #1f2a44;
-    font-size: 0.95rem;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(15, 23, 42, 0.16);
+    color: #1d2b4a;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.project-stack-icons .stack-icon i {
+    font-size: 1.05rem;
+}
+
+.project-stack-icons .stack-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+    color: #1d4ed8;
 }
 
 body.dark-mode .project-stack-icons .stack-icon {
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #e6efff;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #e7f0ff;
 }
 
 .project-technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 14px;
+    display: none;
 }
 
 /* Hide tech tags in featured projects */

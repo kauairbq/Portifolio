@@ -107,10 +107,6 @@ function createProjectCard(project, index, isFallback) {
     ? (project.image.startsWith('http') || project.image.startsWith('/') ? project.image : `/${project.image}`)
     : '/assets/img/projects/placeholder.png';
 
-  const techTags = Array.isArray(project.technologies)
-    ? project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')
-    : '';
-
   const stackIcons = renderStackIcons(project.technologies);
 
   const problem = project.problem
@@ -136,7 +132,6 @@ function createProjectCard(project, index, isFallback) {
       ${problem}
       ${challenge}
       ${stackIcons}
-      <div class="project-technologies">${techTags}</div>
       <div class="project-links">
         <a href="${safeLink}" class="btn primary" ${isInternalLink ? '' : 'target="_blank"'}>Ver Projeto</a>
         ${project.github ? `<a href="${project.github}" class="btn primary" target="_blank">GitHub</a>` : `<span class="btn primary disabled" aria-disabled="true">GitHub</span>`}
@@ -189,10 +184,6 @@ function createProjectGalleryCard(project, index) {
     : [baseImage];
 
   const stackIcons = renderStackIcons(project.technologies);
-  const techTags = Array.isArray(project.technologies)
-    ? project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')
-    : '';
-
   const problem = project.problem
     ? `<p class="project-problem"><strong>Problema:</strong> ${project.problem}</p>`
     : '';
@@ -226,7 +217,6 @@ function createProjectGalleryCard(project, index) {
         ${problem}
         ${challenge}
         ${stackIcons}
-        <div class="project-technologies">${techTags}</div>
       </div>
       <div class="project-links">
         <a href="${safeLink}" class="btn primary" ${isInternalLink ? '' : 'target=\"_blank\"'}>Ver Projeto</a>
@@ -270,32 +260,57 @@ function initProjectsGallery() {
 function renderStackIcons(technologies) {
   if (!Array.isArray(technologies) || technologies.length === 0) return '';
 
-  const iconMap = {
-    'React': 'fa-brands fa-react',
-    'Vue 3': 'fa-brands fa-vuejs',
-    'Vue.js': 'fa-brands fa-vuejs',
-    'Node.js': 'fa-brands fa-node-js',
-    'Express': 'fa-solid fa-server',
-    'PostgreSQL': 'fa-solid fa-database',
-    'MongoDB': 'fa-solid fa-leaf',
-    'TypeScript': 'fa-solid fa-code',
-    'JavaScript': 'fa-brands fa-js',
-    'HTML': 'fa-brands fa-html5',
-    'CSS': 'fa-brands fa-css3-alt',
-    'TailwindCSS': 'fa-solid fa-wind',
-    'Prisma': 'fa-solid fa-diagram-project',
-    'NestJS': 'fa-solid fa-layer-group',
-    'JWT': 'fa-solid fa-key',
-    'Swagger': 'fa-solid fa-file-lines',
-    'Redis': 'fa-solid fa-bolt',
-    'BullMQ': 'fa-solid fa-gears',
-    'API': 'fa-solid fa-cloud',
-    'Vite': 'fa-solid fa-bolt',
-    'Flutter': 'fa-solid fa-mobile-screen',
-    'Firebase': 'fa-solid fa-fire',
-    'IoT': 'fa-solid fa-wifi',
-    'MQTT': 'fa-solid fa-signal'
-  };
+    const iconMap = {
+      'Acessibilidade': 'fa-solid fa-universal-access',
+      'Android': 'fa-brands fa-android',
+      'API': 'fa-solid fa-cloud',
+      'Argon2id': 'fa-solid fa-lock',
+      'Bootstrap': 'fa-brands fa-bootstrap',
+      'BullMQ': 'fa-solid fa-gears',
+      'Calendly': 'fa-solid fa-calendar-days',
+      'CMS': 'fa-solid fa-pen-to-square',
+      'CSS': 'fa-brands fa-css3-alt',
+      'D3.js': 'fa-solid fa-chart-line',
+      'Express': 'fa-solid fa-server',
+      'Fetch': 'fa-solid fa-rotate',
+      'Firebase': 'fa-solid fa-fire',
+      'Flutter': 'fa-solid fa-mobile-screen',
+      'Font Awesome': 'fa-solid fa-icons',
+      'GDPR': 'fa-solid fa-shield-halved',
+      'GSAP': 'fa-solid fa-wave-square',
+      'HTML': 'fa-brands fa-html5',
+      'IoT': 'fa-solid fa-wifi',
+      'iOS': 'fa-brands fa-apple',
+      'JavaScript': 'fa-brands fa-js',
+      'Jest': 'fa-solid fa-vial',
+      'JWT': 'fa-solid fa-key',
+      'LocalStorage': 'fa-solid fa-floppy-disk',
+      'localStorage': 'fa-solid fa-floppy-disk',
+      'MongoDB': 'fa-solid fa-leaf',
+      'MQTT': 'fa-solid fa-signal',
+      'MySQL': 'fa-solid fa-database',
+      'NestJS': 'fa-solid fa-layer-group',
+      'Next.js': 'fa-solid fa-forward',
+      'Node.js': 'fa-brands fa-node-js',
+      'PHP': 'fa-brands fa-php',
+      'Pinia': 'fa-solid fa-boxes-stacked',
+      'POO': 'fa-solid fa-cubes',
+      'PostgreSQL': 'fa-solid fa-database',
+      'Prisma': 'fa-solid fa-diagram-project',
+      'RBAC': 'fa-solid fa-user-shield',
+      'React': 'fa-brands fa-react',
+      'Redis': 'fa-solid fa-bolt',
+      'Responsivo': 'fa-solid fa-mobile-screen',
+      'SEO': 'fa-solid fa-magnifying-glass',
+      'Socket.io': 'fa-solid fa-tower-broadcast',
+      'Swagger': 'fa-solid fa-file-lines',
+      'TailwindCSS': 'fa-solid fa-wind',
+      'TypeScript': 'fa-solid fa-code',
+      'Vite': 'fa-solid fa-bolt',
+      'Vue 3': 'fa-brands fa-vuejs',
+      'Vue.js': 'fa-brands fa-vuejs',
+      'WordPress': 'fa-brands fa-wordpress'
+    };
 
   const icons = technologies
     .map(tech => {
