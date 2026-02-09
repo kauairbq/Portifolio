@@ -369,6 +369,7 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	5+ anos experiência
 	•	Stack técnica apresentada como “linha de autoridade”
 	•	Visual clean, corporativo e legível
+	•	[x] Concluído
 
 ⸻
 

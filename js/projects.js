@@ -139,8 +139,8 @@ function createProjectCard(project, index, isFallback) {
       <div class="project-technologies">${techTags}</div>
       <div class="project-links">
         <a href="${safeLink}" class="btn primary" ${isInternalLink ? '' : 'target="_blank"'}>Ver Projeto</a>
-        ${project.github ? `<a href="${project.github}" class="btn primary" target="_blank">GitHub</a>` : ''}
-        ${project.case ? `<a href="${project.case}" class="btn primary" target="_blank">Case</a>` : ''}
+        ${project.github ? `<a href="${project.github}" class="btn primary" target="_blank">GitHub</a>` : `<span class="btn primary disabled" aria-disabled="true">GitHub</span>`}
+        ${project.case ? `<a href="${project.case}" class="btn primary" target="_blank">Case</a>` : `<span class="btn primary disabled" aria-disabled="true">Case</span>`}
       </div>
     </div>
   `;
@@ -230,8 +230,8 @@ function createProjectGalleryCard(project, index) {
       </div>
       <div class="project-links">
         <a href="${safeLink}" class="btn primary" ${isInternalLink ? '' : 'target=\"_blank\"'}>Ver Projeto</a>
-        ${project.github ? `<a href="${project.github}" class="btn primary" target="_blank">GitHub</a>` : ''}
-        ${project.case ? `<a href="${project.case}" class="btn primary" target="_blank">Case</a>` : ''}
+        ${project.github ? `<a href="${project.github}" class="btn primary" target="_blank">GitHub</a>` : `<span class="btn primary disabled" aria-disabled="true">GitHub</span>`}
+        ${project.case ? `<a href="${project.case}" class="btn primary" target="_blank">Case</a>` : `<span class="btn primary disabled" aria-disabled="true">Case</span>`}
       </div>
     </div>
   `;
