@@ -312,14 +312,15 @@ function renderStackIcons(technologies) {
       'WordPress': 'fa-brands fa-wordpress'
     };
 
-  const icons = technologies
-    .map(tech => {
-      const cls = iconMap[tech];
-      if (!cls) return '';
-      return `<span class="stack-icon" title="${tech}"><i class="${cls}"></i></span>`;
-    })
-    .filter(Boolean)
-    .join('');
+    const icons = technologies
+      .map(tech => {
+        const cls = iconMap[tech];
+        if (!cls) return '';
+        const slug = String(tech).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        return `<span class="stack-icon tech-${slug}" title="${tech}"><i class="${cls}"></i></span>`;
+      })
+      .filter(Boolean)
+      .join('');
 
   if (!icons) return '';
   return `<div class="project-stack-icons">${icons}</div>`;

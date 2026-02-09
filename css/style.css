@@ -3411,6 +3411,34 @@ body.dark-mode .project-stack-icons .stack-icon {
     color: #e7f0ff;
 }
 
+.project-stack-icons .stack-icon.tech-react:hover { color: #61dafb; }
+.project-stack-icons .stack-icon.tech-vue-3:hover,
+.project-stack-icons .stack-icon.tech-vue-js:hover { color: #42b883; }
+.project-stack-icons .stack-icon.tech-node-js:hover { color: #68a063; }
+.project-stack-icons .stack-icon.tech-express:hover { color: #1f2937; }
+.project-stack-icons .stack-icon.tech-nestjs:hover { color: #e0234e; }
+.project-stack-icons .stack-icon.tech-prisma:hover { color: #0c344b; }
+.project-stack-icons .stack-icon.tech-postgresql:hover { color: #336791; }
+.project-stack-icons .stack-icon.tech-mongodb:hover { color: #47a248; }
+.project-stack-icons .stack-icon.tech-typescript:hover { color: #3178c6; }
+.project-stack-icons .stack-icon.tech-javascript:hover { color: #f7df1e; }
+.project-stack-icons .stack-icon.tech-html:hover { color: #e34f26; }
+.project-stack-icons .stack-icon.tech-css:hover { color: #1572b6; }
+.project-stack-icons .stack-icon.tech-tailwindcss:hover { color: #38bdf8; }
+.project-stack-icons .stack-icon.tech-bootstrap:hover { color: #7952b3; }
+.project-stack-icons .stack-icon.tech-docker:hover { color: #0db7ed; }
+.project-stack-icons .stack-icon.tech-git:hover { color: #f14e32; }
+.project-stack-icons .stack-icon.tech-firebase:hover { color: #ffca28; }
+.project-stack-icons .stack-icon.tech-flutter:hover { color: #02569b; }
+.project-stack-icons .stack-icon.tech-redis:hover { color: #d82c20; }
+.project-stack-icons .stack-icon.tech-swagger:hover { color: #85ea2d; }
+.project-stack-icons .stack-icon.tech-bullmq:hover { color: #8b5cf6; }
+.project-stack-icons .stack-icon.tech-api:hover { color: #3b82f6; }
+.project-stack-icons .stack-icon.tech-d3-js:hover { color: #f97316; }
+.project-stack-icons .stack-icon.tech-socket-io:hover { color: #111827; }
+.project-stack-icons .stack-icon.tech-gsap:hover { color: #0ae448; }
+.project-stack-icons .stack-icon.tech-wordpress:hover { color: #21759b; }
+
 .project-technologies {
     display: none;
 }
@@ -3742,4 +3770,33 @@ body.dark-mode .authority-label {
 }
 body.dark-mode .proof-context {
     color: #b6c2de;
+}
+
+/* Projects filters: force palette buttons (light + dark) */
+.projects-filters .filter-btn {
+    background: linear-gradient(135deg, #1E4DB7 0%, #0B1C3F 100%);
+    color: #ffffff;
+    border: 1px solid rgba(30, 77, 183, 0.35);
+    box-shadow: 0 6px 16px rgba(30, 77, 183, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.projects-filters .filter-btn:hover,
+.projects-filters .filter-btn.active {
+    background: linear-gradient(135deg, #0B1C3F 0%, #1E4DB7 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 10px 22px rgba(30, 77, 183, 0.35) !important;
+    transform: translateY(-2px);
+}
+
+.projects-filters .filter-btn.active:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 26px rgba(30, 77, 183, 0.4) !important;
+}
+
+body.light-mode .projects-filters .filter-btn {
+    background: linear-gradient(135deg, #1E4DB7 0%, #0B1C3F 100%);
+    color: #ffffff;
+    border-color: rgba(30, 77, 183, 0.4);
 }
