@@ -981,6 +981,10 @@ footer h4 {
     margin-bottom: 2.5rem;
 }
 
+body.light-mode .projects-page .container h1 {
+    color: var(--primary);
+}
+
 .projects-page .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
@@ -3115,6 +3119,28 @@ body.dark-mode .project-card p {
 .project-links .btn {
     font-weight: 700;
     padding: 12px 18px;
+}
+
+body.light-mode .project-links .btn {
+    color: #ffffff;
+}
+
+.project-links .btn.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.project-links .btn.primary {
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 10px 22px rgba(30, 77, 183, 0.3);
+}
+
+.project-links .btn.primary:hover {
+    background: #1b3f97;
+    box-shadow: 0 12px 26px rgba(30, 77, 183, 0.35);
+    transform: translateY(-2px);
 }
 
 .project-problem,
