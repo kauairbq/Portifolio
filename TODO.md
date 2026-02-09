@@ -337,6 +337,7 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	Dar mais peso visual ao botão “Ver Projeto”
 	•	Uniformizar layout e altura dos cards
 	•	Garantir consistência visual entre front-end e back-end
+	•	[x] Concluído
 
 	* [x] Concluído
 
@@ -355,6 +356,7 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	solução
 	•	stack
 	•	impacto
+	•	[x] Concluído
 
 ⸻
 

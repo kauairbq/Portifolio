@@ -2,6 +2,10 @@
     {
         "id":  100,
         "image":  "assets/img/projects/covers/100.png",
+        "images":  [
+                       "assets/img/projects/covers/100.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "React",
                              "Node.js",
@@ -27,6 +31,10 @@
     {
         "id":  13,
         "image":  "assets/img/projects/covers/13.png",
+        "images":  [
+                       "assets/img/projects/covers/13.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "Vue 3",
                              "Vite",
@@ -68,6 +76,10 @@
         "challenge":  "Fluxo de orçamentos e área do cliente com múltiplas páginas e componentes.",
         "featured":  false,
         "image":  "assets/img/projects/xkairos.svg",
+        "images":  [
+                       "assets/img/projects/xkairos.svg",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "categories":  [
                            "Full-Stack",
                            "Produto"
@@ -76,6 +88,10 @@
     {
         "id":  101,
         "image":  "assets/img/projects/covers/101.png",
+        "images":  [
+                       "assets/img/projects/covers/101.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "Flutter",
                              "Firebase",
@@ -149,6 +165,10 @@
     {
         "id":  3,
         "image":  "assets/img/projects/covers/3.png",
+        "images":  [
+                       "assets/img/projects/covers/3.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "Vue.js",
                              "D3.js",
@@ -220,6 +240,10 @@
     {
         "id":  7,
         "image":  "assets/img/projects/covers/7.png",
+        "images":  [
+                       "assets/img/projects/covers/7.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "HTML",
                              "CSS",
@@ -242,6 +266,10 @@
     {
         "id":  8,
         "image":  "assets/img/projects/covers/8.png",
+        "images":  [
+                       "assets/img/projects/covers/8.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "React",
                              "Socket.io",
@@ -334,6 +362,10 @@
     {
         "id":  104,
         "image":  "assets/img/projects/covers/104.png",
+        "images":  [
+                       "assets/img/projects/covers/104.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "HTML",
                              "CSS",
@@ -356,6 +388,10 @@
     {
         "id":  105,
         "image":  "assets/img/projects/covers/105.png",
+        "images":  [
+                       "assets/img/projects/covers/105.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "technologies":  [
                              "HTML",
                              "CSS",
@@ -378,6 +414,10 @@
         "id":  106,
         "category":  "Backend",
         "image":  "assets/img/projects/covers/106.png",
+        "images":  [
+                       "assets/img/projects/covers/106.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "link":  "projects/api-gestao-pro/index.html",
         "github":  "",
         "technologies":  [
@@ -403,6 +443,10 @@
         "id":  107,
         "category":  "Frontend",
         "image":  "assets/img/projects/covers/107.png",
+        "images":  [
+                       "assets/img/projects/covers/107.png",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "link":  "projects/dashboard-dados-reais/dist/index.html",
         "github":  "",
         "technologies":  [
@@ -424,6 +468,10 @@
     },
     {
         "image":  "assets/img/projects/dashboard-analytics.svg",
+        "images":  [
+                       "assets/img/projects/dashboard-analytics.svg",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "link":  "projects/saas-billing/README.md",
         "id":  108,
         "technologies":  [
@@ -449,6 +497,10 @@
     },
     {
         "image":  "assets/img/projects/api-rest.svg",
+        "images":  [
+                       "assets/img/projects/api-rest.svg",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "link":  "projects/iam/README.md",
         "id":  109,
         "technologies":  [
@@ -473,6 +525,10 @@
     },
     {
         "image":  "assets/img/projects/api.svg",
+        "images":  [
+                       "assets/img/projects/api.svg",
+                       "assets/img/projects/placeholder.png"
+                   ],
         "link":  "projects/workflow-engine/README.md",
         "id":  110,
         "technologies":  [
