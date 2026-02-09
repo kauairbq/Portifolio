@@ -288,74 +288,73 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	[x] Sobre
 	•	[x] Projetos
 	•	[x] Serviços
-	•	CV (download direto / nova aba)
-	•	Remover Galeria do menu principal
-	•	Remover Contacto do menu principal
-	•	Remover Xkairos do menu principal
-	•	Garantir header neutro, sem CTA chamativo
+	•	[x] CV (download direto / nova aba)
+	•	[x] Remover Galeria do menu principal
+	•	[x] Remover Contacto do menu principal
+	•	[x] Remover Xkairos do menu principal
+	•	[x] Garantir header neutro, sem CTA chamativo
 
 	* [x] Concluído
 
 ⸻
 
 20. Hero Section — Ajuste para nível sénior
-	•	Remover imagem/banner com o nome “Kauai Rocha”
-	•	Manter foco apenas em:
-	•	headline
-	•	sub-headline
-	•	CTAs
-	•	Definir CTA principal: Ver Projetos
-	•	Definir CTA secundário discreto: Baixar CV
-	•	Padronizar estilo dos botões (cor, radius, hover)
-	•	Reduzir mistura excessiva de azul + roxo
+	•	[x] Remover imagem/banner com o nome “Kauai Rocha”
+	•	[x] Manter foco apenas em:
+	•	[x] headline
+	•	[x] sub-headline
+	•	[x] CTAs
+	•	[x] Definir CTA principal: Ver Projetos
+	•	[x] Definir CTA secundário discreto: Baixar CV
+	•	[x] Padronizar estilo dos botões (cor, radius, hover)
+	•	[x] Reduzir mistura excessiva de azul + roxo
 
 	* [x] Concluído
 
 ⸻
 
 21. Design System — Consolidação visual
-	•	Definir 1 cor primária (azul corporativo profundo)
-	•	Definir 1 cor secundária (roxo apenas para destaque)
-	•	Remover gradientes desnecessários
-	•	Padronizar:
-	•	botões
-	•	cards
-	•	badges de tecnologias
-	•	Ajustar contraste (AA/AAA)
-	•	Garantir hierarquia tipográfica clara
+	•	[x] Definir 1 cor primária (azul corporativo profundo)
+	•	[x] Definir 1 cor secundária (roxo apenas para destaque)
+	•	[x] Remover gradientes desnecessários
+	•	[x] Padronizar:
+	•	[x] botões
+	•	[x] cards
+	•	[x] badges de tecnologias
+	•	[x] Ajustar contraste (AA/AAA)
+	•	[x] Garantir hierarquia tipográfica clara
 
 	* [x] Concluído
 
 ⸻
 
 22. Home — Secção “Meus Projetos”
-	•	Aumentar espaçamento vertical da secção
-	•	Melhorar separação entre:
-	•	filtros
-	•	“Projetos em Destaque”
-	•	cards
-	•	Dar mais peso visual ao botão “Ver Projeto”
-	•	Uniformizar layout e altura dos cards
-	•	Garantir consistência visual entre front-end e back-end
-	•	[x] Concluído
+	•	[x] Aumentar espaçamento vertical da secção
+	•	[x] Melhorar separação entre:
+	•	[x] filtros
+	•	[x] “Projetos em Destaque”
+	•	[x] cards
+	•	[x] Dar mais peso visual ao botão “Ver Projeto”
+	•	[x] Uniformizar layout e altura dos cards
+	•	[x] Garantir consistência visual entre front-end e back-end
 
 	* [x] Concluído
 
 ⸻
 
 23. Página “Meus Projetos” — Galeria premium
-	•	Transformar página em galeria interativa
-	•	Usar cards grandes (2 por linha em desktop)
-	•	Implementar hover com micro-interações
-	•	Adicionar carrossel de imagens por projeto
-	•	Mostrar apenas projetos relevantes
-	•	Remover projetos de curso/básicos
-	•	Eliminar separação “destaque vs outros”
-	•	Cada projeto deve comunicar:
-	•	problema
-	•	solução
-	•	stack
-	•	impacto
+	•	[x] Transformar página em galeria interativa
+	•	[x] Usar cards grandes (2 por linha em desktop)
+	•	[x] Implementar hover com micro-interações
+	•	[x] Adicionar carrossel de imagens por projeto
+	•	[x] Mostrar apenas projetos relevantes
+	•	[x] Remover projetos de curso/básicos
+	•	[x] Eliminar separação “destaque vs outros”
+	•	[x] Cada projeto deve comunicar:
+	•	[x] problema
+	•	[x] solução
+	•	[x] stack
+	•	[x] impacto
 	•	[x] Concluído
 
 ⸻

@@ -3348,6 +3348,16 @@ body.dark-mode .project-stack-icons .stack-icon {
     margin-bottom: 14px;
 }
 
+/* Hide tech tags in featured projects */
+#projects-featured .project-technologies {
+    display: none;
+}
+
+/* Hide tech tags in secondary projects */
+#projects-secondary .project-technologies {
+    display: none;
+}
+
 .tech-tag {
     display: inline-flex;
     align-items: center;
