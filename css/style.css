@@ -1756,12 +1756,33 @@ body.dark-mode .timeline-date {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    transform: translateX(0);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
+    transform: translateX(64px) translateY(-4px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content.in-view {
+    transform: translateX(40px);
+}
+
+.timeline-item:nth-child(odd) .timeline-content:hover {
+    transform: translateX(64px) translateY(-4px);
+}
+
+.timeline-item:nth-child(odd) .timeline-content.in-view {
+    transform: translateX(40px);
+}
+
+.timeline-item:nth-child(even) .timeline-content:hover {
+    transform: translateX(-52px) translateY(-4px);
+}
+
+.timeline-item:nth-child(even) .timeline-content.in-view {
+    transform: translateX(-36px);
 }
 
 body.dark-mode .timeline-content {
