@@ -3055,6 +3055,79 @@ footer .social-links .social-link.tiktok {
     background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
 }
 
+/* Contact section social buttons should match footer (neutral base + brand hover) */
+.contact .social-links .social-link.linkedin {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.contact .social-links .social-link.linkedin:hover {
+    background: linear-gradient(135deg, #2C8CFF 0%, #0A66C2 100%);
+    box-shadow: 0 12px 30px rgba(42, 140, 255, 0.45);
+}
+.contact .social-links .social-link.github {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.contact .social-links .social-link.github:hover {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    box-shadow: 0 12px 30px rgba(17, 24, 39, 0.55);
+}
+.contact .social-links .social-link.facebook {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.contact .social-links .social-link.facebook:hover {
+    background: linear-gradient(135deg, #1f7bff 0%, #0b61d6 100%);
+    box-shadow: 0 12px 30px rgba(24, 119, 242, 0.5);
+}
+.contact .social-links .social-link.twitter {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.contact .social-links .social-link.twitter:hover {
+    background: linear-gradient(135deg, #1f2a3a 0%, #0f1419 100%);
+    box-shadow: 0 12px 30px rgba(14, 20, 25, 0.5);
+}
+.contact .social-links .social-link.threads {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.contact .social-links .social-link.threads:hover {
+    background: linear-gradient(135deg, #000000 0%, #1f1f1f 100%);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+.contact .social-links .social-link.tiktok {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.contact .social-links .social-link.tiktok:hover {
+    background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
+    box-shadow: 0 12px 30px rgba(0, 242, 234, 0.35);
+}
+
+/* Social links – neutral base + brand hover (global) */
+.social-links .social-link {
+    background: linear-gradient(135deg, #161c2b 0%, #111827 100%);
+}
+.social-links .social-link.linkedin:hover {
+    background: linear-gradient(135deg, #2C8CFF 0%, #0A66C2 100%);
+    box-shadow: 0 12px 30px rgba(42, 140, 255, 0.45);
+}
+.social-links .social-link.github:hover {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    box-shadow: 0 12px 30px rgba(17, 24, 39, 0.55);
+}
+.social-links .social-link.facebook:hover {
+    background: linear-gradient(135deg, #1f7bff 0%, #0b61d6 100%);
+    box-shadow: 0 12px 30px rgba(24, 119, 242, 0.5);
+}
+.social-links .social-link.twitter:hover {
+    background: linear-gradient(135deg, #1f2a3a 0%, #0f1419 100%);
+    box-shadow: 0 12px 30px rgba(14, 20, 25, 0.5);
+}
+.social-links .social-link.threads:hover {
+    background: linear-gradient(135deg, #000000 0%, #1f1f1f 100%);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+.social-links .social-link.tiktok:hover {
+    background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
+    box-shadow: 0 12px 30px rgba(0, 242, 234, 0.35);
+}
+
 footer .social-links .social-link.tiktok:hover {
     background: linear-gradient(135deg, #ff0050 0%, #00f2ea 100%);
     box-shadow: 0 12px 30px rgba(0, 242, 234, 0.35);

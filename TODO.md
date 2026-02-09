@@ -361,66 +361,66 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 ⸻
 
 24. Prova Social — Refactor para nível sénior
-	•	Refazer layout da secção “Prova Social”
-	•	Transformar métricas em cards visuais
-	•	Destaque forte para números:
-	•	+25 projetos
-	•	98% uptime
-	•	5+ anos experiência
-	•	Stack técnica apresentada como “linha de autoridade”
-	•	Visual clean, corporativo e legível
+	•	[x] Refazer layout da secção “Prova Social”
+	•	[x] Transformar métricas em cards visuais
+	•	[x] Destaque forte para números:
+	•	[x] +25 projetos
+	•	[x] 98% uptime
+	•	[x] 5+ anos experiência
+	•	[x] Stack técnica apresentada como “linha de autoridade”
+	•	[x] Visual clean, corporativo e legível
 	•	[x] Concluído
 
 ⸻
 
 25. Página “Sobre” — Revisão estratégica
-	•	Revisar copy para tom profissional e estratégico
-	•	Reduzir autobiografia
-	•	Focar em:
-	•	tomada de decisão
-	•	visão de produto
-	•	impacto técnico
-	•	Reduzir listas extensas
-	•	Melhorar ritmo de leitura (layout + espaçamento)
+	•	[x] Revisar copy para tom profissional e estratégico
+	•	[x] Reduzir autobiografia
+	•	[x] Focar em:
+	•	[x] tomada de decisão
+	•	[x] visão de produto
+	•	[x] impacto técnico
+	•	[x] Reduzir listas extensas
+	•	[x] Melhorar ritmo de leitura (layout + espaçamento)
 
 ⸻
 
 26. Página “Serviços” — Polimento visual
-	•	Manter estrutura atual
-	•	Refinar layout dos cards
-	•	Tornar tabela de valores mais discreta
-	•	Reforçar posicionamento B2B / consultoria
-	•	Melhorar secção “Processo de Trabalho”
-	•	Alinhar visualmente com a Home
+	•	[x] Manter estrutura atual
+	•	[x] Refinar layout dos cards
+	•	[x] Tornar tabela de valores mais discreta
+	•	[x] Reforçar posicionamento B2B / consultoria
+	•	[x] Melhorar secção “Processo de Trabalho”
+	•	[x] Alinhar visualmente com a Home
 
 ⸻
 
 27. Contacto — Consolidação final
-	•	Manter apenas uma secção de contacto
-	•	Contacto localizado exclusivamente no final do index
-	•	Remover duplicações de contacto
-	•	Manter redes principais:
-	•	LinkedIn
-	•	GitHub
-	•	Redes secundárias apenas se discretas
-	•	Mapa apenas se não expuser localização sensível
+	•	[x] Manter apenas uma secção de contacto
+	•	[x] Contacto localizado exclusivamente no final do index
+	•	[x] Remover duplicações de contacto
+	•	[x] Manter redes principais:
+	•	[x] LinkedIn
+	•	[x] GitHub
+	•	[x] Redes secundárias apenas se discretas
+	•	[x] Mapa apenas se não expuser localização sensível
 
 ⸻
 
 28. QA Final — Validação sénior
-	•	Rever espaçamentos globais
-	•	Validar hover e transições
-	•	Revisar versão mobile
-	•	Testar navegação sem ruído
-	•	Revisar copy final (clareza e impacto)
-	•	Check rápido de performance (Lighthouse)
+	•	[x] Rever espaçamentos globais
+	•	[x] Validar hover e transições
+	•	[x] Revisar versão mobile
+	•	[x] Testar navegação sem ruído
+	•	[x] Revisar copy final (clareza e impacto)
+	•	[x] Check rápido de performance (Lighthouse)
 
 ⸻
 
 29. Congelamento da versão
-	•	Congelar layout final
-	•	Congelar arquitetura de navegação
-	•	Preparar versão para:
-	•	recrutadores
-	•	clientes B2B
-	•	Portfólio pronto para uso profissional
+	•	[x] Congelar layout final
+	•	[x] Congelar arquitetura de navegação
+	•	[x] Preparar versão para:
+	•	[x] recrutadores
+	•	[x] clientes B2B
+	•	[x] Portfólio pronto para uso profissional
