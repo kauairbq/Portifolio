@@ -324,6 +324,8 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	Ajustar contraste (AA/AAA)
 	•	Garantir hierarquia tipográfica clara
 
+	* [x] Concluído
+
 ⸻
 
 22. Home — Secção “Meus Projetos”
@@ -335,6 +337,8 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	Dar mais peso visual ao botão “Ver Projeto”
 	•	Uniformizar layout e altura dos cards
 	•	Garantir consistência visual entre front-end e back-end
+
+	* [x] Concluído
 
 ⸻
 
@@ -417,4 +421,3 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 	•	recrutadores
 	•	clientes B2B
 	•	Portfólio pronto para uso profissional
-

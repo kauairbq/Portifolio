@@ -89,6 +89,16 @@ function createProjectCard(project, index, isFallback) {
     ? project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')
     : '';
 
+  const stackIcons = renderStackIcons(project.technologies);
+
+  const problem = project.problem
+    ? `<p class="project-problem"><strong>Problema:</strong> ${project.problem}</p>`
+    : '';
+
+  const challenge = project.challenge
+    ? `<p class="project-challenge"><strong>Desafio:</strong> ${project.challenge}</p>`
+    : '';
+
   const categories = Array.isArray(project.categories)
     ? project.categories
     : [];
@@ -101,10 +111,14 @@ function createProjectCard(project, index, isFallback) {
     <div class="project-card-content">
       <h3>${project.title || 'Projeto'}</h3>
       <p>${project.description || ''}</p>
+      ${problem}
+      ${challenge}
+      ${stackIcons}
       <div class="project-technologies">${techTags}</div>
       <div class="project-links">
         <a href="${safeLink}" class="btn" ${isInternalLink ? '' : 'target="_blank"'}>Ver Projeto</a>
         ${project.github ? `<a href="${project.github}" class="btn secondary" target="_blank">GitHub</a>` : ''}
+        ${project.case ? `<a href="${project.case}" class="btn secondary" target="_blank">Case</a>` : ''}
       </div>
     </div>
   `;
@@ -113,6 +127,49 @@ function createProjectCard(project, index, isFallback) {
   card.addEventListener('mouseleave', () => removeHoverEffect(card));
 
   return card;
+}
+
+function renderStackIcons(technologies) {
+  if (!Array.isArray(technologies) || technologies.length === 0) return '';
+
+  const iconMap = {
+    'React': 'fa-brands fa-react',
+    'Vue 3': 'fa-brands fa-vuejs',
+    'Vue.js': 'fa-brands fa-vuejs',
+    'Node.js': 'fa-brands fa-node-js',
+    'Express': 'fa-solid fa-server',
+    'PostgreSQL': 'fa-solid fa-database',
+    'MongoDB': 'fa-solid fa-leaf',
+    'TypeScript': 'fa-solid fa-code',
+    'JavaScript': 'fa-brands fa-js',
+    'HTML': 'fa-brands fa-html5',
+    'CSS': 'fa-brands fa-css3-alt',
+    'TailwindCSS': 'fa-solid fa-wind',
+    'Prisma': 'fa-solid fa-diagram-project',
+    'NestJS': 'fa-solid fa-layer-group',
+    'JWT': 'fa-solid fa-key',
+    'Swagger': 'fa-solid fa-file-lines',
+    'Redis': 'fa-solid fa-bolt',
+    'BullMQ': 'fa-solid fa-gears',
+    'API': 'fa-solid fa-cloud',
+    'Vite': 'fa-solid fa-bolt',
+    'Flutter': 'fa-solid fa-mobile-screen',
+    'Firebase': 'fa-solid fa-fire',
+    'IoT': 'fa-solid fa-wifi',
+    'MQTT': 'fa-solid fa-signal'
+  };
+
+  const icons = technologies
+    .map(tech => {
+      const cls = iconMap[tech];
+      if (!cls) return '';
+      return `<span class="stack-icon" title="${tech}"><i class="${cls}"></i></span>`;
+    })
+    .filter(Boolean)
+    .join('');
+
+  if (!icons) return '';
+  return `<div class="project-stack-icons">${icons}</div>`;
 }
 
 function initFilters() {

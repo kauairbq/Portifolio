@@ -672,7 +672,7 @@ body.dark-mode .skills-subcategory h4 {
 
 /* Projects Section */
 .projects {
-    padding: 5rem 0;
+    padding: 6.5rem 0;
     background: radial-gradient(ellipse at top, #F0F8FF 0%, #E6F3FF 60%, #D1E9FF 100%);
 }
 
@@ -687,51 +687,6 @@ body.dark-mode .projects {
     margin-top: 2rem;
 }
 
-.project-card {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-body.dark-mode .project-card {
-    background-color: #2a2a2a;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-card-content {
-    padding: 1.5rem;
-}
-
-.project-card h3 {
-    margin-bottom: 0.5rem;
-    color: #1E4DB7;
-}
-
-.project-card p {
-    margin-bottom: 1rem;
-    color: #666;
-}
-
-body.dark-mode .project-card p {
-    color: #ccc;
-}
-
-.project-card .btn {
-    margin-top: 1rem;
-}
 
 /* Contact Section */
 .contact {
@@ -2968,7 +2923,7 @@ body.light-mode .contact-section textarea {
     color: #0B1C3F;
     border: 1px solid #d7dce5;
 }
-\n.projects-lede{color:#9fb6e0;max-width:760px;margin:6px auto 18px;text-align:center;}\n.projects-subtitle{margin:28px 0 12px;font-size:20px;color:#1f3b78;text-align:left;}\nbody.dark-mode .projects-subtitle{color:#e8f0ff;}\n
+\n.projects-lede{color:#9fb6e0;max-width:760px;margin:6px auto 28px;text-align:center;}\n.projects-subtitle{margin:34px 0 16px;font-size:20px;color:#1f3b78;text-align:left;}\nbody.dark-mode .projects-subtitle{color:#e8f0ff;}\n
 \n.project-card {
     background: #ffffff;
     border-radius: 16px;
@@ -3054,6 +3009,12 @@ body.dark-mode .tech-tag {
     margin-top: 0;
 }
 
+.project-links .btn,
+.project-links a {
+    padding: 10px 18px;
+    font-weight: 700;
+}
+
 .project-links .btn.secondary {
     background: transparent;
     border: 1px solid rgba(30, 58, 138, 0.3);
@@ -3064,8 +3025,8 @@ body.dark-mode .project-links .btn.secondary {
     border-color: rgba(219, 234, 254, 0.3);
     color: #dbeafe;
 }
-\n.projects-filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 20px;}\n.filter-btn{border:1px solid rgba(59,130,246,0.25);background:#f5f9ff;color:#1e3a8a;padding:8px 14px;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer;transition:all .2s ease;}\n.filter-btn.active{background:linear-gradient(135deg,#4A90E2,#1E4DB7);color:#fff;border-color:transparent;box-shadow:0 8px 18px rgba(30,77,183,0.3);}\nbody.dark-mode .filter-btn{background:rgba(15,23,42,0.8);color:#dbeafe;border-color:rgba(148,163,184,0.2);}\nbody.dark-mode .filter-btn.active{background:linear-gradient(135deg,#38bdf8,#2563eb);color:#fff;}\n
-\n.social-proof{padding:4.5rem 0;background:linear-gradient(180deg,#f7fbff 0%,#eef5ff 100%);}\n.social-proof h2{text-align:center;margin-bottom:.35rem;color:#0b1f4d;}\n.section-lede{text-align:center;color:#5b6b86;max-width:720px;margin:0 auto 24px;}\n.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:22px;}\n.proof-card{background:#fff;border:1px solid rgba(31,59,120,0.12);border-radius:14px;padding:18px;text-align:center;box-shadow:0 10px 26px rgba(15,23,42,0.08);}\n.proof-card h3{font-size:28px;margin:0 0 6px;color:#1e3a8a;}\n.proof-card p{margin:0;color:#5b6b86;}\n.logo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}\n.logo-row span{padding:6px 12px;border-radius:999px;background:rgba(59,130,246,0.12);color:#1e3a8a;font-weight:700;font-size:12px;}\nbody.dark-mode .social-proof{background:linear-gradient(180deg,#0b1224 0%,#0f172a 100%);}\nbody.dark-mode .social-proof h2{color:#e8f0ff;}\nbody.dark-mode .section-lede{color:#b6c2de;}\nbody.dark-mode .proof-card{background:#0f172a;border-color:rgba(148,163,184,0.18);box-shadow:0 12px 30px rgba(0,0,0,0.35);}\nbody.dark-mode .proof-card h3{color:#e8f0ff;}\nbody.dark-mode .proof-card p{color:#b6c2de;}\nbody.dark-mode .logo-row span{background:rgba(59,130,246,0.2);color:#dbeafe;}\n
+\n.projects-filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 28px;}\n.filter-btn{border:1px solid rgba(59,130,246,0.25);background:#f5f9ff;color:#1e3a8a;padding:8px 14px;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer;transition:all .2s ease;}\n.filter-btn.active{background:#1e4db7;color:#fff;border-color:transparent;box-shadow:0 8px 18px rgba(30,77,183,0.3);}\nbody.dark-mode .filter-btn{background:rgba(15,23,42,0.8);color:#dbeafe;border-color:rgba(148,163,184,0.2);}\nbody.dark-mode .filter-btn.active{background:#1e4db7;color:#fff;}\n
+\n.social-proof{padding:4.5rem 0;background:#eef5ff;}\n.social-proof h2{text-align:center;margin-bottom:.35rem;color:#0b1f4d;}\n.section-lede{text-align:center;color:#5b6b86;max-width:720px;margin:0 auto 24px;}\n.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:22px;}\n.proof-card{background:#fff;border:1px solid rgba(31,59,120,0.12);border-radius:14px;padding:18px;text-align:center;box-shadow:0 10px 26px rgba(15,23,42,0.08);}\n.proof-card h3{font-size:28px;margin:0 0 6px;color:#1e3a8a;}\n.proof-card p{margin:0;color:#5b6b86;}\n.logo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}\n.logo-row span{padding:6px 12px;border-radius:999px;background:rgba(59,130,246,0.12);color:#1e3a8a;font-weight:700;font-size:12px;}\nbody.dark-mode .social-proof{background:#0b1224;}\nbody.dark-mode .social-proof h2{color:#e8f0ff;}\nbody.dark-mode .section-lede{color:#b6c2de;}\nbody.dark-mode .proof-card{background:#0f172a;border-color:rgba(148,163,184,0.18);box-shadow:0 12px 30px rgba(0,0,0,0.35);}\nbody.dark-mode .proof-card h3{color:#e8f0ff;}\nbody.dark-mode .proof-card p{color:#b6c2de;}\nbody.dark-mode .logo-row span{background:rgba(59,130,246,0.2);color:#dbeafe;}\n
 \n.contact-cta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;}\n.contact-cta .btn{margin-top:0;}\n
 
 /* ============== Design System Overrides (Dark-First) ============== */
@@ -3159,9 +3120,8 @@ body.dark-mode .hero {
 .social-proof .badge {
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-700);
-    background: rgba(17, 24, 39, 0.65);
+    background: #111827;
     box-shadow: var(--shadow-1);
-    backdrop-filter: blur(8px);
 }
 
 .project-card h3,
