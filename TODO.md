@@ -278,7 +278,141 @@ Antes de publicar o portfólio, **tudo abaixo deve estar marcado**:
 
 * [x] Definição de pronto confirmada
 
+---
 
+19. Header — Limpeza e posicionamento final
+	•	Remover botão “Contactar” do cabeçalho
+	•	Remover qualquer link do header para /contactos.html
+	•	Ajustar menu principal para conter apenas:
+	•	Início
+	•	Sobre
+	•	Projetos
+	•	Serviços
+	•	CV (download direto / nova aba)
+	•	Remover Galeria do menu principal
+	•	Remover Contacto do menu principal
+	•	Remover Xkairos do menu principal
+	•	Garantir header neutro, sem CTA chamativo
+
+⸻
+
+20. Hero Section — Ajuste para nível sénior
+	•	Remover imagem/banner com o nome “Kauai Rocha”
+	•	Manter foco apenas em:
+	•	headline
+	•	sub-headline
+	•	CTAs
+	•	Definir CTA principal: Ver Projetos
+	•	Definir CTA secundário discreto: Baixar CV
+	•	Padronizar estilo dos botões (cor, radius, hover)
+	•	Reduzir mistura excessiva de azul + roxo
+
+⸻
+
+21. Design System — Consolidação visual
+	•	Definir 1 cor primária (azul corporativo profundo)
+	•	Definir 1 cor secundária (roxo apenas para destaque)
+	•	Remover gradientes desnecessários
+	•	Padronizar:
+	•	botões
+	•	cards
+	•	badges de tecnologias
+	•	Ajustar contraste (AA/AAA)
+	•	Garantir hierarquia tipográfica clara
+
+⸻
+
+22. Home — Secção “Meus Projetos”
+	•	Aumentar espaçamento vertical da secção
+	•	Melhorar separação entre:
+	•	filtros
+	•	“Projetos em Destaque”
+	•	cards
+	•	Dar mais peso visual ao botão “Ver Projeto”
+	•	Uniformizar layout e altura dos cards
+	•	Garantir consistência visual entre front-end e back-end
+
+⸻
+
+23. Página “Meus Projetos” — Galeria premium
+	•	Transformar página em galeria interativa
+	•	Usar cards grandes (2 por linha em desktop)
+	•	Implementar hover com micro-interações
+	•	Adicionar carrossel de imagens por projeto
+	•	Mostrar apenas projetos relevantes
+	•	Remover projetos de curso/básicos
+	•	Eliminar separação “destaque vs outros”
+	•	Cada projeto deve comunicar:
+	•	problema
+	•	solução
+	•	stack
+	•	impacto
+
+⸻
+
+24. Prova Social — Refactor para nível sénior
+	•	Refazer layout da secção “Prova Social”
+	•	Transformar métricas em cards visuais
+	•	Destaque forte para números:
+	•	+25 projetos
+	•	98% uptime
+	•	5+ anos experiência
+	•	Stack técnica apresentada como “linha de autoridade”
+	•	Visual clean, corporativo e legível
+
+⸻
+
+25. Página “Sobre” — Revisão estratégica
+	•	Revisar copy para tom profissional e estratégico
+	•	Reduzir autobiografia
+	•	Focar em:
+	•	tomada de decisão
+	•	visão de produto
+	•	impacto técnico
+	•	Reduzir listas extensas
+	•	Melhorar ritmo de leitura (layout + espaçamento)
+
+⸻
+
+26. Página “Serviços” — Polimento visual
+	•	Manter estrutura atual
+	•	Refinar layout dos cards
+	•	Tornar tabela de valores mais discreta
+	•	Reforçar posicionamento B2B / consultoria
+	•	Melhorar secção “Processo de Trabalho”
+	•	Alinhar visualmente com a Home
+
+⸻
+
+27. Contacto — Consolidação final
+	•	Manter apenas uma secção de contacto
+	•	Contacto localizado exclusivamente no final do index
+	•	Remover duplicações de contacto
+	•	Manter redes principais:
+	•	LinkedIn
+	•	GitHub
+	•	Redes secundárias apenas se discretas
+	•	Mapa apenas se não expuser localização sensível
+
+⸻
+
+28. QA Final — Validação sénior
+	•	Rever espaçamentos globais
+	•	Validar hover e transições
+	•	Revisar versão mobile
+	•	Testar navegação sem ruído
+	•	Revisar copy final (clareza e impacto)
+	•	Check rápido de performance (Lighthouse)
+
+⸻
+
+29. Congelamento da versão
+	•	Congelar layout final
+	•	Congelar arquitetura de navegação
+	•	Preparar versão para:
+	•	recrutadores
+	•	clientes B2B
+	•	Portfólio pronto para uso profissional
 
 
 
