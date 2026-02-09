@@ -1509,7 +1509,7 @@ body.dark-mode .certification-card:hover .certification-content h3 {
 }
 
 .certification-issuer::before {
-    content: 'ðŸ¢';
+    content: "\1F3E2";
     font-size: 1.2rem;
 }
 
@@ -1528,7 +1528,7 @@ body.dark-mode .certification-issuer {
 }
 
 .certification-date::before {
-    content: 'ðŸ“…';
+    content: "\1F4C5";
     font-size: 1.2rem;
 }
 
