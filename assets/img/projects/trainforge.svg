@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a122a"/>
+      <stop offset="100%" stop-color="#1d2f63"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4f8cff"/>
+      <stop offset="100%" stop-color="#6c4dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect x="70" y="90" width="1140" height="540" rx="28" fill="#101a37" stroke="#314b90" stroke-width="2"/>
+  <text x="130" y="210" fill="#e8eefc" font-size="72" font-family="Segoe UI, Arial, sans-serif" font-weight="700">TrainForge</text>
+  <text x="130" y="270" fill="#9db0d9" font-size="34" font-family="Segoe UI, Arial, sans-serif">Plataforma de Gestão de Performance Fitness</text>
+  <rect x="130" y="340" width="300" height="180" rx="22" fill="#17274d"/>
+  <rect x="460" y="340" width="300" height="180" rx="22" fill="#17274d"/>
+  <rect x="790" y="340" width="300" height="180" rx="22" fill="#17274d"/>
+  <rect x="160" y="380" width="240" height="24" rx="12" fill="url(#card)"/>
+  <rect x="490" y="380" width="240" height="24" rx="12" fill="url(#card)"/>
+  <rect x="820" y="380" width="240" height="24" rx="12" fill="url(#card)"/>
+  <text x="160" y="455" fill="#d9e5ff" font-size="32" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Ranking</text>
+  <text x="490" y="455" fill="#d9e5ff" font-size="32" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Desafios</text>
+  <text x="820" y="455" fill="#d9e5ff" font-size="32" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Métricas</text>
+</svg>
+

@@ -114,6 +114,36 @@
                        ]
     },
     {
+        "id":  111,
+        "image":  "assets/img/projects/trainforge.svg",
+        "images":  [
+                       "assets/img/projects/trainforge.svg",
+                       "assets/img/projects/placeholder.png"
+                   ],
+        "technologies":  [
+                             "React",
+                             "PHP",
+                             "MySQL",
+                             "JWT",
+                             "Bootstrap",
+                             "Recharts"
+                         ],
+        "link":  "projects/TrainForge/index.html",
+        "github":  "https://github.com/kauairbq/Projetos/tree/master/TrainForge",
+        "case":  "projects/TrainForge/README.md",
+        "archived":  false,
+        "title":  "TrainForge - Gestão de Performance Fitness",
+        "description":  "SaaS para personal trainers e alunos com desafios semanais, ranking global, feedback e dashboard de métricas.",
+        "problem":  "Unificar acompanhamento de alunos presenciais e online num único fluxo operacional.",
+        "challenge":  "Integrar autenticação segura, ranking em tempo real e gestão de desafios numa arquitetura full-stack.",
+        "featured":  true,
+        "categories":  [
+                           "Full-Stack",
+                           "SaaS",
+                           "Produto"
+                       ]
+    },
+    {
         "id":  0,
         "image":  "assets/img/projects/covers/calculadora-de-media-de-notas.png",
         "technologies":  [

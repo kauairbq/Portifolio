@@ -1,0 +1,129 @@
+:root {
+  --bg: #0b1020;
+  --panel: #111a33;
+  --panel-soft: #172445;
+  --text: #e8eefc;
+  --muted: #9db0d9;
+  --primary: #4f8cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top right, #1d2a4f, #0b1020 60%);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.tf-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.tf-sidebar {
+  background: rgba(9, 16, 35, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.tf-brand {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #4f8cff, #6c4dff);
+  color: #fff;
+}
+
+.tf-link {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all 0.2s ease;
+}
+
+.tf-link:hover,
+.tf-link.active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.25), rgba(108, 77, 255, 0.25));
+}
+
+.tf-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.tf-header {
+  background: rgba(10, 18, 39, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.tf-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.tf-card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-soft));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tf-progress {
+  height: 22px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tf-progress .progress-bar {
+  background: linear-gradient(135deg, #4f8cff, #6c4dff);
+}
+
+.tf-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.tf-auth {
+  background: radial-gradient(circle at top left, #1b2f64, #090f21 60%);
+}
+
+.tf-auth-card {
+  width: min(460px, 92vw);
+  background: rgba(15, 25, 52, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+}
+
+.text-secondary {
+  color: var(--muted) !important;
+}
+
+@media (max-width: 992px) {
+  .tf-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .tf-sidebar {
+    min-height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
