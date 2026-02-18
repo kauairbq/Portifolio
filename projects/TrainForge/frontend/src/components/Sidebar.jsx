@@ -1,7 +1,17 @@
-import { NavLink } from 'react-router-dom';
-import { FiBarChart2, FiFlag, FiUsers, FiMessageSquare, FiSettings } from 'react-icons/fi';
+﻿import { NavLink } from 'react-router-dom';
+import {
+  FiBarChart2,
+  FiFlag,
+  FiUsers,
+  FiMessageSquare,
+  FiSettings,
+  FiBriefcase,
+  FiShield
+} from 'react-icons/fi';
 
 export default function Sidebar({ role }) {
+  const canSeeAdmin = role === 'admin' || role === 'trainer';
+
   return (
     <aside className="tf-sidebar p-3">
       <div className="tf-brand mb-4">
@@ -16,6 +26,9 @@ export default function Sidebar({ role }) {
         <NavLink to="/challenges" className="tf-link">
           <FiFlag /> Desafios
         </NavLink>
+        <NavLink to="/services" className="tf-link">
+          <FiBriefcase /> Servicos
+        </NavLink>
         <NavLink to="/students" className="tf-link">
           <FiUsers /> Alunos
         </NavLink>
@@ -23,8 +36,13 @@ export default function Sidebar({ role }) {
           <FiMessageSquare /> Feedback
         </NavLink>
         <NavLink to="/settings" className="tf-link">
-          <FiSettings /> Definições
+          <FiSettings /> Area do cliente
         </NavLink>
+        {canSeeAdmin ? (
+          <NavLink to="/admin" className="tf-link">
+            <FiShield /> Admin
+          </NavLink>
+        ) : null}
       </nav>
 
       <div className="mt-auto pt-4 text-secondary">
@@ -33,4 +51,3 @@ export default function Sidebar({ role }) {
     </aside>
   );
 }
-

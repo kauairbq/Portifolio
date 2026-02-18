@@ -1,32 +1,34 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+﻿import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+
 import { api } from '../services/api';
 
 const schema = Yup.object({
-  subject: Yup.string().required('Obrigatório'),
-  message: Yup.string().min(8, 'Mínimo 8 caracteres').required('Obrigatório'),
-  rating: Yup.number().min(1).max(5).required('Obrigatório')
+  subject: Yup.string().required('Obrigatorio'),
+  message: Yup.string().min(8, 'Minimo 8 caracteres').required('Obrigatorio'),
+  rating: Yup.number().min(1).max(5).required('Obrigatorio')
 });
 
-export default function Feedback() {
+export default function Feedback({ user }) {
   return (
     <section className="row g-4">
       <div className="col-12 col-lg-8">
         <div className="card tf-card">
           <div className="card-body">
-            <h3>Feedback</h3>
-            <p className="text-secondary">Envie feedback para o personal trainer.</p>
+            <h3>Feedback dos alunos</h3>
+            <p className="text-secondary">Envie observacoes para o personal e para a equipa administrativa.</p>
+
             <Formik
               initialValues={{ subject: 'Feedback da semana', message: '', rating: 5 }}
               validationSchema={schema}
               onSubmit={async (values, { setStatus, setSubmitting, resetForm }) => {
                 try {
-                  const { data } = await api.post('/feedback.php', values);
+                  const { data } = await api.post('/feedback', values);
                   if (!data?.ok) throw new Error(data?.error || 'Falha no envio');
                   setStatus('Feedback enviado com sucesso.');
                   resetForm();
                 } catch (err) {
-                  setStatus(err.message || 'Erro ao enviar feedback');
+                  setStatus(err?.response?.data?.error || err.message || 'Erro ao enviar feedback');
                 } finally {
                   setSubmitting(false);
                 }
@@ -45,7 +47,7 @@ export default function Feedback() {
                     <small className="text-danger"><ErrorMessage name="message" /></small>
                   </div>
                   <div>
-                    <label className="form-label">Rating</label>
+                    <label className="form-label">Classificacao</label>
                     <Field as="select" className="form-select" name="rating">
                       <option value={5}>5</option>
                       <option value={4}>4</option>
@@ -55,7 +57,9 @@ export default function Feedback() {
                     </Field>
                     <small className="text-danger"><ErrorMessage name="rating" /></small>
                   </div>
+
                   {status ? <div className="alert alert-info py-2">{status}</div> : null}
+
                   <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'A enviar...' : 'Enviar feedback'}
                   </button>
@@ -65,7 +69,19 @@ export default function Feedback() {
           </div>
         </div>
       </div>
+
+      <div className="col-12 col-lg-4">
+        <div className="card tf-card h-100">
+          <div className="card-body">
+            <h5>Resumo</h5>
+            <ul className="text-secondary mb-0">
+              <li>Utilizador: {user.full_name}</li>
+              <li>Papel: {user.role}</li>
+              <li>Canal: web app</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
-

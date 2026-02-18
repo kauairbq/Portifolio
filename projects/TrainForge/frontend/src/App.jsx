@@ -1,14 +1,24 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+﻿import { Navigate, Route, Routes } from 'react-router-dom';
 import { useMemo, useState } from 'react';
+
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Challenges from './pages/Challenges';
 import Students from './pages/Students';
+import Services from './pages/Services';
 import Feedback from './pages/Feedback';
 import Settings from './pages/Settings';
+import Admin from './pages/Admin';
+
+import { api, saveAuth, clearAuth } from './services/api';
+
+function canSeeAdmin(role) {
+  return role === 'admin' || role === 'trainer';
+}
 
 export default function App() {
   const [user, setUser] = useState(() => {
@@ -20,16 +30,18 @@ export default function App() {
 
   const onAuth = (authPayload) => {
     setUser(authPayload.user);
-    localStorage.setItem('trainforge_user', JSON.stringify(authPayload.user));
-    localStorage.setItem('trainforge_access_token', authPayload.accessToken);
-    localStorage.setItem('trainforge_refresh_token', authPayload.refreshToken);
+    saveAuth(authPayload);
   };
 
-  const onLogout = () => {
-    setUser(null);
-    localStorage.removeItem('trainforge_user');
-    localStorage.removeItem('trainforge_access_token');
-    localStorage.removeItem('trainforge_refresh_token');
+  const onLogout = async () => {
+    try {
+      await api.post('/auth/logout');
+    } catch {
+      // no-op
+    } finally {
+      setUser(null);
+      clearAuth();
+    }
   };
 
   if (!isAuthenticated) {
@@ -43,12 +55,17 @@ export default function App() {
         <Header user={user} onLogout={onLogout} />
         <main className="container-fluid py-4">
           <Routes>
-            <Route path="/" element={<Dashboard user={user} />} />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard user={user} />} />
             <Route path="/challenges" element={<Challenges user={user} />} />
+            <Route path="/services" element={<Services user={user} />} />
             <Route path="/students" element={<Students user={user} />} />
             <Route path="/feedback" element={<Feedback user={user} />} />
-            <Route path="/settings" element={<Settings user={user} />} />
+            <Route path="/settings" element={<Settings user={user} onUserUpdate={setUser} />} />
+            <Route
+              path="/admin"
+              element={canSeeAdmin(user.role) ? <Admin /> : <Navigate to="/dashboard" replace />}
+            />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </main>
@@ -57,4 +74,3 @@ export default function App() {
     </div>
   );
 }
-

@@ -122,7 +122,8 @@
                    ],
         "technologies":  [
                              "React",
-                             "PHP",
+                             "Node.js",
+                             "Express",
                              "MySQL",
                              "JWT",
                              "Bootstrap",
@@ -133,9 +134,9 @@
         "case":  "projects/TrainForge/README.md",
         "archived":  false,
         "title":  "TrainForge - Gestão de Performance Fitness",
-        "description":  "SaaS para personal trainers e alunos com desafios semanais, ranking global, feedback e dashboard de métricas.",
-        "problem":  "Unificar acompanhamento de alunos presenciais e online num único fluxo operacional.",
-        "challenge":  "Integrar autenticação segura, ranking em tempo real e gestão de desafios numa arquitetura full-stack.",
+        "description":  "SaaS para personal trainers e alunos com desafios semanais, ranking global, historico de performance e gestao de servicos.",
+        "problem":  "Unificar acompanhamento de alunos presenciais e online com operacao de servicos num unico fluxo.",
+        "challenge":  "Migrar backend legado para Node.js/Express com JWT rotativo, RBAC e API para desafios, ranking e suporte.",
         "featured":  true,
         "categories":  [
                            "Full-Stack",
