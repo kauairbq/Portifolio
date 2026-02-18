@@ -46,8 +46,13 @@
       .menu-open .menu-panel{transform:translateY(0);opacity:1;}
       @media(max-width:768px){
         .nav-inner{flex-wrap:wrap;gap:10px;}
-        .nav-actions{width:100%;justify-content:flex-end;}
-        .menu-panel{right:12px;left:12px;width:auto;}
+        .nav-brand{width:100%;justify-content:center;}
+        .nav-actions{width:100%;justify-content:center;flex-wrap:wrap;gap:8px;}
+        .nav-actions .nav-dark,.nav-actions .nav-toggle,.nav-actions .nav-cta{flex:1 1 140px;max-width:200px;}
+        .menu-panel{right:12px;left:12px;width:auto;top:74px;}
+      }
+      @media(max-width:480px){
+        .nav-actions .nav-dark,.nav-actions .nav-toggle,.nav-actions .nav-cta{flex:1 1 100%;max-width:100%;}
       }
     </style>
     <!-- Open Graph / Twitter card -->
