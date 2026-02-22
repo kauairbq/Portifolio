@@ -1,41 +1,37 @@
-﻿# TrainForge - Plataforma de Gestao de Performance Fitness
+# TrainForge - Plataforma de Gestao de Performance Fitness
 
-Aplicacao SaaS para personal trainers e alunos com foco em performance, desafios semanais, ranking global e operacao hibrida (presencial + online).
+SaaS multi-tenant para personal trainers e ginasios com operacao de performance, desafios semanais, ranking global, billing e suporte.
 
-## Objetivo de negocio
+## Arquitetura (upgrade definitivo)
 
-TrainForge foi desenhado para operar como produto recorrente para personal trainers:
-
-- competicao entre alunos online e presenciais no mesmo ranking
-- desafio semanal com pontuacao e top 3 destacados
-- historico completo de servicos, treinos e suporte
-- base para monetizacao via assinaturas, personalizacoes e relatorios
-
-## Stack
-
-### Front-end
-
-- React + Vite
-- React Router DOM
-- Axios
-- Bootstrap 5 + Tailwind utilities
-- React Icons
-- Recharts
-- Framer Motion
-- Formik + Yup
-
-### Back-end
-
-- Node.js + Express
-- MySQL (WAMP)
-- JWT (access token curto + refresh token rotativo)
-- RBAC: `admin`, `trainer`, `client`
-- Rate limit + middlewares de seguranca
-
-### Integracoes
-
-- API REST
-- Notificacao por email (Nodemailer)
+- Multi-tenant real por `tenants` (`PERSONAL` / `GYM`)
+- Usuarios autenticados em `tenant_users` com RBAC:
+  - `MASTER_ADMIN`
+  - `GYM_STAFF`
+  - `PERSONAL`
+- White-label por slug:
+  - branding por tenant
+  - landing dinamica por tenant
+- Billing:
+  - planos
+  - subscricoes
+  - invoices
+  - payments
+  - bloqueio de acesso por inadimplencia (`access_blocks`)
+- Suporte com historico:
+  - ticket
+  - mensagens
+  - eventos
+- Gamificacao:
+  - desafio semanal
+  - participacao
+  - log diario
+  - leaderboard
+  - achievements
+- Frequencia:
+  - alunos
+  - memberships
+  - attendance
 
 ## Estrutura de pastas
 
@@ -45,49 +41,67 @@ TrainForge/
     controllers/
     routes/
     models/
-    utils/
     middlewares/
+    utils/
     db/
-    tests/
+      schema.sql
+      seed.sql
     app.js
     server.js
-    package.json
-
-  frontend/
-    src/
-      components/
-      pages/
-      services/
-      styles/
-      utils/
-    public/
     package.json
 
   database/
     schema.sql
     seed.sql
+    migrations/
+      20260218_000001_trainforge_multitenant.sql
+
+  frontend/
+    src/
+    public/
+    package.json
+
+  landings/
+    personal-template/
+    gym-template/
+    saas-sales/
 
   tests/
-    backend/
-    frontend/
-
   TODO.md
   README.md
-  index.html
 ```
 
-## Setup local (WAMP + Node)
+## Stack
 
-> Caminho local: `C:\wamp64\www\Fullstack MD\projects\TrainForge`
+### Front-end
+
+- React + Vite
+- React Router DOM
+- Axios
+- Bootstrap + Tailwind utilities
+- Recharts
+- Formik + Yup
+
+### Back-end
+
+- Node.js + Express
+- MySQL (WAMP)
+- JWT (access token curto + refresh rotativo)
+- RBAC + middlewares de autorizacao
+- Rate limit + helmet + CORS
+
+## Setup local
+
+> Caminho: `C:\wamp64\www\Fullstack MD\projects\TrainForge`
 
 ### 1) Base de dados
 
-1. Criar DB `trainforge` no MySQL.
-2. Executar:
-   - `database/schema.sql`
-   - `database/seed.sql`
+Executar na ordem:
 
-### 2) Backend (Node/Express)
+1. `database/schema.sql`
+2. `database/seed.sql`
+
+### 2) Backend
 
 ```bash
 cd backend
@@ -96,15 +110,9 @@ copy .env.example .env
 npm run dev
 ```
 
-API em `http://localhost:8085/api/v1`.
+API: `http://localhost:8085/api/v1`
 
-Health check:
-
-```bash
-GET http://localhost:8085/api/v1/health
-```
-
-### 3) Frontend (React)
+### 3) Frontend
 
 ```bash
 cd frontend
@@ -112,7 +120,7 @@ npm install
 npm run dev
 ```
 
-Frontend em `http://localhost:5173`.
+Frontend: `http://localhost:5173`
 
 Opcional no `frontend/.env`:
 
@@ -122,16 +130,12 @@ VITE_API_BASE_URL=http://localhost:8085/api/v1
 
 ## Credenciais demo
 
-Todos os utilizadores seeded usam:
+Senha demo para contas seeded: `password`
 
-- password: `password`
-
-Contas:
-
-- `admin@trainforge.local` (admin)
-- `kauai@trainforge.local` (trainer)
-- `ana@trainforge.local` (client)
-- `bruno@trainforge.local` (client)
+- `kauai@trainforge.local` (MASTER_ADMIN -> `admin` no app)
+- `admin@trainforge.local` (GYM_STAFF -> `trainer` no app)
+- `ricardo@ironvalley.pt` (GYM_STAFF -> `trainer` no app)
+- `yasmin@performance.pt` (PERSONAL -> `trainer` no app)
 
 ## Endpoints principais
 
@@ -144,68 +148,89 @@ Contas:
 - `POST /auth/logout`
 - `POST /auth/logout-all`
 
-### Usuarios / Area do cliente
+### Tenant / Master
 
-- `GET /users/me`
-- `PATCH /users/me`
-- `GET /users/me/history`
-- `GET /users/me/support`
-- `POST /users/me/support`
-- `GET /users?role=client` (admin/trainer)
+- `GET /tenants` (master)
+- `POST /tenants` (master)
+- `GET /admin/tenants-kpis` (master)
 
-### Desafios e ranking
+### Branding / Landing (white-label)
+
+- `GET /branding/:slug`
+- `POST /branding` (auth)
+- `GET /landing/:slug`
+
+### Dashboard admin
+
+- `GET /admin/overview`
+- `GET /admin/rankings`
+- `GET /admin/billing/overview` (master)
+- `POST /admin/billing/run-cycle` (master)
+- `POST /admin/billing/invoices/:invoiceId/confirm-payment` (master)
+
+### Suporte
+
+- `GET /support/tickets`
+- `POST /support/tickets`
+- `GET /support/tickets/:id/timeline`
+- `POST /support/tickets/:id/messages`
+- `PATCH /support/tickets/:id/status`
+
+### Desafios / Ranking
 
 - `GET /challenges`
-- `POST /challenges` (admin/trainer)
-- `PATCH /challenges/:id/toggle` (admin/trainer)
+- `POST /challenges`
+- `PATCH /challenges/:id/toggle`
 - `GET /challenges/:id/ranking?top=3`
 - `POST /challenges/:id/complete`
 
-### Workouts
+### Workouts / Metrics
 
 - `GET /workouts/leaderboard`
 - `GET /workouts/metrics`
 - `GET /workouts/history`
 - `POST /workouts`
 
-### Servicos, solicitacoes e orcamentos
+### Servicos / Orcamentos
 
 - `GET /services/catalog`
-- `POST /services/catalog` (admin/trainer)
-- `PATCH /services/catalog/:id/toggle` (admin/trainer)
+- `POST /services/catalog`
+- `PATCH /services/catalog/:id/toggle`
 - `POST /services/requests`
 - `GET /services/requests`
-- `PATCH /services/requests/:id/status` (admin/trainer)
-- `POST /services/quotes` (admin/trainer)
+- `PATCH /services/requests/:id/status`
+- `POST /services/quotes`
 - `GET /services/quotes`
 
-### Feedback e admin
+### Area do utilizador
+
+- `GET /users/me`
+- `PATCH /users/me`
+- `GET /users/me/history`
+- `GET /users/me/support`
+- `POST /users/me/support`
+- `GET /users?role=client`
+
+### Feedback
 
 - `POST /feedback`
-- `GET /feedback` (admin/trainer)
-- `GET /admin/overview` (admin/trainer)
-- `GET /admin/rankings` (admin/trainer)
+- `GET /feedback`
+
+## Admin oculto (redirect)
+
+- `/personal/:slug/adm` -> redirect para `SAAS_ADMIN_LOGIN_URL` ou `/saas/adm`
+- `/gym/:slug/adm` -> redirect para `SAAS_ADMIN_LOGIN_URL` ou `/saas/adm`
+- `/saas/adm` -> endpoint informativo de login
 
 ## Testes
-
-### Backend
 
 ```bash
 cd backend
 npm test
 ```
 
-### Frontend
+## Notas
 
-Use os testes em `tests/frontend` com a stack de testes que preferir (`vitest` ou `jest`).
-
-## Notas de migracao
-
-- O backend PHP antigo foi preservado em `backend/legacy-php/` apenas para referencia.
-- A implementacao ativa agora e Node/Express em `backend/`.
-
-## Proximos passos
-
-- adicionar CI com testes + lint
-- adicionar auditoria de eventos e observabilidade (logs estruturados)
-- adicionar multi-tenant por organizacao para escalar o modelo SaaS
+- O legado PHP continua em `backend/legacy-php/` apenas como referencia.
+- A implementacao ativa e Node/Express com schema multi-tenant.
+- Regras de bloqueio por inadimplencia sao aplicadas no ciclo de billing (`run-cycle`).

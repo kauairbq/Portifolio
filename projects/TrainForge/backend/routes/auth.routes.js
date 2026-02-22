@@ -3,6 +3,8 @@ const {
   register,
   login,
   refresh,
+  requestActivationToken,
+  verifyActivationTokenController,
   me,
   logout,
   logoutAll
@@ -15,6 +17,8 @@ const router = express.Router();
 router.post('/register', authLimiter, register);
 router.post('/login', authLimiter, login);
 router.post('/refresh', authLimiter, refresh);
+router.post('/activation/request', authLimiter, requestActivationToken);
+router.post('/activation/verify', authLimiter, verifyActivationTokenController);
 router.get('/me', authRequired, me);
 router.post('/logout', authRequired, logout);
 router.post('/logout-all', authRequired, logoutAll);

@@ -1,57 +1,173 @@
-﻿# TrainForge - TODO de desenvolvimento
+﻿📘 TrainForge — TODO Geral de Desenvolvimento & Upgrade SaaS
+✅ STATUS ATUAL DO PROJETO
 
-## Fase 1 - Setup
-
-- [x] Estrutura base do projeto criada no caminho WAMP
+🧱 FASE 1 — Setup
+- [x] Estrutura base do projeto criada no WAMP
 - [x] Frontend React (Vite) configurado
 - [x] Backend Node.js + Express configurado
-- [x] Pasta `backend/legacy-php` preservada para referencia
+- [x] Pasta `backend/legacy-php` preservada para referência
 - [x] `.gitignore` configurado
 
-## Fase 2 - Base de dados
+🗄 FASE 2 — Base de Dados
+- [x] `schema.sql` atualizado para modelo SaaS Fitness
+- [x] `seed.sql` com utilizadores, desafios, serviços e dados demo
+- [x] Ligação MySQL via `backend/utils/db.js`
+- [x] Scripts SQL executados localmente no WAMP
 
-- [x] `schema.sql` atualizado para modelo SaaS fitness
-- [x] `seed.sql` com utilizadores, desafio, servicos e dados demo
-- [x] Ligacao MySQL preparada via `backend/utils/db.js`
-- [ ] Executar scripts SQL localmente no MySQL do WAMP
-
-## Fase 3 - Backend API
-
-- [x] Auth com JWT + refresh rotativo
+🔐 FASE 3 — Backend API
+- [x] Auth com JWT + refresh token rotativo
 - [x] RBAC (admin / trainer / client)
 - [x] Endpoints de desafios e ranking
-- [x] Endpoints de servicos, solicitacoes e orcamentos
-- [x] Endpoints de historico e suporte
-- [x] Endpoint de feedback com notificacao por email (Nodemailer)
+- [x] Endpoints de serviços, solicitações e orçamentos
+- [x] Endpoints de histórico e suporte
+- [x] Endpoint de feedback com email (Nodemailer)
 - [x] Rate limit global e auth
-- [ ] Testar todos endpoints no Postman/Insomnia
+- [x] Smoke test automatizado
 
-## Fase 4 - Frontend
+🖥 FASE 4 — Frontend Atual
+- [x] Login e área autenticada
+- [x] Dashboard com métricas e ranking
+- [x] Desafio semanal com top 3
+- [x] Gestão de serviços
+- [x] Área do cliente (dados pessoais + pagamento)
+- [x] Suporte e histórico
+- [x] Painel admin
+- [x] Responsividade base
+- [x] Refinar UX visual premium
 
-- [x] Login e area autenticada
-- [x] Dashboard com metricas e ranking global
-- [x] Desafio semanal com top 3 e conclusao de treino
-- [x] Gestao de servicos e historico de solicitacoes
-- [x] Area do cliente com campos: nome, nascimento, morada, pagamento
-- [x] Suporte e historico na pagina de settings
-- [x] Painel admin com indicadores e ranking
-- [x] Responsividade base para mobile/tablet/desktop
-- [ ] Refinar UX visual premium (microinteracoes + empty states)
+🧪 FASE 5 — Qualidade
+- [x] Testes backend (`npm test`)
+- [x] Testes de integração completos
+- [x] Testes frontend automatizados
+- [x] Pipeline CI (lint + test + build)
+- [x] README completo
+- [x] Deploy final produção + smoke test
 
-## Fase 5 - Qualidade e entrega
+🚀 NOVA FASE — REFATORAÇÃO FRONT-END SaaS PREMIUM
+🎯 Objetivo: Transformar TrainForge em produto SaaS comercial nível enterprise.
 
-- [x] Testes backend base (`npm test` no backend)
-- [ ] Testes de integracao completos (login -> refresh -> acao protegida)
-- [ ] Testes frontend automatizados (componentes e paginas)
-- [ ] Pipeline CI (lint + test + build)
-- [x] README completo com stack, setup, endpoints e credenciais demo
-- [ ] Deploy final (backend + frontend) e smoke test de producao
+🧱 FASE 6 — Arquitetura Visual Profissional
+Layout Base
+- [x] Criar layout padrão SaaS com sidebar
+- [x] Header fixo
+- [x] Área principal scrollável
 
-## Checkpoints obrigatorios
+Sidebar
+- [x] Logo TrainForge
+- [x] Dashboard
+- [x] Clientes
+- [x] Pagamentos
+- [x] Desafios
+- [x] Ranking
+- [x] Tickets
+- [x] Configurações
+- [x] Logout na sidebar
 
-- [ ] Frontend funcional ligado ao backend Node
-- [ ] Backend substituindo fluxo PHP antigo
-- [ ] Conexao DB validada localmente
-- [ ] Auth JWT validada (login, refresh, logout)
-- [ ] Ranking e desafio semanal validados ponta a ponta
-- [ ] Integracao final com portfolio validada
+Header
+- [x] Nome usuário
+- [x] Avatar
+- [x] Notificações
+- [x] Status da assinatura
+- [x] Dropdown perfil
+
+🎨 FASE 7 — Design System
+Design Tokens
+- [x] Definir cores (Primary / Secondary / base visual)
+- [x] Definir Background 1 / Background 2
+- [x] Definir Border subtle
+- [x] Definir escala tipográfica
+- [x] Definir escala de espaçamento (4 / 8 / 12 / 16 / 24 / 32 / 48 / 64)
+
+Componentização
+- [x] Criar componente `<Card>` padrão (classe `.tf-card`)
+- [x] Criar componente `<Button>` padrão
+- [x] Criar `<Badge>` status
+- [x] Criar `<Table>` padrão admin
+
+📊 FASE 8 — Dashboard Comercial Real
+KPIs
+- [x] Receita Mensal
+- [x] Clientes Ativos
+- [x] Pagamentos Pendentes
+- [x] Crescimento %
+
+Cada KPI deve conter:
+- [x] Ícone
+- [x] Número grande
+- [x] Comparativo mensal
+- [x] Indicador verde/vermelho
+
+Gráfico Principal
+- [x] Implementar Recharts ou Chart.js
+- [x] Receita mensal
+- [x] Crescimento
+- [x] Comparativo período anterior
+
+Atividade Recente
+- [x] Novo personal
+- [x] Pagamento confirmado
+- [x] Ticket aberto
+- [x] Novo ginásio
+
+💰 FASE 9 — Monetização Visual
+Página Clientes
+- [x] Tabela (Cliente / Tipo / Plano / Status / Receita / Ação)
+- [x] Filtros (Ativo / Suspenso / Trial / Inadimplente)
+
+Receita
+- [x] Receita mensal total
+- [x] Receita por tipo
+- [x] Receita acumulada
+
+🎯 FASE 10 — UX Comercial
+- [x] Criar empty states profissionais
+- [x] Criar CTAs elegantes
+- [x] Loading skeletons
+- [x] Toast notifications
+- [x] Microinterações
+- [x] Hover states refinados
+
+🛡 FASE 11 — Percepção Premium
+- [x] Sistema de elevação (sombras leves)
+- [x] Bordas suaves
+- [x] Glass effect leve (opcional)
+- [x] Fundo com gradiente sutil
+- [x] Noise texture leve
+
+📱 FASE 12 — Responsividade Real
+- [x] Sidebar colapsável
+- [x] KPI empilhados no mobile
+- [x] Menu hambúrguer
+- [x] Gráfico adaptável
+
+🧠 FASE 13 — Branding
+- [x] Aplicar logo final azul + dourado
+- [x] Aplicar slogan: "Forjando performance e resultados"
+- [x] Badge "SaaS Platform"
+- [x] Favicon profissional configurado
+
+🔥 FASE 14 — Produto Real
+Onboarding
+- [x] Página onboarding inicial
+- [x] Checklist de setup
+- [x] Tutorial guiado
+
+Assinatura
+- [x] Página plano atual
+- [x] Próxima cobrança
+- [x] Status
+- [x] Upgrade
+
+🧬 FASE 15 — Auditoria Final
+- [x] Verificar contraste
+- [x] Hierarquia visual
+- [x] Consistência spacing
+- [x] Performance Lighthouse
+- [x] UX geral
+
+🎯 RESULTADO ESPERADO
+- [ ] Produto SaaS comercial real
+- [ ] Plataforma escalável
+- [ ] UX nível mercado
+- [ ] Percepção premium
+- [ ] Pronto para venda

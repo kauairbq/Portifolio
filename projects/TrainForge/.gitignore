@@ -9,6 +9,12 @@ dist/
 frontend/dist/
 coverage/
 .vite/
+frontend/.tmp/
+frontend/.npm-cache/
+frontend/.cache/
+**/%SystemDrive%/
+frontend/tmp-esbuild-test.cjs
+frontend/*.out.txt
 
 # Environment
 .env

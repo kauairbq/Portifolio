@@ -43,7 +43,16 @@ async function getMyHistory(req, res, next) {
 
 async function getUsers(req, res, next) {
   try {
-    const users = await listUsers(req.query.role || null);
+    const roleFilter = String(req.query.role || '').toLowerCase();
+    const tenantRole = req.user.tenantRole || req.user.tenant_role || null;
+    if (tenantRole === 'MASTER_ADMIN' && roleFilter === 'client') {
+      return next({ status: 403, message: 'Master admin nao pode listar alunos diretamente.' });
+    }
+
+    const users = await listUsers({
+      tenantId: req.user.tid,
+      role: req.query.role || null
+    });
     return res.json({ ok: true, data: users });
   } catch (err) {
     return next(err);
@@ -52,15 +61,19 @@ async function getUsers(req, res, next) {
 
 async function createTicket(req, res, next) {
   try {
-    const { subject, message } = req.body;
+    const { subject, message, category, priority, targetScope } = req.body;
     if (!subject || !message) {
       return next({ status: 400, message: 'subject and message are required.' });
     }
 
     const ticket = await createSupportTicket({
-      user_id: req.user.sub,
+      tenant_id: req.user.tid,
+      opened_by_user_id: req.user.sub,
       subject,
-      message
+      message,
+      category: category || 'QUESTION',
+      priority: priority || 'MEDIUM',
+      target_scope: targetScope || 'PERSONAL'
     });
 
     return res.status(201).json({ ok: true, data: ticket });
@@ -71,7 +84,11 @@ async function createTicket(req, res, next) {
 
 async function getTickets(req, res, next) {
   try {
-    const tickets = await listSupportTickets({ id: req.user.sub, role: req.user.role });
+    const tickets = await listSupportTickets({
+      id: req.user.sub,
+      tenant_id: req.user.tid,
+      role: req.user.role
+    });
     return res.json({ ok: true, data: tickets });
   } catch (err) {
     return next(err);

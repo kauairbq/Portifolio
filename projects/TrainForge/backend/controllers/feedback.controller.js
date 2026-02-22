@@ -9,7 +9,8 @@ async function postFeedback(req, res, next) {
     }
 
     const data = await createFeedback({
-      user_id: req.user.sub,
+      tenant_id: req.user.tid,
+      author_user_id: req.user.sub,
       subject,
       message,
       rating: Number(rating || 5)
@@ -28,7 +29,7 @@ async function postFeedback(req, res, next) {
 
 async function getFeedback(req, res, next) {
   try {
-    const data = await listFeedback(Number(req.query.limit || 100));
+    const data = await listFeedback(req.user.tid, Number(req.query.limit || 100));
     return res.json({ ok: true, data });
   } catch (err) {
     return next(err);

@@ -1,11 +1,11 @@
 ﻿const express = require('express');
 const { postFeedback, getFeedback } = require('../controllers/feedback.controller');
 const { authRequired } = require('../middlewares/auth.middleware');
-const { allowRoles } = require('../middlewares/role.middleware');
+const { allowRoles, denyTenantRoles } = require('../middlewares/role.middleware');
 
 const router = express.Router();
 
-router.use(authRequired);
+router.use(authRequired, denyTenantRoles('MASTER_ADMIN'));
 
 router.post('/', postFeedback);
 router.get('/', allowRoles('admin', 'trainer'), getFeedback);

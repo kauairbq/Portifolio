@@ -1,8 +1,21 @@
 ﻿import { motion } from 'framer-motion';
+import StatusBadge from './StatusBadge';
 
 export default function ChallengeCard({ challenge, onToggle, onComplete, canManage }) {
   const active = Number(challenge.is_active) === 1;
   const topThree = Array.isArray(challenge.top_three) ? challenge.top_three : [];
+  const toggleLabel = active ? 'Desativar' : 'Ativar';
+
+  const handleToggle = () => {
+    const nextState = active ? 0 : 1;
+
+    if (active) {
+      const confirmed = window.confirm('Tens a certeza que queres desativar este desafio?');
+      if (!confirmed) return;
+    }
+
+    onToggle(challenge.id, nextState);
+  };
 
   return (
     <motion.article
@@ -13,9 +26,7 @@ export default function ChallengeCard({ challenge, onToggle, onComplete, canMana
       <div className="card-body d-flex flex-column">
         <div className="d-flex justify-content-between align-items-center mb-2">
           <h5 className="card-title mb-0">{challenge.title}</h5>
-          <span className={`badge ${active ? 'bg-success' : 'bg-secondary'}`}>
-            {active ? 'Ativo' : 'Inativo'}
-          </span>
+          <StatusBadge status={active ? 'active' : 'inactive'} label={active ? 'Ativo' : 'Inativo'} />
         </div>
 
         <p className="text-secondary mb-2">{challenge.description || 'Sem descricao.'}</p>
@@ -24,6 +35,10 @@ export default function ChallengeCard({ challenge, onToggle, onComplete, canMana
           <div>Modalidade: {challenge.modality}</div>
           <div>Meta semanal: {challenge.weekly_target}</div>
           <div>Pontos por conclusao: {challenge.points_per_completion}</div>
+          <div>
+            Limite semanal de pontos:{' '}
+            {Number(challenge.weekly_points_limit) > 0 ? challenge.weekly_points_limit : 'Sem limite (metricas atuais)'}
+          </div>
         </div>
 
         <div className="mb-3">
@@ -53,10 +68,10 @@ export default function ChallengeCard({ challenge, onToggle, onComplete, canMana
 
           {canManage && (
             <button
-              className="btn btn-outline-primary btn-sm"
-              onClick={() => onToggle(challenge.id, active ? 0 : 1)}
+              className={`btn btn-sm ${active ? 'btn-danger' : 'btn-outline-success'}`}
+              onClick={handleToggle}
             >
-              {active ? 'Desativar' : 'Ativar'}
+              {toggleLabel}
             </button>
           )}
         </div>

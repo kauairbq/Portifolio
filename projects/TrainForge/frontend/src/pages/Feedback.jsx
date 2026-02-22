@@ -2,6 +2,7 @@
 import * as Yup from 'yup';
 
 import { api } from '../services/api';
+import { useToast } from '../components/ToastProvider';
 
 const schema = Yup.object({
   subject: Yup.string().required('Obrigatorio'),
@@ -10,6 +11,8 @@ const schema = Yup.object({
 });
 
 export default function Feedback({ user }) {
+  const toast = useToast();
+
   return (
     <section className="row g-4">
       <div className="col-12 col-lg-8">
@@ -21,20 +24,29 @@ export default function Feedback({ user }) {
             <Formik
               initialValues={{ subject: 'Feedback da semana', message: '', rating: 5 }}
               validationSchema={schema}
-              onSubmit={async (values, { setStatus, setSubmitting, resetForm }) => {
+              onSubmit={async (values, { setSubmitting, resetForm }) => {
                 try {
                   const { data } = await api.post('/feedback', values);
                   if (!data?.ok) throw new Error(data?.error || 'Falha no envio');
-                  setStatus('Feedback enviado com sucesso.');
+
+                  toast.push({
+                    type: 'success',
+                    title: 'Feedback enviado',
+                    message: 'Obrigado. A equipa foi notificada.'
+                  });
                   resetForm();
                 } catch (err) {
-                  setStatus(err?.response?.data?.error || err.message || 'Erro ao enviar feedback');
+                  toast.push({
+                    type: 'error',
+                    title: 'Erro ao enviar',
+                    message: err?.response?.data?.error || err.message || 'Erro ao enviar feedback'
+                  });
                 } finally {
                   setSubmitting(false);
                 }
               }}
             >
-              {({ isSubmitting, status }) => (
+              {({ isSubmitting }) => (
                 <Form className="d-grid gap-3">
                   <div>
                     <label className="form-label">Assunto</label>
@@ -57,8 +69,6 @@ export default function Feedback({ user }) {
                     </Field>
                     <small className="text-danger"><ErrorMessage name="rating" /></small>
                   </div>
-
-                  {status ? <div className="alert alert-info py-2">{status}</div> : null}
 
                   <button className="btn btn-primary" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'A enviar...' : 'Enviar feedback'}

@@ -10,6 +10,8 @@ function authRequired(req, _res, next) {
 
   try {
     req.user = verifyAccessToken(token);
+    req.user.tid = req.user.tid || null;
+    req.user.tenantRole = req.user.tenantRole || null;
     return next();
   } catch {
     return next({ status: 401, message: 'Invalid or expired access token.' });
